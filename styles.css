@@ -1,0 +1,67 @@
+/* Reset y estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* Estilos del encabezado */
+.header {
+  background-color: white;
+  border-top: 1px solid #ddd; /* Borde superior claro */
+  border-bottom: 1px solid #003366; /* Borde inferior azul oscuro */
+}
+
+.container {
+  width: 90%;
+  max-width: 1500px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+}
+
+/* Sección de contacto */
+.contact-info {
+  display: flex;
+  align-items: center;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  margin-right: 20px;
+}
+
+.social-icons a {
+  color: #333;
+  font-size: 20px;
+}
+
+.contact-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-text p {
+  font-size: 18px;
+  margin: 0;
+}
+
+.phone-number {
+  font-size: 28px;
+  color: #e74c3c; /* Rojo vibrante */
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+/* Logo de la empresa */
+.logo img {
+  height: 50px; /* Ajusta el tamaño del logo según sea necesario */
+  width: auto;
+}
