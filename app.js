@@ -68,3 +68,31 @@ document.addEventListener("DOMContentLoaded", function () {
         updateDots(index);
     });
 });
+
+// script.js
+document.addEventListener("DOMContentLoaded", function () {
+    const slideTrack = document.querySelector(".slide-track");
+    const slides = document.querySelectorAll(".slide");
+
+    // Pausar animación al pasar el mouse
+    slideTrack.addEventListener("mouseenter", () => {
+        slideTrack.style.animationPlayState = "paused";
+    });
+
+    slideTrack.addEventListener("mouseleave", () => {
+        slideTrack.style.animationPlayState = "running";
+    });
+});
+
+function initMap() {
+    const map = new google.maps.Map(document.getElementById("map"), {
+        center: { lat: 20.0583, lng: -98.2522 }, // Coordenadas de ejemplo
+        zoom: 15,
+    });
+
+    const marker = new google.maps.Marker({
+        position: { lat: 20.0583, lng: -98.2522 },
+        map: map,
+        title: "Hidrosistemas de Hidalgo",
+    });
+}

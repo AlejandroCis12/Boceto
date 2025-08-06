@@ -1,10 +1,12 @@
 /* Reset y estilos generales */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: "Nata Sans", sans-serif;
   color: #333;
@@ -16,7 +18,7 @@ body {
   border-top: 1px solid #ddd; /* Borde superior claro */
 }
 
-.container {
+.container-encabezado {
   width: 90%;
   max-width: 1500px;
   margin: 0 auto;
@@ -86,6 +88,7 @@ body {
  /* Estilos del menú */
   nav {
       display: flex;
+      top: 0;
       background-color: #013c80; /* Azul oscuro */
       color: white;
       padding: 5px 20px;
@@ -110,14 +113,15 @@ body {
     max-width: 1200px;
     margin: 0px auto;
     overflow: hidden;
-    height: 500px;
+    height: 400px;
 }
 
 .slider {
     display: flex;
+    overflow-x: scroll ;
+    overflow-y: hidden;
     width: 100%;
     height: 100%;
-    overflow-x: auto;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
@@ -177,7 +181,7 @@ body {
 .overlay-Hidrosistemas p{
     font-size: 15px;
     margin-bottom: 20px;
-    text-align: left;
+    text-align: justify;
     line-height: 1.2;
     /* Fuerza la alineación incluso en entornos flex/grid: */
     margin-right: auto !important;
@@ -185,13 +189,12 @@ body {
     padding-left: 15px;
 }
 
-
-.overlay {
+.overlay-asesoria {
     position: absolute;
     top: 175px;
     right: 50px; /* Alinea el overlay a la derecha */
-    width: 50%; /* Ancho del overlay */
-    height: 60%;
+    width: 45%; /* Ancho del overlay */
+    height: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -202,29 +205,228 @@ body {
     background: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente */
 }
 
-.overlay h1 {
+.overlay-asesoria h1{
     font-size: 48px;
     margin-bottom: 20px;
+    text-align: left;
+    line-height: 1.2;
+    /* Fuerza la alineación incluso en entornos flex/grid: */
+    margin-right: auto !important;
+    width: fit-content;
+    padding-left: 15px;
 }
 
-.overlay p {
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 30px;
-    max-width: 80%;
+.overlay-asesoria p{
+    font-size: 15px;
+    margin-bottom: 20px;
+    text-align: justify;
+    line-height: 1.2;
+    /* Fuerza la alineación incluso en entornos flex/grid: */
+    margin-right: auto !important;
+    width: fit-content;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
-.overlay button {
-    padding: 15px 30px;
+.overlay-capacitacion {
+    position: absolute;
+    top: 175px;
+    right: 50px; /* Alinea el overlay a la derecha */
+    width: 45%; /* Ancho del overlay */
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente */
+}
+
+.overlay-capacitacion h1{
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-align: left;
+    line-height: 1.2;
+    /* Fuerza la alineación incluso en entornos flex/grid: */
+    margin-right: auto !important;
+    width: fit-content;
+    padding-left: 15px;
+}
+
+.overlay-capacitacion p{
+    font-size: 15px;
+    margin-bottom: 20px;
+    text-align: justify;
+    line-height: 1.2;
+    /* Fuerza la alineación incluso en entornos flex/grid: */
+    margin-right: auto !important;
+    width: fit-content;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.overlay-supervision {
+    position: absolute;
+    top: 150px;
+    right: 50px; /* Alinea el overlay a la derecha */
+    width: 60%; /* Ancho del overlay */
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente */
+}
+
+.overlay-supervision h1{
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-align: left;
+    line-height: 1.2;
+    /* Fuerza la alineación incluso en entornos flex/grid: */
+    margin-right: auto !important;
+    width: fit-content;
+    padding-left: 15px;
+}
+
+.overlay-supervision p{
+    font-size: 15px;
+    margin-bottom: 20px;
+    text-align: justify;
+    line-height: 1.2;
+    /* Fuerza la alineación incluso en entornos flex/grid: */
+    margin-right: auto !important;
+    width: fit-content;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.overlay-coordinacion {
+    position: absolute;
+    top: 150px;
+    right: 50px; /* Alinea el overlay a la derecha */
+    width: 60%; /* Ancho del overlay */
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente */
+}
+
+.overlay-coordinacion h1{
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-align: left;
+    line-height: 1.2;
+    /* Fuerza la alineación incluso en entornos flex/grid: */
+    margin-right: auto !important;
+    width: fit-content;
+    padding-left: 15px;
+}
+
+.overlay-coordinacion p{
+    font-size: 15px;
+    margin-bottom: 20px;
+    text-align: justify;
+    line-height: 1.2;
+    /* Fuerza la alineación incluso en entornos flex/grid: */
+    margin-right: auto !important;
+    width: fit-content;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+.overlay-asesoria button {
+    padding: 10px 30px;
+    padding-bottom: 5px;
     font-size: 16px;
     background-color: red;
     color: white;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    text-align: left;
+    line-height: 1.2;
+    margin-right: auto;
+    margin-left: 20px;
+    width: fit-content;
+
 }
 
-.overlay button:hover {
+.overlay-asesoria button:hover {
+    background-color: darkred;
+}
+
+.overlay-capacitacion button {
+    padding: 10px 30px;
+    padding-bottom: 5px;
+    font-size: 16px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: left;
+    line-height: 1.2;
+    margin-right: auto;
+    margin-left: 20px;
+    width: fit-content;
+
+}
+
+.overlay-capacitacion button:hover {
+    background-color: darkred;
+}
+
+.overlay-supervision button {
+    padding: 10px 30px;
+    padding-bottom: 5px;
+    font-size: 16px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: left;
+    line-height: 1.2;
+    margin-right: auto;
+    margin-left: 20px;
+    width: fit-content;
+
+}
+
+.overlay-supervision button:hover {
+    background-color: darkred;
+}
+
+.overlay-coordinacion button {
+    padding: 10px 30px;
+    padding-bottom: 5px;
+    font-size: 16px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: left;
+    line-height: 1.2;
+    margin-right: auto;
+    margin-left: 20px;
+    width: fit-content;
+
+}
+
+.overlay-coordinacion button:hover {
     background-color: darkred;
 }
 
@@ -249,4 +451,331 @@ body {
 
 .dot.active {
     background-color: whitesmoke;
+}
+
+/* Estilos para las tarjetas*/
+.container-tarjetas {
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+    gap: 20px;
+}
+
+.card {
+    width: 200px;
+    height: 250px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    position: relative;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    background-color: #e0e0e0;
+}
+
+.card img {
+    width: 100%;
+    object-fit: cover;
+    opacity: 0; /* Inicialmente oculto */
+    transition: opacity 0.5s ease; /* Efecto de aparición */
+}
+
+.card h3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #013c80;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Animación de aparición de imágenes al cargar la página */
+.card img {
+    animation: fadeIn 5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/*Seccion de Nosotros*/
+.container-nosotros {
+    max-width: 1200px;
+    position: relative;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.container-nosotros h1 {
+    font-size: 25px;
+    color: #333;
+    position: absolute;
+    top: 0; /* Ajusta según necesites */
+    left: 20px; /* Ajusta según necesites */
+}
+
+.content {
+    display: flex;
+    gap: 50px;
+    padding-top: 40px;
+}
+
+.column {
+    flex: 1;
+}
+
+.left p {
+    font-size: 15px;
+    margin-bottom: 20px;
+    text-align: justify;
+    
+}
+
+.right p {
+    font-size: 15px;
+    text-align: justify;
+}
+
+.read-more {
+    background-color: #e74c3c; /* Rojo oscuro */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.read-more:hover {
+    background-color: #c0392b; /* Rojo más oscuro al hover */
+}
+
+/* Productos */
+
+.container-Productos {
+  padding-top: 20px;
+}
+
+.products {
+  background-color: #f1f5f9;
+}
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  justify-content: center;
+  gap: 25px;
+}
+.product-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 280px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.product-info {
+  padding: 15px;
+  text-align: justify;
+}
+.product-info h3 {
+  color: #003366;
+  margin-bottom: 10px;
+}
+.product-info p {
+  color: #555;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+.product-btn {
+  display: flex;
+  justify-content: center; /* Centra el texto horizontalmente */
+  align-items: center; /* Centra el texto verticalmente (opcional) */
+  background-color: #003366;
+  color: white;
+  text-decoration: none;
+  padding: 6px 12px; /* Reduce el padding para hacer el botón más pequeño */
+  border-radius: 5px;
+  font-size: 0.8rem; /* Reduce el tamaño de la fuente */
+  width: fit-content; /* Ajusta el ancho al contenido */
+  margin: 0 auto; /* Centra el botón en su contenedor (opcional) */
+}
+.product-btn:hover {
+  background-color: rgba(15, 114, 157, 0.753)
+}
+
+/*Marcas*/
+.container-marcas {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.container-marcas h2 {
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #444;
+}
+
+.slider-marcas {
+    overflow: hidden;
+    width: 100%;
+    padding: 10px 0;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: none
+}
+
+.slide-track {
+    display: flex;
+    animation: scroll 20s linear infinite; /* 20 segundos para completar el desplazamiento */
+}
+
+.slide-img-marcas {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: filter 0.3s ease;
+}
+
+.slide-img-marcas:hover {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+/* Animación de desplazamiento infinito hacia la izquierda */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%); /* Se mueve hacia la izquierda hasta que la copia comience */
+    }
+}
+
+/*Contacto */
+.container-contacto {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.section {
+    width: calc(50% - 20px); /* Ajusta el ancho de las secciones */
+    padding: 20px;
+}
+
+.section h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#map {
+    width: 100%;
+    height: 400px; /* Altura del mapa */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact p {
+    margin: 10px 0;
+}
+
+.phone-footer {
+    color: red;
+    font-weight: bold;
+}
+.container-contact {
+  display: flex;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  gap: 30px;
+}
+
+.section {
+  flex: 1;
+  padding: 20px;
+}
+
+.section h2 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  border-bottom: 2px solid #003366;
+  padding-bottom: 8px;
+}
+
+/* Información de contacto */
+.contact-info p {
+  margin: 12px 0;
+  font-size: 15px;
+}
+
+.contact-info i {
+  color: #003366;
+  width: 24px;
+  text-align: center;
+}
+
+.contact-info .phone {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.contact-info a {
+  color: #003366;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+.footer-content {
+  text-align: center;
+  padding: 20px;
+  background-color: #013c80; /* Azul oscuro */
+  color: white;
+  font-size: 14px;
+}
+
+/* Responsive: en pantallas pequeñas, apila las columnas */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .section {
+    width: 100%;
+  }
+
+  .container-contact {
+    padding: 15px;
+  }
 }
