@@ -39,24 +39,33 @@
       </div>
     </div>
   </header>
+<!-- Navegación con submenú en Servicios -->
+<nav class="navbar">
+  <div class="nav-header">
+    <button class="menu-toggle" aria-label="Menú">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
 
-  <!-- Navegación con enlaces corregidos -->
-  <nav class="navbar">
-    <a href="#inicio">Inicio</a>
-    <a href="#nosotros">Nosotros</a>
-    <a href="#container-Productos">Productos</a>
-    <div class="dropdown">
-      <a href="#" class="dropbtn">Servicios</a>
-      <div class="dropdown-content">
-        <a href="asesoria.html"><i class="fas fa-lightbulb"></i> Asesoría</a>
+  <ul class="nav-menu">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="productos.html">Productos</a></li>
+    
+    <!-- Menú desplegable de Servicios -->
+    <li class="dropdown">
+      <a href="#" class="dropbtn">Servicios <i class="fas fa-chevron-down"></i></a>
+      <ul class="dropdown-menu">
+        <li><a href="asesoria.html"><i class="fas fa-lightbulb"></i> Asesoría</a></li>
         <a href="capacitacion.html"><i class="fas fa-graduation-cap"></i> Capacitación</a>
         <a href="supervision.html"><i class="fas fa-search"></i> Supervisión</a>
         <a href="coordinacion.html"><i class="fas fa-handshake"></i> Coordinación</a>
-      </div>
-    </div>
-    <a href="#contacto">Contacto</a>
-  </nav>
-
+      </ul>
+    </li>
+    
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</nav>
   <!-- Slider con id="inicio" -->
   <div class="slider-container" id="inicio">
     <div class="slider">
@@ -116,37 +125,40 @@
   </div>
   <!-- Sección Productos con id -->
 <!-- Productos -->
-<div class="container-Productos" id="container-Productos">
+<div class="container-Productos">
   <h2 class="section-title">Nuestros Productos</h2>
   <div class="product-grid">
-    <!-- Producto 1 -->
+    <!-- Tarjeta 1: Tubo para agua y CPVC -->
     <div class="product-card">
-      <img src="Imagenes/pvc.jpg" alt="Tubo para agua y CPVC">
+      <img src="Imagenes/Productos/pvc.jpg" alt="Tubería HDPE">
       <div class="product-info">
         <h3>Tubo para agua y CPVC</h3>
         <p>Los tubos y conexiones de Policloruro de vinilo clorado (CPVC) es un termoplástico producido por cloración de la resina de policloruro de vinilo (PVC).</p>
         <a href="#" class="product-btn">Ver ficha técnica</a>
       </div>
     </div>
-    <!-- Producto 2 -->
+
+    <!-- Tarjeta 2: Tubería corrugada PAD -->
     <div class="product-card">
-      <img src="Imagenes/PAD.jpg" alt="Tubería corrugada PAD">
+      <img src="Imagenes/Productos/PAD.jpg" alt="Accesorio PAD">
       <div class="product-info">
         <h3>Tubería corrugada PAD</h3>
         <p>Tubos y conexiones de Polietileno de alta densidad (PEAD o PAD) es un termoplástico producido por etilenos con alta densidad para la resistencia a CARGAS.</p>
         <a href="#" class="product-btn">Ver ficha técnica</a>
       </div>
     </div>
-    <!-- Producto 3 -->
+
+    <!-- Tarjeta 3: Tubería gris C-80 -->
     <div class="product-card">
-      <img src="Imagenes/C-80.jpg" alt="Tubería gris C-80">
+      <img src="Imagenes/Productos/C-80.jpg" alt="C-80">
       <div class="product-info">
         <h3>Tubería gris C-80</h3>
         <p>Los tubos y conexiones de Policloruro de Vinilo (PVC) es un termoplástico producido a partir de la resina del policloruro de vinilo (PVC).</p>
         <a href="#" class="product-btn">Ver ficha técnica</a>
       </div>
     </div>
-  </div>
+    <div class="product-cta">
+  <a href="productos.html" class="btn-ver-productos">Ver todos nuestros productos</a>
 </div>
 
   </div>
@@ -156,10 +168,12 @@
   <div class="slider-marcas">
     <div class="slide-track">
       <!-- Primera vuelta de marcas -->
+      <div class="slide-img-marcas"><img src="Imagenes/Marcas/Advance.png" alt="Marca Tuberia Advance"></div>
       <div class="slide-img-marcas"><img src="Imagenes/Marcas/ALFA.jpg" alt="Marca ALFA"></div>
       <div class="slide-img-marcas"><img src="Imagenes/Marcas/amanco.jpeg" alt="Marca Amanco"></div>
       <div class="slide-img-marcas"><img src="Imagenes/Marcas/ARES.jpg" alt="Marca ARES"></div>
       <div class="slide-img-marcas"><img src="Imagenes/Marcas/brovalco.jpg" alt="Marca Brovalco"></div>
+      <div class="slide-img-marcas"><img src="Imagenes/Marcas/CRESCO.jpg" alt="Marca Cresco"></div>
       <div class="slide-img-marcas"><img src="Imagenes/Marcas/DOROT.jpg" alt="Marca DOROT"></div>
       <div class="slide-img-marcas"><img src="Imagenes/Marcas/EL ROSARIO.jpg" alt="Marca El Rosario"></div>
       <div class="slide-img-marcas"><img src="Imagenes/Marcas/FONTANERY.jpg" alt="Marca Fontanery"></div>
@@ -172,13 +186,16 @@
       <div class="slide-img-marcas"><img src="Imagenes/Marcas/SIMEX.jpg" alt="Marca Simex"></div>
       <div class="slide-img-marcas"><img src="Imagenes/Marcas/SOGAR.jpg" alt="Marca Sogar"></div>
       <div class="slide-img-marcas"><img src="Imagenes/Marcas/SPEARS.jpg" alt="Marca Spears"></div>
+      <div class="slide-img-marcas"><img src="Imagenes/Marcas/unda.jpg" alt="Marca Unda"></div>
       <div class="slide-img-marcas"><img src="Imagenes/Marcas/VILLAREAL.jpg" alt="Marca Villareal"></div>
 
       <!-- Segunda vuelta de marcas (repetición exacta para efecto continuo) -->
+      <div class="slide-img-marcas"><img src="Imagenes/Marcas/Advance.png" alt="Marca Tuberia Advance"></div>
       <div class="slide-img-marcas"><img src="Imagenes/Marcas/ALFA.jpg" alt="Marca ALFA"></div>
       <div class="slide-img-marcas"><img src="Imagenes/Marcas/amanco.jpeg" alt="Marca Amanco"></div>
       <div class="slide-img-marcas"><img src="Imagenes/Marcas/ARES.jpg" alt="Marca ARES"></div>
       <div class="slide-img-marcas"><img src="Imagenes/Marcas/brovalco.jpg" alt="Marca Brovalco"></div>
+      <div class="slide-img-marcas"><img src="Imagenes/Marcas/CRESCO.jpg" alt="Marca Cresco"></div>
       <div class="slide-img-marcas"><img src="Imagenes/Marcas/DOROT.jpg" alt="Marca DOROT"></div>
       <div class="slide-img-marcas"><img src="Imagenes/Marcas/EL ROSARIO.jpg" alt="Marca El Rosario"></div>
       <div class="slide-img-marcas"><img src="Imagenes/Marcas/FONTANERY.jpg" alt="Marca Fontanery"></div>
@@ -191,6 +208,7 @@
       <div class="slide-img-marcas"><img src="Imagenes/Marcas/SIMEX.jpg" alt="Marca Simex"></div>
       <div class="slide-img-marcas"><img src="Imagenes/Marcas/SOGAR.jpg" alt="Marca Sogar"></div>
       <div class="slide-img-marcas"><img src="Imagenes/Marcas/SPEARS.jpg" alt="Marca Spears"></div>
+      <div class="slide-img-marcas"><img src="Imagenes/Marcas/unda.jpg" alt="Marca Unda"></div>
       <div class="slide-img-marcas"><img src="Imagenes/Marcas/VILLAREAL.jpg" alt="Marca Villareal"></div>
     </div>
   </div>
