@@ -1,199 +1,257 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hidrosistemas S.A de C.V.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nata+Sans:wght@100..900&display=swap" rel="stylesheet">
   <link rel="icon" href="Imagenes/h.png" type="image/png">
-  <link rel="stylesheet" href="style.css"> <!-- Archivo CSS externo -->
+  <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <!-- Header -->
-       <div class="container">
+  <!-- Encabezado -->
+  <header class="header">
+    <div class="container-encabezado">
       <!-- Sección de contacto -->
       <div class="contact-info">
         <div class="social-icons">
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-whatsapp"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/HidrosistemasHGO/?fref=ts" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://wa.me/527712167150?text=Hola,%20me%20gustaría%20obtener%20información%20sobre%20sus%20productos." target="_blank"><i class="fab fa-whatsapp"></i></a>
         </div>
         <div class="contact-text">
-          <p>Escribenos en WhatsApp!!</p>
-          <h2 class="phone-number">771 216 7150</h2>
+          <p>Escribenos en WhatsApp</p>
+          <h2 class="phone-number">
+            <a href="https://wa.me/527712167150?text=Hola,%20me%20gustaría%20obtener%20información%20sobre%20sus%20productos." 
+               class="phone-link" 
+               target="_blank">
+              771 216 7150
+            </a>
+          </h2>
         </div>
       </div>
-
       <!-- Logo de la empresa -->
       <div class="logo">
         <img src="Imagenes/logo_web_120.png" alt="Logo de Hidrosistemas">
       </div>
     </div>
-    
-  <header>
-    <div class="container header-content">
-      <div class="logo">Hidrosistemas</div>
-      <nav>
-        <ul>
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#productos">Productos</a></li>
-          <li><a href="#aplicaciones">Aplicaciones</a></li>
-          <li><a href="#empresa">Empresa</a></li>
-          <li><a href="#recursos">Recursos</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </nav>
-      <a href="#contacto" class="cta-button">Solicitar Cotización</a>
-    </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero" id="inicio">
-    <div class="container">
-      <h1>Soluciones integrales en sistemas de conducción de agua, drenaje y protección de cables</h1>
-      <p>Tuberías, conexiones y accesorios de alta calidad para obras duraderas y seguras, fabricados con materiales de la más alta eficiencia técnica.</p>
-      <div class="hero-buttons">
-        <a href="#productos" class="btn">Ver Productos</a>
-        <a href="#recursos" class="btn">Descargar Catálogo</a>
+  <!-- Navegación con enlaces corregidos -->
+  <nav class="navbar">
+    <a href="#inicio">Inicio</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#container-Productos">Productos</a>
+    <div class="dropdown">
+      <a href="#" class="dropbtn">Servicios</a>
+      <div class="dropdown-content">
+        <a href="asesoria.html"><i class="fas fa-lightbulb"></i> Asesoría</a>
+        <a href="capacitacion.html"><i class="fas fa-graduation-cap"></i> Capacitación</a>
+        <a href="supervision.html"><i class="fas fa-search"></i> Supervisión</a>
+        <a href="coordinacion.html"><i class="fas fa-handshake"></i> Coordinación</a>
       </div>
     </div>
-  </section>
+    <a href="#contacto">Contacto</a>
+  </nav>
 
-  <!-- Aplicaciones -->
-  <section class="section" id="aplicaciones">
-    <div class="container">
-      <h2 class="section-title">Sectores de Aplicación</h2>
-      <div class="applications">
-        <div class="app-item">
-          <i class="fas fa-tint"></i>
-          <h3>Agua Potable</h3>
-          <p>Sistemas seguros y duraderos para distribución de agua limpia.</p>
-        </div>
-        <div class="app-item">
-          <i class="fas fa-toilet"></i>
-          <h3>Alcantarillado</h3>
-          <p>Redes resistentes para drenaje y aguas residuales.</p>
-        </div>
-        <div class="app-item">
-          <i class="fas fa-seedling"></i>
-          <h3>Riego Agrícola</h3>
-          <p>Infraestructura eficiente para agricultura moderna.</p>
-        </div>
-        <div class="app-item">
-          <i class="fas fa-bolt"></i>
-          <h3>Redes Eléctricas</h3>
-          <p>Protección de cables en instalaciones eléctricas.</p>
+  <!-- Slider con id="inicio" -->
+  <div class="slider-container" id="inicio">
+    <div class="slider">
+      <div class="slide">
+        <img src="Imagenes/agua.jpg" alt="Imagen 1">
+        <div class="overlay-Hidrosistemas">
+          <h1>Hidrosistemas</h1>
+          <p>Tenemos las mejores marcas, con calidad que buscas.</p>
         </div>
       </div>
+      <!-- Repetir otros slides... -->
     </div>
-  </section>
+    <div class="dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+<!-- Sección de Servicios con redirección -->
+  <div class="container-tarjetas" id="servicios">
+    <div class="card" data-url="asesoria.html">
+      <img src="Imagenes/asesoria_1.png" alt="Asesoría">
+      <h3>Asesoría</h3>
+    </div>
+    <div class="card" data-url="capacitacion.html">
+      <img src="Imagenes/capacitacion_1.png" alt="Capacitación">
+      <h3>Capacitación</h3>
+    </div>
+    <div class="card" data-url="supervision.html">
+      <img src="Imagenes/supervicion_1.png" alt="Supervisión">
+      <h3>Supervisión</h3>
+    </div>
+    <div class="card" data-url="coordinacion.html">
+      <img src="Imagenes/coordinacion_1.png" alt="Coordinación">
+      <h3>Coordinación</h3>
+    </div>
+  </div>
 
-  <!-- Productos -->
-  <section class="section products" id="productos">
-    <div class="container">
-      <h2 class="section-title">Nuestros Productos</h2>
-      <div class="product-grid">
-        <div class="product-card">
-          <img src="https://via.placeholder.com/300x180" alt="Tubería HDPE">
-          <div class="product-info">
-            <h3>Tubería HDPE 200mm</h3>
-            <p>Alta resistencia a la corrosión, ideal para drenaje y riego.</p>
-            <a href="#" class="product-btn">Ver ficha técnica</a>
-          </div>
-        </div>
-        <div class="product-card">
-          <img src="https://via.placeholder.com/300x180" alt="Accesorio PVC">
-          <div class="product-info">
-            <h3>Cople PVC 110mm</h3>
-            <p>Conexión rápida y hermética para redes sanitarias.</p>
-            <a href="#" class="product-btn">Ver ficha técnica</a>
-          </div>
-        </div>
-        <div class="product-card">
-          <img src="https://via.placeholder.com/300x180" alt="Caja de Registro">
-          <div class="product-info">
-            <h3>Caja de Registro 600mm</h3>
-            <p>Diseño modular para fácil mantenimiento y acceso.</p>
-            <a href="#" class="product-btn">Ver ficha técnica</a>
-          </div>
-        </div>
+  <!-- Sección Nosotros -->
+  <div class="container-nosotros" id="nosotros">
+    <h1>Bienvenido a Hidrosistemas</h1>
+    <div class="content">
+      <div class="column left">
+        <p>
+          En Hidrosistemas se fabrica, ensambla, instala y se comercializan tuberías, conexiones y accesorios de materiales de la más alta calidad y eficiencia técnica en sistemas de agua potable, alcantarillado, riego, plantas de tratamiento de agua y otras aplicaciones...
+        </p>
+        <button class="read-more">Leer más...</button>
+      </div>
+      <div class="column right">
+        <p>
+          En la construcción moderna es de primordial importancia que se satisfagan factores de seguridad, durabilidad y economía; con materiales utilizados en instalaciones de redes sanitarias, de agua potable y alcantarillado para unidades habitacionales y conjuntos urbanos...
+        </p>
       </div>
     </div>
-  </section>
-
-  <!-- Sobre la Empresa -->
-  <section class="section about" id="empresa">
-    <div class="container">
-      <h2 class="section-title">Sobre Hidrosistemas</h2>
-      <p>
-        En Hidrosistemas se fabrica, ensambla, instala y comercializan tuberías, conexiones y accesorios de materiales de la más alta calidad y eficiencia técnica en sistemas de agua potable, alcantarillado, riego, plantas de tratamiento de agua y otras aplicaciones, así como para la conducción de cables en redes eléctricas y telecomunicaciones. La seguridad, durabilidad y economía son factores primordiales en cada uno de nuestros productos.
-      </p>
-      <a href="#">Conoce nuestra historia →</a>
-    </div>
-  </section>
-
-  <!-- Recursos Técnicos -->
-  <section class="section resources" id="recursos">
-    <div class="container">
-      <h2 class="section-title">Recursos Técnicos</h2>
-      <p>Accede a documentación detallada para ingenieros, contratistas y distribuidores.</p>
-      <div class="resource-list">
-        <div class="resource-item">
-          <i class="fas fa-file-pdf"></i> Catálogos descargables (PDF)
-        </div>
-        <div class="resource-item">
-          <i class="fas fa-ruler"></i> Guías de instalación
-        </div>
-        <div class="resource-item">
-          <i class="fas fa-chart-line"></i> Fichas técnicas
-        </div>
-        <div class="resource-item">
-          <i class="fas fa-video"></i> Videos explicativos
-        </div>
+  </div>
+  <!-- Sección Productos con id -->
+<!-- Productos -->
+<div class="container-Productos" id="container-Productos">
+  <h2 class="section-title">Nuestros Productos</h2>
+  <div class="product-grid">
+    <!-- Producto 1 -->
+    <div class="product-card">
+      <img src="Imagenes/pvc.jpg" alt="Tubo para agua y CPVC">
+      <div class="product-info">
+        <h3>Tubo para agua y CPVC</h3>
+        <p>Los tubos y conexiones de Policloruro de vinilo clorado (CPVC) es un termoplástico producido por cloración de la resina de policloruro de vinilo (PVC).</p>
+        <a href="#" class="product-btn">Ver ficha técnica</a>
       </div>
     </div>
-  </section>
-
-  <!-- Contacto -->
-  <section class="section" id="contacto">
-    <div class="container">
-      <h2 class="section-title">Contáctanos</h2>
-      <div class="contact">
-        <div class="contact-form">
-          <form action="#" method="POST">
-            <input type="text" placeholder="Nombre" required>
-            <input type="text" placeholder="Empresa">
-            <input type="tel" placeholder="Teléfono" required>
-            <input type="email" placeholder="Correo" required>
-            <textarea rows="5" placeholder="Mensaje"></textarea>
-            <button type="submit">Enviar Mensaje</button>
-          </form>
-        </div>
-        <div class="contact-info">
-          <p><i class="fas fa-map-marker-alt"></i> Ciudad de México, México</p>
-          <p><i class="fas fa-phone"></i> (55) 1234-5678</p>
-          <p><i class="fas fa-envelope"></i> info@hidrosistemas.com.mx</p>
-          <p><i class="fas fa-clock"></i> Lunes a Viernes: 8:00 - 17:00</p>
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.15852276184!2d-99.13324638508078!3d19.43260768690695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff6d5e6b5a9f%3A0x7f4a8e4b5e6b5a9f!2sCDMX!5e0!3m2!1ses!2smx!4v1600000000000!5m2!1ses!2smx" allowfullscreen></iframe>
-        </div>
+    <!-- Producto 2 -->
+    <div class="product-card">
+      <img src="Imagenes/PAD.jpg" alt="Tubería corrugada PAD">
+      <div class="product-info">
+        <h3>Tubería corrugada PAD</h3>
+        <p>Tubos y conexiones de Polietileno de alta densidad (PEAD o PAD) es un termoplástico producido por etilenos con alta densidad para la resistencia a CARGAS.</p>
+        <a href="#" class="product-btn">Ver ficha técnica</a>
       </div>
     </div>
-  </section>
+    <!-- Producto 3 -->
+    <div class="product-card">
+      <img src="Imagenes/C-80.jpg" alt="Tubería gris C-80">
+      <div class="product-info">
+        <h3>Tubería gris C-80</h3>
+        <p>Los tubos y conexiones de Policloruro de Vinilo (PVC) es un termoplástico producido a partir de la resina del policloruro de vinilo (PVC).</p>
+        <a href="#" class="product-btn">Ver ficha técnica</a>
+      </div>
+    </div>
+  </div>
+</div>
 
-  <!-- Footer -->
+  </div>
+<!-- Carrusel de marcas -->
+<div class="container-marcas">
+  <h2>Nuestras Marcas</h2>
+  <div class="slider-marcas">
+    <div class="slide-track">
+      <!-- Primera vuelta de marcas -->
+      <div class="slide-img-marcas"><img src="Imagenes/Marcas/ALFA.jpg" alt="Marca ALFA"></div>
+      <div class="slide-img-marcas"><img src="Imagenes/Marcas/amanco.jpeg" alt="Marca Amanco"></div>
+      <div class="slide-img-marcas"><img src="Imagenes/Marcas/ARES.jpg" alt="Marca ARES"></div>
+      <div class="slide-img-marcas"><img src="Imagenes/Marcas/brovalco.jpg" alt="Marca Brovalco"></div>
+      <div class="slide-img-marcas"><img src="Imagenes/Marcas/DOROT.jpg" alt="Marca DOROT"></div>
+      <div class="slide-img-marcas"><img src="Imagenes/Marcas/EL ROSARIO.jpg" alt="Marca El Rosario"></div>
+      <div class="slide-img-marcas"><img src="Imagenes/Marcas/FONTANERY.jpg" alt="Marca Fontanery"></div>
+      <div class="slide-img-marcas"><img src="Imagenes/Marcas/HELVEX.jpg" alt="Marca Helvex"></div>
+      <div class="slide-img-marcas"><img src="Imagenes/Marcas/IDEAL.jpg" alt="Marca Ideal"></div>
+      <div class="slide-img-marcas"><img src="Imagenes/Marcas/PROTOR.png" alt="Marca Protör"></div>
+      <div class="slide-img-marcas"><img src="Imagenes/Marcas/ptm.jpg" alt="Marca PTM"></div>
+      <div class="slide-img-marcas"><img src="Imagenes/Marcas/rotoplas.jpeg" alt="Marca Rotoplas"></div>
+      <div class="slide-img-marcas"><img src="Imagenes/Marcas/RUGO.jpg" alt="Marca Rugo"></div>
+      <div class="slide-img-marcas"><img src="Imagenes/Marcas/SIMEX.jpg" alt="Marca Simex"></div>
+      <div class="slide-img-marcas"><img src="Imagenes/Marcas/SOGAR.jpg" alt="Marca Sogar"></div>
+      <div class="slide-img-marcas"><img src="Imagenes/Marcas/SPEARS.jpg" alt="Marca Spears"></div>
+      <div class="slide-img-marcas"><img src="Imagenes/Marcas/VILLAREAL.jpg" alt="Marca Villareal"></div>
+
+      <!-- Segunda vuelta de marcas (repetición exacta para efecto continuo) -->
+      <div class="slide-img-marcas"><img src="Imagenes/Marcas/ALFA.jpg" alt="Marca ALFA"></div>
+      <div class="slide-img-marcas"><img src="Imagenes/Marcas/amanco.jpeg" alt="Marca Amanco"></div>
+      <div class="slide-img-marcas"><img src="Imagenes/Marcas/ARES.jpg" alt="Marca ARES"></div>
+      <div class="slide-img-marcas"><img src="Imagenes/Marcas/brovalco.jpg" alt="Marca Brovalco"></div>
+      <div class="slide-img-marcas"><img src="Imagenes/Marcas/DOROT.jpg" alt="Marca DOROT"></div>
+      <div class="slide-img-marcas"><img src="Imagenes/Marcas/EL ROSARIO.jpg" alt="Marca El Rosario"></div>
+      <div class="slide-img-marcas"><img src="Imagenes/Marcas/FONTANERY.jpg" alt="Marca Fontanery"></div>
+      <div class="slide-img-marcas"><img src="Imagenes/Marcas/HELVEX.jpg" alt="Marca Helvex"></div>
+      <div class="slide-img-marcas"><img src="Imagenes/Marcas/IDEAL.jpg" alt="Marca Ideal"></div>
+      <div class="slide-img-marcas"><img src="Imagenes/Marcas/PROTOR.png" alt="Marca Protör"></div>
+      <div class="slide-img-marcas"><img src="Imagenes/Marcas/ptm.jpg" alt="Marca PTM"></div>
+      <div class="slide-img-marcas"><img src="Imagenes/Marcas/rotoplas.jpeg" alt="Marca Rotoplas"></div>
+      <div class="slide-img-marcas"><img src="Imagenes/Marcas/RUGO.jpg" alt="Marca Rugo"></div>
+      <div class="slide-img-marcas"><img src="Imagenes/Marcas/SIMEX.jpg" alt="Marca Simex"></div>
+      <div class="slide-img-marcas"><img src="Imagenes/Marcas/SOGAR.jpg" alt="Marca Sogar"></div>
+      <div class="slide-img-marcas"><img src="Imagenes/Marcas/SPEARS.jpg" alt="Marca Spears"></div>
+      <div class="slide-img-marcas"><img src="Imagenes/Marcas/VILLAREAL.jpg" alt="Marca Villareal"></div>
+    </div>
+  </div>
+</div>
+
+  <!-- Sección Contacto con id -->
+  <div class="container-contact" id="contacto">
+    <div class="section contact">
+      <h2>Contáctanos</h2>
+      <div class="contact-info">
+        <p><i class="fas fa-map-marker-alt"></i> Dirección: <strong>Circuito Emprendedores No. 19, Parque Industrial Metropolitano, Mineral de la Reforma, Hgo. CP 42186</strong></p>
+        
+        <p>
+          <i class="fas fa-phone"></i>
+          <a href="tel:7717132513">
+            <span class="phone-footer">771 713 2513</span>
+          </a>
+        </p>
+        
+        <p>
+          <i class="fas fa-phone"></i>
+          <a href="tel:7717132514">
+            <span class="phone-footer">771 713 2514</span>
+          </a>
+        </p>
+        
+        <p>
+          <i class="fas fa-phone"></i>
+          <a href="tel:7717181044">
+            <span class="phone-footer">771 718 1044</span>
+          </a>
+        </p>
+
+        <p><i class="fas fa-envelope"></i> <a href="mailto:ventas@hidrosistemas.com.mx">ventas@hidrosistemas.com.mx</a></p>
+        <p><i class="fas fa-clock"></i> Lunes a Viernes: 9:00 - 18:00</p>
+      </div>
+    </div>
+
+    <div class="section map">
+      <h2>En Donde Estamos</h2>
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3730.315008417475!2d-98.2544547850834!3d20.05829998633899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d18b223700f555%3A0x7b6a1f6a6a6a6a6a!2sCircuito%20Emprendedores%2019%2C%20Parque%20Industrial%20Metropolitano%2C%2042186%20Mineral%20de%20la%20Reforma%2C%20Hgo.!5e0!3m2!1ses!2smx!4v1600000000000!5m2!1ses!2smx" 
+        width="100%" 
+        height="400" 
+        style="border:0; border-radius: 8px;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        title="Ubicación de Hidrosistemas de Hidalgo">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- Footer-->
   <footer>
-    <div class="container">
-      <div class="logo">Hidrosistemas</div>
-      <p>&copy; 2025 Hidrosistemas S.A. de C.V. Todos los derechos reservados.</p>
-      <div class="social-links">
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
-      </div>
-      <p>
-        <a href="#">Aviso de Privacidad</a> | 
-        <a href="#">Términos de Uso</a>
-      </p>
+    <div class="footer-content">
+      <p>&copy; 2025 Hidrosistemas S.A de C.V. Todos los derechos reservados.</p>
     </div>
   </footer>
+
+  <!-- Scripts -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+  <script src="app.js"></script>
 </body>
 </html>
