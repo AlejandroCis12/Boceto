@@ -1,0 +1,178 @@
+/* Hero Styles */
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+              url('Imagenes/agua.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  color: white;
+  position: relative;
+}
+
+.hero-overlay {
+  width: 100%;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+}
+
+/* ################################################################################# */
+/* Introduction Styles */
+.introduction {
+  padding: 4rem 0;
+  background-color: #f9f9f9;
+}
+
+.section-title {
+  grid-column: 1 / -1; /* Ocupa todas las columnas (de la 1 a la última) */
+  margin: 0 0 1rem 0;
+  color: #0056b3;
+  font-size: 2.2rem;
+  text-align: left;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ddd; /* Línea debajo del título, opcional */
+}
+
+.intro-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* 2 columnas: texto (2fr), imágenes (1fr) */
+  grid-template-rows: auto auto; /* Filas automáticas */
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Columna izquierda: ocupa más espacio */
+.text-section {
+  flex: 2;
+  display: flex;
+  flex-direction: column; /* Título arriba, luego párrafo */
+}
+
+.intro-content p {
+  text-align: justify;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* Columna derecha: imágenes en 2 columnas */
+.images-container {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.images-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+/* ############################################################################### */
+/* Values Styles */
+.values-section {
+  padding: 4rem 0;
+  background-color: #f9f9f9;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.value-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+}
+
+.value-icon {
+  font-size: 2.5rem;
+  color: #0056b3;
+  margin-bottom: 1rem;
+}
+
+.value-card h3 {
+  color: #0056b3;
+  margin-bottom: 1rem;
+}
+/* ################################################################################ */
+/* CTA Styles */
+.cta-section {
+  padding: 4rem 0;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.cta-section h2 {
+  color: #0056b3;
+  margin-bottom: 1rem;
+}
+
+.cta-section p {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  font-size: 1.1rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  margin: 0 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #0056b3;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #003d7a;
+}
+
+.btn-secondary {
+  background-color: white;
+  color: #0056b3;
+  border: 2px solid #0056b3;
+}
+
+.btn-secondary:hover {
+  background-color: #0056b3;
+  color: white;
+}
