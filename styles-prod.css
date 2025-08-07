@@ -1,0 +1,126 @@
+/* Sección de productos: título y descripción */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px 40px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #003366; /* Azul institucional */
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.container p {
+    text-align: justify;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* Diseño de la sección de tarjetas */
+.image-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+/* Estilo de cada tarjeta */
+.image-card {
+    flex: 1;
+    min-width: 280px;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    text-align: center;
+    padding: 20px;
+}
+
+.image-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagen dentro de la tarjeta */
+.image-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid #f0f4f8;
+    margin-bottom: 15px;
+}
+
+/* Nombre del producto */
+.image-card h3 {
+    font-size: 1.25rem;
+    color: #003366; /* Azul institucional */
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+/* Botón "Ver ficha técnica" */
+.image-card .btn {
+    background-color: #FF6B35; /* Naranja moderno */
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    font-size: 0.95rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(255, 107, 53, 0.2);
+    width: 100%;
+}
+
+.image-card .btn:hover {
+    background-color: #E55A2B;
+    transform: scale(1.05);
+}
+
+/* Botones finales: Descargar y Ver Catálogo */
+.button-section {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.btn-large {
+    background-color: #fa0000;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    font-size: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 0 15px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(255, 107, 53, 0.25);
+}
+
+.btn-large:hover {
+    background-color: #fe0000;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 107, 53, 0.35);
+}
+
+/* Responsive: en móviles, las tarjetas se apilan */
+@media (max-width: 768px) {
+    .container h1 {
+        font-size: 2rem;
+    }
+    .image-section {
+        flex-direction: column;
+        gap: 15px;
+    }
+}

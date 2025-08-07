@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestros Productos - Hidrosistemas de Hidalgo</title>
+
+    <!-- Fuentes de Google (CORRECTAS y funcionales) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icono del sitio -->
+    <link rel="icon" href="Imagenes/h.png" type="image/png">
+
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-prod.css">
+
+    <!-- Font Awesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+  <!-- Encabezado -->
+  <header class="header">
+    <div class="container-encabezado">
+      <!-- Sección de contacto -->
+      <div class="contact-info">
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/HidrosistemasHGO/?fref=ts" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://wa.me/527712167150?text=Hola,%20me%20gustaría%20obtener%20información%20sobre%20sus%20productos." target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <div class="contact-text">
+          <p>Escríbenos en WhatsApp</p>
+          <h2 class="phone-number">
+            <a href="https://wa.me/527712167150?text=Hola,%20me%20gustaría%20obtener%20información%20sobre%20sus%20productos." 
+               class="phone-link" 
+               target="_blank">
+              771 216 7150
+            </a>
+          </h2>
+        </div>
+      </div>
+      <!-- Logo de la empresa -->
+      <div class="logo">
+        <img src="Imagenes/logo_web_120.png" alt="Logo de Hidrosistemas">
+      </div>
+    </div>
+  </header>
+
+  <!-- Navegación -->
+<!-- Navegación con submenú en Servicios -->
+<nav class="navbar">
+  <div class="nav-header">
+    <button class="menu-toggle" aria-label="Menú">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+
+  <ul class="nav-menu">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="productos.html">Productos</a></li>
+    
+    <!-- Menú desplegable de Servicios -->
+    <li class="dropdown">
+      <a href="#" class="dropbtn">Servicios <i class="fas fa-chevron-down"></i></a>
+      <ul class="dropdown-menu">
+        <li><a href="asesoria.html"><i class="fas fa-lightbulb"></i> Asesoría</a></li>
+        <a href="capacitacion.html"><i class="fas fa-graduation-cap"></i> Capacitación</a>
+        <a href="supervision.html"><i class="fas fa-search"></i> Supervisión</a>
+        <a href="coordinacion.html"><i class="fas fa-handshake"></i> Coordinación</a>
+      </ul>
+    </li>
+    
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</nav>
+
+  <!-- Sección Productos -->
+  <div class="container" id="container-Productos">
+    <h1>Nuestros Productos</h1>
+    <p>En Hidrosistemas de Hidalgo, ofrecemos una amplia gama de productos de alta calidad para satisfacer todas tus necesidades en sistemas hidráulicos y de plomería. Desde tuberías y accesorios hasta soluciones especializadas, contamos con todo lo que necesitas para tus proyectos.</p>
+
+    <!-- Secciones de productos (5 veces) -->
+    <div class="image-section">
+      <div class="image-card">
+        <img src="Imagenes/Productos/tubocpvc.jpeg" alt="Tubo para agua y CPVC">
+        <h3>Tubo para agua y CPVC</h3>
+        <button class="btn">Ver ficha técnica</button>
+      </div>
+      <div class="image-card">
+        <img src="Imagenes/Productos/PEAD.jpg" alt="Tubería corrugada PAD">
+        <h3>Tubería corrugada PAD</h3>
+        <button class="btn">Ver ficha técnica</button>
+      </div>
+      <div class="image-card">
+        <img src="Imagenes/Productos/c80.jpg" alt="Tubería gris C-80">
+        <h3>Tubería gris C-80</h3>
+        <button class="btn">Ver ficha técnica</button>
+      </div>
+    </div>
+
+    <!-- Repite 4 veces más -->
+    <div class="image-section">
+      <div class="image-card">
+        <img src="Imagenes/Productos/tpvc.jpeg" alt="Tubería de PVC">
+        <h3>Tubería de PVC</h3>
+        <button class="btn">Ver ficha técnica</button>
+      </div>
+      <div class="image-card">
+        <img src="Imagenes/Productos/tuboppr.jpeg" alt="Tuberia verde PPR">
+        <h3>Tuberia verde PPR</h3>
+        <button class="btn">Ver ficha técnica</button>
+      </div>
+      <div class="image-card">
+        <img src="Imagenes/Productos/tnaranjae.jpg" alt="Tubería naranja eléctrica">
+        <h3>Tubería naranja eléctrica</h3>
+        <button class="btn">Ver ficha técnica</button>
+      </div>
+    </div>
+
+    <div class="image-section">
+      <div class="image-card">
+        <img src="Imagenes/Productos/tgalvanizado.jpeg" alt="Tubos galvanizados">
+        <h3>Tubos galvanizados</h3>
+        <button class="btn">Ver ficha técnica</button>
+      </div>
+      <div class="image-card">
+        <img src="Imagenes/Productos/tpolitileno.jpeg" alt="Tubo de polietileno">
+        <h3>Tubo de polietileno</h3>
+        <button class="btn">Ver ficha técnica</button>
+      </div>
+      <div class="image-card">
+        <img src="Imagenes/Productos/tinaco.jpg" alt="Tanques de almacenamiento de agua">
+        <h3>Tanques de almacenamiento de agua</h3>
+        <button class="btn">Ver ficha técnica</button>
+      </div>
+    </div>
+
+    <div class="image-section">
+      <div class="image-card">
+        <img src="Imagenes/Productos/valvulas.jpg" alt="Válvulas y bombas">
+        <h3>Válvulas y bombas</h3>
+        <button class="btn">Ver ficha técnica</button>
+      </div>
+      <div class="image-card">
+        <img src="Imagenes/Productos/brocal.jpeg" alt="Rejillas y Brocales">
+        <h3>Rejillas y Brocales</h3>
+        <button class="btn">Ver ficha técnica</button>
+      </div>
+      <div class="image-card">
+        <img src="Imagenes/Productos/labavos.jpg" alt="Lavabos y fregaderos">
+        <h3>Lavabos y fregaderos</h3>
+        <button class="btn">Ver ficha técnica</button>
+      </div>
+    </div>
+
+    <div class="image-section">
+      <div class="image-card">
+        <img src="tubo_agua_cpv.png" alt="Biodigestores">
+        <h3>Biodigestores</h3>
+        <button class="btn">Ver ficha técnica</button>
+      </div>
+      <div class="image-card">
+        <img src="tuberia_corrugada_pad.png" alt="Riego residencial, urbano y parcelario">
+        <h3>Riego residencial, urbano y parcelario</h3>
+        <button class="btn">Ver ficha técnica</button>
+      </div>
+      <div class="image-card">
+        <img src="tuberia_gris_c80.png" alt="Tu proyecto de instalaciones">
+        <h3>Tu proyecto de instalaciones</h3>
+        <button class="btn">Ver ficha técnica</button>
+      </div>
+    </div>
+
+    <!-- Botones finales -->
+    <div class="button-section">
+      <button class="btn btn-large">Descargar Catálogo</button>
+      <button class="btn btn-large">Ver Catálogo</button>
+    </div>
+  </div>
+
+  <!-- Sección Contacto -->
+  <div class="container-contact" id="contacto">
+    <div class="section contact">
+      <h2>Contáctanos</h2>
+      <div class="contact-info">
+        <p><i class="fas fa-map-marker-alt"></i> Dirección: <strong>Circuito Emprendedores No. 19, Parque Industrial Metropolitano, Mineral de la Reforma, Hgo. CP 42186</strong></p>
+        
+        <p><i class="fas fa-phone"></i> <a href="tel:7717132513" class="phone-footer">771 713 2513</a></p>
+        <p><i class="fas fa-phone"></i> <a href="tel:7717132514" class="phone-footer">771 713 2514</a></p>
+        <p><i class="fas fa-phone"></i> <a href="tel:7717181044" class="phone-footer">771 718 1044</a></p>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:ventas@hidrosistemas.com.mx">ventas@hidrosistemas.com.mx</a></p>
+        <p><i class="fas fa-clock"></i> Lunes a Viernes: 9:00 - 18:00</p>
+      </div>
+    </div>
+
+    <div class="section map">
+      <h2>En dónde estamos</h2>
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3730.315008417475!2d-98.2544547850834!3d20.05829998633899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d18b223700f555%3A0x7b6a1f6a6a6a6a6a!2sCircuito%20Emprendedores%2019%2C%20Parque%20Industrial%20Metropolitano%2C%2042186%20Mineral%20de%20la%20Reforma%2C%20Hgo.!5e0!3m2!1ses!2smx!4v1600000000000!5m2!1ses!2smx" 
+        width="100%" 
+        height="400" 
+        style="border:0; border-radius: 8px;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        title="Ubicación de Hidrosistemas de Hidalgo">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Hidrosistemas S.A. de C.V. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
