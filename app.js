@@ -9,182 +9,150 @@
     }
   });
 
-document.addEventListener("DOMContentLoaded", function() {
-    const slider = document.querySelector(".slider");
-    const slides = document.querySelectorAll(".slide");
-    const dots = document.querySelectorAll(".dot");
-    let isDragging = false;
-    let startPos = 0;
-    let currentTranslate = 0;
-    let prevTranslate = 0;
-    let animationID = 0;
-    let currentIndex = 0;
+document.addEventListener("DOMContentLoaded", function () {
+  const slider = document.querySelector(".slider");
+  const dots = document.querySelectorAll(".dot");
 
-    // Clonamos el primer y último slide para efecto infinito
-    const firstClone = slides[0].cloneNode(true);
-    const lastClone = slides[slides.length - 1].cloneNode(true);
-    
-    slider.appendChild(firstClone);
-    slider.insertBefore(lastClone, slides[0]);
-    
-    // Actualizamos la lista de slides
-    const allSlides = document.querySelectorAll(".slide");
-    const slideCount = allSlides.length;
-    
-    // Posicionamos inicialmente el slider en el slide "real" 1 (que es el clon al inicio)
-    currentIndex = 1;
+  let slides = document.querySelectorAll(".slide");
+
+  // Clonación infinita
+  const firstClone = slides[0].cloneNode(true);
+  const lastClone = slides[slides.length - 1].cloneNode(true);
+  slider.appendChild(firstClone);
+  slider.insertBefore(lastClone, slides[0]);
+
+  slides = document.querySelectorAll(".slide");
+  const slideCount = slides.length;
+
+  let currentIndex = 1;
+  let startPos = 0;
+  let currentTranslate = 0;
+  let prevTranslate = 0;
+  let isDragging = false;
+  let animationID;
+
+  setPositionByIndex();
+
+  slides.forEach((slide, index) => {
+    const img = slide.querySelector("img");
+    if (img) img.addEventListener("dragstart", (e) => e.preventDefault());
+
+    slide.addEventListener("mousedown", touchStart(index));
+    slide.addEventListener("mouseup", touchEnd);
+    slide.addEventListener("mouseleave", touchEnd);
+    slide.addEventListener("mousemove", touchMove);
+
+    slide.addEventListener("touchstart", touchStart(index), { passive: true });
+    slide.addEventListener("touchend", touchEnd);
+    slide.addEventListener("touchmove", touchMove, { passive: false });
+  });
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      goToSlide(index + 1);
+    });
+  });
+
+  function touchStart(index) {
+    return function (event) {
+      isDragging = true;
+      currentIndex = index;
+      startPos = getPositionX(event);
+      slider.style.transition = "none";
+      animationID = requestAnimationFrame(animation);
+    };
+  }
+
+  function touchEnd() {
+    if (!isDragging) return;
+    isDragging = false;
+    cancelAnimationFrame(animationID);
+    slider.style.transition = "transform 0.5s ease-out";
+    const movedBy = currentTranslate - prevTranslate;
+
+    if (movedBy < -100) currentIndex++;
+    else if (movedBy > 100) currentIndex--;
+
     setPositionByIndex();
 
-    // Configuración inicial
-    allSlides.forEach((slide, index) => {
-        // Prevent image drag
-        const slideImage = slide.querySelector('img');
-        slideImage.addEventListener('dragstart', (e) => e.preventDefault());
-        
-        // Touch events
-        slide.addEventListener('touchstart', touchStart(index));
-        slide.addEventListener('touchend', touchEnd);
-        slide.addEventListener('touchmove', touchMove);
-        
-        // Mouse events
-        slide.addEventListener('mousedown', touchStart(index));
-        slide.addEventListener('mouseup', touchEnd);
-        slide.addEventListener('mouseleave', touchEnd);
-        slide.addEventListener('mousemove', touchMove);
-    });
-
-    // Dot click events
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            goToSlide(index + 1); // +1 porque tenemos un slide clonado al inicio
-        });
-    });
-
-    function touchStart(index) {
-        return function(event) {
-            currentIndex = index;
-            startPos = getPositionX(event);
-            isDragging = true;
-            
-            animationID = requestAnimationFrame(animation);
-            slider.style.cursor = 'grabbing';
-            slider.style.transition = 'none'; // Quitamos transición durante el arrastre
-        }
-    }
-
-    function touchEnd() {
-        isDragging = false;
-        cancelAnimationFrame(animationID);
-        slider.style.transition = 'transform 0.5s ease-out';
-        
-        const movedBy = currentTranslate - prevTranslate;
-        
-        if (movedBy < -100) {
-            currentIndex += 1;
-        } else if (movedBy > 100) {
-            currentIndex -= 1;
-        }
-        
-        // Efecto infinito
-        if (currentIndex >= slideCount - 1) {
-            // Si estamos en el último slide (clon), saltamos al primero real sin animación
-            setTimeout(() => {
-                slider.style.transition = 'none';
-                currentIndex = 1;
-                setPositionByIndex();
-            }, 500);
-        } else if (currentIndex <= 0) {
-            // Si estamos en el primer slide (clon), saltamos al último real sin animación
-            setTimeout(() => {
-                slider.style.transition = 'none';
-                currentIndex = slideCount - 2;
-                setPositionByIndex();
-            }, 500);
-        }
-        
+    if (currentIndex >= slideCount - 1) {
+      setTimeout(() => {
+        slider.style.transition = "none";
+        currentIndex = 1;
         setPositionByIndex();
-        slider.style.cursor = 'grab';
-    }
-
-    function touchMove(event) {
-        if (isDragging) {
-            const currentPosition = getPositionX(event);
-            currentTranslate = prevTranslate + currentPosition - startPos;
-        }
-    }
-
-    function getPositionX(event) {
-        return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
-    }
-
-    function animation() {
-        setSliderPosition();
-        if (isDragging) requestAnimationFrame(animation);
-    }
-
-    function setSliderPosition() {
-        slider.style.transform = `translateX(${currentTranslate}px)`;
-    }
-
-    function setPositionByIndex() {
-        currentTranslate = currentIndex * -slider.offsetWidth;
-        prevTranslate = currentTranslate;
-        setSliderPosition();
-        updateDots();
-    }
-
-    function goToSlide(index) {
-        currentIndex = index;
-        slider.style.transition = 'transform 0.5s ease-out';
+      }, 500);
+    } else if (currentIndex <= 0) {
+      setTimeout(() => {
+        slider.style.transition = "none";
+        currentIndex = slideCount - 2;
         setPositionByIndex();
-        
-        // Manejo del efecto infinito para navegación con dots
-        if (currentIndex >= slideCount - 1) {
-            setTimeout(() => {
-                slider.style.transition = 'none';
-                currentIndex = 1;
-                setPositionByIndex();
-            }, 500);
-        } else if (currentIndex <= 0) {
-            setTimeout(() => {
-                slider.style.transition = 'none';
-                currentIndex = slideCount - 2;
-                setPositionByIndex();
-            }, 500);
-        }
+      }, 500);
     }
+  }
 
-    function updateDots() {
-        let dotIndex = currentIndex - 1;
-        if (dotIndex < 0) dotIndex = dots.length - 1;
-        if (dotIndex >= dots.length) dotIndex = 0;
-        
-        dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === dotIndex);
-        });
-    }
+  function touchMove(event) {
+    if (!isDragging) return;
+    const currentPosition = getPositionX(event);
+    currentTranslate = prevTranslate + currentPosition - startPos;
+    event.preventDefault();
+  }
 
-    // Make slider responsive to window resize
-    window.addEventListener('resize', () => {
+  function getPositionX(event) {
+    return event.type.includes("mouse") ? event.pageX : event.touches[0].clientX;
+  }
+
+  function animation() {
+    setSliderPosition();
+    if (isDragging) requestAnimationFrame(animation);
+  }
+
+  function setSliderPosition() {
+    slider.style.transform = `translateX(${currentTranslate}px)`;
+  }
+
+  function setPositionByIndex() {
+    currentTranslate = currentIndex * -slider.offsetWidth;
+    prevTranslate = currentTranslate;
+    setSliderPosition();
+    updateDots();
+  }
+
+  function goToSlide(index) {
+    currentIndex = index;
+    slider.style.transition = "transform 0.5s ease-out";
+    setPositionByIndex();
+
+    if (currentIndex >= slideCount - 1) {
+      setTimeout(() => {
+        slider.style.transition = "none";
+        currentIndex = 1;
         setPositionByIndex();
-    });
+      }, 500);
+    } else if (currentIndex <= 0) {
+      setTimeout(() => {
+        slider.style.transition = "none";
+        currentIndex = slideCount - 2;
+        setPositionByIndex();
+      }, 500);
+    }
+  }
 
-    // Auto-rotate slider (opcional)
-    let autoSlideInterval = setInterval(() => {
-        goToSlide(currentIndex + 1);
-    }, 5000);
+  function updateDots() {
+    let dotIndex = currentIndex - 1;
+    if (dotIndex < 0) dotIndex = dots.length - 1;
+    if (dotIndex >= dots.length) dotIndex = 0;
 
-    // Pause auto-rotate on hover/touch
-    slider.addEventListener('mouseenter', () => {
-        clearInterval(autoSlideInterval);
+    dots.forEach((dot, i) => {
+      dot.classList.toggle("active", i === dotIndex);
     });
-    
-    slider.addEventListener('mouseleave', () => {
-        autoSlideInterval = setInterval(() => {
-            goToSlide(currentIndex + 1);
-        }, 5000);
-    });
+  }
+
+  window.addEventListener("resize", () => {
+    slider.style.transition = "none";
+    setPositionByIndex();
+  });
 });
+
 
 // script.js
 document.addEventListener("DOMContentLoaded", function () {
