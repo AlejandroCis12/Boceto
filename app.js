@@ -1,32 +1,32 @@
-// Esperar a que el DOM esté completamente cargado
+// =======================
+// 1. MENÚ MÓVIL (solo si existe)
+// =======================
 document.addEventListener('DOMContentLoaded', function () {
   const menuToggle = document.querySelector('.menu-toggle');
   const mobileMenu = document.querySelector('.mobile-menu');
   const dropdownToggle = document.querySelector('.dropdown-toggle');
   const dropdownMobile = document.querySelector('.dropdown-mobile');
 
-  // Verificar si los elementos existen
+  // Si no hay menú, no ejecutar nada de esto
   if (!menuToggle || !mobileMenu) {
-    console.warn('Menú hamburguesa no encontrado. ¿Están las clases correctas?');
+    // Puedes comentar esto en producción
+    // console.log('Menú no encontrado. Saltando funcionalidad de menú.');
     return;
   }
 
-  // Crear overlay
+  // Crear overlay solo si hay menú
   const overlay = document.createElement('div');
   overlay.classList.add('overlay');
   document.body.appendChild(overlay);
 
-  // Abrir/cerrar menú hamburguesa
   menuToggle.addEventListener('click', () => {
     menuToggle.classList.toggle('active');
     mobileMenu.classList.toggle('active');
     overlay.style.display = mobileMenu.classList.contains('active') ? 'block' : 'none';
   });
 
-  // Cerrar menú al hacer clic en el overlay
   overlay.addEventListener('click', closeMobileMenu);
 
-  // Toggle del submenú "Servicios" en móvil (si existe)
   if (dropdownToggle && dropdownMobile) {
     dropdownToggle.addEventListener('click', (e) => {
       e.preventDefault();
@@ -34,201 +34,229 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Cerrar menú al hacer clic en cualquier enlace (excepto Servicios)
   document.querySelectorAll('.mobile-menu a').forEach(link => {
     link.addEventListener('click', (e) => {
-      // No cerrar si es el botón de desplegar servicios
       if (link.classList.contains('dropdown-toggle')) return;
-
-      // Cerrar menú
       closeMobileMenu();
     });
   });
 
-  // Función para cerrar el menú
   function closeMobileMenu() {
-    if (menuToggle) menuToggle.classList.remove('active');
-    if (mobileMenu) mobileMenu.classList.remove('active');
+    menuToggle.classList.remove('active');
+    mobileMenu.classList.remove('active');
     overlay.style.display = 'none';
     if (dropdownMobile) dropdownMobile.classList.remove('active');
   }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    const slider = document.querySelector(".slider");
-    const slides = document.querySelectorAll(".slide");
-    const dotsContainer = document.querySelector(".dots");
-    const prevBtn = document.querySelector(".prev");
-    const nextBtn = document.querySelector(".next");
-    
-    // Create dots
-    slides.forEach((_, i) => {
-        const dot = document.createElement("span");
-        dot.classList.add("dot");
-        if (i === 0) dot.classList.add("active");
-        dot.addEventListener("click", () => goToSlide(i));
-        dotsContainer.appendChild(dot);
-    });
-    
-    const dots = document.querySelectorAll(".dot");
-    
-    // Clone first and last slides for infinite effect
+// =======================
+// 2. SLIDER (solo si existe)
+// =======================
+document.addEventListener('DOMContentLoaded', function () {
+  const slider = document.querySelector(".slider");
+  const slides = document.querySelectorAll(".slide");
+  const dotsContainer = document.querySelector(".dots");
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
+
+  // ✅ Verificar si el slider existe
+  if (!slider || slides.length === 0 || !dotsContainer) {
+    // console.log('Slider no encontrado o sin slides. Saltando slider.');
+    return;
+  }
+
+  // ✅ Crear puntos (dots)
+  slides.forEach((_, i) => {
+    const dot = document.createElement("span");
+    dot.classList.add("dot");
+    if (i === 0) dot.classList.add("active");
+    dot.addEventListener("click", () => goToSlide(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = document.querySelectorAll(".dot");
+
+  // ✅ Clonar slides solo si hay al menos un slide
+  if (slides.length > 0) {
     const firstClone = slides[0].cloneNode(true);
     const lastClone = slides[slides.length - 1].cloneNode(true);
     firstClone.classList.add("clone");
     lastClone.classList.add("clone");
     slider.appendChild(firstClone);
     slider.insertBefore(lastClone, slides[0]);
-    
-    let currentIndex = 1;
-    let isTransitioning = false;
-    let touchStartX = 0;
-    let touchEndX = 0;
-    
-    // Set initial position
+  }
+
+  let currentIndex = 1;
+  let isTransitioning = false;
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  // Posición inicial
+  if (slides.length > 0) {
     slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-    
-    // Auto-rotate slides
-    let interval = setInterval(nextSlide, 5000);
-    
-    function updateSlider() {
-        if (isTransitioning) return;
-        
-        isTransitioning = true;
+  }
+
+  let interval = null;
+  if (slides.length > 0) {
+    interval = setInterval(nextSlide, 5000);
+  }
+
+  function updateSlider() {
+    if (isTransitioning || slides.length === 0) return;
+    isTransitioning = true;
+    slider.style.transition = "transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1)";
+    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+    dots.forEach((dot, i) => {
+      dot.classList.toggle("active", i === (currentIndex - 1 + slides.length) % slides.length);
+    });
+  }
+
+  function nextSlide() {
+    if (isTransitioning || slides.length === 0) return;
+    currentIndex++;
+    updateSlider();
+    resetInterval();
+  }
+
+  function prevSlide() {
+    if (isTransitioning || slides.length === 0) return;
+    currentIndex--;
+    updateSlider();
+    resetInterval();
+  }
+
+  function goToSlide(index) {
+    if (isTransitioning || slides.length === 0) return;
+    currentIndex = index + 1;
+    updateSlider();
+    resetInterval();
+  }
+
+  function resetInterval() {
+    if (interval) clearInterval(interval);
+    interval = setInterval(nextSlide, 5000);
+  }
+
+  // transitionend
+  slider.addEventListener("transitionend", () => {
+    if (slides.length === 0) return;
+
+    if (currentIndex === 0) {
+      slider.style.transition = "none";
+      currentIndex = slides.length;
+      slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+      setTimeout(() => {
         slider.style.transition = "transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1)";
-        slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-        
-        // Update dots
-        dots.forEach((dot, i) => {
-            dot.classList.toggle("active", i === (currentIndex - 1 + slides.length) % slides.length);
-        });
+      }, 20);
+    } else if (currentIndex === slides.length + 1) {
+      slider.style.transition = "none";
+      currentIndex = 1;
+      slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+      setTimeout(() => {
+        slider.style.transition = "transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1)";
+      }, 20);
     }
-    
-    function nextSlide() {
-        if (isTransitioning) return;
-        currentIndex++;
-        updateSlider();
-    }
-    
-    function prevSlide() {
-        if (isTransitioning) return;
-        currentIndex--;
-        updateSlider();
-    }
-    
-    function goToSlide(index) {
-        if (isTransitioning) return;
-        currentIndex = index + 1;
-        updateSlider();
-        resetInterval();
-    }
-    
-    function resetInterval() {
-        clearInterval(interval);
-        interval = setInterval(nextSlide, 5000);
-    }
-    
-    slider.addEventListener("transitionend", () => {
-        // Handle infinite loop
-        if (currentIndex === 0) {
-            slider.style.transition = "none";
-            currentIndex = slides.length;
-            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-            setTimeout(() => {
-                slider.style.transition = "transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1)";
-            }, 20);
-        } else if (currentIndex === slides.length + 1) {
-            slider.style.transition = "none";
-            currentIndex = 1;
-            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-            setTimeout(() => {
-                slider.style.transition = "transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1)";
-            }, 20);
-        }
-        
-        isTransitioning = false;
-    });
-    
-    // Touch events
-    slider.addEventListener("touchstart", (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
-    
-    slider.addEventListener("touchend", (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-        resetInterval();
-    }, { passive: true });
-    
-    function handleSwipe() {
-        const difference = touchStartX - touchEndX;
-        if (difference > 50) nextSlide();
-        if (difference < -50) prevSlide();
-    }
-    
-    // Button controls
-    nextBtn.addEventListener("click", () => {
-        nextSlide();
-        resetInterval();
-    });
-    
+
+    isTransitioning = false;
+  });
+
+  // Touch
+  slider.addEventListener("touchstart", (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  slider.addEventListener("touchend", (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+    resetInterval();
+  }, { passive: true });
+
+  function handleSwipe() {
+    const difference = touchStartX - touchEndX;
+    if (difference > 50) nextSlide();
+    if (difference < -50) prevSlide();
+  }
+
+  // Botones
+  if (prevBtn) {
     prevBtn.addEventListener("click", () => {
-        prevSlide();
-        resetInterval();
+      prevSlide();
+      resetInterval();
     });
-    
-    // Pause on hover
-    slider.addEventListener("mouseenter", () => {
-        clearInterval(interval);
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => {
+      nextSlide();
+      resetInterval();
     });
-    
-    slider.addEventListener("mouseleave", () => {
-        resetInterval();
-    });
-    
-    // Keyboard navigation
-    document.addEventListener("keydown", (e) => {
-        if (e.key === "ArrowRight") {
-            nextSlide();
-            resetInterval();
-        } else if (e.key === "ArrowLeft") {
-            prevSlide();
-            resetInterval();
-        }
-    });
-    
-    // Responsive adjustments
-    window.addEventListener("resize", () => {
-        slider.style.transition = "none";
-        slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-    });
+  }
+
+  // Hover
+  slider.addEventListener("mouseenter", () => {
+    if (interval) clearInterval(interval);
+  });
+
+  slider.addEventListener("mouseleave", () => {
+    resetInterval();
+  });
+
+  // Teclado
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") {
+      nextSlide();
+      resetInterval();
+    } else if (e.key === "ArrowLeft") {
+      prevSlide();
+      resetInterval();
+    }
+  });
+
+  // Resize
+  window.addEventListener("resize", () => {
+    slider.style.transition = "none";
+    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+  });
 });
 
-//marcas
-// script.js
-document.addEventListener("DOMContentLoaded", function () {
-    const slideTrack = document.querySelector(".slide-track");
-    const slides = document.querySelectorAll(".slide");
+// =======================
+// 3. CARRUSEL DE MARCAS (solo si existe)
+// =======================
+document.addEventListener('DOMContentLoaded', function () {
+  const slideTrack = document.querySelector(".slide-track");
+  if (!slideTrack) {
+    // console.log('Carrusel de marcas no encontrado. Saltando.');
+    return;
+  }
 
-    // Pausar animación al pasar el mouse
-    slideTrack.addEventListener("mouseenter", () => {
-        slideTrack.style.animationPlayState = "paused";
-    });
+  slideTrack.addEventListener("mouseenter", () => {
+    slideTrack.style.animationPlayState = "paused";
+  });
 
-    slideTrack.addEventListener("mouseleave", () => {
-        slideTrack.style.animationPlayState = "running";
-    });
+  slideTrack.addEventListener("mouseleave", () => {
+    slideTrack.style.animationPlayState = "running";
+  });
 });
 
+// =======================
+// 4. MAPA DE GOOGLE (si existe el contenedor)
+// =======================
 function initMap() {
-    const map = new google.maps.Map(document.getElementById("map"), {
-        center: { lat: 20.0583, lng: -98.2522 }, // Coordenadas de ejemplo
-        zoom: 15,
-    });
+  const mapElement = document.getElementById("map");
+  if (!mapElement) {
+    // console.log('Mapa no encontrado en esta página.');
+    return;
+  }
 
-    const marker = new google.maps.Marker({
-        position: { lat: 20.0583, lng: -98.2522 },
-        map: map,
-        title: "Hidrosistemas de Hidalgo",
-    });
+  const map = new google.maps.Map(mapElement, {
+    center: { lat: 20.0583, lng: -98.2522 },
+    zoom: 15,
+  });
+
+  new google.maps.Marker({
+    position: { lat: 20.0583, lng: -98.2522 },
+    map: map,
+    title: "Hidrosistemas de Hidalgo",
+  });
 }
