@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Nata+Sans:wght@100..900&display=swap" rel="stylesheet">
   <link rel="icon" href="Imagenes/h.png" type="image/png">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="our style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -287,59 +288,83 @@
   </div>
 </div>
 
-  <!-- Sección Contacto con id -->
-  <div class="container-contact" id="contacto">
-    <div class="section contact">
-      <h2>Contáctanos</h2>
-      <div class="contact-info">
-        <p><i class="fas fa-map-marker-alt"></i> Dirección: <strong>Circuito Emprendedores No. 19, Parque Industrial Metropolitano, Mineral de la Reforma, Hgo. CP 42186</strong></p>
-        
-        <p>
-          <i class="fas fa-phone"></i>
-          <a href="tel:7717132513">
-            <span class="phone-footer">771 713 2513</span>
-          </a>
-        </p>
-        
-        <p>
-          <i class="fas fa-phone"></i>
-          <a href="tel:7717132514">
-            <span class="phone-footer">771 713 2514</span>
-          </a>
-        </p>
-        
-        <p>
-          <i class="fas fa-phone"></i>
-          <a href="tel:7717181044">
-            <span class="phone-footer">771 718 1044</span>
-          </a>
-        </p>
-
-        <p><i class="fas fa-envelope"></i> <a href="mailto:ventas@hidrosistemas.com.mx">ventas@hidrosistemas.com.mx</a></p>
-        <p><i class="fas fa-clock"></i> Lunes a Viernes: 9:00 - 18:00</p>
-      </div>
+<!-- ######################################################### -->
+<div class="contact-container">
+<div class="contact-header">
+    <h1>En Dónde Estamos</h1>
+    <p>Estamos ubicados estratégicamente para servirte mejor en Mineral de la Reforma, Hidalgo</p>
+</div>
+<div class="contact-content">
+<div class="map-section">
+        <!-- Aquí va el mapa real o la vista estática -->
+        <div class="map-visual" id="map-visual">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3759.382675408644!2d-98.9878648!3d20.0302349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d19b0e3d4e3d4f%3A0x1234567890abcdef!2sCircuito+Emprendedores+19%2C+Parque+Industrial+Metropolitano%2C+Mineral+de+la+Reforma%2C+Hgo.!5e0!3m2!1ses!2smx!4v1700000000000!5m2!1ses!2smx" 
+                width="100%" 
+                height="100%" 
+                style="border:0" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
     </div>
-
-    <div class="section map">
-      <h2>En Donde Estamos</h2>
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3730.315008417475!2d-98.2544547850834!3d20.05829998633899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d18b223700f555%3A0x7b6a1f6a6a6a6a6a!2sCircuito%20Emprendedores%2019%2C%20Parque%20Industrial%20Metropolitano%2C%2042186%20Mineral%20de%20la%20Reforma%2C%20Hgo.!5e0!3m2!1ses!2smx!4v1600000000000!5m2!1ses!2smx" 
-        width="100%" 
-        height="400" 
-        style="border:0; border-radius: 8px;" 
-        allowfullscreen="" 
-        loading="lazy" 
-        title="Ubicación de Hidrosistemas de Hidalgo">
-      </iframe>
+<div class="contact-info-section">
+    <h2>Contáctanos</h2>
+    <div class="contact-details">
+        <div class="contact-item">
+            <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-content">
+                <h3>Dirección</h3>
+                <p>
+                    Circuito Emprendedores No. 19.<br>
+                    Parque Industrial Metropolitano.<br>
+                    Mineral de la Reforma, Hgo. CP 42186
+                </p>
+            </div>
+        </div>
+        <div class="contact-item">
+            <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-content">
+                <h3>Email</h3>
+                <p>
+                    <a href="mailto:ventas@hidrosistemas.com.mx">ventas@hidrosistemas.com.mx</a>
+                </p>
+            </div>
+        </div>
+        <div class="contact-item">
+            <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+            </div>
+            <div class="contact-content">
+                <h3>Teléfonos</h3>
+                <div class="phone-numbers">
+                    <div class="phone-item">
+                        <strong>Teléfono 1</strong>
+                        <a href="tel:7717132513">771 713 2513</a>
+                    </div>
+                    <div class="phone-item">
+                        <strong>Teléfono 2</strong>
+                        <a href="tel:7717132514">771 713 2514</a>
+                    </div>
+                    <div class="phone-item">
+                        <strong>Teléfono 3</strong>
+                        <a href="tel:7717181044">771 718 1044</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-
-  <!-- Footer-->
-  <footer>
-    <div class="footer-content">
-      <p>&copy; 2025 Hidrosistemas S.A de C.V. Todos los derechos reservados.</p>
+</div>
+</div>
+    <div class="footer-note">
+        Hidrosistemas de Hidalgo - Contribuyendo a construir un mejor México
     </div>
-  </footer>
+</div>
 
   <!-- Scripts -->
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
