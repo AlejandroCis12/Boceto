@@ -3,91 +3,675 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asesoría.</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nata+Sans:wght@100..900&display=swap" rel="stylesheet">
-  <link rel="icon" href="Imagenes/h.png" type="image/png">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Asesoría Técnica Especializada | Hidrosistemas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0066a6;
+            --primary-dark: #004d80;
+            --secondary: #00a0e3;
+            --accent: #ff6b00;
+            --light: #f5f9fc;
+            --dark: #333333;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            line-height: 1.3;
+            color: var(--primary-dark);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--accent);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .btn:hover {
+            background-color: #e55e00;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(255, 107, 0, 0.4);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            color: var(--primary);
+            margin: 0;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .nav-contact {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 4px;
+            margin-left: 20px;
+        }
+
+        .nav-contact:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .nav-contact::after {
+            display: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 80, 158, 0.8), rgba(0, 52, 89, 0.9)), url('https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding-top: 70px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--white);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Servicios */
+        .servicios {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            display: inline-block;
+            position: relative;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent);
+            border-radius: 2px;
+        }
+
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .servicio-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            padding: 40px 30px;
+        }
+
+        .servicio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .servicio-icon {
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+        }
+
+        .servicio-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        /* Proceso */
+        .proceso {
+            padding: 100px 0;
+            background-color: var(--light);
+        }
+
+        .proceso-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            text-align: center;
+            position: relative;
+            padding: 30px 20px;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            z-index: 1;
+        }
+
+        .step-number {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .step h3 {
+            margin-top: 20px;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--light-gray);
+            padding: 70px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            color: var(--light-gray);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .contact-info {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .contact-info i {
+            color: var(--accent);
+            margin-right: 15px;
+            margin-top: 5px;
+            text-decoration: none;
+        }
+
+        .social-links {
+            display: flex;
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .phone-footer {
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                padding: 15px 0;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 5px 10px;
+            }
+            
+            .nav-contact {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+            
+            .hero {
+                height: auto;
+                padding: 120px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .servicios, .proceso, .beneficios, .cta {
+                padding: 60px 0;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
+    </style>
+      <link rel="icon" href="Imagenes/h.png" type="image/png">
 </head>
 <body>
-  <!-- Encabezado -->
-  <header class="header">
-    <div class="container-encabezado">
-      <!-- Sección de contacto -->
-      <div class="contact-info">
-        <div class="social-icons">
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.facebook.com/HidrosistemasHGO/?fref=ts" target="_blank"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://wa.me/527712167150?text=Hola,%20me%20gustaría%20obtener%20información%20sobre%20sus%20productos." target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="Imagenes/logo_web_120.png" alt="Logo de Hidrosistemas">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#" class="nav-contact">Contacto</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="contact-text">
-          <p>Escribenos en WhatsApp</p>
-          <h2 class="phone-number">
-            <a href="https://wa.me/527712167150?text=Hola,%20me%20gustaría%20obtener%20información%20sobre%20sus%20productos." 
-               class="phone-link" 
-               target="_blank">
-              771 216 7150
-            </a>
-          </h2>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Asesoría Técnica Especializada</h1>
+            <p>Proporcionamos asesoramiento al efectuar una inversión económica para ayudar a tu empresa a obtener el beneficio de un ahorro proyectado.</p>
+            <a href="#contacto" class="btn">Solicitar Cotización</a>
         </div>
-      </div>
-      <!-- Logo de la empresa -->
-      <div class="logo">
-        <img src="Imagenes/logo_web_120.png" alt="Logo de Hidrosistemas">
-      </div>
-    </div>
-  </header>
-<!-- Navegación con submenú en Servicios -->
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="nav-header">
-      <button class="menu-toggle" aria-label="Menú">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
+    </section>
 
-      <ul class="nav-menu">
-        <li><a class="nav-menu-text" href="index.html">Inicio</a></li>
-        <li><a class="nav-menu-text" href="Nosotros.html">Nosotros</a></li>
-        <li><a class="nav-menu-text" href="productos.html">Productos</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropbtn">Servicios <i class="fas fa-chevron-down"></i></a>
-          <ul class="dropdown-menu">
-            <li><a href="asesoria.html"><i class="fas fa-lightbulb"></i> Asesoría</a></li>
-            <li><a href="capacitacion.html"><i class="fas fa-graduation-cap"></i> Capacitación</a></li>
-            <li><a href="supervision.html"><i class="fas fa-search"></i> Supervisión</a></li>
-            <li><a href="coordinacion.html"><i class="fas fa-handshake"></i> Coordinación</a></li>
-          </ul>
-        </li>
-        <li><a class="nav-menu-text" href="#contacto">Contacto</a></li>
-      </ul>
-    </div>
-  </nav>
+    <!-- Servicios de Asesoría -->
+    <section class="servicios">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros Servicios de Asesoría</h2>
+            </div>
+            <div class="servicios-grid">
+                <div class="servicio-card">
+                    <div class="servicio-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Diseño de Sistemas</h3>
+                    <p>Asesoría en diseñoseficientes para aplicaciones industriales, comerciales y residenciales.</p>
+                </div>
+                <div class="servicio-card">
+                    <div class="servicio-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Diagnóstico Técnico</h3>
+                    <p>Análisis profesional de sistemas existentes para identificar problemas y oportunidades de mejora.</p>
+                </div>
+                <div class="servicio-card">
+                    <div class="servicio-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Optimización de Sistemas</h3>
+                    <p>Recomendaciones para mejorar el rendimiento y eficiencia energética de tus instalaciones.</p>
+                </div>
+                <div class="servicio-card">
+                    <div class="servicio-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Estudios de Eficiencia</h3>
+                    <p>Evaluación técnica para reducir costos operativos y consumo de agua en sistemas hidráulicos.</p>
+                </div>
+                <div class="servicio-card">
+                    <div class="servicio-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Soluciones Personalizadas</h3>
+                    <p>Desarrollo de soluciones adaptadas a necesidades específicas de cada proyecto.</p>
+                </div>
+                <div class="servicio-card">
+                    <div class="servicio-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Capacitación Técnica</h3>
+                    <p>Programas de formación para personal técnico en operación.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Menú Móvil -->
-  <div class="mobile-menu">
-    <ul>
-      <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
-      <li><a href="#nosotros"><i class="fas fa-users"></i> Nosotros</a></li>
-      <li><a href="productos.html"><i class="fas fa-box"></i> Productos</a></li>
-      <li class="dropdown-mobile">
-        <a href="#" class="dropdown-toggle"><i class="fas fa-briefcase"></i> Servicios <i class="fas fa-chevron-down"></i></a>
-        <ul class="dropdown-menu-mobile">
-          <li><a href="asesoria.html"><i class="fas fa-lightbulb"></i> Asesoría</a></li>
-          <li><a href="capacitacion.html"><i class="fas fa-graduation-cap"></i> Capacitación</a></li>
-          <li><a href="supervision.html"><i class="fas fa-search"></i> Supervisión</a></li>
-          <li><a href="coordinacion.html"><i class="fas fa-handshake"></i> Coordinación</a></li>
-        </ul>
-      </li>
-      <li><a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
-    </ul>
-  </div>
-
-
-  
-  <script src="app.js"></script>
+    <!-- Proceso de Asesoría -->
+    <section class="proceso">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestro Proceso de Asesoría</h2>
+            </div>
+            <div class="proceso-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Evaluación Inicial</h3>
+                    <p>Análisis detallado de tus necesidades y objetivos para entender el alcance del proyecto.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Diagnóstico Técnico</h3>
+                    <p>Inspección de sistemas existentes y recopilación de datos para identificar áreas de mejora.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Desarrollo de Soluciones</h3>
+                    <p>Elaboración de propuestas técnicas con alternativas optimizadas para tu sistema.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Implementación</h3>
+                    <p>Soporte durante la ejecución del proyecto y asesoramiento continuo durante la instalación.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3>Seguimiento</h3>
+                    <p>Monitoreo post-implementación para asegurar el funcionamiento óptimo del sistema.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>HIDROSISTEMAS</h4>
+                    <p>Tenemos las mejores marcas, con calidad que buscas..</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="#">Asesoría Técnica</a></li>
+                        <li><a href="#">Diseño de Sistemas</a></li>
+                        <li><a href="#">Instalación</a></li>
+                        <li><a href="#">Mantenimiento</a></li>
+                        <li><a href="#">Venta de Equipos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Nosotros</a></li>
+                        <li><a href="#">Proyectos</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <div class="contact-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>Circuito Emprendedores No. 19, Parque Industrial Metropolitano, Mineral de la Reforma, Hgo. CP 42186</div>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <a href="tel:7717132513">
+                                <span class="phone-footer">771 713 2513</span></a>
+                            </div>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-phone"></i>
+                        <div>          
+                            <a href="tel:7717132514">
+                                <span class="phone-footer">771 713 2514</span></a>
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <a href="tel:7717181044">
+                                <span class="phone-footer">771 718 1044</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <div><a href="mailto:ventas@hidrosistemas.com.mx">ventas@hidrosistemas.com.mx</a></p>
+        <p></div>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-clock"></i>
+                        <div>Lun-Vie: 9:00 AM - 6:00 PM</div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Hidrosistemas. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
