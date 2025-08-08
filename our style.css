@@ -98,6 +98,19 @@
   background-color: #f9f9f9;
 }
 
+/* Contenedor centrado con margen lateral igual al de la primera sección */
+.values-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem; /* Opcional: añade un pequeño padding lateral si es necesario */
+}
+
+.values-section h2 {
+  color: #0056b3;
+  margin-bottom: 1rem;
+  text-align: left; /* Para que el título no esté centrado si prefieres alineación con la primera sección */
+}
+
 .values-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -128,51 +141,552 @@
   color: #0056b3;
   margin-bottom: 1rem;
 }
+
+.value-card p {
+  text-align: justify;
+}
+.values-list {
+  list-style: none;           /* Quita las viñetas originales */
+  padding-left: 0;            /* Ajusta el padding si es necesario */
+  text-align: left;         /* Alinea el texto a la izquierda */
+}
+
+.values-list li {
+  position: relative;
+  padding-left: 1.5em;        /* Espacio para que el ícono no se pegue */
+  margin-bottom: 0.5rem;      /* Espacio entre items */
+}
+
+.values-list li::before {
+  content: "●";               /* Círculo relleno */
+  color: #0056b3;             /* Color azul oscuro */
+  font-size: 1rem;            /* Tamaño del punto */
+  position: absolute;         /* Posiciona el ícono */
+  left: 0;                    /* Alineado a la izquierda */
+  top: 0;                     /* Alineado al texto */
+  transform: translateY(-1px); /* Ajuste fino vertical si el texto no está centrado */
+}
 /* ################################################################################ */
-/* CTA Styles */
+
+/* Sección de Llamado a Acción */
 .cta-section {
-  padding: 4rem 0;
-  text-align: center;
-  background-color: #f9f9f9;
+    background-color: #fff;
+    padding: 40px 0;
+    text-align: center;
 }
 
 .cta-section h2 {
-  color: #0056b3;
-  margin-bottom: 1rem;
+    font-size: 24px;
+    color: #007bff;
+    margin-bottom: 20px;
 }
 
 .cta-section p {
-  max-width: 600px;
-  margin: 0 auto 2rem;
-  font-size: 1.1rem;
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 30px;
 }
 
-.btn {
-  display: inline-block;
-  padding: 12px 30px;
-  margin: 0 10px;
-  border-radius: 5px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: all 0.3s ease;
+.buttons {
+    display: flex;
+    justify-content: center;
 }
 
 .btn-primary {
-  background-color: #0056b3;
-  color: white;
-}
-
-.btn-primary:hover {
-  background-color: #003d7a;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 15px;
 }
 
 .btn-secondary {
-  background-color: white;
-  color: #0056b3;
-  border: 2px solid #0056b3;
+    background-color: #fff;
+    color: #007bff;
+    border: 2px solid #007bff;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+/* ############################################################################################################## */
+/* Sección de Información de Contacto */
+:root {
+    --primary: #0d3d6c;   /* Azul corporativo */
+    --secondary: #f26522; /* Naranja corporativo */
+    --light: #f8f9fa;
+    --dark: #212529;
+    --gray: #6c757d;
+    --light-blue: #e3f2fd;
 }
 
-.btn-secondary:hover {
-  background-color: #0056b3;
-  color: white;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4edf9 100%);
+    color: #333;
+    line-height: 1.6;
+    font-family: 'Roboto', sans-serif;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contact-header {
+    background: var(--primary);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.contact-header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.contact-header p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.map-section {
+    position: relative;
+    height: 500px;
+    background: #e0e7f0;
+}
+
+.map-overlay {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    z-index: 10;
+}
+
+.map-overlay h2 {
+    color: var(--primary);
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.map-controls {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.map-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.map-btn.active {
+    background: var(--secondary);
+}
+
+.map-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.map-notes {
+    font-size: 0.85rem;
+    color: var(--gray);
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+.local-reference {
+    margin-top: 1.5rem;
+}
+
+.local-reference h3 {
+    color: var(--primary);
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.reference-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.7rem;
+}
+
+.reference-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    background: #f8f9fa;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border-left: 3px solid var(--secondary);
+}
+
+.map-visual {
+    width: 100%;
+    height: 500px; /* Mismo alto que .map-section */
+    position: relative;
+    overflow: hidden;
+    border-radius: 0 15px 0 0; /* Opcional: bordes redondeados inferiores */
+}
+
+.map-visual iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    z-index: 1;
+}
+
+/* Fallback: si el mapa no carga, muestra fondo morado con texto */
+.map-visual::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #8a9ccf 0%, #b3c0e4 100%);
+    opacity: 0.85;
+    z-index: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Contenido de texto (solo visible en vista satélite) */
+.map-visual .placeholder-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.map-visual.satellite .placeholder-content {
+    opacity: 1;
+}
+
+.map-visual.satellite::before {
+    background: linear-gradient(135deg, #2c3e50 0%, #4a6491 100%);
+    opacity: 0.9;
+}
+
+.map-visual-icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.map-visual h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+}
+
+.map-visual p {
+    max-width: 80%;
+    margin: 0 auto;
+    opacity: 0.95;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+.contact-info-section {
+    background: #f9fbfd;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-info-section h2 {
+    color: var(--primary);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 0.8rem;
+}
+
+.contact-info-section h2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 70px;
+    height: 4px;
+    background: var(--secondary);
+    border-radius: 2px;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.contact-item {
+    display: flex;
+    gap: 1.2rem;
+    align-items: flex-start;
+}
+
+.contact-icon {
+    background: var(--light-blue);
+    color: var(--primary);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+ /* Secccion de contacto, numeros y email */
+ /* === Sección de Contacto === */
+.contact-info-section {
+    background: #f9fbfd;
+    padding: 2.5rem;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem; /* Reduce el espacio entre los contact-item */
+}
+
+.contact-item {
+    display: flex;
+    gap: 1.2rem;
+    align-items: flex-start;
+}
+
+.contact-icon {
+    background: var(--light-blue);
+    color: var(--primary);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.contact-content {
+    flex: 1;
+}
+
+.contact-content h3 {
+    color: var(--primary);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem; /* Ajusta el margen inferior del título */
+}
+
+.contact-content p {
+    color: #444;
+    line-height: 1.7;
+    margin: 0; /* Elimina el margen superior e inferior del párrafo */
+}
+
+.phone-numbers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 0.8rem;
+}
+
+.phone-item {
+    background: white;
+    border: 1px solid #e1e8f0;
+    padding: 0.9rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.phone-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border-color: var(--secondary);
+}
+
+.phone-item strong {
+    display: block;
+    color: var(--gray);
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+.phone-item a {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+/* ############################ */
+
+.contact-content h3 {
+    color: var(--primary);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-content p {
+    color: #444;
+    line-height: 1.5;
+}
+
+.contact-content a {
+    color: var(--secondary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    display: inline-block;
+    margin-top: 0.3rem;
+}
+
+.contact-content a:hover {
+    color: #d35400;
+    text-decoration: underline;
+}
+
+/* === Sección de Teléfonos - Dos columnas en desktop, una en mobile === */
+/* === Sección de Teléfonos - Cuadros más anchos y mejor espaciados === */
+.phone-numbers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Ancho mínimo aumentado */
+    gap: 1.2rem; /* Un poco más de separación */
+    margin-top: 0.8rem;
+}
+
+.phone-item {
+    background: white;
+    border: 1px solid #e1e8f0;
+    padding: 1rem; /* Un poco más de padding */
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+    text-align: center; /* Centramos el contenido para mejor apariencia */
+}
+
+.phone-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border-color: var(--secondary);
+}
+
+.phone-item strong {
+    display: block;
+    color: var(--gray);
+    font-size: 0.95rem; /* Un poco más grande */
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+}
+
+.phone-item a {
+    font-weight: 600;
+    font-size: 1.2rem; /* Número más legible */
+    color: var(--secondary);
+    text-decoration: none;
+    display: block;
+    white-space: nowrap; /* Evita que el número se rompa */
+    overflow: hidden;
+    text-overflow: clip; /* Muestra el número completo si cabe */
+}
+
+.phone-item a:hover {
+    text-decoration: underline;
+}
+
+/* === Pie de página (se mantiene igual) === */
+.footer-note {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--primary);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+}
+/* Pantallas medianas a grandes (desktop) */
+@media (min-width: 769px) {
+    .phone-numbers {
+        grid-template-columns: repeat(2, 1fr); /* Exactamente 2 columnas en desktop */
+    }
+}
+
+/* Pantallas de escritorio: forzamos exactamente 2 columnas si hay espacio */
+@media (min-width: 769px) {
+    .phone-numbers {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas fijas en desktop */
+    }
+}
+
+/* Pantallas pequeñas: una sola columna */
+@media (max-width: 768px) {
+    .phone-numbers {
+        grid-template-columns: 1fr; /* 1 columna en móvil */
+        gap: 1rem;
+    }
+    .phone-item {
+        padding: 0.8rem;
+    }
+    .phone-item strong {
+        font-size: 0.9rem;
+    }
+    .phone-item a {
+        font-size: 1.1rem;
+    }
 }
