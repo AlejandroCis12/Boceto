@@ -1,14 +1,58 @@
-  document.addEventListener('DOMContentLoaded', function () {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
+// Esperar a que el DOM esté completamente cargado
+document.addEventListener('DOMContentLoaded', function () {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const dropdownToggle = document.querySelector('.dropdown-toggle');
+  const dropdownMobile = document.querySelector('.dropdown-mobile');
 
-    if (menuToggle && navMenu) {
-      menuToggle.addEventListener('click', function () {
-        navMenu.classList.toggle('active');
-      });
-    }
+  // Verificar si los elementos existen
+  if (!menuToggle || !mobileMenu) {
+    console.warn('Menú hamburguesa no encontrado. ¿Están las clases correctas?');
+    return;
+  }
+
+  // Crear overlay
+  const overlay = document.createElement('div');
+  overlay.classList.add('overlay');
+  document.body.appendChild(overlay);
+
+  // Abrir/cerrar menú hamburguesa
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+    overlay.style.display = mobileMenu.classList.contains('active') ? 'block' : 'none';
   });
 
+  // Cerrar menú al hacer clic en el overlay
+  overlay.addEventListener('click', closeMobileMenu);
+
+  // Toggle del submenú "Servicios" en móvil (si existe)
+  if (dropdownToggle && dropdownMobile) {
+    dropdownToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      dropdownMobile.classList.toggle('active');
+    });
+  }
+
+  // Cerrar menú al hacer clic en cualquier enlace (excepto Servicios)
+  document.querySelectorAll('.mobile-menu a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      // No cerrar si es el botón de desplegar servicios
+      if (link.classList.contains('dropdown-toggle')) return;
+
+      // Cerrar menú
+      closeMobileMenu();
+    });
+  });
+
+  // Función para cerrar el menú
+  function closeMobileMenu() {
+    if (menuToggle) menuToggle.classList.remove('active');
+    if (mobileMenu) mobileMenu.classList.remove('active');
+    overlay.style.display = 'none';
+    if (dropdownMobile) dropdownMobile.classList.remove('active');
+  }
+});
 document.addEventListener("DOMContentLoaded", function () {
   const slider = document.querySelector(".slider");
   const dots = document.querySelectorAll(".dot");

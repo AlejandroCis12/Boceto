@@ -40,32 +40,52 @@
     </div>
   </header>
 <!-- Navegación con submenú en Servicios -->
-<nav class="navbar">
-  <div class="nav-header">
-    <button class="menu-toggle" aria-label="Menú">
-      <i class="fas fa-bars"></i>
-    </button>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-header">
+      <button class="menu-toggle" aria-label="Menú">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <ul class="nav-menu">
+        <li><a class="nav-menu-text" href="index.html">Inicio</a></li>
+        <li><a class="nav-menu-text" href="#nosotros">Nosotros</a></li>
+        <li><a class="nav-menu-text" href="productos.html">Productos</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">Servicios <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="asesoria.html"><i class="fas fa-lightbulb"></i> Asesoría</a></li>
+            <li><a href="capacitacion.html"><i class="fas fa-graduation-cap"></i> Capacitación</a></li>
+            <li><a href="supervision.html"><i class="fas fa-search"></i> Supervisión</a></li>
+            <li><a href="coordinacion.html"><i class="fas fa-handshake"></i> Coordinación</a></li>
+          </ul>
+        </li>
+        <li><a class="nav-menu-text" href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Menú Móvil -->
+  <div class="mobile-menu">
+    <ul>
+      <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+      <li><a href="#nosotros"><i class="fas fa-users"></i> Nosotros</a></li>
+      <li><a href="productos.html"><i class="fas fa-box"></i> Productos</a></li>
+      <li class="dropdown-mobile">
+        <a href="#" class="dropdown-toggle"><i class="fas fa-briefcase"></i> Servicios <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown-menu-mobile">
+          <li><a href="asesoria.html"><i class="fas fa-lightbulb"></i> Asesoría</a></li>
+          <li><a href="capacitacion.html"><i class="fas fa-graduation-cap"></i> Capacitación</a></li>
+          <li><a href="supervision.html"><i class="fas fa-search"></i> Supervisión</a></li>
+          <li><a href="coordinacion.html"><i class="fas fa-handshake"></i> Coordinación</a></li>
+        </ul>
+      </li>
+      <li><a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
+    </ul>
   </div>
 
-  <ul class="nav-menu">
-    <li><a href="index.html">Inicio</a></li>
-    <li><a href="#nosotros">Nosotros</a></li>
-    <li><a href="productos.html">Productos</a></li>
-    
-    <!-- Menú desplegable de Servicios -->
-    <li class="dropdown">
-      <a href="#" class="dropbtn">Servicios <i class="fas fa-chevron-down"></i></a>
-      <ul class="dropdown-menu">
-        <li><a href="asesoria.html"><i class="fas fa-lightbulb"></i> Asesoría</a></li>
-        <a href="capacitacion.html"><i class="fas fa-graduation-cap"></i> Capacitación</a>
-        <a href="supervision.html"><i class="fas fa-search"></i> Supervisión</a>
-        <a href="coordinacion.html"><i class="fas fa-handshake"></i> Coordinación</a>
-      </ul>
-    </li>
-    
-    <li><a href="#contacto">Contacto</a></li>
-  </ul>
-</nav>
   <!-- Slider con id="inicio" -->
    <div class="slider-container">
         <div class="slider">
@@ -154,7 +174,7 @@
         <p>
           En Hidrosistemas se fabrica, ensambla, instala y se comercializan tuberías, conexiones y accesorios de materiales de la más alta calidad y eficiencia técnica en sistemas de agua potable, alcantarillado, riego, plantas de tratamiento de agua y otras aplicaciones...
         </p>
-        <button class="read-more">Leer más...</button>
+        <a href="Nosotros.html"><button class="read-more">Leer más...</button></a>
       </div>
       <div class="column right">
         <p>
