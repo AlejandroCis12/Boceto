@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supervisión</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nata+Sans:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="Imagenes/h.png" type="image/png">
+    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="Mapa.css">
+
+
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+            </div>
+            
+            <!-- Menú de escritorio -->
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li><a href="productos.html"><i class="fas fa-box"></i> Productos</a></li>
+                    <li class="dropdown">
+                        <a href="#servicios"><i class="fas fa-briefcase"></i> Servicios <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="asesoria.html"><i class="fas fa-lightbulb"></i> Asesoría</a></li>
+                            <li><a href="capacitacion.html"><i class="fas fa-graduation-cap"></i> Capacitación</a></li>
+                            <li><a href="supervision.html"><i class="fas fa-search"></i> Supervisión</a></li>
+                            <li><a href="coordinacion.html"><i class="fas fa-handshake"></i> Coordinación</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="Nosotros.html"><i class="fas fa-users"></i> Nosotros</a></li>
+                    <li><a href="#contacto" class="nav-contact"><i class="fas fa-envelope"></i> Contacto</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Botón menú móvil -->
+            <button class="menu-toggle" aria-label="Menú">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+
+ <div class="container-encabezado">
+      <!-- Logo de la empresa -->
+      <div class="logo">
+        <img src="Imagenes/logo_web_120.png" alt="Logo de Hidrosistemas">
+      </div>
+      <div class="slogan">
+        <h1>Hidrosistemas S.A de C.V.</h1>
+        <p>¡Tu mejor opción!</p>
+      </div>
+    </div>
+    
+    <!-- Menú Móvil -->
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="#inicio"><i class="fas fa-home"></i> Inicio</a></li>
+            <li><a href="#productos"><i class="fas fa-box"></i> Productos</a></li>
+            <li class="dropdown-mobile">
+                <a href="#" class="dropdown-toggle"><i class="fas fa-briefcase"></i> Servicios <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu-mobile">
+                    <li><a href="#asesoria"><i class="fas fa-lightbulb"></i> Asesoría</a></li>
+                    <li><a href="#capacitacion"><i class="fas fa-graduation-cap"></i> Capacitación</a></li>
+                    <li><a href="#supervision"><i class="fas fa-search"></i> Supervisión</a></li>
+                    <li><a href="#coordinacion"><i class="fas fa-handshake"></i> Coordinación</a></li>
+                </ul>
+            </li>
+            <li><a href="#nosotros"><i class="fas fa-users"></i> Nosotros</a></li>
+            <li><a href="#contacto" class="mobile-contact"><i class="fas fa-envelope"></i> Contacto</a></li>
+        </ul>
+    </div>
+ <!-- Hero Section -->
+    <section class="hero">
+        <div class="container-hero">
+            <h1>Supervisión Profesional de Proyectos</h1>
+            <p>Garantizamos el éxito de sus proyectos hidráulicos con nuestra supervisión experta, asegurando calidad, eficiencia y cumplimiento de normativas en cada etapa del proceso.</p>
+            <div class="hero-buttons">
+                <a href="#contacto" class="btn">Solicitar Supervisión</a>
+                <a href="#proceso" class="btn btn-secondary">Conocer Proceso</a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+<!-- Sección: En Dónde Estamos -->
+<section class="contact-section" id="contacto">
+    <div class="container">
+        <div class="contact-container">
+            <div class="contact-header">
+                <h2>En Dónde Estamos</h2>
+                <p>Estamos ubicados estratégicamente para servirte mejor en Mineral de la Reforma, Hidalgo</p>
+            </div>
+            <div class="contact-content">
+                <div class="map-section">
+                    <div class="map-visual">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3759.382675408644!2d-98.9878648!3d20.0302349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d19b0e3d4e3d4f%3A0x1234567890abcdef!2sCircuito+Emprendedores+19%2C+Parque+Industrial+Metropolitano%2C+Mineral+de+la+Reforma%2C+Hgo.!5e0!3m2!1ses!2smx!4v1700000000000!5m2!1ses!2smx" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="contact-info-section">
+                    <h3>Contáctanos</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Dirección</h4>
+                                <p>Circuito Emprendedores No. 19, Parque Industrial Metropolitano, Mineral de la Reforma, Hgo. CP 42186</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Teléfonos</h4>
+                                <p>
+                                    <a href="tel:7717132513">771 713 2513</a><br>
+                                    <a href="tel:7717132514">771 713 2514</a><br>
+                                    <a href="tel:7717181044">771 718 1044</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p><a href="mailto:ventas@hidrosistemas.com.mx">ventas@hidrosistemas.com.mx</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Horario</h4>
+                                <p>Lun-Vie: 9:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer id="contacto">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>HIDROSISTEMAS</h4>
+                    <p>Tenemos las mejores marcas, con calidad que buscas..</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="asesoria.html">Asesoría</a></li>
+                        <li><a href="capacitacion.html">Capacitación</a></li>
+                        <li><a href="supervision.html">Supervisión</a></li>
+                        <li><a href="coordinacion.html">Coordinación</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="Nosotros.html">Nosotros</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Hidrosistemas. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
