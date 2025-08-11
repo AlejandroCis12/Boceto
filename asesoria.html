@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asesoría Técnica Especializada | Hidrosistemas</title>
+    <title>Asesoría  | Hidrosistemas</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #0066a6;
+            --primary:  #005c8f;
             --primary-dark: #004d80;
             --secondary: #00a0e3;
-            --accent: #ff6b00;
+            --accent: #c70101;
             --light: #f5f9fc;
             --dark: #333333;
             --gray: #6c757d;
@@ -54,7 +54,7 @@
             background-color: var(--accent);
             color: var(--white);
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: 6px;
             font-weight: 500;
             transition: var(--transition);
             border: none;
@@ -65,114 +65,14 @@
         }
 
         .btn:hover {
-            background-color: #e55e00;
+            background-color: #ff0202;
             transform: translateY(-3px);
             box-shadow: 0 6px 15px rgba(255, 107, 0, 0.4);
         }
 
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--primary);
-            color: var(--white);
-        }
-
-        /* Header */
-        header {
-            background-color: var(--white);
-            box-shadow: var(--shadow);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo img {
-            height: 50px;
-            margin-right: 10px;
-        }
-
-        .logo h1 {
-            font-size: 24px;
-            color: var(--primary);
-            margin: 0;
-        }
-
-        .logo span {
-            color: var(--accent);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 30px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            transition: var(--transition);
-            position: relative;
-        }
-
-        nav ul li a:hover {
-            color: var(--primary);
-        }
-
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--primary);
-            transition: var(--transition);
-        }
-
-        nav ul li a:hover::after {
-            width: 100%;
-        }
-
-        .nav-contact {
-            background-color: var(--primary);
-            color: var(--white);
-            padding: 8px 20px;
-            border-radius: 4px;
-            margin-left: 20px;
-        }
-
-        .nav-contact:hover {
-            background-color: var(--primary-dark);
-        }
-
-        .nav-contact::after {
-            display: none;
-        }
-
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 80, 158, 0.8), rgba(0, 52, 89, 0.9)), url('https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3') no-repeat center center/cover;
+            background: linear-gradient(rgba(197, 199, 201, 0.8), rgba(0, 52, 89, 0.9)), url(Imagenes/hero-asesoria.jpeg) no-repeat center center/cover;
             height: 100vh;
             display: flex;
             align-items: center;
@@ -321,6 +221,11 @@
             padding: 70px 0 20px;
         }
 
+        footer a {
+            text-decoration: none;
+            color: var(--light-gray);
+       }
+
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -422,27 +327,12 @@
         }
 
         @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-                padding: 15px 0;
+            .menu-toggle {
+                display: flex;
             }
             
-            .logo {
-                margin-bottom: 15px;
-            }
-            
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            nav ul li {
-                margin: 5px 10px;
-            }
-            
-            .nav-contact {
-                margin-left: 0;
-                margin-top: 10px;
+            .desktop-nav {
+                display: none;
             }
             
             .hero {
@@ -464,7 +354,7 @@
         }
 
         @media (max-width: 576px) {
-            .servicios, .proceso, .beneficios, .cta {
+            .servicios, .proceso {
                 padding: 60px 0;
             }
             
@@ -476,31 +366,81 @@
                 padding: 10px 20px;
                 font-size: 14px;
             }
+            
+            .mobile-menu {
+                width: 85%;
+            }
         }
     </style>
-      <link rel="icon" href="Imagenes/h.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="Imagenes/h.png" type="image/png">
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="container header-container">
             <div class="logo">
-                <img src="Imagenes/logo_web_120.png" alt="Logo de Hidrosistemas">
             </div>
-            <nav>
+            
+            <!-- Menú de escritorio -->
+            <nav class="desktop-nav">
                 <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Productos</a></li>
-                    <li><a href="#">Servicios</a></li>
-                    <li><a href="#">Nosotros</a></li>
-                    <li><a href="#" class="nav-contact">Contacto</a></li>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li><a href="productos.html"><i class="fas fa-box"></i> Productos</a></li>
+                    <li class="dropdown">
+                        <a href="#servicios"><i class="fas fa-briefcase"></i> Servicios <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="asesoria.html"><i class="fas fa-lightbulb"></i> Asesoría</a></li>
+                            <li><a href="#capacitacion"><i class="fas fa-graduation-cap"></i> Capacitación</a></li>
+                            <li><a href="#supervision"><i class="fas fa-search"></i> Supervisión</a></li>
+                            <li><a href="#coordinacion"><i class="fas fa-handshake"></i> Coordinación</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="Nosotros.html"><i class="fas fa-users"></i> Nosotros</a></li>
+                    <li><a href="#contacto" class="nav-contact"><i class="fas fa-envelope"></i> Contacto</a></li>
                 </ul>
             </nav>
+            
+            <!-- Botón menú móvil -->
+            <button class="menu-toggle" aria-label="Menú">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
         </div>
     </header>
 
+ <div class="container-encabezado">
+      <!-- Logo de la empresa -->
+      <div class="logo">
+        <img src="Imagenes/logo_web_120.png" alt="Logo de Hidrosistemas">
+      </div>
+    </div>
+    
+    <!-- Menú Móvil -->
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="#inicio"><i class="fas fa-home"></i> Inicio</a></li>
+            <li><a href="#productos"><i class="fas fa-box"></i> Productos</a></li>
+            <li class="dropdown-mobile">
+                <a href="#" class="dropdown-toggle"><i class="fas fa-briefcase"></i> Servicios <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu-mobile">
+                    <li><a href="#asesoria"><i class="fas fa-lightbulb"></i> Asesoría</a></li>
+                    <li><a href="#capacitacion"><i class="fas fa-graduation-cap"></i> Capacitación</a></li>
+                    <li><a href="#supervision"><i class="fas fa-search"></i> Supervisión</a></li>
+                    <li><a href="#coordinacion"><i class="fas fa-handshake"></i> Coordinación</a></li>
+                </ul>
+            </li>
+            <li><a href="#nosotros"><i class="fas fa-users"></i> Nosotros</a></li>
+            <li><a href="#contacto" class="mobile-contact"><i class="fas fa-envelope"></i> Contacto</a></li>
+        </ul>
+    </div>
+    
+    <!-- Overlay para menú móvil -->
+    <div class="overlay"></div>
+
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="inicio">
         <div class="hero-content">
             <h1>Asesoría Técnica Especializada</h1>
             <p>Proporcionamos asesoramiento al efectuar una inversión económica para ayudar a tu empresa a obtener el beneficio de un ahorro proyectado.</p>
@@ -509,7 +449,7 @@
     </section>
 
     <!-- Servicios de Asesoría -->
-    <section class="servicios">
+    <section class="servicios" id="servicios">
         <div class="container">
             <div class="section-title">
                 <h2>Nuestros Servicios de Asesoría</h2>
@@ -562,7 +502,7 @@
     </section>
 
     <!-- Proceso de Asesoría -->
-    <section class="proceso">
+    <section class="proceso" id="proceso">
         <div class="container">
             <div class="section-title">
                 <h2>Nuestro Proceso de Asesoría</h2>
@@ -596,8 +536,9 @@
             </div>
         </div>
     </section>
+    
     <!-- Footer -->
-    <footer>
+    <footer id="contacto">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
@@ -612,19 +553,19 @@
                 <div class="footer-col">
                     <h4>Servicios</h4>
                     <ul>
-                        <li><a href="#">Asesoría </a></li>
-                        <li><a href="#">Capacitación</a></li>
-                        <li><a href="#">Supervisión</a></li>
-                        <li><a href="#">Coordinación</a></li>
+                        <li><a href="#asesoria">Asesoría</a></li>
+                        <li><a href="#capacitacion">Capacitación</a></li>
+                        <li><a href="#supervision">Supervisión</a></li>
+                        <li><a href="#coordinacion">Coordinación</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Enlaces Rápidos</h4>
                     <ul>
-                        <li><a href="#">Inicio</a></li>
-                        <li><a href="#">Nosotros</a></li>
-                        <li><a href="#">Productos</a></li>
-                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#productos">Productos</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -657,8 +598,7 @@
                     </div>
                     <div class="contact-info">
                         <i class="fas fa-envelope"></i>
-                        <div><a href="mailto:ventas@hidrosistemas.com.mx">ventas@hidrosistemas.com.mx</a></p>
-        <p></div>
+                        <div><a href="mailto:ventas@hidrosistemas.com.mx">ventas@hidrosistemas.com.mx</a></div>
                     </div>
                     <div class="contact-info">
                         <i class="fas fa-clock"></i>
@@ -667,9 +607,81 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 Hidrosistemas. Todos los derechos reservados.</p>
+                <p>&copy; 2025 Hidrosistemas. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Elementos del DOM
+            const menuToggle = document.querySelector('.menu-toggle');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const overlay = document.querySelector('.overlay');
+            const dropdownToggle = document.querySelector('.dropdown-toggle');
+            const dropdownMobile = document.querySelector('.dropdown-mobile');
+            
+            // Toggle menú móvil
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    mobileMenu.classList.toggle('active');
+                    overlay.classList.toggle('active');
+                    document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+                });
+            }
+            
+            // Cerrar menú al hacer clic en overlay
+            if (overlay) {
+                overlay.addEventListener('click', function() {
+                    menuToggle.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    overlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            }
+            
+            // Toggle submenú móvil
+            if (dropdownToggle && dropdownMobile) {
+                dropdownToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    dropdownMobile.classList.toggle('active');
+                });
+            }
+            
+            // Cerrar menú al hacer clic en un enlace
+            document.querySelectorAll('.mobile-menu a').forEach(link => {
+                if (!link.classList.contains('dropdown-toggle') && !link.classList.contains('mobile-contact')) {
+                    link.addEventListener('click', function() {
+                        menuToggle.classList.remove('active');
+                        mobileMenu.classList.remove('active');
+                        overlay.classList.remove('active');
+                        document.body.style.overflow = '';
+                    });
+                }
+            });
+            
+            // Scroll suave para todos los enlaces
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const headerHeight = document.querySelector('header').offsetHeight;
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
