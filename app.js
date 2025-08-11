@@ -1,52 +1,71 @@
-// =======================
-// 1. MENÚ MÓVIL (solo si existe)
-// =======================
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
+  // Elementos del DOM
   const menuToggle = document.querySelector('.menu-toggle');
   const mobileMenu = document.querySelector('.mobile-menu');
+  const overlay = document.querySelector('.overlay');
   const dropdownToggle = document.querySelector('.dropdown-toggle');
   const dropdownMobile = document.querySelector('.dropdown-mobile');
-
-  // Si no hay menú, no ejecutar nada de esto
-  if (!menuToggle || !mobileMenu) {
-    // Puedes comentar esto en producción
-    // console.log('Menú no encontrado. Saltando funcionalidad de menú.');
-    return;
+  
+  // Toggle menú móvil
+  if (menuToggle) {
+      menuToggle.addEventListener('click', function() {
+          this.classList.toggle('active');
+          mobileMenu.classList.toggle('active');
+          overlay.classList.toggle('active');
+          document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+      });
   }
-
-  // Crear overlay solo si hay menú
-  const overlay = document.createElement('div');
-  overlay.classList.add('overlay');
-  document.body.appendChild(overlay);
-
-  menuToggle.addEventListener('click', () => {
-    menuToggle.classList.toggle('active');
-    mobileMenu.classList.toggle('active');
-    overlay.style.display = mobileMenu.classList.contains('active') ? 'block' : 'none';
-  });
-
-  overlay.addEventListener('click', closeMobileMenu);
-
+  
+  // Cerrar menú al hacer clic en overlay
+  if (overlay) {
+      overlay.addEventListener('click', function() {
+          menuToggle.classList.remove('active');
+          mobileMenu.classList.remove('active');
+          overlay.classList.remove('active');
+          document.body.style.overflow = '';
+      });
+  }
+  
+  // Toggle submenú móvil
   if (dropdownToggle && dropdownMobile) {
-    dropdownToggle.addEventListener('click', (e) => {
-      e.preventDefault();
-      dropdownMobile.classList.toggle('active');
-    });
+      dropdownToggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          dropdownMobile.classList.toggle('active');
+      });
   }
-
+  
+  // Cerrar menú al hacer clic en un enlace
   document.querySelectorAll('.mobile-menu a').forEach(link => {
-    link.addEventListener('click', (e) => {
-      if (link.classList.contains('dropdown-toggle')) return;
-      closeMobileMenu();
-    });
+      if (!link.classList.contains('dropdown-toggle') && !link.classList.contains('mobile-contact')) {
+          link.addEventListener('click', function() {
+              menuToggle.classList.remove('active');
+              mobileMenu.classList.remove('active');
+              overlay.classList.remove('active');
+              document.body.style.overflow = '';
+          });
+      }
   });
-
-  function closeMobileMenu() {
-    menuToggle.classList.remove('active');
-    mobileMenu.classList.remove('active');
-    overlay.style.display = 'none';
-    if (dropdownMobile) dropdownMobile.classList.remove('active');
-  }
+  
+  // Scroll suave para todos los enlaces
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+              const headerHeight = document.querySelector('header').offsetHeight;
+              const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+              
+              window.scrollTo({
+                  top: targetPosition,
+                  behavior: 'smooth'
+              });
+          }
+      });
+  });
 });
 
 // =======================
