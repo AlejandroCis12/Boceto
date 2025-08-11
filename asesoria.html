@@ -8,6 +8,23 @@
     <link rel="stylesheet" href="Mapa.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
+        /* Aseguramos que el cuerpo y el contenedor principal llenen la pantalla */
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+            min-height: 100vh; /* Aseguramos que el cuerpo ocupe al menos la altura de la ventana */
+            display: flex;
+            flex-direction: column; /* Organizamos el contenido verticalmente */
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
         h1, h2, h3, h4, h5 {
             font-family: 'Poppins', sans-serif;
             font-weight: 700;
@@ -160,10 +177,12 @@
         }
 
         /* Footer */
+        /* Aseguramos que el footer siempre esté al final de la página */
         footer {
             background-color: var(--dark);
             color: var(--light-gray);
             padding: 70px 0 20px;
+            margin-top: auto; /* Empuja el footer hacia abajo */
         }
 
         footer a {
@@ -481,12 +500,12 @@
             </div>
         </div>
     </section>
-    <div class="contact-container">
-<div class="contact-header">
+    <div class="map-contact-container">
+<div class="map-contact-header">
     <h1>En Dónde Estamos</h1>
     <p>Estamos ubicados estratégicamente para servirte mejor en Mineral de la Reforma, Hidalgo</p>
 </div>
-<div class="contact-content">
+<div class="map-contact-content">
 <div class="map-section">
         <!-- Aquí va el mapa real o la vista estática -->
         <div class="map-visual" id="map-visual">
@@ -501,14 +520,14 @@
             </iframe>
         </div>
     </div>
-<div class="contact-info-section">
+<div class="map-contact-info-section">
     <h2>Contáctanos</h2>
-    <div class="contact-details">
-        <div class="contact-item">
-            <div class="contact-icon">
+    <div class="map-contact-details">
+        <div class="map-contact-item">
+            <div class="map-contact-icon">
                 <i class="fas fa-map-marker-alt"></i>
             </div>
-            <div class="contact-content">
+            <div class="map-contact-content">
                 <h3>Dirección</h3>
                 <p>
                     Circuito Emprendedores No. 19.<br>

@@ -1,4 +1,4 @@
-.contact-container {
+.map-contact-container {
   max-width: 98vw;
   width: 100%;
   margin: 2rem auto;
@@ -9,21 +9,21 @@
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
-.contact-header {
+.map-contact-header {
   background: var(--primary);
   color: white;
   padding: 2rem;
   position: relative;
 }
 
-.contact-header h1 {
+.map-contact-header h1 {
   font-family: 'Montserrat', sans-serif;
   font-size: 2.5rem;
   margin-bottom: 1rem;
   font-weight: 700;
 }
 
-.contact-header p {
+.map-contact-header p {
   max-width: 900px;
   margin: 0 auto;
   font-size: 1.1rem;
@@ -31,7 +31,7 @@
   text-align: left;
 }
 
-.contact-content {
+.map-contact-content {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   gap: 20px;
@@ -206,7 +206,7 @@
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 /* === Información de contacto === */
-.contact-info-section {
+.map-contact-info-section {
   background: #f9fbfd;
   padding: 2.5rem;
   display: flex;
@@ -215,7 +215,7 @@
   width: 100%;
 }
 
-.contact-info-section h2 {
+.map-contact-info-section h2 {
   color: var(--primary);
   font-family: 'Montserrat', sans-serif;
   font-size: 2rem;
@@ -224,7 +224,7 @@
   padding-bottom: 0.8rem;
 }
 
-.contact-info-section h2:after {
+.map-contact-info-section h2:after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -235,19 +235,19 @@
   border-radius: 2px;
 }
 
-.contact-details {
+.map-contact-details {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
 }
 
-.contact-item {
+.map-contact-item {
   display: flex;
   gap: 1.2rem;
   align-items: flex-start;
 }
 
-.contact-icon {
+.map-contact-icon {
   background: var(--light-blue);
   color: var(--primary);
   width: 55px;
@@ -260,19 +260,19 @@
   flex-shrink: 0;
 }
 
-.contact-content h3 {
+.map-contact-content h3 {
   color: var(--primary);
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
 
-.contact-content p {
+.map-contact-content p {
   color: #444;
   line-height: 1.5;
   margin: 0;
 }
 
-.contact-content a {
+.map-contact-content a {
   color: var(--secondary);
   text-decoration: none;
   transition: all 0.3s ease;
@@ -281,7 +281,7 @@
   margin-top: 0.3rem;
 }
 
-.contact-content a:hover {
+.map-contact-content a:hover {
   color: #d35400;
   text-decoration: none;
 }
