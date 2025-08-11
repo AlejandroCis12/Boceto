@@ -47,7 +47,6 @@
 
 .section-title {
   grid-column: 1 / -1;
-  margin: 0 0 1rem 0;
   color: #0056b3;
   font-size: 2.2rem;
   text-align: left;
@@ -59,7 +58,7 @@
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: auto auto;
-  gap: 2rem;
+  gap: 1rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -234,7 +233,7 @@ body {
   color: #333;
   line-height: 1.6;
   font-family: 'Roboto', sans-serif;
-  padding: 20px;
+  padding-bottom: 0px;
   min-height: 100vh;
   overflow-x: hidden;
 }
@@ -280,11 +279,13 @@ body {
 }
 
 /* === Mapa === */
+/* === Mapa - Sección principal con padding inferior visible === */
 .map-section {
   position: relative;
-  height: 500px;
-  background: #e0e7f0;
   width: 100%;
+  background: #e0e7f0;
+  border-radius: 0 15px 0 0;
+  overflow: hidden; /* Mantiene el borde redondeado */
 }
 
 .map-overlay {
@@ -380,6 +381,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  bottom: 3rem; /* Espacio para el contenido del mapa */
   width: 100%;
   height: 100%;
   border: none;
@@ -391,6 +393,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  bottom: 10px; /* Espacio para el contenido del mapa */
   width: 100%;
   height: 100%;
   background: linear-gradient(135deg, #8a9ccf 0%, #b3c0e4 100%);
@@ -432,14 +435,14 @@ body {
   font-size: 1.8rem;
   margin-bottom: 1rem;
   font-family: 'Montserrat', sans-serif;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 .map-visual p {
   max-width: 80%;
   margin: 0 auto;
   opacity: 0.95;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 /* === Información de contacto === */
@@ -520,71 +523,37 @@ body {
 
 .contact-content a:hover {
   color: #d35400;
-  text-decoration: underline;
-}
-
-/* === Teléfonos === */
-.phone-numbers {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1.2rem;
-  margin-top: 0.8rem;
-  width: 100%;
-}
-
-.phone-item {
-  background: white;
-  border: 1px solid #e1e8f0;
-  padding: 1rem;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
-  text-align: center;
-}
-
-.phone-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  border-color: var(--secondary);
-}
-
-.phone-item strong {
-  display: block;
-  color: var(--gray);
-  font-size: 0.95rem;
-  margin-bottom: 0.4rem;
-  font-weight: 600;
-}
-
-.phone-item a {
-  font-weight: 600;
-  font-size: 1.2rem;
-  color: var(--secondary);
   text-decoration: none;
-  display: block;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: clip;
-}
-
-.phone-item a:hover {
-  text-decoration: underline;
-}
-
-/* === Pie de página === */
-.footer-note {
-  text-align: center;
-  padding: 1.5rem;
-  background: var(--primary);
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.9rem;
 }
 
 /* === Responsive === */
 @media (max-width: 768px) {
   body {
-    padding: 10px;
+    padding: 3px;
   }
+
+  .text-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.intro-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.images-container {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
 
   .contact-container {
     max-width: 96vw;
@@ -615,11 +584,11 @@ body {
 
 @media (min-width: 1200px) {
   .contact-container {
-    max-width: 95%;
+    max-width: 100%;
   }
 
   .contact-content {
-    padding: 30px;
+    padding: 20px;
     gap: 24px;
   }
 }
