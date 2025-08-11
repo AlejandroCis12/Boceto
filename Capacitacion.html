@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hidrosistemas S.A de C.V.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nata+Sans:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="icon" href="Imagenes/h.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="Mapa.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+            </div>
+            
+            <!-- Menú de escritorio -->
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li><a href="productos.html"><i class="fas fa-box"></i> Productos</a></li>
+                    <li class="dropdown">
+                        <a href="#servicios"><i class="fas fa-briefcase"></i> Servicios <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="asesoria.html"><i class="fas fa-lightbulb"></i> Asesoría</a></li>
+                            <li><a href="#capacitacion"><i class="fas fa-graduation-cap"></i> Capacitación</a></li>
+                            <li><a href="#supervision"><i class="fas fa-search"></i> Supervisión</a></li>
+                            <li><a href="#coordinacion"><i class="fas fa-handshake"></i> Coordinación</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="Nosotros.html"><i class="fas fa-users"></i> Nosotros</a></li>
+                    <li><a href="#contacto" class="nav-contact"><i class="fas fa-envelope"></i> Contacto</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Botón menú móvil -->
+            <button class="menu-toggle" aria-label="Menú">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+    <title>Capacitación | Hidrosistemas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+        
+        h1, h2, h3 {
+            color: #0056b3;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        h1:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, #0056b3, #00a8e8);
+            border-radius: 2px;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e5799 0%, #207cca 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .hero h1 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero h1:after {
+            background: #ffffff;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #ff6b00;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid #ff6b00;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+        
+        .btn:hover {
+            background: transparent;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* Contenido Principal */
+        .main-content {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            padding: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin: 40px 0;
+        }
+        
+        .content-img {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .content-img img {
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .content-img:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Servicios */
+        .services-section {
+            background-color: #f0f7ff;
+            padding: 60px 0;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .card-icon {
+            background: linear-gradient(135deg, #0056b3 0%, #00a8e8 100%);
+            color: white;
+            font-size: 2.5rem;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .card-content {
+            padding: 25px;
+        }
+        
+        .card-content h3 {
+            margin-bottom: 15px;
+            color: #0056b3;
+        }
+        
+        .benefits-list {
+            margin-top: 30px;
+        }
+        
+        .benefits-list h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .benefit-item {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .benefit-item:hover {
+            background: linear-gradient(135deg, #0056b3 0%, #00a8e8 100%);
+            color: white;
+        }
+        
+        .benefit-item:hover h3 {
+            color: white;
+        }
+        
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: #0056b3;
+            margin-bottom: 20px;
+        }
+        
+        .benefit-item:hover .benefit-icon {
+            color: white;
+        }
+        
+        .benefit-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, #0056b3 0%, #00a8e8 100%);
+            color: white;
+            text-align: center;
+            padding: 70px 0;
+            border-radius: 10px;
+            margin: 60px 0;
+        }
+        
+        .cta-section h2 {
+            color: white;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+        }
+        
+        .cta-btn {
+            background: white;
+            color: #0056b3;
+            font-weight: 700;
+        }
+        
+        .cta-btn:hover {
+            background: #ff6b00;
+            color: white;
+            border-color: #ff6b00;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            section {
+                padding: 40px 0;
+            }
+            
+            .main-content {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Contenido de la página -->
+    <section class="hero">
+        <div class="container">
+            <h1>Capacitación Especializada</h1>
+            <p>Programas de formación profesional para el mantenimiento, operación y optimización de sistemas hidráulicos y de bombeo</p>
+            <a href="#contacto" class="btn">Solicitar Informes</a>
+        </div>
+    </section>
+    
+    <div class="container">
+        <section class="main-content">
+            <h1>Nuestros Servicios de Capacitación</h1>
+            
+            <div class="content-grid">
+                <div class="content-text">
+                    <p>En Hidrosistemas, ofrecemos programas de capacitación diseñados para satisfacer las necesidades específicas de profesionales en el sector hidráulico. Nuestros cursos combinan fundamentos teóricos con aplicaciones prácticas para garantizar una formación integral.</p>
+                    
+                    <p>Contamos con instructores altamente calificados y con amplia experiencia en la industria, lo que permite a los participantes adquirir conocimientos aplicables directamente en su entorno laboral.</p>
+                    
+                    <p>Nuestros programas están disponibles tanto en modalidad presencial como en línea, con flexibilidad de horarios para adaptarnos a las necesidades de su organización.</p>
+                </div>
+                
+                <div class="content-img">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Sesión de capacitación">
+                </div>
+            </div>
+        </section>
+        
+        <section class="services-section">
+            <h2>Cursos Disponibles</h2>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="card-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Mantenimiento de Sistemas Hidroneumáticos</h3>
+                        <p>Preventivo y correctivo de sistemas hidroneumáticos. Diagnóstico de fallas y protocolos de mantenimiento.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="card-icon">
+                        <i class="fas fa-pump-soap"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Bombas Centrífugas Verticales</h3>
+                        <p>Mantenimiento especializado para bombas tipo turbina. Procedimientos de desmontaje, reparación y reinstalación.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="card-icon">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Equipos de Bombeo</h3>
+                        <p>Mantenimiento integral de equipos de bombeo. Técnicas de diagnóstico y reparación avanzada.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="card-icon">
+                        <i class="fas fa-tint-slash"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Detección de Fugas</h3>
+                        <p>Técnicas avanzadas para detección de fugas en redes hidráulicas. Uso de equipos especializados.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="card-icon">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Interpretación de Planos</h3>
+                        <p>Lectura e interpretación de planos hidráulicos. Simbología especializada y aplicaciones prácticas.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="card-icon">
+                        <i class="fas fa-faucet"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Plomería Profesional</h3>
+                        <p>Curso completo de plomería con enfoque en sistemas comerciales e industriales. Normatividad actualizada.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="benefits-list">
+            <h2>Beneficios de Nuestra Capacitación</h2>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Instructores Expertos</h3>
+                    <p>Profesionales con más de 15 años de experiencia en el campo</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Certificación Oficial</h3>
+                    <p>Diplomas con validez oficial reconocidos por la industria</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3>Rentabilidad</h3>
+                    <p>Mejora en la eficiencia operativa que reduce costos</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Enfoque Práctico</h3>
+                    <p>70% del tiempo dedicado a prácticas con equipos reales</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="cta-section">
+            <h2>¿Listo para Mejorar las Habilidades de su Equipo?</h2>
+            <p>Contáctenos hoy mismo para diseñar un programa de capacitación a la medida de las necesidades de su organización. Ofrecemos soluciones para grupos pequeños y grandes corporaciones.</p>
+            <a href="#contacto" class="btn cta-btn">Solicitar Cotización</a>
+        </section>
+    </div>
+
+    <!-- Scripts (si fueran necesarios) -->
+    <script>
+        // Script para animaciones simples
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animación para las tarjetas al aparecer
+            const cards = document.querySelectorAll('.service-card, .benefit-item');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            cards.forEach(card => {
+                card.style.opacity = 0;
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(card);
+            });
+        });
+    </script>
+<!-- Sección: En Dónde Estamos -->
+<section class="contact-section" id="contacto">
+    <div class="container">
+        <div class="contact-container">
+            <div class="contact-header">
+                <h2>En Dónde Estamos</h2>
+                <p>Estamos ubicados estratégicamente para servirte mejor en Mineral de la Reforma, Hidalgo</p>
+            </div>
+            <div class="contact-content">
+                <div class="map-section">
+                    <div class="map-visual">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3759.382675408644!2d-98.9878648!3d20.0302349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d19b0e3d4e3d4f%3A0x1234567890abcdef!2sCircuito+Emprendedores+19%2C+Parque+Industrial+Metropolitano%2C+Mineral+de+la+Reforma%2C+Hgo.!5e0!3m2!1ses!2smx!4v1700000000000!5m2!1ses!2smx" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="contact-info-section">
+                    <h3>Contáctanos</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Dirección</h4>
+                                <p>Circuito Emprendedores No. 19, Parque Industrial Metropolitano, Mineral de la Reforma, Hgo. CP 42186</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Teléfonos</h4>
+                                <p>
+                                    <a href="tel:7717132513">771 713 2513</a><br>
+                                    <a href="tel:7717132514">771 713 2514</a><br>
+                                    <a href="tel:7717181044">771 718 1044</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p><a href="mailto:ventas@hidrosistemas.com.mx">ventas@hidrosistemas.com.mx</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Horario</h4>
+                                <p>Lun-Vie: 9:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer id="contacto">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>HIDROSISTEMAS</h4>
+                    <p>Tenemos las mejores marcas, con calidad que buscas..</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="#asesoria">Asesoría</a></li>
+                        <li><a href="#capacitacion">Capacitación</a></li>
+                        <li><a href="#supervision">Supervisión</a></li>
+                        <li><a href="#coordinacion">Coordinación</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#productos">Productos</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Hidrosistemas. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
