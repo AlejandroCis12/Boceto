@@ -15,10 +15,43 @@ body {
   overflow-x: hidden;
 }
 
+:root {
+  --primary:  #005c8f;
+  --primary-dark: #004d80;
+  --secondary: #00a0e3;
+  --accent: #c70101;
+  --light: #f5f9fc;
+  --dark: #333333;
+  --gray: #6c757d;
+  --light-gray: #e9ecef;
+  --white: #ffffff;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
 .container {
   width: 90%;
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
+}
+
+.slogan{
+  text-align: center;
+  padding-top: 80px;
+}
+
+.slogan h1{
+  color:  #004d80;
+}
+
+.slogan h1
+.slogan p {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  line-height: 1.3;
 }
 
 .btn {
@@ -80,22 +113,6 @@ header {
 }
 
 /* Barra de Navegacion/*
-
-
-/* Estilo base del navbar */
-:root {
-  --primary:  #005c8f;
-  --primary-dark: #004d80;
-  --secondary: #00a0e3;
-  --accent: #c70101;
-  --light: #f5f9fc;
-  --dark: #333333;
-  --gray: #6c757d;
-  --light-gray: #e9ecef;
-  --white: #ffffff;
-  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  --transition: all 0.3s ease;
-}
 /* Menú de escritorio */
 .desktop-nav ul {
   display: flex;
@@ -813,84 +830,107 @@ header {
     transform: translateX(-50%); /* ← Clave: -50%, no -100% */
   }
 }
+/* Footer */
+footer {
+    background-color: var(--dark);
+    color: var(--light-gray);
+    padding: 70px 0 20px;
+}
 
-/*Contacto */
-.container-contacto {
+footer a {
+    text-decoration: none;
+    color: var(--light-gray);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.footer-col h4 {
+    color: var(--white);
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--accent);
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    color: var(--light-gray);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-col ul li a:hover {
+    color: var(--accent);
+    padding-left: 5px;
+}
+
+.contact-info {
+    margin-bottom: 15px;
     display: flex;
-    justify-content: space-between;
-    max-width: 1500px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    align-items: flex-start;
 }
 
-.section {
-    width: calc(50% - 20px); /* Ajusta el ancho de las secciones */
-    padding: 20px;
+.contact-info i {
+    color: var(--accent);
+    margin-right: 15px;
+    margin-top: 5px;
+    text-decoration: none;
 }
 
-.section h2 {
-    color: #333;
-    margin-bottom: 20px;
+.social-links {
+    display: flex;
+    margin-top: 25px;
 }
 
-#map {
-    width: 100%;
-    height: 400px; /* Altura del mapa */
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: var(--transition);
 }
 
-.contact p {
-    margin: 10px 0;
-}
-.container-contact {
-  display: flex;
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 0;
-  background-color: #fff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  gap: 30px;
+.social-links a:hover {
+    background-color: var(--accent);
+    transform: translateY(-5px);
 }
 
-.section {
-  flex: 1;
-  padding: 20px;
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.phone-footer {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
 }
 
-.section h2 {
-  color: #2c3e50;
-  margin-bottom: 20px;
-  font-size: 1.5em;
-  border-bottom: 2px solid #003366;
-  padding-bottom: 8px;
-}
-
-/* Información de contacto */
-.contact-info p {
-  margin: 12px 0;
-  font-size: 15px;
-}
-
-.contact-info .phone {
-  color: #e74c3c;
-  font-weight: bold;
-}
-
-.contact-info a:hover {
-  text-decoration: underline;
-}
-
-.footer-content {
-  text-align: center;
-  padding: 20px;
-  background-color: #013c80; /* Azul oscuro */
-  color: white;
-  font-size: 14px;
-}
 
 /* Responsive: en pantallas pequeñas, apila las columnas */
 @media (max-width: 768px) {

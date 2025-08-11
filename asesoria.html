@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asesoría  | Hidrosistemas</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="Mapa.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         h1, h2, h3, h4, h5 {
@@ -159,107 +158,6 @@
             color: var(--primary);
         }
 
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: var(--light-gray);
-            padding: 70px 0 20px;
-        }
-
-        footer a {
-            text-decoration: none;
-            color: var(--light-gray);
-       }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 50px;
-        }
-
-        .footer-col h4 {
-            color: var(--white);
-            margin-bottom: 25px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-col h4::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 2px;
-            background-color: var(--accent);
-        }
-
-        .footer-col ul {
-            list-style: none;
-        }
-
-        .footer-col ul li {
-            margin-bottom: 12px;
-        }
-
-        .footer-col ul li a {
-            color: var(--light-gray);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .footer-col ul li a:hover {
-            color: var(--accent);
-            padding-left: 5px;
-        }
-
-        .contact-info {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .contact-info i {
-            color: var(--accent);
-            margin-right: 15px;
-            margin-top: 5px;
-            text-decoration: none;
-        }
-
-        .social-links {
-            display: flex;
-            margin-top: 25px;
-        }
-
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            color: var(--white);
-            border-radius: 50%;
-            margin-right: 10px;
-            transition: var(--transition);
-        }
-
-        .social-links a:hover {
-            background-color: var(--accent);
-            transform: translateY(-5px);
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .phone-footer {
-            color: rgb(255, 255, 255);
-            font-weight: bold;
-        }
-
         /* Responsive */
         @media (max-width: 992px) {
             .hero h1 {
@@ -318,6 +216,7 @@
         }
     </style>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="Mapa.css">
     <link rel="icon" href="Imagenes/h.png" type="image/png">
 </head>
 <body>
@@ -326,7 +225,6 @@
         <div class="container header-container">
             <div class="logo">
             </div>
-            
             <!-- Menú de escritorio -->
             <nav class="desktop-nav">
                 <ul>
@@ -359,6 +257,10 @@
       <!-- Logo de la empresa -->
       <div class="logo">
         <img src="Imagenes/logo_web_120.png" alt="Logo de Hidrosistemas">
+      </div>
+      <div class="slogan">
+        <h1>Hidrosistemas S.A de C.V.</h1>
+        <p>Contáctanos Hoy</p>
       </div>
     </div>
     
@@ -481,44 +383,79 @@
             </div>
         </div>
     </section>
-    <div class="contact-container">
-<div class="contact-header">
-    <h1>En Dónde Estamos</h1>
-    <p>Estamos ubicados estratégicamente para servirte mejor en Mineral de la Reforma, Hidalgo</p>
-</div>
-<div class="contact-content">
-<div class="map-section">
-        <!-- Aquí va el mapa real o la vista estática -->
-        <div class="map-visual" id="map-visual">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3759.382675408644!2d-98.9878648!3d20.0302349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d19b0e3d4e3d4f%3A0x1234567890abcdef!2sCircuito+Emprendedores+19%2C+Parque+Industrial+Metropolitano%2C+Mineral+de+la+Reforma%2C+Hgo.!5e0!3m2!1ses!2smx!4v1700000000000!5m2!1ses!2smx" 
-                width="100%" 
-                height="100%" 
-                style="border:0" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-        </div>
-    </div>
-<div class="contact-info-section">
-    <h2>Contáctanos</h2>
-    <div class="contact-details">
-        <div class="contact-item">
-            <div class="contact-icon">
-                <i class="fas fa-map-marker-alt"></i>
+
+<!-- Sección: En Dónde Estamos -->
+<section class="contact-section" id="contacto">
+    <div class="container">
+        <div class="contact-container">
+            <div class="contact-header">
+                <h2>En Dónde Estamos</h2>
+                <p>Estamos ubicados estratégicamente para servirte mejor en Mineral de la Reforma, Hidalgo</p>
             </div>
             <div class="contact-content">
-                <h3>Dirección</h3>
-                <p>
-                    Circuito Emprendedores No. 19.<br>
-                    Parque Industrial Metropolitano.<br>
-                    Mineral de la Reforma, Hgo. CP 42186
-                </p>
+                <div class="map-section">
+                    <div class="map-visual">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3759.382675408644!2d-98.9878648!3d20.0302349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d19b0e3d4e3d4f%3A0x1234567890abcdef!2sCircuito+Emprendedores+19%2C+Parque+Industrial+Metropolitano%2C+Mineral+de+la+Reforma%2C+Hgo.!5e0!3m2!1ses!2smx!4v1700000000000!5m2!1ses!2smx" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="contact-info-section">
+                    <h3>Contáctanos</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Dirección</h4>
+                                <p>Circuito Emprendedores No. 19, Parque Industrial Metropolitano, Mineral de la Reforma, Hgo. CP 42186</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Teléfonos</h4>
+                                <p>
+                                    <a href="tel:7717132513">771 713 2513</a><br>
+                                    <a href="tel:7717132514">771 713 2514</a><br>
+                                    <a href="tel:7717181044">771 718 1044</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p><a href="mailto:ventas@hidrosistemas.com.mx">ventas@hidrosistemas.com.mx</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Horario</h4>
+                                <p>Lun-Vie: 9:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</section>
+
     <!-- Footer -->
     <footer id="contacto">
         <div class="container">
@@ -550,50 +487,12 @@
                         <li><a href="#contacto">Contacto</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h4>Contacto</h4>
-                    <div class="contact-info">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>Circuito Emprendedores No. 19, Parque Industrial Metropolitano, Mineral de la Reforma, Hgo. CP 42186</div>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <a href="tel:7717132513">
-                                <span class="phone-footer">771 713 2513</span></a>
-                            </div>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fas fa-phone"></i>
-                        <div>          
-                            <a href="tel:7717132514">
-                                <span class="phone-footer">771 713 2514</span></a>
-                        </div>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <a href="tel:7717181044">
-                                <span class="phone-footer">771 718 1044</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fas fa-envelope"></i>
-                        <div><a href="mailto:ventas@hidrosistemas.com.mx">ventas@hidrosistemas.com.mx</a></div>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fas fa-clock"></i>
-                        <div>Lun-Vie: 9:00 AM - 6:00 PM</div>
-                    </div>
-                </div>
             </div>
             <div class="copyright">
                 <p>&copy; 2025 Hidrosistemas. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
-
     <script src="app.js"></script>
 </body>
 </html>

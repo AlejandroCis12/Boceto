@@ -1,26 +1,17 @@
 /* Sección de productos: título y descripción */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 60px 20px 40px;
-    font-family: 'Poppins', sans-serif;
+.product-text {
+    background-color:  #005c8f;
+    margin-bottom: 20px;
 }
 
-.container h1 {
-    text-align: center;
-    font-size: 2.5rem;
-    color: #003366; /* Azul institucional */
-    font-weight: 600;
-    margin-bottom: 15px;
+.product-text h1{
+    color: white;
+    margin-left: 10px;
 }
 
-.container p {
-    text-align: justify;
-    max-width: 800px;
-    margin: 0 auto 40px;
-    color: #555;
-    font-size: 1.1rem;
-    line-height: 1.7;
+.product-text p{
+    color: white;
+    margin-left: 10px;
 }
 
 /* Diseño de la sección de tarjetas */
