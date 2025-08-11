@@ -72,7 +72,7 @@ body {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 1rem;
-  padding: 0 6rem;     /* Espacio mínimo desde los bordes */
+  padding: 0 0;     /* Espacio mínimo desde los bordes */
   margin: 0;           /* Sin margen lateral extra */
   width: 100%;
   box-sizing: border-box;
@@ -107,7 +107,7 @@ body {
 .values-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 0;
 }
 
 .values-section h2 {
@@ -228,6 +228,3 @@ body {
   --gray: #6c757d;
   --light-blue: #e3f2fd;
 }
-
-
-
