@@ -644,7 +644,7 @@ header {
 
 .container-nosotros h1 {
     font-size: 25px;
-    color: #333;
+    color: var(--primary);
     position: absolute;
     top: 0; /* Ajusta según necesites */
     left: 20px; /* Ajusta según necesites */
@@ -687,7 +687,14 @@ header {
 }
 
 /* Productos */
+.section-title{
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--primary);
+  margin-bottom: 20px;
+  text-align: center;
 
+}
 .container-Productos {
   padding-top: 20px;
 }
