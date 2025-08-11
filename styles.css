@@ -167,21 +167,23 @@ header {
   min-width: 220px;
   border-radius: 6px;
   box-shadow: var(--shadow);
-  opacity: 2;
-  visibility: hidden;
+  opacity: 0; /* Cambiado a 0 (valor inicial) */
   transform: translateY(10px);
-  transition: var(--transition);
+  transition: 
+    opacity 0.3s ease,
+    transform 0.3s ease;
   z-index: 1001;
   padding: 10px 0;
   display: flex;
-  flex-direction: column; /* Disposición vertical */
+  flex-direction: column;
+  pointer-events: none; /* Impide interacciones cuando está oculto */
 }
 
 .dropdown:hover .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
+  opacity: 1; /* Hacemos visible con opacidad */
   transform: translateY(0);
-  color: var(--dark);
+  pointer-events: auto; /* Permite interacciones al mostrar */
+  transition-delay: 0s; /* Sin retardo al aparecer */
 }
 
 .dropdown-menu li {
@@ -647,7 +649,7 @@ header {
     color: var(--primary);
     position: absolute;
     top: 0; /* Ajusta según necesites */
-    left: 20px; /* Ajusta según necesites */
+    left: 50px; /* Ajusta según necesites */
 }
 
 .content {
