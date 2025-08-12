@@ -113,8 +113,7 @@ body {
 .values-section h2 {
   color: #0056b3;
   margin-bottom: 1rem;
-  text-align: left;
-  padding-left: 50px;
+  text-align: left;;
 }
 
 .values-grid {
