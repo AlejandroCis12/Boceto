@@ -22,24 +22,21 @@
               /* Product Section */
         
         .product-text {
-            max-width: 800px;
-            margin: 0 auto 50px;
-            text-align: center;
+            max-width: 1200px;
+            margin-left: 100px;
+            padding: 40px 10px;
         }
         
         .product-text p {
             font-size: 1.1rem;
             line-height: 1.8;
-        }
+            text-align: justify;
 
-        .product-text {
-            max-width: 800px;
-            margin: 0 auto 50px;
-            text-align: center;
         }
         
         .product-text h1 {
             color: var(--primary);
+            text-align: left;
         }
         
 
@@ -50,7 +47,7 @@
             overflow: hidden;
             box-shadow: var(--box-shadow);
             width: 100%;
-            max-width: 350px;
+            max-width: 1200px;
             transition: var(--transition);
             position: relative;
         }
@@ -79,6 +76,7 @@
         .catalog-content {
             padding: 25px;
             text-align: center;
+            height: 80%;
         }
 
         .catalog-section {
@@ -150,6 +148,104 @@
             box-shadow: 0 6px 15px rgba(0, 168, 232, 0.4);
         }    
 
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .desktop-nav {
+                display: none;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .slogan h1 {
+                font-size: 2.2rem;
+            }
+            
+            .catalog-card {
+                width: calc(50% - 30px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .catalog-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 280px;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .map-section {
+                height: 350px;
+            }
+            
+            .catalog-card {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .slogan h1 {
+                font-size: 1.8rem;
+            }
+            
+            .slogan p {
+                font-size: 1.2rem;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .product-text p {
+                font-size: 1rem;
+            }
+        }        
 
         
     </style>
@@ -228,6 +324,8 @@
         <div class="product-text">
             <h1>Nuestros Productos</h1>
             <p>En Hidrosistemas de Hidalgo, ofrecemos una amplia gama de productos de alta calidad para satisfacer todas tus necesidades en sistemas hidráulicos y de plomería. Desde tuberías y accesorios hasta soluciones especializadas, contamos con todo lo que necesitas para tus proyectos.</p>
+            <p>Con nosotros encontrarás una gran variedad de tubería, conexiones, equipo y los mejores productos en las mejores marcas para su instalación.</p>
+            <p>Ponemos a tu disposición nuestro catálogo con una gran cantidad de líneas y productos y nuestros números telefónicos y correos de contacto en donde con gusto te atenderemos. También te informamos que surtimos pedidos a toda la República Mexicana.</p>
         </div>
 
         <!-- Nuevo diseño para catálogo -->
@@ -237,7 +335,7 @@
                     <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Catálogo Hidrosistemas">
                 </div>
                 <div class="catalog-content">
-                    <h3>Catálogo 2023</h3>
+                    <h3>Catálogo</h3>
                     <p>Nuestro catálogo completo con todos los productos disponibles y sus especificaciones técnicas.</p>
                     <div class="catalog-actions">
                         <a href="Catalogo/CATALOGO_HIDROSISTEMAS_2021.pdf" download="CATALOGO_HIDROSISTEMAS_2023.pdf" class="btn btn-download">
