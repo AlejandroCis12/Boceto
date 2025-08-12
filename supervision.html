@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +10,79 @@
     <link rel="icon" href="Imagenes/h.png" type="image/png">
     <link rel="stylesheet" href="styles.css"> 
     <link rel="stylesheet" href="Mapa.css">
+    <style>
+        :root {
+            --transition: all 0.3s ease;
+            --shadow: 0 5px 15px rgba(0,0,0,0.1);
+            --shadow-hover: 0 8px 25px rgba(0,0,0,0.2);
+        }
 
+        .hero {
+            background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(0, 59, 92, 0.8)), url('Imagenes/Sub-paginas/Supervision/hero-supervision.jpg') center/cover no-repeat;
+            color: white;
+            padding: 180px 0 100px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+                /* Services Intro */
+        .services-intro {
+            background-color: var(--white);
+        }
+        
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .intro-content{
+            padding-bottom: 200px;
+        }
+        
+        .intro-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+            padding-top: 100px;
+        }
+
+        .intro-content p {
+            text-align: justify;
+        }
+        
+        .intro-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .intro-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+            display: flex;
+        }
+        
+        .intro-image:hover img {
+            transform: scale(1.05);
+        }
+
+    </style>
 
 </head>
 <body>
@@ -30,7 +102,6 @@
                             <li><a href="asesoria.html"><i class="fas fa-lightbulb"></i> Asesoría</a></li>
                             <li><a href="capacitacion.html"><i class="fas fa-graduation-cap"></i> Capacitación</a></li>
                             <li><a href="supervision.html"><i class="fas fa-search"></i> Supervisión</a></li>
-                            <li><a href="coordinacion.html"><i class="fas fa-handshake"></i> Coordinación</a></li>
                         </ul>
                     </li>
                     <li><a href="Nosotros.html"><i class="fas fa-users"></i> Nosotros</a></li>
@@ -62,18 +133,17 @@
     <!-- Menú Móvil -->
     <div class="mobile-menu">
         <ul>
-            <li><a href="#inicio"><i class="fas fa-home"></i> Inicio</a></li>
-            <li><a href="#productos"><i class="fas fa-box"></i> Productos</a></li>
+            <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+            <li><a href="productos.html"><i class="fas fa-box"></i> Productos</a></li>
             <li class="dropdown-mobile">
                 <a href="#" class="dropdown-toggle"><i class="fas fa-briefcase"></i> Servicios <i class="fas fa-chevron-down"></i></a>
                 <ul class="dropdown-menu-mobile">
-                    <li><a href="#asesoria"><i class="fas fa-lightbulb"></i> Asesoría</a></li>
-                    <li><a href="#capacitacion"><i class="fas fa-graduation-cap"></i> Capacitación</a></li>
-                    <li><a href="#supervision"><i class="fas fa-search"></i> Supervisión</a></li>
-                    <li><a href="#coordinacion"><i class="fas fa-handshake"></i> Coordinación</a></li>
+                    <li><a href="asesoria.html"><i class="fas fa-lightbulb"></i> Asesoría</a></li>
+                    <li><a href="capacitacion.html"><i class="fas fa-graduation-cap"></i> Capacitación</a></li>
+                    <li><a href="supervision.html"><i class="fas fa-search"></i> Supervisión</a></li>
                 </ul>
             </li>
-            <li><a href="#nosotros"><i class="fas fa-users"></i> Nosotros</a></li>
+            <li><a href="nosotros.html"><i class="fas fa-users"></i> Nosotros</a></li>
             <li><a href="#contacto" class="mobile-contact"><i class="fas fa-envelope"></i> Contacto</a></li>
         </ul>
     </div>
@@ -82,23 +152,30 @@
         <div class="container-hero">
             <h1>Supervisión Profesional de Proyectos</h1>
             <p>Garantizamos el éxito de sus proyectos hidráulicos con nuestra supervisión experta, asegurando calidad, eficiencia y cumplimiento de normativas en cada etapa del proceso.</p>
-            <div class="hero-buttons">
-                <a href="#contacto" class="btn">Solicitar Supervisión</a>
-                <a href="#proceso" class="btn btn-secondary">Conocer Proceso</a>
-            </div>
         </div>
     </section>
 
-
-
-
-
+   <!-- Services Intro -->
+    <section class="services-intro section">
+        <div class="container">
+            <div class="intro-grid">
+                <div class="intro-content">
+                    <h2>Supervisión Especializada</h2>
+                    <p>En Hidrosistemas, verificamos y supervisamos el cumplimiento de instalaciones y avance contra proyecto integrando la aplicación de las normas y reglamentos nacionales e internacionales vigentes, tanto para la aprobación de los materiales como para las instalaciones a realizar.</p>
+                    <p>Acompañamos a nuestros socios durante la obra para se cumplan los lineamientos y normativas que hagan su proyecto, seguro, funcional y con viabilidad y sustentabilidad para que el usuario final obtenga un valor agregado que solo los profesionales podemos ofrece</p>
+                </div>
+                <div class="intro-image">
+                    <img src="Imagenes/Sub-paginas/Supervision/supervicion-proyectos.jpg" alt="Supervisión de proyectos hidráulicos">
+                </div>
+            </div>
+        </div>
+    </section>
 <!-- Sección: En Dónde Estamos -->
 <section class="contact-section" id="contacto">
     <div class="container">
         <div class="contact-container">
             <div class="contact-header">
-                <h2>En Dónde Estamos</h2>
+                <h2>En dónde estamos</h2>
                 <p>Estamos ubicados estratégicamente para servirte mejor en Mineral de la Reforma, Hidalgo</p>
             </div>
             <div class="contact-content">
