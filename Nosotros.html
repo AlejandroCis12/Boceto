@@ -81,10 +81,6 @@
         </ul>
     </div>
     
-    <!-- Overlay para menú móvil -->
-    <div class="overlay"></div>
-
-
 <!-- Hero Section -->
 <section class="hero">
   <div class="hero-overlay">
@@ -150,6 +146,103 @@
   </div> 
 </section>
 
+<section class="services-section" id="servicios">
+    <div class="container">
+        <h2 class="section-title">Nuestra experiencia</h2>
+        <p>Conoce nuestra experiencia que hemos formado a lo largo de nuestra amplia trayectoria</p>
+        
+        <div class="services-grid">
+            <!-- Servicio 1 -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-city"></i>
+                </div>
+                <h3>Infraestructura Urbana Integral</h3>
+                <p>Diseño y construcción de redes eléctricas, sistemas de agua potable, alcantarillado y proyectos de urbanización para ciudades sostenibles.</p>
+            </div>
+            
+            <!-- Servicio 2 -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-home"></i>
+                </div>
+                <h3>Viviendas Residenciales y de Interés Social</h3>
+                <p>Desarrollo de edificios departamentales y casas habitación en zonas residenciales con enfoque comunitario y accesible.</p>
+            </div>
+            
+            <!-- Servicio 3 -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-building"></i>
+                </div>
+                <h3>Edificios Corporativos y Hoteles</h3>
+                <p>Proyectos llave en mano para oficinas corporativas y hoteles de alta gama, integrando funcionalidad y diseño innovador.</p>
+            </div>
+            
+            <!-- Servicio 4 -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <h3>Centros Comerciales Modernos</h3>
+                <p>Diseño y construcción de espacios comerciales optimizados para experiencia de usuario y flujo eficiente de visitantes.</p>
+            </div>
+            
+            <!-- Servicio 5 -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-parking"></i>
+                </div>
+                <h3>Estacionamientos Inteligentes</h3>
+                <p>Soluciones automatizadas y multifuncionales para áreas urbanas de alto tráfico con gestión tecnológica avanzada.</p>
+            </div>
+            
+            <!-- Servicio 6 -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-hospital"></i>
+                </div>
+                <h3>Hospitales y Centros Médicos</h3>
+                <p>Infraestructura especializada con estándares de bioseguridad y tecnología médica integrada para atención eficiente.</p>
+            </div>
+            
+            <!-- Servicio 7 -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-industry"></i>
+                </div>
+                <h3>Áreas Industriales Especializadas</h3>
+                <p>Parques industriales y naves con infraestructura robusta para operaciones logísticas y producción exigente.</p>
+            </div>
+            
+            <!-- Servicio 8 -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-flask"></i>
+                </div>
+                <h3>Laboratorios de Alta Especialización</h3>
+                <p>Instalaciones técnicas con requisitos ambientales y de seguridad certificados para investigación avanzada.</p>
+            </div>
+            
+            <!-- Servicio 9 -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <h3>Espacios Corporativos Modernos</h3>
+                <p>Diseño de oficinas adaptables con enfoque en productividad, bienestar y tecnología integrada para empresas innovadoras.</p>
+            </div>
+        </div>
+    </div>
+</section>
+        
+        
+    <section class="cta-section">
+        <h2>¿Te interesa trabajar con nosotros?</h2>
+        <p>Comunícate y pide informes, estamos para servirte y brindarte un buen servicio.</p>
+        <a href="#contacto" class="btn cta-btn">Solicitar Cotización</a>
+    </section>
+    </div>
 <!-- Sección: En Dónde Estamos -->
 <section class="contact-section" id="contacto">
     <div class="container">
@@ -259,5 +352,40 @@
         </div>
     </footer>
   <script src="app.js"></script>
+    <!-- Scripts para animaciones -->
+    <script>
+        // Animación para las tarjetas y elementos al aparecer
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.service-card, .benefit-item, .step');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            cards.forEach(card => {
+                card.style.opacity = 0;
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(card);
+            });
+            
+            // Animación para el hero al cargar
+            const hero = document.querySelector('.hero-coordinacion');
+            hero.style.opacity = 0;
+            hero.style.transform = 'translateY(20px)';
+            hero.style.transition = 'opacity 1s ease, transform 1s ease';
+            
+            setTimeout(() => {
+                hero.style.opacity = 1;
+                hero.style.transform = 'translateY(0)';
+            }, 200);
+        });
+    </script>
 </body>
 </html>
