@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuestros Productos - Hidrosistemas de Hidalgo</title>
+    <title>Productos | Hidrosistemas</title>
 
     <!-- Fuentes de Google (CORRECTAS y funcionales) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,10 +15,144 @@
 
     <!-- Estilos personalizados -->
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="styles-prod.css">
     <link rel="stylesheet" href="Mapa.css">
     <!-- Font Awesome para íconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+              /* Product Section */
+        
+        .product-text {
+            max-width: 800px;
+            margin: 0 auto 50px;
+            text-align: center;
+        }
+        
+        .product-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .product-text {
+            max-width: 800px;
+            margin: 0 auto 50px;
+            text-align: center;
+        }
+        
+        .product-text h1 {
+            color: var(--primary);
+        }
+        
+
+
+        .catalog-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            width: 100%;
+            max-width: 350px;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .catalog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .catalog-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .catalog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .catalog-card:hover .catalog-image img {
+            transform: scale(1.05);
+        }
+        
+        .catalog-content {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .catalog-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px;
+        }
+        
+        .catalog-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .catalog-content p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+        
+        .catalog-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 25px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            min-width: 160px;
+        }
+        
+        .btn i {
+            margin-right: 8px;
+        }
+        
+        .btn-download {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 86, 179, 0.3);
+        }
+        
+        .btn-download:hover {
+            background: #004494;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 86, 179, 0.4);
+        }
+        
+        .btn-view {
+            background: var(--accent);
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 168, 232, 0.3);
+        }
+        
+        .btn-view:hover {
+            background: #0098d0;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 168, 232, 0.4);
+        }    
+
+
+        
+    </style>
 </head>
 <body>
 
@@ -90,109 +224,34 @@
     <!-- Overlay para menú móvil -->
     <div class="overlay"></div>
 
-  <!-- Sección Productos -->
-  <div class="container-prod" id="container-Productos">
-    <div class="product-text">
-    <h1>Nuestros Productos</h1>
-    <p>En Hidrosistemas de Hidalgo, ofrecemos una amplia gama de productos de alta calidad para satisfacer todas tus necesidades en sistemas hidráulicos y de plomería. Desde tuberías y accesorios hasta soluciones especializadas, contamos con todo lo que necesitas para tus proyectos.</p>
-    </div>
-    <!-- Secciones de productos (5 veces) -->
-    <div class="image-section">
-      <div class="image-card">
-        <img src="Imagenes/Sub-paginas/Productos/tubocpvc.jpeg" alt="Tubo para agua y CPVC">
-        <h3>Tubo para agua y CPVC</h3>
-        <button class="btn">Ver ficha técnica</button>
-      </div>
-      <div class="image-card">
-        <img src="Imagenes/Sub-paginas/Productos/PEAD.jpg" alt="Tubería corrugada PAD">
-        <h3>Tubería corrugada PAD</h3>
-        <button class="btn">Ver ficha técnica</button>
-      </div>
-      <div class="image-card">
-        <img src="Imagenes/Sub-paginas/Productos/c80.jpg" alt="Tubería gris C-80">
-        <h3>Tubería gris C-80</h3>
-        <button class="btn">Ver ficha técnica</button>
-      </div>
-    </div>
+      <div class="container-prod" id="container-Productos">
+        <div class="product-text">
+            <h1>Nuestros Productos</h1>
+            <p>En Hidrosistemas de Hidalgo, ofrecemos una amplia gama de productos de alta calidad para satisfacer todas tus necesidades en sistemas hidráulicos y de plomería. Desde tuberías y accesorios hasta soluciones especializadas, contamos con todo lo que necesitas para tus proyectos.</p>
+        </div>
 
-    <div class="image-section">
-      <div class="image-card">
-        <img src="Imagenes/Sub-paginas/Productos/tpvc.jpeg" alt="Tubería de PVC">
-        <h3>Tubería de PVC</h3>
-        <button class="btn">Ver ficha técnica</button>
-      </div>
-      <div class="image-card">
-        <img src="Imagenes/Sub-paginas/Productos/tuboppr.jpeg" alt="Tuberia verde PPR">
-        <h3>Tuberia verde PPR</h3>
-        <button class="btn">Ver ficha técnica</button>
-      </div>
-      <div class="image-card">
-        <img src="Imagenes/Sub-paginas/Productos/tnaranjae.jpg" alt="Tubería naranja eléctrica">
-        <h3>Tubería naranja eléctrica</h3>
-        <button class="btn">Ver ficha técnica</button>
-      </div>
-    </div>
+        <!-- Nuevo diseño para catálogo -->
+        <div class="catalog-section">
+            <div class="catalog-card">
+                <div class="catalog-image">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Catálogo Hidrosistemas">
+                </div>
+                <div class="catalog-content">
+                    <h3>Catálogo 2023</h3>
+                    <p>Nuestro catálogo completo con todos los productos disponibles y sus especificaciones técnicas.</p>
+                    <div class="catalog-actions">
+                        <a href="Catalogo/CATALOGO_HIDROSISTEMAS_2021.pdf" download="CATALOGO_HIDROSISTEMAS_2023.pdf" class="btn btn-download">
+                            <i class="fas fa-download"></i> Descargar PDF
+                        </a>
+                        <a href="Catalogo/CATALOGO_HIDROSISTEMAS_2021.pdf" class="btn btn-view">
+                            <i class="fas fa-eye"></i> Ver Online
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <div class="image-section">
-      <div class="image-card">
-        <img src="Imagenes/Sub-paginas/Productos/tgalvanizado.jpeg" alt="Tubos galvanizados">
-        <h3>Tubos galvanizados</h3>
-        <button class="btn">Ver ficha técnica</button>
-      </div>
-      <div class="image-card">
-        <img src="Imagenes/Sub-paginas/Productos/tpolitileno.jpeg" alt="Tubo de polietileno">
-        <h3>Tubo de polietileno</h3>
-        <button class="btn">Ver ficha técnica</button>
-      </div>
-      <div class="image-card">
-        <img src="Imagenes/Sub-paginas/Productos/tinaco.jpg" alt="Tanques de almacenamiento de agua">
-        <h3>Tanques de almacenamiento de agua</h3>
-        <button class="btn">Ver ficha técnica</button>
-      </div>
-    </div>
 
-    <div class="image-section">
-      <div class="image-card">
-        <img src="Imagenes/Sub-paginas/Productos/valvulas.jpg" alt="Válvulas y bombas">
-        <h3>Válvulas y bombas</h3>
-        <button class="btn">Ver ficha técnica</button>
-      </div>
-      <div class="image-card">
-        <img src="Imagenes/Sub-paginas/Productos/brocal.jpeg" alt="Rejillas y Brocales">
-        <h3>Rejillas y Brocales</h3>
-        <button class="btn">Ver ficha técnica</button>
-      </div>
-      <div class="image-card">
-        <img src="Imagenes/Sub-paginas/Productos/labavos.jpg" alt="Lavabos y fregaderos">
-        <h3>Lavabos y fregaderos</h3>
-        <button class="btn">Ver ficha técnica</button>
-      </div>
-    </div>
-
-    <div class="image-section">
-      <div class="image-card">
-        <img src="Imagenes/Sub-paginas/Productos/biodigestores.jpg" alt="Biodigestores">
-        <h3>Biodigestores</h3>
-        <button class="btn">Ver ficha técnica</button>
-      </div>
-      <div class="image-card">
-        <img src="Imagenes/Sub-paginas/Productos/riego.jpg" alt="Riego residencial, urbano y parcelario">
-        <h3>Riego residencial, urbano y parcelario</h3>
-        <button class="btn">Ver ficha técnica</button>
-      </div>
-      <div class="image-card">
-        <img src="Imagenes/Sub-paginas/Productos/proyecto.jpg" alt="Tu proyecto de instalaciones">
-        <h3>Tu proyecto de instalaciones</h3>
-        <button class="btn">Ver ficha técnica</button>
-      </div>
-    </div>
-
-    <!-- Botones finales -->
-    <div class="button-section">
-      <a href="Catalogo/CATALOGO_HIDROSISTEMAS_2021.pdf" download="CATALOGO_HIDROSISTEMAS_2021.pdf"><button class="btn btn-large">Descargar Catálogo</button></a>
-      <a href="Catalogo/CATALOGO_HIDROSISTEMAS_2021.pdf"><button class="btn btn-large">Ver Catálogo</button></a>
-    </div>
-  </div>
 <!-- Sección: En Dónde Estamos -->
 <section class="contact-section" id="contacto">
     <div class="container">
