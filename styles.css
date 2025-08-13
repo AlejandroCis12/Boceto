@@ -31,6 +31,35 @@ body {
   --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+h1, h2, h3 {
+    color: #0056b3;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.sub-head h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 15px;
+    /* Degradado en el texto */
+    background: linear-gradient(to right, #0056b3, #00a8e8);
+    background-clip: text;  /* Recorta el fondo con el texto */
+    -webkit-text-fill-color: transparent; /* Hace transparente el relleno del texto */
+}
+
+.sub-head h1:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #0056b3, #00a8e8);
+    border-radius: 2px;
+        }
+
 .container {
   width: 90%;
   max-width: 1500px;
@@ -196,7 +225,7 @@ header {
   color: black;
   padding: 10px 20px;
   display: flex;
-  align-items: center;
+  align-items: left;
   gap: 10px;
   font-size: 14px;
   transition: var(--transition);
@@ -210,7 +239,7 @@ header {
 
 .dropdown-menu i {
   width: 18px;
-  text-align: center;
+  text-align: left;
   color: var(--white);
 }
 
@@ -331,7 +360,7 @@ header {
   color: rgba(255, 255, 255, 0.8);
   padding: 8px 0;
   display: flex;
-  align-items: center;
+  align-items: left;
 }
 
 .dropdown-menu-mobile li a:hover {
@@ -341,7 +370,7 @@ header {
 .dropdown-toggle {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: left;
   width: 100%;
 }
 
@@ -701,6 +730,16 @@ header {
 }
 .container-Productos {
   padding-top: 20px;
+  max-width: 1200px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.container-Productos h2{
+  padding-top: 20px;
+  text-align: left;
+  max-width: 1300px;
+  padding-left: 50px;
 }
 
 .products {
@@ -793,8 +832,7 @@ header {
 .container-marcas h2 {
   margin-bottom: 30px;
   font-size: 28px;
-  color: #444;
-  font-family: 'Nata Sans', sans-serif;
+  color:  #005c8f;
 }
 
 .slider-marcas {

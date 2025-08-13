@@ -77,6 +77,24 @@ document.addEventListener('DOMContentLoaded', function () {
   const dotsContainer = document.querySelector(".dots");
   const prevBtn = document.querySelector(".prev");
   const nextBtn = document.querySelector(".next");
+const cards = document.querySelectorAll('.container-Productos, container-nosotros, .container-marcas, .contact-section');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+      if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+      }
+  });
+}, { threshold: 0.1 });
+
+cards.forEach(card => {
+  card.style.opacity = 0;
+  card.style.transform = 'translateY(20px)';
+  card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+  observer.observe(card);
+});
 
   // ✅ Verificar si el slider existe
   if (!slider || slides.length === 0 || !dotsContainer) {
@@ -258,30 +276,5 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-// =======================
-// 4. MAPA DE GOOGLE (si existe el contenedor)
-// =======================
-function initMap() {
-  const mapElement = document.getElementById("map");
-  if (!mapElement) {
-    // console.log('Mapa no encontrado en esta página.');
-    return;
-  }
-
-  const map = new google.maps.Map(mapElement, {
-    center: { lat: 20.0583, lng: -98.2522 },
-    zoom: 15,
-  });
-
-  new google.maps.Marker({
-    position: { lat: 20.0583, lng: -98.2522 },
-    map: map,
-    title: "Hidrosistemas de Hidalgo",
-  });
-}
-
-if (condition) {
-  
-}
 
 
