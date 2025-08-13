@@ -276,5 +276,41 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+//boton para subir
+
+document.addEventListener('DOMContentLoaded', function() {
+    const btnScrollTop = document.querySelector('.btn-scroll-top');
+    const scrollThreshold = 300;
+    
+    // Mostrar/ocultar botón con animación
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > scrollThreshold) {
+            btnScrollTop.classList.add('visible');
+        } else {
+            btnScrollTop.classList.remove('visible');
+        }
+    });
+    
+    // Scroll suave al hacer clic
+    btnScrollTop.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
+    // Efecto de retroalimentación táctil
+    btnScrollTop.addEventListener('mousedown', function() {
+        this.style.transform = 'translateY(1px) scale(0.98)';
+    });
+    
+    btnScrollTop.addEventListener('mouseup', function() {
+        this.style.transform = 'translateY(-3px) scale(1.05)';
+    });
+    
+    btnScrollTop.addEventListener('mouseleave', function() {
+        this.style.transform = '';
+    });
+});
 
 
