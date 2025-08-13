@@ -57,22 +57,10 @@
         <p>¡Tu mejor opción!</p>
       </div>
     </div>
-    <title>Capacitación | Hidrosistemas</title>
+    <title>Capacitación</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Estilos generales */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: #f8f9fa;
-            color: #333;
-            line-height: 1.6;
-        }
         
         .cap-container {
             max-width: 1200px;
@@ -135,14 +123,14 @@
         
         .btn {
             display: inline-block;
-            background: #ff6b00;
+            background: #ff0000;
             color: white;
             padding: 12px 30px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
-            border: 2px solid #ff6b00;
+            border: 2px solid #ff0000;
             text-transform: uppercase;
             font-size: 0.9rem;
             letter-spacing: 1px;
@@ -154,6 +142,69 @@
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
+
+        .btn-fechas {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 12px;
+            padding: 16px 32px;
+            background: #fbbc05;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-fechas:hover {
+            background: #fbbc05;
+            transform: translateY(-3px);
+        }
+        
+        .btn-fechas:active {
+            transform: translateY(1px);
+        }
+        
+        .btn-fechas i {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .btn-fechas:hover i {
+            transform: scale(1.1);
+        }
+        
+        /* Efecto de onda al hacer clic */
+        .btn-fechas::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 70%);
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+        
+        .btn-fechas:active::after {
+            opacity: 1;
+            transform: scale(1.5);
+        }
+
+        .container-fechas {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+           }
         
         /* Contenido Principal */
         .main-content {
@@ -303,15 +354,15 @@
         }
         
         .cta-btn {
-            background: white;
-            color: #0056b3;
+            background: rgb(255, 3, 3);
+            color: #ffffff;
             font-weight: 700;
         }
         
         .cta-btn:hover {
-            background: #ff6b00;
+            background: #fb1c1cd7;
             color: white;
-            border-color: #ff6b00;
+            border-color: #ff0000;
         }
         
         /* Responsive */
@@ -368,8 +419,13 @@
         </section>
         
         <section class="services-section">
+            <div class="container-fechas">
             <h2>Cursos Disponibles</h2>
-            
+            <button class="btn-fechas">
+                <i class="fas fa-calendar-alt"></i>
+                    Ver fechas próximas
+                </button>
+            </div>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="card-icon">
@@ -386,7 +442,7 @@
                         <i class="fas fa-pump-soap"></i>
                     </div>
                     <div class="card-content">
-                        <h3>Bombas Centrífugas Verticales</h3>
+                        <h3>Bombas Centrífugas</h3>
                         <p>Mantenimiento especializado para bombas tipo turbina. Procedimientos de desmontaje, reparación y reinstalación.</p>
                     </div>
                 </div>
@@ -396,7 +452,7 @@
                         <i class="fas fa-wrench"></i>
                     </div>
                     <div class="card-content">
-                        <h3>Equipos de Bombeo</h3>
+                        <h3>Soporteria</h3>
                         <p>Mantenimiento integral de equipos de bombeo. Técnicas de diagnóstico y reparación avanzada.</p>
                     </div>
                 </div>
@@ -449,7 +505,7 @@
                     <div class="benefit-icon">
                         <i class="fas fa-certificate"></i>
                     </div>
-                    <h3>Certificación Oficial</h3>
+                    <h3>Certificación</h3>
                     <p>Diplomas con validez oficial reconocidos por la industria</p>
                 </div>
                 
