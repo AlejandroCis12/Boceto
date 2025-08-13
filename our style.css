@@ -179,6 +179,7 @@
   top: 0;
   transform: translateY(-1px);
 }
+
 .btn-primary {
   background-color: rgb(202, 12, 12);
   color: #fff;
@@ -304,14 +305,4 @@
     background: var(--accent);
     color: var(--white);
     border-color: var(--accent);
-}
-
-/* ################################################################################# */
-/* Sección de Información de Contacto */
-:root {
-  --secondary: #f26522;
-  --light: #f8f9fa;
-  --dark: #212529;
-  --gray: #6c757d;
-  --light-blue: #e3f2fd;
 }
