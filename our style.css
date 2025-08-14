@@ -49,6 +49,14 @@
   background-color: #f9f9f9;
 }
 
+.section-title {
+  grid-column: 1 / -1;
+  color: #0056b3;
+  font-size: 2rem;
+  text-align: left;
+  padding-bottom: 1rem;
+}
+
 .section-title p{
   grid-column: 1 / -1;
   color: #000000;
