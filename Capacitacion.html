@@ -11,55 +11,9 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="Mapa.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
-    <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <div class="logo">
-            </div>
-            
-            <!-- Menú de escritorio -->
-            <nav class="desktop-nav">
-                <ul>
-                    <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
-                    <li><a href="productos.html"><i class="fas fa-box"></i> Productos</a></li>
-                    <li class="dropdown">
-                        <a href="#servicios"><i class="fas fa-briefcase"></i> Servicios <i class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="asesoria.html"><i class="fas fa-lightbulb"></i> Asesoría</a></li>
-                            <li><a href="capacitacion.html"><i class="fas fa-graduation-cap"></i> Capacitación</a></li>
-                            <li><a href="supervision.html"><i class="fas fa-search"></i> Supervisión</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="Nosotros.html"><i class="fas fa-users"></i> Nosotros</a></li>
-                    <li><a href="#contacto" class="nav-contact"><i class="fas fa-envelope"></i> Contacto</a></li>
-                </ul>
-            </nav>
-            
-            <!-- Botón menú móvil -->
-            <button class="menu-toggle" aria-label="Menú">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-        </div>
-    </header>
-     <div class="container-encabezado">
-      <!-- Logo de la empresa -->
-      <div class="logo">
-        <img src="Imagenes/logo_web_120.png" alt="Logo de Hidrosistemas">
-      </div>
-      <div class="slogan">
-            <div class="sub-head">
-                <h1>Hidrosistemas de Hidalgo</h1>
-            </div> 
-        <p>¡Tu mejor opción!</p>
-      </div>
-    </div>
-    <title>Capacitación</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
+  <title>Capacitación</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
         /* Estilos generales */
         
         .cap-container {
@@ -388,18 +342,80 @@
             }
             
         }
-    </style>
+  </style>
 </head>
+
 <body>
-    <!-- Contenido de la página -->
-    <section class="hero">
-        <div class="cap-container">
-            <h1>Capacitación Especializada</h1>
-            <p>Programas de formación profesional para el mantenimiento, operación y optimización de sistemas hidráulicos y de bombeo</p>
-            <a href="#contacto" class="btn">Solicitar Informes</a>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+            </div>
+            
+            <!-- Menú de escritorio -->
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li><a href="#productos"><i class="fas fa-box"></i> Productos</a></li>
+                    <li class="dropdown">
+                        <a href="#servicios"><i class="fas fa-briefcase"></i> Servicios <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="asesoria.html"><i class="fas fa-lightbulb"></i> Asesoría</a></li>
+                            <li><a href="capacitacion.html"><i class="fas fa-graduation-cap"></i> Capacitación</a></li>
+                            <li><a href="supervision.html"><i class="fas fa-search"></i> Supervisión</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#nosotros"><i class="fas fa-users"></i> Nosotros</a></li>
+                    <li><a href="#contacto" class="nav-contact"><i class="fas fa-envelope"></i> Contacto</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Botón menú móvil -->
+             <button class="menu-toggle" aria-label="Menú" style="margin-left: auto;">
+                 <span class="bar"></span>
+                 <span class="bar"></span>
+                 <span class="bar"></span>
+            </button>
+
         </div>
-    </section>
+    </header>
+
+
+    <div class="container-encabezado">
+        <!-- Logo de la empresa -->
+        <div class="logo">
+        <img src="Imagenes/logo_web_120.png" alt="Logo de Hidrosistemas">
+        </div>
+        <div class="slogan">
+            <div class="sub-head">
+                <h1>Hidrosistemas de Hidalgo</h1>
+            </div> 
+        <p>¡Tu mejor opción!</p>
+        </div>
+    </div>
     
+    <!-- Menú Móvil -->
+    <div class="mobile-menu">
+        <button class="close-menu" aria-label="Cerrar menú">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+            <li><a href="productos.html"><i class="fas fa-box"></i> Productos</a></li>
+            <li class="dropdown-mobile">
+                <a href="#" class="dropdown-toggle"><i class="fas fa-briefcase"></i> Servicios <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu-mobile">
+                    <li><a href="asesoria.html"><i class="fas fa-lightbulb"></i> Asesoría</a></li>
+                    <li><a href="Capacitacion.html"><i class="fas fa-graduation-cap"></i> Capacitación</a></li>
+                    <li><a href="supervision.html"><i class="fas fa-search"></i> Supervisión</a></li>
+                </ul>
+            </li>
+            <li><a href="Nosotros.html"><i class="fas fa-users"></i> Nosotros</a></li>
+            <li><a href="#contacto" class="mobile-contact"><i class="fas fa-envelope"></i> Contacto</a></li>
+        </ul>
+    </div>
+
     <div class="cap-container">
         <section class="main-content">
             <h2>Nuestros Servicios de Capacitación</h2>
