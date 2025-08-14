@@ -82,6 +82,29 @@
             transform: scale(1.05);
         }
 
+        @media(max-width:800px){
+            .intro-grid {
+                grid-template-columns: 1fr; /* Cambia a una sola columna */
+            }
+            
+            .intro-content {
+                padding-bottom: 50px; /* Reduce el padding para móviles */
+                padding-top: 50px; /* Ajusta el padding superior para móviles */
+            }
+            
+            .intro-content h2 {
+                padding-top: 0; /* Elimina el padding superior del h2 en móviles */
+                font-size: 2rem; /* Opcional: reduce el tamaño de fuente para móviles */
+            }
+            
+            .intro-image {
+                order: 1; /* Opcional: coloca la imagen después del texto */
+                margin-top: 20px; /* Añade espacio entre el texto y la imagen */
+            }
+
+
+        }
+
     </style>
 
 </head>
