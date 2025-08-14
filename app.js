@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
       menuToggle.addEventListener('click', function() {
           this.classList.toggle('active');
           mobileMenu.classList.toggle('active');
-          overlay.classList.toggle('active');
           document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
       });
   }
@@ -26,6 +25,15 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   }
   
+    const closeMenu = document.querySelector('.close-menu');
+    if (closeMenu) {
+        closeMenu.addEventListener('click', function() {
+            menuToggle.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    }
+    
   // Toggle submenú móvil
   if (dropdownToggle && dropdownMobile) {
       dropdownToggle.addEventListener('click', function(e) {
