@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidrosistemas - Versión Responsive</title>
+    <style>
+        /* Estilos base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f7fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Introduction Styles */
+        .introduction {
+            padding: 2rem 0;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-title {
+            color: #0056b3;
+            font-size: 2rem;
+            text-align: left;
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: #0056b3;
+        }
+        
+        .intro-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            padding: 0 0;     /* Espacio mínimo desde los bordes */
+            margin: 0;           /* Sin margen lateral extra */
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .intro-content p {
+            text-align: justify;
+            line-height: 1.8;
+            margin: 0;
+            font-size: 1.05rem;
+            color: #444;
+        }
+        
+        .images-container {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            align-items: start;
+        }
+        
+        .images-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .images-container img:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Estilos para dispositivos móviles */
+        @media (max-width: 768px) {
+            .intro-content {
+                /* Cambiamos a una sola columna */
+                grid-template-columns: 1fr;
+            }
+            
+            .images-container {
+                /* Cambiamos a una sola columna */
+                grid-template-columns: 1fr;
+                /* Añadimos un margen superior para separar del texto */
+                margin-top: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+                text-align: center;
+            }
+            
+            .section-title::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .intro-content p {
+                font-size: 1rem;
+            }
+        }
+        
+        /* Estilos para pantallas muy pequeñas */
+        @media (max-width: 480px) {
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+            
+            .introduction {
+                padding: 1.5rem 0;
+            }
+        }
+        
+        /* Encabezado para demostración */
+        header {
+            background: linear-gradient(135deg, #0056b3, #003d82);
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* Indicador de modo responsive */
+        .device-indicator {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: #0056b3;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            z-index: 1000;
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .device-indicator {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="device-indicator">Modo Móvil</div>
+    
+    <header>
+        <div class="container">
+            <h1>Hidrosistemas</h1>
+            <p>Soluciones en tuberías y sistemas de conducción</p>
+        </div>
+    </header>
+    
+    <section class="introduction">
+        <div class="container">
+            <div class="intro-content">
+                <div>
+                    <h2 class="section-title">Bienvenidos a Hidrosistemas</h2>
+                    <p>
+                        En Hidrosistemas se fabrica, ensambla, instala y se comercializan tuberías, conexiones y accesorios de materiales de la más alta calidad y eficiencia técnica en sistemas de agua potable, alcantarillado, riego, plantas de tratamiento de agua y otras aplicaciones, así como para la conducción de cables en redes eléctricas y telecomunicaciones. En la construcción moderna es de primordial importancia se satisfagan factores de seguridad, durabilidad y economía; con materiales utilizados en instalaciones de redes sanitarias, de agua potable y alcantarillado para unidades habitacionales y conjuntos urbanos, en la conducción de fluidos corrosivos y la protección del cableado de líneas eléctricas, telefónicas o de fibra óptica.
+                    </p>
+                </div>
+                <div class="images-container">
+                    <img src="https://images.unsplash.com/photo-1614294149019-78e8561c7b1e?auto=format&fit=crop&w=600&q=80" alt="Tuberías industriales">
+                    <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?auto=format&fit=crop&w=600&q=80" alt="Instalación de sistemas">
+                    <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=600&q=80" alt="Proceso de fabricación">
+                    <img src="https://images.unsplash.com/photo-1581092921461-7bcb0e3a43f5?auto=format&fit=crop&w=600&q=80" alt="Sistemas de conducción">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="container" style="margin-top: 2rem; text-align: center; padding: 20px; background-color: #e9f0fa; border-radius: 8px;">
+        <h3>Instrucciones de Uso</h3>
+        <p>Redimensiona la ventana de tu navegador para ver cómo el diseño se adapta a diferentes tamaños de pantalla.</p>
+        <p>En dispositivos móviles (menos de 768px), el texto ocupa una columna completa y las imágenes se muestran debajo, una por fila.</p>
+    </div>
+</body>
+</html>
