@@ -286,6 +286,8 @@ header {
   transition: var(--transition);
 }
 
+
+
 .menu-toggle.active .bar:nth-child(1) {
   transform: rotate(-45deg) translate(-5px, 6px);
 }
@@ -296,19 +298,34 @@ header {
   transform: rotate(45deg) translate(-5px, -6px);
 }
 
+/* Botón para cerrar el menú móvil */
+.close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 5px;
+}
+
 /* Menú móvil */
 .mobile-menu {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 280px;
-  height: 100vh;
-  background-color: var(--primary);
-  padding: 80px 30px 30px;
-  transition: var(--transition);
-  z-index: 1000;
-  overflow-y: auto;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background-color: var(--primary);
+    padding: 60px 30px 30px; /* Más espacio arriba para el botón cerrar */
+    transition: var(--transition);
+    z-index: 1000;
+    overflow-y: auto;
 }
+
 
 .mobile-menu.active {
   right: 0;
@@ -659,6 +676,9 @@ header {
     background-color: #c0392b; /* Rojo más oscuro al hover */
 }
 
+.read-more-movil {
+  display: none;
+}
 /* Productos */
 .section-title{
   font-size: 24px;
@@ -997,7 +1017,47 @@ footer a {
 
 
 /* Responsive: en pantallas pequeñas, apila las columnas */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
+    .slider-container {
+        height: 50vh;
+        min-height: 350px;
+    }
+    
+    .slide-content {
+        width: 90%;
+        padding: 20px;
+        right: 5%;
+        left: 5%;
+    }
+    
+    .container-nosotros {
+        padding: 30px 20px;
+    }
+    
+    .content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .product-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .product-card {
+        width: 90%;
+        max-width: 300px;
+    }
+    
+    .container-marcas {
+        padding: 20px 10px;
+    }
+    
+    .slide-img-marcas {
+        width: 90px;
+        height: 60px;
+    }
+
   .overlay h1 {
     font-size: 20px;
   }
@@ -1018,6 +1078,9 @@ footer a {
     gap: 15px;
   }
 
+  .desktop-nav{
+    display: none;
+  }
   .contact-info {
     order: 1;
     margin-bottom: 10px;
@@ -1044,59 +1107,135 @@ footer a {
   .logo img {
     height: 90px;
   }
-  
-  .menu-toggle {
-    display: flex;
-  }
 
-  .nav-menu {
-    display: none;
-  }
+      .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+    }
+    
+    .desktop-nav {
+        display: none;
+    }
 
-  .container {
-    flex-direction: column;
-  }
+    .read-more{
+      display: none;
+    }
 
-  /* Slider*/
-  .slider-container {
-    height: 350px;
-    border-radius: 15px;
-  }
+    .read-more-movil a{
+      text-decoration: none
+    }
 
-  .overlay {
-    width: 80%;
-    right: 20px;
-    padding: 20px;
-    top: 120px;
-    font-size: 0.9rem;
-  }
+    .read-more-movil {
+    display: inline-block;
+    background-color: #e74c3c; /* Rojo oscuro */
+    color: white;
+    border: none;
+    padding: 20px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 6px;
+    margin-top: 25px;
+}
 
-  .overlay h1 {
-    font-size: 1.6rem;
-  }
+.container-Productos h2 {
+    padding-top: 20px;
+    text-align: center;
+    max-width: 1500px;
+    padding-left: 0;
+}
 
-  .overlay p {
-    font-size: 0.9rem;
-  }
+}
 
-  .overlay button {
-    padding: 10px 20px;
-    font-size: 0.9rem;
-  }
-
-  .dots {
-    bottom: 15px;
-  }
-  .section {
+/* Barras del menú hamburguesa */
+.menu-toggle .bar {
+    height: 3px;
     width: 100%;
-  }
+    background-color: var(--white);
+    border-radius: 2px;
+    transition: var(--transition);
+}
 
-  .container-contact {
-    padding: 15px;
-  }
+/* Animación cuando está activo */
+.menu-toggle.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Menú móvil - aparece desde la derecha */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background-color: var(--primary);
+    padding: 60px 30px 30px;
+    transition: var(--transition);
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.mobile-menu.active {
+    right: 0;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Botón para cerrar */
+.close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1001;
 }
 
 @media (max-width: 480px) {
+
+    .slider-container {
+        height: 40vh;
+        min-height: 300px;
+    }
+    
+    .slide-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .slide-content p {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+    }
+    
+    .slider-controls {
+        bottom: 15px;
+    }
+    
+    .container-encabezado {
+        flex-direction: column;
+        padding: 20px 0;
+    }
+    
+    .logo img {
+        height: 80px;
+        padding-top: 20px;
+    }
+    
+    .slogan {
+        padding-top: 20px;
+    }
+    
   .contact-text p {
     font-size: 18px;
   }
@@ -1137,25 +1276,12 @@ footer a {
     width: 12px;
     height: 12px;
   }
-/* Responsive */
-@media (max-width: 768px) {
-  .menu-toggle {
-      display: flex;
-  }
-  
-  .desktop-nav {
-      display: none;
-  }
 }
 
 @media (max-width: 576px) {
-  .btn {
-      padding: 10px 20px;
-      font-size: 14px;
+  .container-nosotros h1,
+  .container-nosotros p{
+    font-size: 6vw;
   }
-  
-  .mobile-menu {
-      width: 85%;
-  }
-}
+
 }
