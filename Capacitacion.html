@@ -342,6 +342,41 @@
             }
             
         }
+
+        @media (max-width: 500px) {
+            .btn-fechas {
+                padding: 8px 16px;
+                font-size: 14px;
+                border-radius: 4px;
+                width: 90%; 
+                max-width: 280px; 
+                margin-left: 30px;
+            }
+        }
+  
+
+/* Ajuste extra para pantallas muy pequeñas */
+        @media (max-width: 360px) {
+            .btn-fechas {
+                font-size: 10px;
+                padding: 7px 14px;
+           }
+            .btn-fechas i {
+                font-size: 1.2rem;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
   </style>
 </head>
 
@@ -645,6 +680,7 @@
                             <div class="contact-text">
                                 <h4>Horario</h4>
                                 <p>Lun-Vie: 9:00 AM - 6:00 PM</p>
+                                <p>Sábado: 9:00 AM - 1:00 PM</p>
                             </div>
                         </div>
                     </div>
