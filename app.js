@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Elementos del DOM
   const menuToggle = document.querySelector('.menu-toggle');
   const mobileMenu = document.querySelector('.mobile-menu');
+  const mobileContact = document.querySelector('.mobile-contact');
   const overlay = document.querySelector('.overlay');
   const dropdownToggle = document.querySelector('.dropdown-toggle');
   const dropdownMobile = document.querySelector('.dropdown-mobile');
@@ -12,16 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
           this.classList.toggle('active');
           mobileMenu.classList.toggle('active');
           document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
-      });
-  }
-  
-  // Cerrar menú al hacer clic en overlay
-  if (overlay) {
-      overlay.addEventListener('click', function() {
-          menuToggle.classList.remove('active');
-          mobileMenu.classList.remove('active');
-          overlay.classList.remove('active');
-          document.body.style.overflow = '';
       });
   }
   
@@ -44,16 +35,16 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Cerrar menú al hacer clic en un enlace
   document.querySelectorAll('.mobile-menu a').forEach(link => {
-      if (!link.classList.contains('dropdown-toggle') && !link.classList.contains('mobile-contact')) {
+      if (!link.classList.contains('dropdown-toggle')) {
           link.addEventListener('click', function() {
               menuToggle.classList.remove('active');
               mobileMenu.classList.remove('active');
-              overlay.classList.remove('active');
+              mobileContact.classList.remove('active');
               document.body.style.overflow = '';
           });
       }
   });
-  
+          
   // Scroll suave para todos los enlaces
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
