@@ -29,7 +29,16 @@ body {
   --transition: all 0.3s ease;
   --border-radius: 8px;
   --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
+  --infraestructura: #3498db; /* Azul para infraestructura */
+  --viviendas: #e74c3c; /* Rojo terroso para viviendas */
+  --edificios: #f39c12; /* Amarillo dorado para edificios */
+  --comercial: #9b59b6; /* Púrpura para centros comerciales */
+  --estacionamientos: #34495e; /* Azul oscuro para estacionamientos */
+  --hospitales: #e67e22; /* Naranja para hospitales */
+  --industriales: #16a085; /* Verde industrial */
+  --laboratorios: #27ae60; /* Verde científico */
+  --corporativos: #2980b9; /* Azul corporativo */
+  }
 
 h1, h2, h3 {
     color: #0056b3;
