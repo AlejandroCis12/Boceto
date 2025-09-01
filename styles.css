@@ -321,22 +321,6 @@ header {
     z-index: 1001;
     padding: 5px;
 }
-
-/* Menú móvil */
-.mobile-menu {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 280px;
-    height: 100vh;
-    background-color: var(--primary);
-    padding: 60px 30px 30px; /* Más espacio arriba para el botón cerrar */
-    transition: var(--transition);
-    z-index: 1000;
-    overflow-y: auto;
-}
-
-
 .mobile-menu.active {
   right: 0;
   box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
@@ -1180,10 +1164,7 @@ footer a {
     overflow-y: auto;
 }
 
-.mobile-menu.active {
-    right: 0;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
-}
+
 
 /* Botón para cerrar */
 .close-menu {
