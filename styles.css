@@ -8,7 +8,7 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Raleway", sans-serif;
   line-height: 1.6;
   color: var(--dark);
   background-color: white;
@@ -507,6 +507,7 @@ header {
 }
 
 .slide-content h1 {
+  color: white;
     font-size: clamp(2rem, 4vw, 3.5rem);
     margin-bottom: 20px;
     font-weight: 700;
@@ -1246,6 +1247,15 @@ footer a {
 
   .social-icons a {
     font-size: 20px;
+  }
+
+  .left p,
+  .right p {
+    font-size: 18px;
+  }
+
+  .container-nosotros h1{
+    font-size: 6vw;
   }
 
   .overlay {
