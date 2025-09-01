@@ -137,16 +137,17 @@ header {
 .container-encabezado {
   width: 90%;
   max-width: 1500px;
+  height: 300px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 0 20px;
+  padding: 30px 0 30px;
 }
 
 /* Logo de la empresa */
 .logo img {
-  height: 120px; /* Ajusta el tamaño del logo según sea necesario */
+  height: 200px; /* Ajusta el tamaño del logo según sea necesario */
   width: auto;
   display: flex;
   padding-top: 50px;
@@ -1012,6 +1013,7 @@ footer a {
     .slider-container {
         height: 50vh;
         min-height: 350px;
+        margin-top: 150px;
     }
     
     .slide-content {
@@ -1049,64 +1051,66 @@ footer a {
         height: 60px;
     }
 
-  .overlay h1 {
-    font-size: 20px;
-  }
+    .overlay h1 {
+      font-size: 20px;
+    }
 
-  .overlay p {
-    font-size: 12px;
-  }
+    .overlay p {
+      font-size: 12px;
+    }
 
-  .overlay button {
-    font-size: 13px;
-    padding: 7px 14px;
-  }
+    .overlay button {
+      font-size: 13px;
+      padding: 7px 14px;
+    }
    .container-encabezado {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 20px 0 40px;
-    gap: 15px;
-  }
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 20px 0 40px;
+      gap: 15px;
+    }
 
-  .desktop-nav{
-    display: none;
-  }
+    .desktop-nav{
+      display: none;
+    }
   .contact-info {
     order: 1;
     margin-bottom: 10px;
-  }
-
-  .social-icons {
-    order: 0;
-    margin-bottom: 10px;
-    justify-content: center;
-  }
-
-  .logo {
-    order: 2;
-  }
-
-  .contact-text p {
-    font-size: 20px;
-  }
-
-  .phone-number {
-    font-size: 26px;
-  }
-
-  .logo img {
-    height: 90px;
-  }
-
-      .menu-toggle {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 30px;
-        height: 21px;
     }
-    
+
+    .social-icons {
+      order: 0;
+      margin-bottom: 10px;
+      justify-content: center;
+    }
+
+    .logo {
+      order: 2;
+    }
+
+    .contact-text p {
+      font-size: 20px;
+    }
+
+    .phone-number {
+      font-size: 26px;
+    }
+
+    .logo img {
+      height: 200px;
+      display: flex;
+      padding-top: 50px;
+    }
+
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+  }
+  
     .desktop-nav {
         display: none;
     }
@@ -1130,14 +1134,14 @@ footer a {
     transition: background-color 0.3s ease;
     border-radius: 6px;
     margin-top: 25px;
-}
+    }
 
-.container-Productos h2 {
+    .container-Productos h2 {
     padding-top: 20px;
     text-align: center;
     max-width: 1500px;
     padding-left: 0;
-}
+    }
 
 }
 
@@ -1193,13 +1197,23 @@ footer a {
     z-index: 1001;
 }
 
-@media (max-width: 480px) {
-
+@media (max-width: 546px) {
     .slider-container {
-        height: 40vh;
-        min-height: 300px;
-    }
-    
+      height: 300px;
+      margin-top: 200px;
+    }  
+}
+@media (max-width: 500px) {
+    .slider-container {
+      height: 300px;
+      margin-top: 200px;
+    }  
+}
+@media (max-width: 480px) {
+    .slider-container {
+      height: 300px;
+      margin-top: 200px;
+    }  
     .slide-content h1 {
         font-size: 1.8rem;
     }
@@ -1218,11 +1232,6 @@ footer a {
         padding: 20px 0;
     }
     
-    .logo img {
-        height: 80px;
-        padding-top: 20px;
-    }
-    
     .slogan {
         padding-top: 20px;
     }
@@ -1237,10 +1246,6 @@ footer a {
 
   .social-icons a {
     font-size: 20px;
-  }
- .slider-container {
-    height: 300px;
-    margin: 10px auto;
   }
 
   .overlay {
@@ -1267,12 +1272,4 @@ footer a {
     width: 12px;
     height: 12px;
   }
-}
-
-@media (max-width: 576px) {
-  .container-nosotros h1,
-  .container-nosotros p{
-    font-size: 6vw;
-  }
-
 }
