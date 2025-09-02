@@ -46,7 +46,7 @@
 
         /* Servicios */
         .servicios {
-            padding: 100px 0;
+            padding: 50px 0;
             background-color: var(--white);
         }
 
@@ -56,27 +56,9 @@
             position: relative;
         }
 
-        .section-title h2 {
-            font-size: 2.5rem;
-            display: inline-block;
-            position: relative;
-        }
-
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: var(--accent);
-            border-radius: 2px;
-        }
-
         .servicios-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
         }
 
@@ -87,18 +69,26 @@
             box-shadow: var(--shadow);
             transition: var(--transition);
             text-align: center;
-            padding: 40px 30px;
+            padding: 10px;
         }
 
         .servicio-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+
+        .servicio-card:hover h3{
+            color: white;
         }
 
         .servicio-icon {
             font-size: 3.5rem;
             color: var(--primary);
             margin-bottom: 25px;
+        }
+
+        .servicio-card:hover .servicio-icon{
+            color: white;
         }
 
         .servicio-card h3 {
@@ -108,8 +98,8 @@
 
         /* Proceso */
         .proceso {
-            padding: 100px 0;
-            background-color: var(--light);
+            padding: 50px 0;
+            background-color: var(--white);
         }
 
         .proceso-steps {
@@ -155,6 +145,31 @@
             margin-bottom: 15px;
             color: var(--primary);
         }
+
+        .step:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .imagenes-final {
+            display: flex;
+            justify-content: center;
+            gap: 85px; 
+            padding: 20px;
+            flex-wrap: wrap; 
+            max-width: 100%;
+            margin: 0 auto; 
+        }
+
+        .imagenes-final img {
+            width: 100%;       
+            height: auto;      
+            max-width: 300px;  
+            object-fit: cover; 
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+            }
+
         /* Responsive */
         @media (max-width: 992px) {
             .hero h1 {
@@ -214,9 +229,7 @@
         }
 
         @media (max-width: 400px) {
-            .menu-toggle{
-                margin-right: 12vw;
-            }
+
 
             .mobile-menu {
                 position: fixed;
@@ -309,7 +322,7 @@
         <div class="hero-content">
             <h1>Asesoría Técnica Especializada</h1>
             <p>Proporcionamos asesoramiento al efectuar una inversión económica para ayudar a tu empresa a obtener el beneficio de un ahorro proyectado.</p>
-            <a href="#contacto" class="btn">Solicitar Cotización</a>
+            <a href="https://api.whatsapp.com/send/?phone=527712167150&text&type=phone_number&app_absent=0" class="btn">Solicitar Cotización</a>
         </div>
     </section>
 
@@ -403,6 +416,10 @@
     </section>
     <div class="contact-container">
 
+    <div class="imagenes-final">
+        <img src="Imagenes/Sub-paginas/Asesoria/asesoria-1.png" alt="Imagen de asesoria 1">
+        <img src="Imagenes/Sub-paginas/Asesoria/asesoria-1.jpg" alt="Imagen de asesoria 2">
+    </div>
     <button class="btn-scroll-top" aria-label="Volver arriba">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path d="M12 4l-8 8h5v8h6v-8h5z"/>
@@ -439,19 +456,33 @@
                                 <p>Circuito Emprendedores No. 19, Parque Industrial Metropolitano, Mineral de la Reforma, Hgo. CP 42186</p>
                             </div>
                         </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
+                            <div class="contact-container">
+                            <div class="contact-item">
+                                <div class="contact-icon">
                                 <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="contact-text">
+                                </div>
+                                <div class="contact-text">
                                 <h4>Teléfonos</h4>
                                 <p>
-                                    <a href="tel:7717132513">771 713 2513</a><br>
-                                    <a href="tel:7717132514">771 713 2514</a><br>
-                                    <a href="tel:7717181044">771 718 1044</a>
+                                    <a href="tel:+527717132513">771 713 2513</a><br>
+                                    <a href="tel:+527717132514">771 713 2514</a><br>
+                                    <a href="tel:+527717181044">771 718 1044</a>
                                 </p>
+                                </div>
                             </div>
-                        </div>
+
+                            <div class="contact-item whatsapp-item">
+                                <div class="contact-icon contact-whatsapp-icon">
+                                <i class="fab fa-whatsapp"></i>
+                                </div>
+                                <div class="contact-whatsapp">
+                                <h4>WhatsApp</h4>
+                                <p>
+                                    <a href="https://wa.me/52771712167150" target="_blank">771 712 167 150</a>
+                                </p>
+                                </div>
+                            </div>
+                            </div>
                         <div class="contact-item">
                             <div class="contact-icon">
                                 <i class="fas fa-envelope"></i>
@@ -484,7 +515,7 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <h4>HIDROSISTEMAS</h4>
-                    <p>Tenemos las mejores marcas, con calidad que buscas..</p>
+                    <p>Tenemos las mejores marcas, con calidad que buscas.</p>
                     <div class="social-links">
                         <a href="https://www.facebook.com/HidrosistemasHGO/?fref=ts" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://api.whatsapp.com/send/?phone=527712167150&text&type=phone_number&app_absent=0" target="_blank"><i class="fab fa-whatsapp"></i></a>

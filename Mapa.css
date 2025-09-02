@@ -1,6 +1,6 @@
 /* Estilos para la sección de contacto */
 .contact-section {
-    padding: 80px 0;
+    padding: 40px 0;
     background-color: var(--white);
 }
 
@@ -69,41 +69,54 @@
 }
 
 .contact-item {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 25px;
-    align-items: flex-start;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  flex: 1;
+  min-width: 250px;
+  margin-bottom: 25px;
 }
 
 .contact-icon {
-    background-color: var(--primary);
-    color: var(--white);
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    font-size: 1.2rem;
+  background-color: var(--primary, #1976D2);
+  color: var(--white, #fff);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.2rem;
 }
 
-.contact-text h4 {
-    font-size: 1.2rem;
-    color: var(--primary-dark);
-    margin-bottom: 5px;
+.contact-text h4,
+.contact-whatsapp h4 {
+  font-size: 1.2rem;
+  color: var(--primary-dark, #1565C0);
+  margin: 0 0 5px 0;
 }
 
-.contact-text p, .contact-text a {
-    color: var(--dark);
-    font-size: 1rem;
-    line-height: 1.6;
-    text-decoration: none;
+.contact-text p,
+.contact-whatsapp p {
+  color: var(--dark, #333);
+  margin: 0;
+  line-height: 1.6;
+  text-decoration: none;
 }
 
-.contact-text a:hover {
-    color: var(--accent);
-    text-decoration: underline;
+.contact-text a,
+.contact-whatsapp a {
+  color: var(--dark, #333);
+  margin: 0;
+  line-height: 1.6;
+  text-decoration: none;
+}
+
+.contact-text a:hover,
+.contact-whatsapp a:hover {
+  color: var(--accent);
+  text-decoration: underline;
 }
 
 /* Responsive */
