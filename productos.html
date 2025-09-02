@@ -20,17 +20,40 @@
     <style>
               /* Product Section */
         
-        .product-text {
-            max-width: 1200px;
-            margin: 40px;
-            padding: 40px 10px;
+        .container-prod {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 20px;
         }
-        
-        .product-text p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            text-align: justify;
 
+        .product-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        }
+
+        .product-image {
+        flex: 1;
+        max-width: 20%;
+        height: auto;
+        border-radius: 8px;
+        }
+
+        .container-prod:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-text {
+        flex: 1;
+        padding: 0 20px;
+        }
+
+        .product-text p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        text-align: justify;
+        color: #555;
         }
         
         .product-text h1 {
@@ -38,8 +61,6 @@
             text-align: left;
         }
         
-
-
         .catalog-card {
             background: white;
             border-radius: var(--border-radius);
@@ -198,12 +219,23 @@
             .catalog-card {
                 width: calc(50% - 30px);
             }
-        }
-        
-        @media (max-width: 800px) {
+            .product-wrapper {
+            flex-direction: column;
+            }
+
+            .product-image {
+            order: 1; /* Imagen debajo del texto */
+            max-width: 50%;
+            }
+
             .product-text {
-                justify-content: center;
-                padding: 40px 10px;
+            order: 0; /* Texto arriba */
+            padding: 0;
+            text-align: center;
+            }
+
+            .product-text p {
+            text-align: left; /* Ajuste para que el texto justificado no se vea mal */
             }
             .catalog-actions {
                 flex-direction: column;
@@ -234,10 +266,7 @@
                 align-items: center;
                 align-content: center;
             }
-
-            
         }
-        
         @media (max-width: 576px) {
             .product-text {
                 justify-content: center;
@@ -333,13 +362,17 @@
         </ul>
     </div>
 
-
-      <div class="container-prod" id="container-Productos">
-        <div class="product-text">
+        <!-- Texto previo al catálogo -->
+        <div class="container-prod" id="container-Productos">
+        <div class="product-wrapper">
+            <div class="product-text">
             <h1>Nuestros Productos</h1>
             <p>En Hidrosistemas de Hidalgo, ofrecemos una amplia gama de productos de alta calidad para satisfacer todas tus necesidades en sistemas hidráulicos y de plomería. Desde tuberías y accesorios hasta soluciones especializadas, contamos con todo lo que necesitas para tus proyectos.</p>
             <p>Con nosotros encontrarás una gran variedad de tubería, conexiones, equipo y los mejores productos en las mejores marcas para su instalación.</p>
             <p>Ponemos a tu disposición nuestro catálogo con una gran cantidad de líneas y productos y nuestros números telefónicos y correos de contacto en donde con gusto te atenderemos. También te informamos que surtimos pedidos a toda la República Mexicana.</p>
+            </div>
+            <img src="Imagenes/Sub-paginas/Productos/textp.png" alt="Nuestros Productos" class="product-image">
+        </div>
         </div>
 
         <!-- Nuevo diseño para catálogo -->
@@ -368,10 +401,6 @@
 <section class="contact-section" id="contacto">
     <div class="container">
         <div class="contact-container">
-            <div class="contact-header">
-                <h2>En Dónde Estamos</h2>
-                <p>Estamos ubicados estratégicamente para servirte mejor en Mineral de la Reforma, Hidalgo</p>
-            </div>
             <div class="contact-content">
                 <div class="map-section">
                     <div class="map-visual">
