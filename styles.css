@@ -115,6 +115,22 @@ h1, h2, h3 {
   transform: translateY(-3px);
   box-shadow: 0 6px 15px rgba(255, 107, 0, 0.4);
 }
+
+.No-inicio, .No-inicio a {
+  font-size: 25px;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.No-inicio a:hover {
+  color: #25d366;
+}
+
+.i-wp {
+  color: #25d366;
+  font-weight: bold;
+}
 /* Estilos del encabezado */
 header {
   background-color: var(--primary);
