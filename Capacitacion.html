@@ -26,12 +26,6 @@
             padding: 60px 0;
         }
         
-        h1, h2, h3 {
-            color: #0056b3;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-        
         h2 {
             font-size: 1.8rem;
         }
@@ -211,18 +205,43 @@
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 300px;
         }
-        
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                0deg, 
+                transparent, 
+                transparent 30%, 
+                rgb(0, 123, 255)
+            );
+            transform: rotate(-45deg);
+            transition: all 0.5s ease;
+            opacity: 0;
+            }
+
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            transform: scale(1.05);
+            box-shadow: 0 0 20px #0019CB
         }
-        
+
+        .service-card:hover::before {
+            opacity: 1;
+            transform: rotate(-45deg) translateY(100%);
+        }
+  
         .card-icon {
-            background: linear-gradient(135deg, #0056b3 0%, #00a8e8 100%);
+            background: linear-gradient(135deg, #0019CB 0%, rgb(0, 123, 255)100%);
             color: white;
             font-size: 2.5rem;
-            height: 120px;
+            height: 100px;
+            width: 300px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -234,12 +253,14 @@
         
         .card-content h3 {
             margin-bottom: 15px;
-            color: #0056b3;
+            color: #0019CB;
         }
         
         .benefits-list {
             margin-top: 30px;
         }
+
+
         
         .benefits-list h2 {
             text-align: center;
@@ -262,7 +283,7 @@
         }
         
         .benefit-item:hover {
-            background: linear-gradient(135deg, #0056b3 0%, #00a8e8 100%);
+            background: linear-gradient(135deg, #0019CB 0%, rgb(0, 123, 255)100%);
             color: white;
         }
         
@@ -272,7 +293,7 @@
         
         .benefit-icon {
             font-size: 2.5rem;
-            color: #0056b3;
+            color: #0019cb;
             margin-bottom: 20px;
         }
         
@@ -287,7 +308,7 @@
         
         /* CTA */
         .cta-section {
-            background: linear-gradient(135deg, #0056b3 0%, #00a8e8 100%);
+            background: linear-gradient(135deg, #0019CB 0%, rgb(0, 123, 255)100%);
             color: white;
             text-align: center;
             padding: 70px 0;
