@@ -209,8 +209,12 @@
         margin: 0 auto;
     }
 
-    .service-card {
-        background: white;
+    .service-card-infraestrucutura {
+        background-image: 
+            linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+            url('Imagenes/Sub-paginas/Nosotros/1.png');
+        background-size: cover;
+        background-position: center;
         border-radius: 10px;
         padding: 30px 25px;
         text-align: center;
@@ -218,11 +222,117 @@
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .service-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    .service-card-viviendas {
+        background-image: 
+            linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+            url('Imagenes/Sub-paginas/Nosotros/2.png');
+        background-size: cover;
+        background-position: center;
+        border-radius: 10px;
+        padding: 30px 25px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
+    .service-card-edificios {
+        background-image: 
+            linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+            url('Imagenes/Sub-paginas/Nosotros/3.png');
+        background-size: cover;
+        background-position: center;
+        border-radius: 10px;
+        padding: 30px 25px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-card-comercial {
+        background-image: 
+            linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+            url('Imagenes/Sub-paginas/Nosotros/4.png');
+        background-size: cover;
+        background-position: center;
+        border-radius: 10px;
+        padding: 30px 25px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-card-estacionamientos {
+        background-image: 
+            linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+            url('Imagenes/Sub-paginas/Nosotros/5.png');
+        background-size: cover;
+        background-position: center;
+        border-radius: 10px;
+        padding: 30px 25px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-card-hospitales {
+        background-image: 
+            linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+            url('Imagenes/Sub-paginas/Nosotros/6.png');
+        background-size: cover;
+        background-position: center;
+        border-radius: 10px;
+        padding: 30px 25px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-card-industriales {
+        background-image: 
+            linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+            url('Imagenes/Sub-paginas/Nosotros/7.png');
+        background-size: cover;
+        background-position: center;
+        border-radius: 10px;
+        padding: 30px 25px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-card-laboratorios {
+        background-image: 
+            linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+            url('Imagenes/Sub-paginas/Nosotros/8.png');
+        background-size: cover;
+        background-position: center;
+        border-radius: 10px;
+        padding: 30px 25px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-card-corporativos {
+        background-image: 
+            linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+            url('Imagenes/Sub-paginas/Nosotros/9.png');
+        background-size: cover;
+        background-position: center;
+        border-radius: 10px;
+        padding: 30px 25px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .service-card > div:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    }
+        
+    .service-card:hover::before {
+        opacity: 0.6;
+    }
     .service-icon {
         width: 70px;
         height: 70px;
@@ -247,11 +357,11 @@
     .service-card h3 {
         margin-bottom: 15px;
         font-size: 18px;
-        color: #333;
+        color: #ffffff;
     }
 
     .service-card p {
-        color: #666;
+        color: #ffffff;
         line-height: 1.6;
     }
 
@@ -518,83 +628,100 @@
         <div class="services-grid">
             <!-- Servicio 1 -->
             <div class="service-card">
-                <div class="service-icon icon-infraestructura">
+            <div class="service-card-infraestrucutura"> 
+               <div class="service-icon icon-infraestructura">
                     <i class="fas fa-city"></i>
-                </div>
+                </div>               
                 <h3>Infraestructura Urbana Integral</h3>
                 <p>Diseño y construcción de redes eléctricas, sistemas de agua potable, alcantarillado y proyectos de urbanización para ciudades sostenibles.</p>
             </div>
-            
+            </div>
             <!-- Servicio 2 -->
             <div class="service-card">
-                <div class="service-icon icon-viviendas">
-                    <i class="fas fa-home"></i>
+                <div class="service-card-viviendas"> 
+                    <div class="service-icon icon-viviendas">
+                        <i class="fas fa-home"></i>
+                    </div>               
+                    <h3>Viviendas Residenciales y de Interés Social</h3>
+                    <p>Desarrollo de edificios departamentales y casas habitación en zonas residenciales con enfoque comunitario y accesible.</p>
                 </div>
-                <h3>Viviendas Residenciales y de Interés Social</h3>
-                <p>Desarrollo de edificios departamentales y casas habitación en zonas residenciales con enfoque comunitario y accesible.</p>
             </div>
-            
+
             <!-- Servicio 3 -->
             <div class="service-card">
-                <div class="service-icon icon-edificios">
-                    <i class="fas fa-building"></i>
+                <div class="service-card-edificios"> 
+                    <div class="service-icon icon-edificios">
+                        <i class="fas fa-building"></i>
+                    </div>               
+                    <h3>Edificios Corporativos y Hoteles</h3>
+                    <p>Proyectos llave en mano para oficinas corporativas y hoteles de alta gama, integrando funcionalidad y diseño innovador.</p>
                 </div>
-                <h3>Edificios Corporativos y Hoteles</h3>
-                <p>Proyectos llave en mano para oficinas corporativas y hoteles de alta gama, integrando funcionalidad y diseño innovador.</p>
             </div>
-            
+
             <!-- Servicio 4 -->
             <div class="service-card">
-                <div class="service-icon icon-comercial">
-                    <i class="fas fa-shopping-cart"></i>
+                <div class="service-card-comercial"> 
+                    <div class="service-icon icon-comercial">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>               
+                    <h3>Centros Comerciales Modernos</h3>
+                    <p>Diseño y construcción de espacios comerciales optimizados para experiencia de usuario y flujo eficiente de visitantes.</p>
                 </div>
-                <h3>Centros Comerciales Modernos</h3>
-                <p>Diseño y construcción de espacios comerciales optimizados para experiencia de usuario y flujo eficiente de visitantes.</p>
             </div>
-            
+
             <!-- Servicio 5 -->
             <div class="service-card">
-                <div class="service-icon icon-estacionamientos">
-                    <i class="fas fa-parking"></i>
+                <div class="service-card-estacionamientos"> 
+                    <div class="service-icon icon-estacionamientos">
+                        <i class="fas fa-parking"></i>
+                    </div>               
+                    <h3>Estacionamientos Inteligentes</h3>
+                    <p>Soluciones automatizadas y multifuncionales para áreas urbanas de alto tráfico con gestión tecnológica avanzada.</p>
                 </div>
-                <h3>Estacionamientos Inteligentes</h3>
-                <p>Soluciones automatizadas y multifuncionales para áreas urbanas de alto tráfico con gestión tecnológica avanzada.</p>
             </div>
-            
+
             <!-- Servicio 6 -->
             <div class="service-card">
-                <div class="service-icon icon-hospitales">
-                    <i class="fas fa-hospital"></i>
+                <div class="service-card-hospitales"> 
+                    <div class="service-icon icon-hospitales">
+                        <i class="fas fa-hospital"></i>
+                    </div>               
+                    <h3>Hospitales y Centros Médicos</h3>
+                    <p>Infraestructura especializada con estándares de bioseguridad y tecnología médica integrada para atención eficiente.</p>
                 </div>
-                <h3>Hospitales y Centros Médicos</h3>
-                <p>Infraestructura especializada con estándares de bioseguridad y tecnología médica integrada para atención eficiente.</p>
             </div>
-            
+
             <!-- Servicio 7 -->
             <div class="service-card">
-                <div class="service-icon icon-industriales">
-                    <i class="fas fa-industry"></i>
+                <div class="service-card-industriales"> 
+                    <div class="service-icon icon-industriales">
+                        <i class="fas fa-industry"></i>
+                    </div>               
+                    <h3>Áreas Industriales Especializadas</h3>
+                    <p>Parques industriales y naves con infraestructura robusta para operaciones logísticas y producción exigente.</p>
                 </div>
-                <h3>Áreas Industriales Especializadas</h3>
-                <p>Parques industriales y naves con infraestructura robusta para operaciones logísticas y producción exigente.</p>
             </div>
-            
+
             <!-- Servicio 8 -->
             <div class="service-card">
-                <div class="service-icon icon-laboratorios">
-                    <i class="fas fa-flask"></i>
+                <div class="service-card-laboratorios"> 
+                    <div class="service-icon icon-laboratorios">
+                        <i class="fas fa-flask"></i>
+                    </div>               
+                    <h3>Laboratorios de Alta Especialización</h3>
+                    <p>Instalaciones técnicas con requisitos ambientales y de seguridad certificados para investigación avanzada.</p>
                 </div>
-                <h3>Laboratorios de Alta Especialización</h3>
-                <p>Instalaciones técnicas con requisitos ambientales y de seguridad certificados para investigación avanzada.</p>
             </div>
-            
+
             <!-- Servicio 9 -->
             <div class="service-card">
-                <div class="service-icon icon-corporativos">
-                    <i class="fas fa-briefcase"></i>
+                <div class="service-card-corporativos"> 
+                    <div class="service-icon icon-corporativos">
+                        <i class="fas fa-briefcase"></i>
+                    </div>               
+                    <h3>Espacios Corporativos Modernos</h3>
+                    <p>Diseño de oficinas adaptables con enfoque en productividad, bienestar y tecnología integrada para empresas innovadoras.</p>
                 </div>
-                <h3>Espacios Corporativos Modernos</h3>
-                <p>Diseño de oficinas adaptables con enfoque en productividad, bienestar y tecnología integrada para empresas innovadoras.</p>
             </div>
         </div>
     </div>
