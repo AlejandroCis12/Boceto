@@ -1,5 +1,6 @@
 /* Reset y estilos generales */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
 
 * {
   margin: 0;
@@ -8,7 +9,7 @@
 }
 
 body {
-  font-family: "Raleway", sans-serif;
+  font-family: "PT Sans", sans-serif;
   line-height: 1.6;
   color: var(--dark);
   background-color: white;
@@ -76,8 +77,9 @@ h1, h2, h3 {
 }
 
 .slogan{
-  text-align: center;
-  padding-top: 80px;
+  text-align: left;
+  padding-top: 170px;
+  padding-bottom: 90px;
 }
 
 .slogan h1{
@@ -117,18 +119,65 @@ h1, h2, h3 {
 }
 
 .No-inicio, .No-inicio a {
-  font-size: 25px;
+  font-size: 20px;
   color: var(--accent);
   text-decoration: none;
   font-weight: bold;
+}
+.Ig-top a {
+  font-size: 20px;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: bold;
+}
+.Fb-top a {
+  font-size: 20px;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: bold;
+}
+.in-top a {
+  font-size: 20px;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: bold;
+}
+.Ig-top img {
+  width: 20px;
+}
+.in-top img {
+  width: 20px;
 }
 
 .No-inicio a:hover {
   color: #25d366;
 }
-
+.Ig-top a:hover {
+  font-size: 20px;
+  background: linear-gradient(to right, #f9ce34, #ee2a7b, #6228d7);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-decoration: none;
+  font-weight: bold;
+}
+.Fb-top a:hover {
+  font-size: 20px;
+  color: #3b5998;
+  text-decoration: none;
+  font-weight: bold;
+}
+.in-top a:hover {
+  font-size: 20px;
+  color: #0077B5;
+  font-weight: bold;
+}
 .i-wp {
   color: #25d366;
+  font-weight: bold;
+}
+.i-fb {
+  color: #3b5998;
   font-weight: bold;
 }
 /* Estilos del encabezado */
@@ -153,7 +202,7 @@ header {
 .container-encabezado {
   width: 90%;
   max-width: 1500px;
-  height: 300px;
+  height: 350px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -163,10 +212,10 @@ header {
 
 /* Logo de la empresa */
 .logo img {
-  height: 200px; /* Ajusta el tamaño del logo según sea necesario */
+  height: 350px; /* Ajusta el tamaño del logo según sea necesario */
   width: auto;
   display: flex;
-  padding-top: 50px;
+  padding-top: 100px;
 }
 
 /* Barra de Navegacion/*
@@ -1024,6 +1073,9 @@ footer a {
 
 /* Responsive: en pantallas pequeñas, apila las columnas */
 @media (max-width: 800px) {
+    .slogan{
+      padding-bottom: 0px;
+    }
     .slider-container {
         height: 50vh;
         min-height: 350px;
@@ -1081,8 +1133,13 @@ footer a {
       flex-direction: column;
       align-items: center;
       text-align: center;
-      padding: 20px 0 40px;
+      height: 600px;
+      padding: 0px 0 40px;
       gap: 15px;
+    }
+    .slogan {
+      padding-top: 50px;
+      padding-bottom: 20px;
     }
 
     .desktop-nav{
@@ -1209,12 +1266,22 @@ footer a {
 }
 
 @media (max-width: 546px) {
+    .container-encabezado {
+      height: 600px;
+    }
     .slider-container {
       height: 300px;
       margin-top: 200px;
-    }  
+    }
+    .slogan{
+      padding-top: 100px;
+      padding-bottom: 50px;
+    }
 }
 @media (max-width: 500px) {
+    .container-encabezado {
+      height: 500px;
+    }
     .slider-container {
       height: 300px;
       margin-top: 200px;
