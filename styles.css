@@ -16,7 +16,7 @@ body {
 }
 
 :root {
-  --primary:  #0019CB;
+  --primary:  #04165a;
   --primary-dark: #004d80;
   --secondary: rgb(0, 123, 255);
   --accent: #CB0000;
@@ -142,11 +142,22 @@ header {
   transition: var(--transition);
 }
 
+.logo-hidrosistemas{
+  background-color: white;
+  width: 300px; 
+  height: 72px;
+  position: absolute;
+  object-fit: contain;
+  padding: 5px;
+
+}
+
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 0;
+  padding: 15px;
+  padding-left: 30%;
   position: relative;
 }
 
@@ -160,6 +171,8 @@ header {
   align-items: center;
   padding: 30px 0 30px;
 }
+
+
 
 /* Logo de la empresa */
 .logo img {
@@ -1022,6 +1035,46 @@ footer a {
 }
 
 
+@media (max-width: 1070px) {
+    .logo-hidrosistemas {
+        width: 250px;
+        height: 69px;
+    }
+    
+    .desktop-nav a {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+  }
+
+@media (max-width: 970px) {
+
+  .desktop-nav {
+      display: none;
+  }
+
+  .header-container{
+    padding-right: 0;
+    margin-right: 0;
+    align-items: center;
+    padding-left: 80%;
+  }
+      
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+  }
+      
+  .logo-hidrosistemas {
+      width: 200px;
+      height: 52px;
+  }
+  }
+
+
 /* Responsive: en pantallas pequeñas, apila las columnas */
 @media (max-width: 800px) {
     .slider-container {
@@ -1085,9 +1138,6 @@ footer a {
       gap: 15px;
     }
 
-    .desktop-nav{
-      display: none;
-    }
   .contact-info {
     order: 1;
     margin-bottom: 10px;
@@ -1115,18 +1165,6 @@ footer a {
       height: 200px;
       display: flex;
       padding-top: 50px;
-    }
-
-  .menu-toggle {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
-  }
-  
-    .desktop-nav {
-        display: none;
     }
 
     .read-more{
