@@ -8,12 +8,28 @@
   box-sizing: border-box;
 }
 
+/* Si necesitas cargar la fuente Eras Bold ITC */
+@font-face {
+  font-family: 'Eras Bold ITC';
+  src: url('ruta/a/eras-bold-itc.ttf') format('truetype');
+  /* Ajusta la ruta y el formato según tu archivo de fuente */
+  font-weight: bold;
+  font-style: normal;
+}
+
 body {
-  font-family: "PT Sans", sans-serif;
+  font-family: "Saira Semi Condensed", sans-serif;
   line-height: 1.6;
   color: var(--dark);
   background-color: white;
   overflow-x: hidden;
+}
+
+/* Para elementos strong o b, o cualquier elemento con clase .bold */
+strong, b {
+  font-family: 'Eras Bold ITC', sans-serif;
+  /* Opcional: si quieres asegurar el peso de la fuente */
+  font-weight: bold;
 }
 
 :root {
