@@ -58,7 +58,7 @@
 
     .section-title {
     grid-column: 1 / -1;
-    color: #0056b3;
+    color: var(--primary);
     font-size: 2rem;
     text-align: left;
     padding-bottom: 1rem;
@@ -107,6 +107,7 @@
     background-color: #f9f9f9;
     margin-left: 5vw;
     margin-right: 5vw;
+    padding: 2rem 0;
     }
 
     .values-container {
@@ -115,9 +116,9 @@
     }
 
     .values-section h2 {
-    color: #0056b3;
+    color: var(--primary);
     margin-bottom: 1rem;
-    text-align: left;;
+    text-align: left;
     }
 
     .values-grid {
@@ -137,7 +138,12 @@
     }
 
     .value-card:hover {
-    transform: translateY(-5px);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+    }
+
+    .value-card:hover h3, .value-card:hover .value-icon, .value-card:hover li::before {
+    color: white;
     }
 
     .value-icon {
@@ -169,7 +175,7 @@
 
     .values-list li::before {
     content: "●";
-    color: #0056b3;
+    color: var(--primary);
     font-size: 1rem;
     position: absolute;
     left: 0;
@@ -542,22 +548,7 @@
     </div>
   </div>
 </section>
-<!-- Introducción -->
-<section class="introduction">
-  <div class="container">
-    <div class="intro-content">
-    <h2 class="section-title">Bienvenidos a Hidrosistemas</h2>
-      <p>En Hidrosistemas se fabrica, ensambla, instala y se comercializan tuberías, conexiones y accesorios de materiales de la más alta calidad y eficiencia técnica en sistemas de agua potable, alcantarillado, riego, plantas de tratamiento de agua y otras aplicaciones, así como para la conducción de cables en redes eléctricas y telecomunicaciones. En la construcción moderna es de primordial importancia se satisfagan factores de seguridad, durabilidad y economía; con materiales utilizados en instalaciones de redes sanitarias, de agua potable y alcantarillado para unidades habitacionales y conjuntos urbanos, en la conducción de fluidos corrosivos y la protección del cableado de líneas eléctricas, telefónicas o de fibra óptica.
-      </p>
-      <div class="images-container">
-        <img src="Imagenes/Sub-paginas/Nosotros/thumb_nosotros_2a.jpg" alt="Imagen 1">
-        <img src="Imagenes/Sub-paginas/Nosotros/thumb_nosotros_4.jpg" alt="Imagen 2">
-        <img src="Imagenes/Sub-paginas/Nosotros/thumb_nosotros_5.jpg" alt="Imagen 3">
-        <img src="Imagenes/Sub-paginas/Nosotros/thumb_nosotros_3a.jpg" alt="Imagen 3">
-      </div>
-    </div>
-  </div>
-</section>
+
 <!-- Valores -->
 <section class="values-section">
   <div class="values-container">
