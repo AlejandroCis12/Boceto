@@ -222,7 +222,7 @@
                 0deg, 
                 transparent, 
                 transparent 30%, 
-                rgb(0, 123, 255)
+                var(--primary)
             );
             transform: rotate(-45deg);
             transition: all 0.5s ease;
@@ -231,7 +231,7 @@
 
         .service-card:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 20px #0019CB
+            box-shadow: 0 0 20px var(--primary)
         }
 
         .service-card:hover::before {
@@ -240,7 +240,7 @@
         }
   
         .card-icon {
-            background: linear-gradient(135deg, #0019CB 0%, rgb(0, 123, 255)100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             color: white;
             font-size: 2.5rem;
             height: 100px;
@@ -256,7 +256,7 @@
         
         .card-content h3 {
             margin-bottom: 15px;
-            color: #0019CB;
+            color: var(--primary);
         }
         
         .benefits-list {
@@ -286,7 +286,7 @@
         }
         
         .benefit-item:hover {
-            background: linear-gradient(135deg, #0019CB 0%, rgb(0, 123, 255)100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             color: white;
         }
         
@@ -296,7 +296,7 @@
         
         .benefit-icon {
             font-size: 2.5rem;
-            color: #0019cb;
+            color: var(--primary);
             margin-bottom: 20px;
         }
         
@@ -311,7 +311,7 @@
         
         /* CTA */
         .cta-section {
-            background: linear-gradient(135deg, #0019CB 0%, rgb(0, 123, 255)100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             color: white;
             text-align: center;
             padding: 70px 0;
@@ -344,6 +344,13 @@
         }
         
         /* Responsive */
+
+         @media (max-width: 970px) {
+           .menu-toggle  {
+            margin-right: 40%;
+        }
+    }
+
         @media (max-width: 768px) {
             .cap-container {
                 margin-top: 225px;
@@ -507,6 +514,44 @@
                 </div>
             </div>
         </section>
+
+        <section class="benefits-list">
+            <h2>Beneficios de Nuestra Capacitación</h2>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Instructores Expertos</h3>
+                    <p>Profesionales con más de 15 años de experiencia en el campo</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Certificación</h3>
+                    <p>Diplomas con validez oficial reconocidos por la industria</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3>Rentabilidad</h3>
+                    <p>Mejora en la eficiencia operativa que reduce costos</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Enfoque Práctico</h3>
+                    <p>70% del tiempo dedicado a prácticas con equipos reales</p>
+                </div>
+            </div>
+        </section>
         
         <section class="services-section">
             <div class="container-fechas">
@@ -579,43 +624,7 @@
             </div>
         </section>
         
-        <section class="benefits-list">
-            <h2>Beneficios de Nuestra Capacitación</h2>
-            
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <div class="benefit-icon">
-                        <i class="fas fa-chalkboard-teacher"></i>
-                    </div>
-                    <h3>Instructores Expertos</h3>
-                    <p>Profesionales con más de 15 años de experiencia en el campo</p>
-                </div>
-                
-                <div class="benefit-item">
-                    <div class="benefit-icon">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <h3>Certificación</h3>
-                    <p>Diplomas con validez oficial reconocidos por la industria</p>
-                </div>
-                
-                <div class="benefit-item">
-                    <div class="benefit-icon">
-                        <i class="fas fa-hand-holding-usd"></i>
-                    </div>
-                    <h3>Rentabilidad</h3>
-                    <p>Mejora en la eficiencia operativa que reduce costos</p>
-                </div>
-                
-                <div class="benefit-item">
-                    <div class="benefit-icon">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <h3>Enfoque Práctico</h3>
-                    <p>70% del tiempo dedicado a prácticas con equipos reales</p>
-                </div>
-            </div>
-        </section>
+
         
         <section class="cta-section">
             <h2>¿Listo para Mejorar las Habilidades de su Equipo?</h2>

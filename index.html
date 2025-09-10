@@ -12,6 +12,121 @@
   <link rel="stylesheet" href="Mapa.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Estilos para el popup - Adaptados a tu sitio */
+    .popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    
+    .popup-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .popup-content {
+        background-color: white;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+        max-width: 90%;
+        width: 500px;
+        text-align: center;
+        position: relative;
+        border-top: 5px solid #04165a;
+        transform: translateY(20px);
+        transition: transform 0.3s ease;
+    }
+    
+    .popup-overlay.active .popup-content {
+        transform: translateY(0);
+    }
+    
+    .popup-close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 24px;
+        cursor: pointer;
+        color: #333;
+        background: none;
+        border: none;
+        transition: color 0.3s ease;
+    }
+    
+    .popup-close:hover {
+        color: #CB0000;
+    }
+    
+    .popup-image {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        border: 1px solid #e9ecef;
+    }
+    
+    .popup-btn {
+        background-color: #04165a;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 10px 0;
+        cursor: pointer;
+        border-radius: 6px;
+        transition: background-color 0.3s;
+        font-weight: 500;
+    }
+    
+    .popup-btn:hover {
+        background-color: #007BFF;
+        transform: translateY(-2px);
+    }
+    
+    .popup-dont-show {
+        margin-top: 15px;
+        font-size: 14px;
+        color: #6c757d;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+    
+    .popup-title {
+        color: #04165a;
+        margin-bottom: 15px;
+        font-size: 24px;
+    }
+    
+    .popup-text {
+        color: #333;
+        margin-bottom: 20px;
+        line-height: 1.5;
+    }
+
+    @media (max-width: 970px) {
+    .menu-toggle  {
+        margin-right: 40%;
+    }
+
+    }
+  </style>
 </head>
 <body>
     <!-- Header -->
@@ -155,13 +270,13 @@
         <div class="content">
             <div class="column left">
             <p>
-                En Hidrosistemas se fabrica, ensambla, instala y se comercializan tuberías, conexiones y accesorios de materiales de la más alta calidad y eficiencia técnica en sistemas de agua potable, alcantarillado, riego, plantas de tratamiento de agua y otras aplicaciones...
+                En Hidrosistemas se fabrica, ensambla, instala y se comercializan tuberías, conexiones y accesorios de materiales de la más alta calidad y eficiencia técnica en sistemas de agua potable, alcantarillado, riego, plantas de tratamiento de agua y otras aplicaciones, así como para la conducción de cables en redes eléctricas y telecomunicaciones.
             </p>
             <a href="Nosotros.html"><button class="read-more">Leer más...</button></a>
             </div>
             <div class="column right">
             <p>
-                En la construcción moderna es de primordial importancia que se satisfagan factores de seguridad, durabilidad y economía; con materiales utilizados en instalaciones de redes sanitarias, de agua potable y alcantarillado para unidades habitacionales y conjuntos urbanos...
+                En la construcción moderna es de primordial importancia que se satisfagan factores de seguridad, durabilidad y economía; con materiales utilizados en instalaciones de redes sanitarias, de agua potable y alcantarillado para unidades habitacionales y conjuntos urbanos, en la conducción de fluidos corrosivos y la protección del cableado de líneas eléctricas, telefónicas o de fibra óptica.
             </p>
             <a href="Nosotros.html"><button class="read-more-movil">Leer más...</button></a>
             </div>
@@ -433,7 +548,49 @@
             </div>
         </div>
     </footer>
+
+    <!-- Popup para el catálogo -->
+    <div id="catalogPopup" class="popup-overlay">
+        <div class="popup-content">
+            <button class="popup-close" id="closePopup">&times;</button>
+            <h2 class="popup-title">¡Consulta nuestro catálogo!</h2>
+            <img src="Imagenes/" alt="Catálogo de productos Hidrosistemas" class="popup-image">
+            <p class="popup-text">Descubre todos nuestros productos exclusivos en nuestro catálogo digital. Tuberías, conexiones y accesorios de la más alta calidad.</p>
+            <a href="Catalogo/CATALOGO_HIDROSISTEMAS_2021.pdf" target="_blank" class="popup-btn">Ver catálogo completo</a>
+            </div>
+        </div>
+    </div>
+
   <!-- Scripts -->
   <script src="app.js"></script>
+  <script>
+    // Script para el popup del catálogo
+    document.addEventListener('DOMContentLoaded', function() {
+        const popup = document.getElementById('catalogPopup');
+        const closeBtn = document.getElementById('closePopup');
+        const dontShowCheckbox = document.getElementById('dontShowAgain');
+        
+        // Comprobar si el usuario ya ha decidido no mostrar el popup
+        if (!localStorage.getItem('dontShowCatalogPopup')) {
+            // Mostrar el popup después de un breve retraso (1.5 segundos)
+            setTimeout(function() {
+                popup.classList.add('active');
+            }, 1500);
+        }
+        
+        // Cerrar el popup al hacer clic en la X
+        closeBtn.addEventListener('click', function() {
+            popup.classList.remove('active');
+        });
+        
+        // Cerrar el popup al hacer clic fuera del contenido
+        popup.addEventListener('click', function(e) {
+            if (e.target === popup) {
+                // Si el usuario marcó la casilla, guardar la preferencia
+                popup.classList.remove('active');
+            }
+        });
+    });
+  </script>
 </body>
 </html>

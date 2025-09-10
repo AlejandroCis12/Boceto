@@ -39,11 +39,6 @@
         border-radius: 8px;
         }
 
-        .container-prod:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        }
-
         .product-text {
         flex: 1;
         padding: 0 20px;
@@ -105,6 +100,7 @@
             justify-content: center;
             gap: 30px;
             padding: 20px;
+            padding-top: 5%;
         }
         
         .catalog-content h3 {
@@ -201,6 +197,124 @@
                 transform: translateY(0px);
             }
         }
+    
+        /* Carrusel de productos */
+        .container-productos {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .slider-productos {
+            overflow: hidden;
+            width: 100%;
+            height: 250px;
+            position: relative;
+        }
+        
+        .slider-track {
+            display: flex;
+            align-items: center;
+            animation: scroll 30s linear infinite;
+            width: max-content;
+        }
+        
+        .slide-img-productos {
+            flex: 0 0 auto;
+            width: 200px;
+            height: 200px;
+            margin: 0 15px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .slide-img-productos:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .slide-img-productos img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .slide-img-productos:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Modal para imagen ampliada */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 8px;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+        }
+        
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .close:hover {
+            color: #007BFF;
+        }
+        
+        .modal-caption {
+            margin: 15px auto;
+            text-align: center;
+            color: #fff;
+            font-size: 1.2rem;
+            max-width: 700px;
+        }
+        
+        /* Animación del modal */
+        .modal-content, .close, .modal-caption {  
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+        
+        @keyframes zoom {
+            from {transform: scale(0)} 
+            to {transform: scale(1)}
+        }
+        
+        /* Animación del carrusel */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
         
         /* Responsive Design */
 
@@ -208,8 +322,7 @@
             .menu-toggle  {
                 margin-right: 15px;
             }
-     
-  }
+        }
 
         @media (max-width: 992px) {
             .product-text {
@@ -275,6 +388,7 @@
                 align-content: center;
             }
         }
+
         @media (max-width: 576px) {
             .product-text {
                 justify-content: center;
@@ -296,6 +410,13 @@
                 font-size: 1rem;
             }
         }        
+
+        
+        @media (max-width: 500px) {
+            .catalog-section {
+                padding-top: 25%;
+            }
+        }
 
         
     </style>
@@ -375,21 +496,6 @@
         </ul>
     </div>
 
-        <!-- Texto previo al catálogo -->
-        <div class="container-prod" id="container-Productos">
-        <div class="product-wrapper">
-            <div class="product-text">
-            <h1>Nuestros Productos</h1>
-            <p>En Hidrosistemas de Hidalgo, ofrecemos una amplia gama de productos de alta calidad para satisfacer todas tus necesidades en sistemas hidráulicos y de plomería. Desde tuberías y accesorios hasta soluciones especializadas, contamos con todo lo que necesitas para tus proyectos.</p>
-            <p>Con nosotros encontrarás una gran variedad de tubería, conexiones, equipo y los mejores productos en las mejores marcas para su instalación.</p>
-            <p>Ponemos a tu disposición nuestro catálogo con una gran cantidad de líneas y productos y nuestros números telefónicos y correos de contacto en donde con gusto te atenderemos. También te informamos que surtimos pedidos a toda la República Mexicana.</p>
-            </div>
-            <img src="Imagenes/Sub-paginas/Productos/VALV Y COPLES UNIV.png" alt="Nuestros Productos" class="product-image">
-            <img src="Imagenes/Sub-paginas/Productos/CORRUGADAYPVC.png" alt="Nuestros Productos" class="product-image">
-        </div>
-        </div>
-
-        <!-- Nuevo diseño para catálogo -->
         <div class="catalog-section">
             <div class="catalog-card">
                 <div class="catalog-image">
@@ -409,6 +515,76 @@
                 </div>
             </div>
         </div>
+
+        <!-- Texto -->
+        <div class="container-prod" id="container-Productos">
+        <div class="product-wrapper">
+            <div class="product-text">
+            <h1>Nuestros Productos</h1>
+            <p>En Hidrosistemas de Hidalgo, ofrecemos una amplia gama de productos de alta calidad para satisfacer todas tus necesidades en sistemas hidráulicos y de plomería. Desde tuberías y accesorios hasta soluciones especializadas, contamos con todo lo que necesitas para tus proyectos.  También te informamos que surtimos pedidos a toda la República Mexicana.</p>
+            <p>Con nosotros encontrarás una gran variedad de tubería, conexiones, equipo y los mejores productos en las mejores marcas para su instalación.</p>
+            </div>
+        </div>
+        </div>
+        <!-- Carrusel de Productos -->
+        <div class="container-productos">  
+            <div class="slider-productos">
+                <div class="slider-track">
+                    <!-- Primera vuelta de productos -->
+                    <div class="slide-img-productos" onclick="openModal('Imagenes/Sub-paginas/Productos/ALCANTARILLADO.png', 'Alcantarillado')">
+                        <img src="Imagenes/Sub-paginas/Productos/ALCANTARILLADO.png" alt="Alcantarillado">
+                    </div>
+                    <div class="slide-img-productos" onclick="openModal('Imagenes/Sub-paginas/Productos/CORRUGADAYPVC.png', 'Corrugada y PVC')">
+                        <img src="Imagenes/Sub-paginas/Productos/CORRUGADAYPVC.png" alt="Corrugada y PVC">
+                    </div>
+                    <div class="slide-img-productos" onclick="openModal('Imagenes/Sub-paginas/Productos/CORRUGADO .png', 'Corrugado')">
+                        <img src="Imagenes/Sub-paginas/Productos/CORRUGADO .png" alt="Corrugado">
+                    </div>
+                    <div class="slide-img-productos" onclick="openModal('Imagenes/Sub-paginas/Productos/GALVANIZADO .png', 'Galvanizado')">
+                        <img src="Imagenes/Sub-paginas/Productos/GALVANIZADO .png" alt="Galvanizado">
+                    </div>
+                    <div class="slide-img-productos" onclick="openModal('Imagenes/Sub-paginas/Productos/POZOS .png', 'Pozos')">
+                        <img src="Imagenes/Sub-paginas/Productos/POZOS .png" alt="Pozos">
+                    </div>
+                    <div class="slide-img-productos" onclick="openModal('Imagenes/Sub-paginas/Productos/PVC.png', 'PVC')">
+                        <img src="Imagenes/Sub-paginas/Productos/PVC.png" alt="PVC">
+                    </div>
+                    <div class="slide-img-productos" onclick="openModal('Imagenes/Sub-paginas/Productos/VALV Y COPLES UNIV.png', 'Válvulas y Coples')">
+                        <img src="Imagenes/Sub-paginas/Productos/VALV Y COPLES UNIV.png" alt="Valvulas y Coples">
+                    </div>
+
+                    <!-- Segunda vuelta de productos (repetición exacta para efecto continuo) -->
+                    <div class="slide-img-productos" onclick="openModal('Imagenes/Sub-paginas/Productos/ALCANTARILLADO.png', 'Alcantarillado')">
+                        <img src="Imagenes/Sub-paginas/Productos/ALCANTARILLADO.png" alt="Alcantarillado">
+                    </div>
+                    <div class="slide-img-productos" onclick="openModal('Imagenes/Sub-paginas/Productos/CORRUGADAYPVC.png', 'Corrugada y PVC')">
+                        <img src="Imagenes/Sub-paginas/Productos/CORRUGADAYPVC.png" alt="Corrugada y PVC">
+                    </div>
+                    <div class="slide-img-productos" onclick="openModal('Imagenes/Sub-paginas/Productos/CORRUGADO .png', 'Corrugado')">
+                        <img src="Imagenes/Sub-paginas/Productos/CORRUGADO .png" alt="Corrugado">
+                    </div>
+                    <div class="slide-img-productos" onclick="openModal('Imagenes/Sub-paginas/Productos/GALVANIZADO .png', 'Galvanizado')">
+                        <img src="Imagenes/Sub-paginas/Productos/GALVANIZADO .png" alt="Galvanizado">
+                    </div>
+                    <div class="slide-img-productos" onclick="openModal('Imagenes/Sub-paginas/Productos/POZOS .png', 'Pozos')">
+                        <img src="Imagenes/Sub-paginas/Productos/POZOS .png" alt="Pozos">
+                    </div>
+                    <div class="slide-img-productos" onclick="openModal('Imagenes/Sub-paginas/Productos/PVC.png', 'PVC')">
+                        <img src="Imagenes/Sub-paginas/Productos/PVC.png" alt="PVC">
+                    </div>
+                    <div class="slide-img-productos" onclick="openModal('Imagenes/Sub-paginas/Productos/VALV Y COPLES UNIV.png', 'Válvulas y Coples')">
+                        <img src="Imagenes/Sub-paginas/Productos/VALV Y COPLES UNIV.png" alt="Valvulas y Coples">
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <!-- Modal para imagen ampliada -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="caption" class="modal-caption"></div>
+    </div>
 
 
 <!-- Sección: En Dónde Estamos -->
@@ -537,6 +713,47 @@
         </div>
     </footer>
   <script src="app.js"></script>
+<script>
+    // Funcionalidad para el modal
+    function openModal(src, alt) {
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const caption = document.getElementById('caption');
+        
+        modal.style.display = "block";
+        modalImg.src = src;
+        caption.innerHTML = alt;
+    }
+    
+    function closeModal() {
+        document.getElementById('imageModal').style.display = "none";
+    }
+    
+    // Cerrar modal al hacer clic fuera de la imagen
+    window.onclick = function(event) {
+        const modal = document.getElementById('imageModal');
+        if (event.target == modal) {
+            closeModal();
+        }
+    }
+
+    // Pausar la animación al pasar el mouse por encima - CON CÓDIGO SEGURO
+    document.addEventListener('DOMContentLoaded', function() {
+        const track = document.querySelector('.slider-track');
+        const slider = document.querySelector('.slider-productos');
+        
+        // Verificar que los elementos existen antes de agregar event listeners
+        if (slider && track) {
+            slider.addEventListener('mouseenter', () => {
+                track.style.animationPlayState = 'paused';
+            });
+            
+            slider.addEventListener('mouseleave', () => {
+                track.style.animationPlayState = 'running';
+            });
+        }
+    });
+</script>
 
 </body>
 </html>

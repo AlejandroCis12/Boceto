@@ -612,10 +612,7 @@ header {
 }
 
 /* Accent colors */
-.slide-content.accent-blue { color: #a8d8ff; }
-.slide-content.accent-green { color: #a8d8ff; }
-.slide-content.accent-purple { color: #a8d8ff;}
-.slide-content.accent-orange { color:#a8d8ff; }
+
 
 .slide-button {
     padding: 12px 30px;
@@ -733,7 +730,7 @@ header {
 }
 
 .read-more {
-    background-color: #e74c3c; /* Rojo oscuro */
+    background-color: var(--accent); /* Rojo oscuro */
     color: white;
     border: none;
     padding: 10px 20px;
@@ -744,7 +741,8 @@ header {
 }
 
 .read-more:hover {
-    background-color: #c0392b; /* Rojo más oscuro al hover */
+  background-color: #e50000;
+  transform: translateY(-2px);
 }
 
 .read-more-movil {
@@ -1250,7 +1248,7 @@ footer a {
 
     .read-more-movil {
     display: inline-block;
-    background-color: #e74c3c; /* Rojo oscuro */
+    background-color: var(--accent); /* Rojo oscuro */
     color: white;
     border: none;
     padding: 20px 20px;
