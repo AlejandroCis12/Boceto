@@ -238,6 +238,7 @@ h1, h2, h3 {
   color: var(--dark);
   text-decoration: none;
   font-weight: bold;
+  line-height: 1;
 }
 .in-top a {
   font-size: 15px;
