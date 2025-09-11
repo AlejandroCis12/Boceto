@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nata+Sans:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-
     <!-- Icono del sitio -->
     <link rel="icon" href="Imagenes/h.png" type="image/png">
 
@@ -18,7 +17,7 @@
     <!-- Font Awesome para íconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-              /* Product Section */
+        /* Product Section */
         
         .container-prod {
         max-width: 1400px;
@@ -197,125 +196,125 @@
                 transform: translateY(0px);
             }
         }
-    
-        /* Carrusel de productos */
-        .container-productos {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 20px;
-            overflow: hidden;
-            position: relative;
+        
+        /* Estilos para el slider */
+        .slider-section {
+            padding: 40px 20px;
+            background-color: #f8f9fa;
         }
         
-        .slider-productos {
-            overflow: hidden;
-            width: 100%;
-            height: 250px;
-            position: relative;
-        }
-        
-        .slider-track {
+        .content-wrapper {
             display: flex;
-            align-items: center;
-            animation: scroll 30s linear infinite;
-            width: max-content;
+            flex-direction: column;
+            max-width: 1400px;
+            margin: 0 auto;
         }
         
-        .slide-img-productos {
-            flex: 0 0 auto;
-            width: 200px;
-            height: 200px;
-            margin: 0 15px;
-            transition: transform 0.3s ease;
-            cursor: pointer;
-            border-radius: 10px;
+        @media (min-width: 900px) {
+            .content-wrapper {
+                flex-direction: row;
+                gap: 40px;
+            }
+        }
+        
+        .text-content {
+            flex: 1;
+            padding: 20px;
+        }
+        
+        .slider-container {
+            flex: 1;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
             overflow: hidden;
+            border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
-        .slide-img-productos:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
         }
         
-        .slide-img-productos img {
+        .slide {
+            min-width: 100%;
+            position: relative;
+        }
+        
+        .slide img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
+            display: block;
+            cursor: pointer;
             transition: transform 0.3s ease;
+            aspect-ratio: 1 / 1;
         }
         
-        .slide-img-productos:hover img {
-            transform: scale(1.1);
+        .slide img:hover {
+            transform: scale(1.03);
+        }
+        
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 15px;
+            gap: 15px;
+        }
+        
+        .slider-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .slider-btn:hover {
+            background-color: var(--accent);
+        }
+        
+        .dots-container {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .dot {
+            cursor: pointer;
+            height: 12px;
+            width: 12px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+        
+        .dot.active, .dot:hover {
+            background-color: var(--primary);
+        }
+        
+        /* Ajustes para el texto */
+        .text-content h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .text-content p {
+            margin-bottom: 15px;
+            text-align: justify;
+            justify-items: center;
+            align-items: center;
         }
 
-        /* Modal para imagen ampliada */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            padding-top: 60px;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.9);
-        }
-        
-        .modal-content {
-            margin: auto;
-            display: block;
-            max-width: 90%;
-            max-height: 80%;
-            border-radius: 8px;
-            box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
-        }
-        
-        .close {
-            position: absolute;
-            top: 15px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-        
-        .close:hover {
-            color: #007BFF;
-        }
-        
-        .modal-caption {
-            margin: 15px auto;
-            text-align: center;
-            color: #fff;
-            font-size: 1.2rem;
-            max-width: 700px;
-        }
-        
-        /* Animación del modal */
-        .modal-content, .close, .modal-caption {  
-            animation-name: zoom;
-            animation-duration: 0.6s;
-        }
-        
-        @keyframes zoom {
-            from {transform: scale(0)} 
-            to {transform: scale(1)}
-        }
-        
-        /* Animación del carrusel */
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-        
         /* Responsive Design */
 
         @media (max-width: 970px) {
@@ -417,14 +416,12 @@
                 padding-top: 25%;
             }
         }
-
-        
     </style>
 </head>
 <body>
     <!-- Header -->
     <header>
-        <img src="Imagenes/logo_web_120.png" alt="Logo Hidrosistemas" class="logo-hidrosistemas">
+        <img src="Imagenes/logo-ajustado.png" alt="Logo Hidrosistemas" class="logo-hidrosistemas">
         <div class="container header-container">
             <!-- Menú de escritorio -->
             <nav class="desktop-nav">
@@ -453,7 +450,6 @@
 
         </div>
     </header>
-
 
     <div class="container-encabezado">
         <!-- Logo de la empresa -->
@@ -509,7 +505,6 @@
                 </div>
             </div>
         </div>
-        
     </div>
     
     <!-- Menú Móvil -->
@@ -533,179 +528,170 @@
         </ul>
     </div>
 
-        <div class="catalog-section">
-            <div class="catalog-card">
-                <div class="catalog-image">
-                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Catálogo Hidrosistemas">
-                </div>
-                <div class="catalog-content">
-                    <h3>Catálogo</h3>
-                    <p>Nuestro catálogo completo con todos los productos disponibles y sus especificaciones técnicas.</p>
-                    <div class="catalog-actions">
-                        <a href="Catalogo/CATALOGO_HIDROSISTEMAS_2021.pdf" download="CATALOGO_HIDROSISTEMAS_2023.pdf" class="btn btn-download">
-                            <i class="fas fa-download"></i> Descargar PDF
-                        </a>
-                        <a href="Catalogo/CATALOGO_HIDROSISTEMAS_2021.pdf" class="btn btn-view">
-                            <i class="fas fa-eye"></i> Ver Online
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Texto -->
-        <div class="container-prod" id="container-Productos">
-        <div class="product-wrapper">
-            <div class="product-text">
-            <h1>Nuestros Productos</h1>
-            <p>En Hidrosistemas de Hidalgo, ofrecemos una amplia gama de productos de alta calidad para satisfacer todas tus necesidades en sistemas hidráulicos y de plomería. Desde tuberías y accesorios hasta soluciones especializadas, contamos con todo lo que necesitas para tus proyectos.  También te informamos que surtimos pedidos a toda la República Mexicana.</p>
-            <p>Con nosotros encontrarás una gran variedad de tubería, conexiones, equipo y los mejores productos en las mejores marcas para su instalación.</p>
+    <div class="catalog-section">
+        <div class="catalog-card">
+            <div class="catalog-image">
+                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Catálogo Hidrosistemas">
             </div>
-        </div>
-        </div>
-        <!-- Carrusel de Productos -->
-        <div class="container-productos">  
-            <div class="slider-productos">
-                <div class="slider-track">
-                    <!-- Primera vuelta de productos -->
-                    <div class="slide-img-productos" onclick="openModal('Imagenes/Sub-paginas/Productos/ALCANTARILLADO.png', 'Alcantarillado')">
-                        <img src="Imagenes/Sub-paginas/Productos/ALCANTARILLADO.png" alt="Alcantarillado">
-                    </div>
-                    <div class="slide-img-productos" onclick="openModal('Imagenes/Sub-paginas/Productos/CORRUGADAYPVC.png', 'Corrugada y PVC')">
-                        <img src="Imagenes/Sub-paginas/Productos/CORRUGADAYPVC.png" alt="Corrugada y PVC">
-                    </div>
-                    <div class="slide-img-productos" onclick="openModal('Imagenes/Sub-paginas/Productos/CORRUGADO .png', 'Corrugado')">
-                        <img src="Imagenes/Sub-paginas/Productos/CORRUGADO .png" alt="Corrugado">
-                    </div>
-                    <div class="slide-img-productos" onclick="openModal('Imagenes/Sub-paginas/Productos/GALVANIZADO .png', 'Galvanizado')">
-                        <img src="Imagenes/Sub-paginas/Productos/GALVANIZADO .png" alt="Galvanizado">
-                    </div>
-                    <div class="slide-img-productos" onclick="openModal('Imagenes/Sub-paginas/Productos/POZOS .png', 'Pozos')">
-                        <img src="Imagenes/Sub-paginas/Productos/POZOS .png" alt="Pozos">
-                    </div>
-                    <div class="slide-img-productos" onclick="openModal('Imagenes/Sub-paginas/Productos/PVC.png', 'PVC')">
-                        <img src="Imagenes/Sub-paginas/Productos/PVC.png" alt="PVC">
-                    </div>
-                    <div class="slide-img-productos" onclick="openModal('Imagenes/Sub-paginas/Productos/VALV Y COPLES UNIV.png', 'Válvulas y Coples')">
-                        <img src="Imagenes/Sub-paginas/Productos/VALV Y COPLES UNIV.png" alt="Valvulas y Coples">
-                    </div>
-
-                    <!-- Segunda vuelta de productos (repetición exacta para efecto continuo) -->
-                    <div class="slide-img-productos" onclick="openModal('Imagenes/Sub-paginas/Productos/ALCANTARILLADO.png', 'Alcantarillado')">
-                        <img src="Imagenes/Sub-paginas/Productos/ALCANTARILLADO.png" alt="Alcantarillado">
-                    </div>
-                    <div class="slide-img-productos" onclick="openModal('Imagenes/Sub-paginas/Productos/CORRUGADAYPVC.png', 'Corrugada y PVC')">
-                        <img src="Imagenes/Sub-paginas/Productos/CORRUGADAYPVC.png" alt="Corrugada y PVC">
-                    </div>
-                    <div class="slide-img-productos" onclick="openModal('Imagenes/Sub-paginas/Productos/CORRUGADO .png', 'Corrugado')">
-                        <img src="Imagenes/Sub-paginas/Productos/CORRUGADO .png" alt="Corrugado">
-                    </div>
-                    <div class="slide-img-productos" onclick="openModal('Imagenes/Sub-paginas/Productos/GALVANIZADO .png', 'Galvanizado')">
-                        <img src="Imagenes/Sub-paginas/Productos/GALVANIZADO .png" alt="Galvanizado">
-                    </div>
-                    <div class="slide-img-productos" onclick="openModal('Imagenes/Sub-paginas/Productos/POZOS .png', 'Pozos')">
-                        <img src="Imagenes/Sub-paginas/Productos/POZOS .png" alt="Pozos">
-                    </div>
-                    <div class="slide-img-productos" onclick="openModal('Imagenes/Sub-paginas/Productos/PVC.png', 'PVC')">
-                        <img src="Imagenes/Sub-paginas/Productos/PVC.png" alt="PVC">
-                    </div>
-                    <div class="slide-img-productos" onclick="openModal('Imagenes/Sub-paginas/Productos/VALV Y COPLES UNIV.png', 'Válvulas y Coples')">
-                        <img src="Imagenes/Sub-paginas/Productos/VALV Y COPLES UNIV.png" alt="Valvulas y Coples">
-                    </div>
+            <div class="catalog-content">
+                <h3>Catálogo</h3>
+                <p>Nuestro catálogo completo con todos los productos disponibles y sus especificaciones técnicas.</p>
+                <div class="catalog-actions">
+                    <a href="Catalogo/CATALOGO_HIDROSISTEMAS_2021.pdf" download="CATALOGO_HIDROSISTEMAS_2023.pdf" class="btn btn-download">
+                        <i class="fas fa-download"></i> Descargar PDF
+                    </a>
+                    <a href="Catalogo/CATALOGO_HIDROSISTEMAS_2021.pdf" class="btn btn-view">
+                        <i class="fas fa-eye"></i> Ver Online
+                    </a>
                 </div>
             </div>
+        </div>
     </div>
 
-    <!-- Modal para imagen ampliada -->
-    <div id="imageModal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modalImage">
-        <div id="caption" class="modal-caption"></div>
-    </div>
-
-
-<!-- Sección: En Dónde Estamos -->
-<section class="contact-section" id="contacto">
-    <div class="container">
-        <div class="contact-container">
-            <div class="contact-content">
-                <div class="map-section">
-                    <div class="map-visual">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3759.382675408644!2d-98.9878648!3d20.0302349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d19b0e3d4e3d4f%3A0x1234567890abcdef!2sCircuito+Emprendedores+19%2C+Parque+Industrial+Metropolitano%2C+Mineral+de+la+Reforma%2C+Hgo.!5e0!3m2!1ses!2smx!4v1700000000000!5m2!1ses!2smx" 
-                            width="100%" 
-                            height="100%" 
-                            style="border:0" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
+    <!-- Slider Section - Integrado del segundo código -->
+    <section class="slider-section">
+        <div class="content-wrapper">
+            <div class="text-content">
+                <h2>Hidrosistemas de Hidalgo</h2>
+                <p>En Hidrosistemas de Hidalgo, ofrecemos una amplia gama de productos de alta calidad para satisfacer todas tus necesidades en sistemas hidráulicos y de plomería. Desde tuberías y accesorios hasta soluciones especializadas, contamos con todo lo que necesitas para tus proyectos. También te informamos que surtimos pedidos a toda la República Mexicana.</p>
+                <p>Con nosotros encontrarás una gran variedad de tubería, conexiones, equipo y los mejores productos en las mejores marcas para su instalación.</p>
+            </div>
+            
+            <div class="slider-container">
+                <div class="slider">
+                    <div class="slide">
+                        <img src="Imagenes/Sub-paginas/Productos/CONÓCENOS .png" alt="Conócenos">
+                    </div>
+                    <div class="slide">
+                        <img src="Imagenes/Sub-paginas/Productos/ALCANTARILLADO.png" alt="Alcantarillado">
+                    </div>
+                    <div class="slide">
+                        <img src="Imagenes/Sub-paginas/Productos/CORRUGADO .png" alt="Corrugado">
+                    </div>
+                    <div class="slide">
+                        <img src="Imagenes/Sub-paginas/Productos/CORRUGADAYPVC.png" alt="Corrugada y PVC">
+                    </div>
+                    <div class="slide">
+                        <img src="Imagenes/Sub-paginas/Productos/GALVANIZADO .png" alt="Galvanizado">
+                    </div>
+                    <div class="slide">
+                        <img src="Imagenes/Sub-paginas/Productos/POZOS .png" alt="Pozos">
+                    </div>
+                    <div class="slide">
+                        <img src="Imagenes/Sub-paginas/Productos/PVC.png" alt="PVC" >
+                    </div>
+                    <div class="slide">
+                        <img src="Imagenes/Sub-paginas/Productos/VALV Y COPLES UNIV.png" alt="Válvulas y coples universales" >
                     </div>
                 </div>
-                <div class="contact-info-section">
-                    <h3>Contáctanos</h3>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Dirección</h4>
-                                <p>Circuito Emprendedores No. 19, Parque Industrial Metropolitano, Mineral de la Reforma, Hgo. CP 42186</p>
-                            </div>
+                
+                <div class="slider-controls">
+                    <button class="slider-btn" onclick="moveSlide(-1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    
+                    <div class="dots-container">
+                        <span class="dot active" onclick="currentSlide(0)"></span>
+                        <span class="dot" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                        <span class="dot" onclick="currentSlide(4)"></span>
+                        <span class="dot" onclick="currentSlide(5)"></span>
+                        <span class="dot" onclick="currentSlide(6)"></span>
+                        <span class="dot" onclick="currentSlide(7)"></span>
+                    </div>
+                    
+                    <button class="slider-btn" onclick="moveSlide(1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: En Dónde Estamos -->
+    <section class="contact-section" id="contacto">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-content">
+                    <div class="map-section">
+                        <div class="map-visual">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3759.382675408644!2d-98.9878648!3d20.0302349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d19b0e3d4e3d4f%3A0x1234567890abcdef!2sCircuito+Emprendedores+19%2C+Parque+Industrial+Metropolitano%2C+Mineral+de+la+Reforma%2C+Hgo.!5e0!3m2!1ses!2smx!4v1700000000000!5m2!1ses!2smx" 
+                                width="100%" 
+                                height="100%" 
+                                style="border:0" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
                         </div>
-                            <div class="contact-container">
+                    </div>
+                    <div class="contact-info-section">
+                        <h3>Contáctanos</h3>
+                        <div class="contact-details">
                             <div class="contact-item">
                                 <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
+                                    <i class="fas fa-map-marker-alt"></i>
                                 </div>
                                 <div class="contact-text">
-                                <h4>Teléfonos</h4>
-                                <p>
-                                    <a href="tel:+527717132513">771 713 2513</a><br>
-                                    <a href="tel:+527717132514">771 713 2514</a><br>
-                                    <a href="tel:+527717181044">771 718 1044</a>
-                                </p>
+                                    <h4>Dirección</h4>
+                                    <p>Circuito Emprendedores No. 19, Parque Industrial Metropolitano, Mineral de la Reforma, Hgo. CP 42186</p>
                                 </div>
                             </div>
+                                <div class="contact-container">
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                    </div>
+                                    <div class="contact-text">
+                                    <h4>Teléfonos</h4>
+                                    <p>
+                                        <a href="tel:+527717132513">771 713 2513</a><br>
+                                        <a href="tel:+527717132514">771 713 2514</a><br>
+                                        <a href="tel:+527717181044">771 718 1044</a>
+                                    </p>
+                                    </div>
+                                </div>
 
-                            <div class="contact-item whatsapp-item">
-                                <div class="contact-icon contact-whatsapp-icon">
-                                <i class="fab fa-whatsapp"></i>
+                                <div class="contact-item whatsapp-item">
+                                    <div class="contact-icon contact-whatsapp-icon">
+                                    <i class="fab fa-whatsapp"></i>
+                                    </div>
+                                    <div class="contact-whatsapp">
+                                    <h4>WhatsApp</h4>
+                                    <p>
+                                        <a href="https://wa.me/52771712167150" target="_blank">771 712 167 150</a>
+                                    </p>
+                                    </div>
                                 </div>
-                                <div class="contact-whatsapp">
-                                <h4>WhatsApp</h4>
-                                <p>
-                                    <a href="https://wa.me/52771712167150" target="_blank">771 712 167 150</a>
-                                </p>
+                                </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Email</h4>
+                                    <p><a href="mailto:ventas@hidrosistemas.com.mx">ventas@hidrosistemas.com.mx</a></p>
                                 </div>
                             </div>
-                            </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Email</h4>
-                                <p><a href="mailto:ventas@hidrosistemas.com.mx">ventas@hidrosistemas.com.mx</a></p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Horario</h4>
-                                <p>Lun-Vie: 9:00 AM - 6:00 PM</p>
-                                <p>Sábado: 9:00 AM - 1:00 PM</p>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Horario</h4>
+                                    <p>Lun-Vie: 9:00 AM - 6:00 PM</p>
+                                    <p>Sábado: 9:00 AM - 1:00 PM</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <button class="btn-scroll-top" aria-label="Volver arriba">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -749,48 +735,39 @@
             </div>
         </div>
     </footer>
-  <script src="app.js"></script>
-<script>
-    // Funcionalidad para el modal
-    function openModal(src, alt) {
-        const modal = document.getElementById('imageModal');
-        const modalImg = document.getElementById('modalImage');
-        const caption = document.getElementById('caption');
+    
+    <script src="app.js"></script>
+    <script>
+        // Script para el slider
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
         
-        modal.style.display = "block";
-        modalImg.src = src;
-        caption.innerHTML = alt;
-    }
-    
-    function closeModal() {
-        document.getElementById('imageModal').style.display = "none";
-    }
-    
-    // Cerrar modal al hacer clic fuera de la imagen
-    window.onclick = function(event) {
-        const modal = document.getElementById('imageModal');
-        if (event.target == modal) {
-            closeModal();
+        showSlides(slideIndex);
+        
+        function moveSlide(n) {
+            showSlides(slideIndex += n);
         }
-    }
-
-    // Pausar la animación al pasar el mouse por encima - CON CÓDIGO SEGURO
-    document.addEventListener('DOMContentLoaded', function() {
-        const track = document.querySelector('.slider-track');
-        const slider = document.querySelector('.slider-productos');
         
-        // Verificar que los elementos existen antes de agregar event listeners
-        if (slider && track) {
-            slider.addEventListener('mouseenter', () => {
-                track.style.animationPlayState = 'paused';
-            });
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+            if (n >= slides.length) slideIndex = 0;
+            if (n < 0) slideIndex = slides.length - 1;
             
-            slider.addEventListener('mouseleave', () => {
-                track.style.animationPlayState = 'running';
+            document.querySelector('.slider').style.transform = `translateX(-${slideIndex * 100}%)`;
+            
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === slideIndex);
             });
         }
-    });
-</script>
-
+        
+        // Auto slide (opcional)
+        setInterval(() => {
+            moveSlide(1);
+        }, 5000);
+    </script>
 </body>
 </html>
