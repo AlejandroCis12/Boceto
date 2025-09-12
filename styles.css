@@ -365,8 +365,8 @@ header {
   position: absolute;
   object-fit: contain;
   padding: 5px;
-
 }
+
 .triangulo{
   background-color: var(--primary);
   height: 72px;
