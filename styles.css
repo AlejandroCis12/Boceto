@@ -357,6 +357,7 @@ header {
   transition: var(--transition);
 }
 
+
 .logo-hidrosistemas{
   background-color: white;
   width: 300px; 
@@ -366,6 +367,15 @@ header {
   padding: 5px;
 
 }
+.triangulo{
+  background-color: var(--primary);
+  height: 72px;
+  position: absolute;
+  padding: 0px;
+  left: 300px;
+}
+
+
 
 .header-container {
   display: flex;
@@ -1253,6 +1263,10 @@ footer a {
         width: 250px;
         height: 69px;
     }
+    .triangulo{
+      height: 69px;
+      left: 250px;
+    }
     
     .desktop-nav a {
         padding: 10px 12px;
@@ -1283,10 +1297,13 @@ footer a {
       
   .logo-hidrosistemas {
       width: 200px;
-      height: 52px;
+      height: 51px;
   }
+  .triangulo{
+    height: 51px;
+    left: 180px;
   }
-
+}
 
 /* Responsive: en pantallas pequeñas, apila las columnas */
 @media (max-width: 800px) {
