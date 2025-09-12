@@ -135,7 +135,7 @@ h1, h2, h3 {
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     padding: 10px;
-    margin-bottom: 100px;
+    margin-bottom: 195px;
 }
 
 .contact-info {
@@ -143,6 +143,7 @@ h1, h2, h3 {
     min-width: 350px;
     padding: 20px;
     line-height: .5;
+    padding-bottom: 0px;
 }
 
 .contact-list {
@@ -378,7 +379,7 @@ header {
 .container-encabezado {
   width: 90%;
   max-width: 1500px;
-  height: 450px;
+  height: 300px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -390,10 +391,10 @@ header {
 
 /* Logo de la empresa */
 .logo img {
-  height: 350px; /* Ajusta el tamaño del logo según sea necesario */
+  height: 225px; /* Ajusta el tamaño del logo según sea necesario */
   width: auto;
   display: flex;
-  padding-top: 100px;
+  margin-top: 78px;
 }
 
 /* Barra de Navegacion/*
