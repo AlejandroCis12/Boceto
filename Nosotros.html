@@ -50,57 +50,88 @@
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
     }
     /* ################################################################################# */
-    /* Introduction Styles */
-    .introduction {
-    padding: 2rem 0;
-    background-color: #f9f9f9;
+    /* Why Choose Us Section */
+    .why-choose-us {
+        padding: 80px 20px;
+        max-width: 1500px;
+        margin: 0 auto;
     }
 
-    .section-title {
-    grid-column: 1 / -1;
-    color: var(--primary);
-    font-size: 2rem;
-    text-align: left;
-    padding-bottom: 1rem;
+    .section-title-why {
+        text-align: left;
+        margin-bottom: 60px;
+        position: relative;
     }
 
-    .section-title p{
-    grid-column: 1 / -1;
-    color: #000000;
-    font-size: 1.1rem;
-    text-align: left;
-    padding-bottom: 1rem;
+    .section-title-why h2 {
+        color: var(--primary);
+        margin-bottom: 1rem;
+        text-align: left;
+        font-size: 24px;
+        margin-left: 4vw;
+
+   }
+
+    .features-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
     }
 
-    .intro-content {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 1rem;
-    padding: 0 0;     /* Espacio mínimo desde los bordes */
-    margin: 0;           /* Sin margen lateral extra */
-    width: 100%;
-    box-sizing: border-box;
-    }
-    .intro-content p {
-    text-align: justify;
-    line-height: 1.8;
-    margin: 0;
+    .feature-card {
+        background: white;
+        border-radius: 12px;
+        padding: 30px 25px;
+        flex: 1;
+        min-width: 250px;
+        max-width: 270px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
     }
 
-    .images-container {
-    flex: 1;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    align-items: start;
+    .feature-card:hover {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+    color: white;
     }
 
-    .images-container img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
+    .feature-card:hover h3,.feature-card:hover .feature-icon, .feature-title  {
+        color: var(--white);
     }
 
+    .feature-number {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: rgba(44, 62, 80, 0.05);
+    }
+    
+    .feature-icon {
+        font-size: 2.8rem;
+        margin-bottom: 20px;
+        background: linear-gradient(135deg, var(--primary), var(--dark));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        color: #075e54;
+    }
+    
+    .feature-title {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        color: var(--primary);
+        font-weight: 600;
+    }
+    
+    .feature-description {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
     /* ################################################################################# */
     /* Values Styles */
     .values-section {
@@ -138,7 +169,7 @@
     }
 
     .value-card:hover {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
     color: white;
     }
 
@@ -218,12 +249,7 @@
     .infraestrucutura,
     .viviendas,
     .edificios,
-    .comercial,
-    .estacionamientos,
-    .hospitales,
-    .industriales,
-    .laboratorios,
-    .corporativos {
+    .comercial {
         width: 350px;
         height: 400px;
         background-size: cover;
@@ -250,56 +276,28 @@
     .infraestrucutura {
         background-image: 
             linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-            url('Imagenes/Sub-paginas/Nosotros/1.png');
+            url('Imagenes/Sub-paginas/Nosotros/construccion.png');
     }
 
     .viviendas {
         background-image: 
             linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-            url('Imagenes/Sub-paginas/Nosotros/2.png');
+            url('Imagenes/Sub-paginas/Nosotros/ferreteria.png');
     }
 
     .edificios {
         background-image: 
             linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-            url('Imagenes/Sub-paginas/Nosotros/3.png');
+            url('Imagenes/Sub-paginas/Nosotros/saneamiento.png');
     }
 
     .comercial {
         background-image: 
             linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-            url('Imagenes/Sub-paginas/Nosotros/4.png');
+            url('Imagenes/Sub-paginas/Nosotros/riego.png');
     }
 
-    .estacionamientos {
-        background-image: 
-            linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-            url('Imagenes/Sub-paginas/Nosotros/5.png');
-    }
 
-    .hospitales {
-        background-image: 
-            linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-            url('Imagenes/Sub-paginas/Nosotros/6.png');
-    }
-
-    .industriales {
-        background-image: 
-            linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-            url('Imagenes/Sub-paginas/Nosotros/7.png');
-    }
-
-    .laboratorios {
-        background-image: 
-            linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-            url('Imagenes/Sub-paginas/Nosotros/8.png');
-    }
-
-    .corporativos {
-        background-image: 
-            linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-            url('Imagenes/Sub-paginas/Nosotros/9.png');
-    }
     .service-card > div:hover {
         transform: translateY(-30px);
         box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
@@ -331,8 +329,8 @@
     }
 
     /* Clases específicas para cada servicio */
-    .icon-infraestructura {
-        background: var(--infraestructura);
+    .icon-industriales {
+        background: var(--industriales);
     }
 
     .icon-viviendas {
@@ -345,26 +343,6 @@
 
     .icon-comercial {
         background: var(--comercial);
-    }
-
-    .icon-estacionamientos {
-        background: var(--estacionamientos);
-    }
-
-    .icon-hospitales {
-        background: var(--hospitales);
-    }
-
-    .icon-industriales {
-        background: var(--industriales);
-    }
-
-    .icon-laboratorios {
-        background: var(--laboratorios);
-    }
-
-    .icon-corporativos {
-        background: var(--corporativos);
     }
 
     /* ############################################################################################# */
@@ -428,15 +406,14 @@
         grid-template-columns: 1fr;
     }
 
-    .images-container {
-        /* Cambiamos a una sola columna */
-        grid-template-columns: 1fr;
-        /* Añadimos un margen superior para separar del texto */
-        margin-top: 1.5rem;
-        justify-items: center;
+
+    .section-title-why h2 {
+        font-size: 2rem;
+        text-align: center;
     }
 
-    .section-title {
+
+    .section-title-why {
         font-size: 1.8rem;
         text-align: center;
         justify-content: center;
@@ -453,7 +430,7 @@
     .values-section h2 {
         text-align: center;
     }
-    .infraestrucutura, .viviendas, .edificios, .comercial, .estacionamientos, .hospitales, .industriales, .laboratorios, .corporativos {
+    .infraestrucutura, .viviendas, .edificios, .comercial{
         display: grid;
         grid-template-columns: 1fr;
         gap: 30px;
@@ -568,6 +545,38 @@
   </div>
 </section>
 
+    <section class="why-choose-us">
+        <div class="section-title-why">
+            <h2>¿Por qué elegirnos?</h2>
+        </div>
+        
+        <div class="features-container">
+            <div class="feature-card">
+                <div class="feature-icon">01</div>
+                <h3 class="feature-title">Experiencia comprobada</h3>
+                <p class="feature-description">Más de 20 años en el mercado con un historial sólido de calidad y confianza.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">02</div>
+                <h3 class="feature-title">Productos de calidad</h3>
+                <p class="feature-description">Trabajamos solo con proveedores certificados para ofrecer lo mejor en cada categoría de producto.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">03</div>
+                <h3 class="feature-title">Compromiso con la innovación</h3>
+                <p class="feature-description">Siempre atentos a las últimas tendencias y necesidades del mercado, con planes de expansión hacia la fabricación.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">04</div>
+                <h3 class="feature-title">Servicio al cliente excepcional</h3>
+                <p class="feature-description">Nos dedicamos a entender y satisfacer las necesidades de nuestros clientes, brindando asesoría y atención personalizada.</p>
+            </div>
+        </div>
+    </section>
+
 <!-- Valores -->
 <section class="values-section">
   <div class="values-container">
@@ -602,7 +611,6 @@
           <li>Sustentabilidad</li>
         </ul>
         </div>
-      <!-- Más valores -->
     </div>
   </div> 
 </section>
@@ -616,21 +624,21 @@
             <!-- Servicio 1 -->
             <div class="service-card">
                 <div class="service-card infraestrucutura"> 
-                <div class="service-icon icon-infraestructura">
-                        <i class="fas fa-city"></i>
+                    <div class="service-icon icon-industriales">
+                        <i class="fas fa-industry"></i>
                     </div>               
-                    <h3>Infraestructura Urbana Integral</h3>
-                    <p>Diseño y construcción de redes eléctricas, sistemas de agua potable, alcantarillado y proyectos de urbanización para ciudades sostenibles.</p>
+                    <h3>Construcción y obra civil</h3>
+                    <p>Proyectos residenciales, comerciales e industriales que requieren soluciones hidráulicas duraderas y eficientes.</p>
                 </div>
             </div>
             <!-- Servicio 2 -->
             <div class="service-card">
                 <div class="service-card viviendas"> 
                     <div class="service-icon icon-viviendas">
-                        <i class="fas fa-home"></i>
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
                     </div>               
-                    <h3>Viviendas Residenciales y de Interés Social</h3>
-                    <p>Desarrollo de edificios departamentales y casas habitación en zonas residenciales con enfoque comunitario y accesible.</p>
+                    <h3>Ferreterías Y distribuidores</h3>
+                    <p>Apoyo constante a nuestros socios comerciales con stock, logística y asesoría técnica.</p>
                 </div>
             </div>
 
@@ -638,10 +646,10 @@
             <div class="service-card">
                 <div class="service-card edificios"> 
                     <div class="service-icon icon-edificios">
-                        <i class="fas fa-building"></i>
+                        <i class="fa-solid fa-faucet-drip"></i>
                     </div>               
-                    <h3>Edificios Corporativos y Hoteles</h3>
-                    <p>Proyectos llave en mano para oficinas corporativas y hoteles de alta gama, integrando funcionalidad y diseño innovador.</p>
+                    <h3>Industria hidráulica Y saneamiento</h3>
+                    <p>Soluciones integrales para sistemas de agua potable, drenaje y alcantarillado.</p>
                 </div>
             </div>
 
@@ -649,65 +657,10 @@
             <div class="service-card">
                 <div class="service-card comercial"> 
                     <div class="service-icon icon-comercial">
-                        <i class="fas fa-shopping-cart"></i>
+                        <i class="fa-solid fa-tractor"></i>
                     </div>               
-                    <h3>Centros Comerciales Modernos</h3>
-                    <p>Diseño y construcción de espacios comerciales optimizados para experiencia de usuario y flujo eficiente de visitantes.</p>
-                </div>
-            </div>
-
-            <!-- Servicio 5 -->
-            <div class="service-card">
-                <div class="service-card estacionamientos"> 
-                    <div class="service-icon icon-estacionamientos">
-                        <i class="fas fa-parking"></i>
-                    </div>               
-                    <h3>Estacionamientos Inteligentes</h3>
-                    <p>Soluciones automatizadas y multifuncionales para áreas urbanas de alto tráfico con gestión tecnológica avanzada.</p>
-                </div>
-            </div>
-
-            <!-- Servicio 6 -->
-            <div class="service-card">
-                <div class="service-card hospitales"> 
-                    <div class="service-icon icon-hospitales">
-                        <i class="fas fa-hospital"></i>
-                    </div>               
-                    <h3>Hospitales y Centros Médicos</h3>
-                    <p>Infraestructura especializada con estándares de bioseguridad y tecnología médica integrada para atención eficiente.</p>
-                </div>
-            </div>
-
-            <!-- Servicio 7 -->
-            <div class="service-card">
-                <div class="service-card industriales"> 
-                    <div class="service-icon icon-industriales">
-                        <i class="fas fa-industry"></i>
-                    </div>               
-                    <h3>Áreas Industriales Especializadas</h3>
-                    <p>Parques industriales y naves con infraestructura robusta para operaciones logísticas y producción exigente.</p>
-                </div>
-            </div>
-
-            <!-- Servicio 8 -->
-            <div class="service-card">
-                <div class="service-card laboratorios"> 
-                    <div class="service-icon icon-laboratorios">
-                        <i class="fas fa-flask"></i>
-                    </div>               
-                    <h3>Laboratorios de Alta Especialización</h3>
-                    <p>Instalaciones técnicas con requisitos ambientales y de seguridad certificados para investigación avanzada.</p>
-                </div>
-            </div>
-
-            <!-- Servicio 9 -->
-            <div class="service-card">
-                <div class="service-card corporativos"> 
-                    <div class="service-icon icon-corporativos">
-                        <i class="fas fa-briefcase"></i>
-                    </div>               
-                    <h3>Espacios Corporativos Modernos</h3>
-                    <p>Diseño de oficinas adaptables con enfoque en productividad, bienestar y tecnología integrada para empresas innovadoras.</p>
+                    <h3>Riego agrícola y residencial</h3>
+                    <p>Sistemas de conducción y distribución de agua para riego eficiente en campos agrícolas, jardines y áreas verdes.</p>
                 </div>
             </div>
         </div>

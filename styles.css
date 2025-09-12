@@ -758,7 +758,7 @@ header {
     font-size: clamp(0.9rem, 1.5vw, 1.1rem);
     margin-bottom: 30px;
     line-height: 1.6;
-    color:#a8d8ff;
+    color: white;
 }
 
 /* Accent colors */
@@ -768,7 +768,7 @@ header {
     padding: 12px 30px;
     font-size: 1rem;
     background-color: transparent;
-    color: #a8d8ff;
+    color: white;
     border: 2px solid currentColor;
     border-radius: 30px;
     cursor: pointer;
