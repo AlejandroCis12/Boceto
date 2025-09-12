@@ -208,24 +208,21 @@
         
         /* Estilos para el slider */
         .slider-section {
-            padding: 40px 20px;
+            padding: 40px 120px;
             background-color: #f8f9fa;
         }
         
         .content-wrapper {
             display: flex;
             flex-direction: column;
-            max-width: 1400px;
+            max-width: 1500px;
             margin: 0 auto;
         }
-        
-        @media (min-width: 900px) {
-            .content-wrapper {
-                flex-direction: row;
-                gap: 40px;
-            }
+
+        .slider-section img {
+            max-width: 100%;
         }
-        
+
         .text-content {
             flex: 1;
             padding: 20px;
@@ -234,11 +231,13 @@
         .slider-container {
             flex: 1;
             max-width: 600px;
+            height: auto;
             margin: 0 auto;
             position: relative;
             overflow: hidden;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 0;
         }
         
         .slider {
@@ -249,19 +248,6 @@
         .slide {
             min-width: 100%;
             position: relative;
-        }
-        
-        .slide img {
-            width: 100%;
-            height: auto;
-            display: block;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            aspect-ratio: 1 / 1;
-        }
-        
-        .slide img:hover {
-            transform: scale(1.03);
         }
         
         .slider-controls {
@@ -325,6 +311,13 @@
         }
 
         /* Responsive Design */
+
+        @media (min-width: 1200px) {
+            .content-wrapper {
+                flex-direction: row;
+                gap: 40px;
+                }
+            }
         @media (max-width: 970px) {
             .menu-toggle  {
                 margin-right: 15px;
