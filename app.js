@@ -95,13 +95,13 @@ cards.forEach(card => {
   observer.observe(card);
 });
 
-  // ✅ Verificar si el slider existe
+  // Verificar si el slider existe
   if (!slider || slides.length === 0 || !dotsContainer) {
     // console.log('Slider no encontrado o sin slides. Saltando slider.');
     return;
   }
 
-  // ✅ Crear puntos (dots)
+  // Crear puntos (dots)
   slides.forEach((_, i) => {
     const dot = document.createElement("span");
     dot.classList.add("dot");
@@ -112,7 +112,7 @@ cards.forEach(card => {
 
   const dots = document.querySelectorAll(".dot");
 
-  // ✅ Clonar slides solo si hay al menos un slide
+  // Clonar slides solo si hay al menos un slide
   if (slides.length > 0) {
     const firstClone = slides[0].cloneNode(true);
     const lastClone = slides[slides.length - 1].cloneNode(true);
