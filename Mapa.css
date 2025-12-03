@@ -2,7 +2,6 @@
 /* Estilos para la sección de contacto */
 .contact-section {
     padding: 40px 0;
-    background-color: var(--white);
 }
 
 .contact-header h2 {
@@ -149,7 +148,7 @@
 
     .map-visual,
     .map-visual iframe {
-         min-height: 300px;
+        min-height: 300px;
     }
 }
 
