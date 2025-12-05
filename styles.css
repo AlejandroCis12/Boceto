@@ -1087,7 +1087,7 @@ transform: translateY(-2px);
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+  background: linear-gradient(135deg, var(--secondary) 0%, #3498db 100%);
   box-shadow: 0 4px 20px rgba(79, 68, 239, 0.3);
   display: flex;
   align-items: center;
@@ -1335,7 +1335,7 @@ footer a {
     margin-top: -100px;
   }
   .contact-content-h{
-    height: 200px;
+    height: 230px;
   }
   
   .supervision-info {
@@ -1430,7 +1430,8 @@ footer a {
   order: 1;
   margin-bottom: 5px;
   line-height: .9;
-  margin-top: -12px;
+  margin-top: 20px;
+  margin-left: 23px;
   }
 
   .social-icons {
@@ -1454,7 +1455,7 @@ footer a {
   }
 
   .logo img {
-    height: 200px;
+    height: 170px;
     display: flex;
     margin-top: 109px;
   }
@@ -1561,9 +1562,19 @@ footer a {
   }  
 }
 @media (max-width: 480px) {
+  .contact-info {
+    margin-left: 20px;
+    margin-top: -10px;
+  }
+  .logo{
+    margin-top: -285px;
+  }
+  .logo img {
+    margin-top: 170px;
+  }
   .slider-container {
     height: 300px;
-    margin-top: -5px;
+    margin-top: 130px;
   }  
   .slide-content h1 {
     font-size: 1.8rem;
@@ -1585,6 +1596,9 @@ footer a {
     
     .slogan {
       padding-top: 20px;
+    }
+    .catalog-section {
+      margin-top: 70px;
     }
     
   .contact-text p {
@@ -1633,7 +1647,22 @@ footer a {
     height: 12px;
   }
 }
-
+@media (max-width: 375px) {
+  .contact-info {
+    margin-left: 55px;
+  }
+  .contact-item {
+    max-width: 200px;
+    padding-right: 9px;
+  }
+  
+}
+@media (max-width: 320px) {
+  .contact-item {
+    padding-right: 60px;
+  }
+  
+}
 
 
 

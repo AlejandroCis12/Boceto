@@ -14,6 +14,13 @@
   <title>Capacitación</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+        .slogan {
+            margin-top: 100px;
+        }
         /* Estilos generales */
         .logo img {
             height: 225px; /* Ajusta el tamaño del logo según sea necesario */
@@ -23,9 +30,16 @@
             margin-bottom: 146px;
         }
         .cap-container {
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+        .cap-container h2{
+            color: var(--green);
+            text-align: center;
+        }
+        .cap-container p{
+            color: black;
         }
         
         section {
@@ -45,36 +59,6 @@
             max-width: 100%;
             height: auto;
         }
-        
-        /* Hero Section */
-        .hero {
-            background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(32, 124, 202, 0.9) 100%), 
-                            url('Imagenes/Sub-paginas/Capacitacion/capas.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        .hero h1 {
-            color: white;
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-        
-        .hero h1:after {
-            background: #ffffff;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 30px;
-        }
-        
         .btn {
             display: inline-block;
             background: #ff0000;
@@ -114,6 +98,7 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            margin-right: 15px;
         }
         .btn-fechas:hover {
             background: 	#128c7e;
@@ -156,15 +141,16 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px;
-            background: #f8f9fa;
             border-radius: 8px;
+           }
+           .container-fechas h2 {
+            color: var(--green);
+            margin-left: 450px;
            }
         
         /* Contenido Principal */
         .main-content {
-            background: white;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             padding: 40px;
             margin-bottom: 50px;
             margin-top: 50px;
@@ -172,11 +158,12 @@
 
         .main-content p {
             text-align: justify;
+            color: var(--white);
         }         
         .content-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            gap: 8rem;
             align-items: center;
             margin: 40px 0;
         }
@@ -198,15 +185,15 @@
         
         /* Servicios */
         .services-section {
-            background-color: #f0f7ff;
             padding: 60px 0;
+            margin-top: -90px;
         }
         
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            gap: 41px;
+            margin-top: 9px;
         }
         
         .service-card {
@@ -247,7 +234,7 @@
         }
   
         .card-icon {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            background: linear-gradient(162deg, var(--secondary) 0%, #002b59 100%);
             color: white;
             font-size: 2.5rem;
             height: 100px;
@@ -267,7 +254,7 @@
         }
         
         .benefits-list {
-            margin-top: 30px;
+            margin-top: -100px;
         }
 
 
@@ -275,12 +262,14 @@
         .benefits-list h2 {
             text-align: center;
             margin-bottom: 40px;
+            color: var(--green)
         }
         
         .benefits-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
+            gap: 44px;
+            padding: 10px 30px;
         }
         
         .benefit-item {
@@ -315,41 +304,7 @@
             font-size: 1.3rem;
             margin-bottom: 15px;
         }
-        
-        /* CTA */
-        .cta-section {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
-            color: white;
-            text-align: center;
-            padding: 70px 0;
-            border-radius: 10px;
-            margin: 60px 0;
-        }
-        
-        .cta-section h2 {
-            color: white;
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-        }
-        
-        .cta-section p {
-            max-width: 700px;
-            margin: 0 auto 30px;
-            font-size: 1.1rem;
-        }
-        
-        .cta-btn {
-            background: rgb(255, 3, 3);
-            color: #ffffff;
-            font-weight: 700;
-        }
-        
-        .cta-btn:hover {
-            background: #fb1c1cd7;
-            color: white;
-            border-color: #ff0000;
-        }
-        
+               
         /* Responsive */
 
          @media (max-width: 970px) {
@@ -359,6 +314,10 @@
     }
 
         @media (max-width: 768px) {
+            .contact-content-h{
+                margin-bottom: 123px;
+                height: 455px;
+            }
             .cap-container {
                 margin-top: 225px;
             }
@@ -391,6 +350,24 @@
         }
 
         @media (max-width: 500px) {
+            .contact-content-h {
+                margin-bottom: 70px;
+                height: 231px;
+            }
+            .contact-info {
+                margin-left: 15px;
+                margin-top: -20px;
+            }
+            
+            .main-content {
+                margin-top: -100px;
+            }
+            .contact-container-h{
+                margin-top: -150px;
+            }
+            .logo img {
+                margin-top: 186px;
+            }
             .btn-fechas {
                 padding: 8px 16px;
                 font-size: 14px;
@@ -404,6 +381,9 @@
 
 /* Ajuste extra para pantallas muy pequeñas */
         @media (max-width: 360px) {
+            .logo img {
+                height: 160px;
+            }
             .btn-fechas {
                 font-size: 10px;
                 padding: 7px 14px;
@@ -418,6 +398,7 @@
             
             .services-grid {
                 grid-template-columns: 1fr;
+                width: 271px;
             }
             
             .benefits-grid {
@@ -432,8 +413,7 @@
     <!-- Header -->
     <header>
         <div class="logo-container">        
-            <img src="Imagenes/logo-ajustado-2.png" alt="Logo Hidrosistemas" class="logo-hidrosistemas">
-            <img src="Imagenes/triangulo.png" alt="triangulo decorativo" class="triangulo">
+            <img src="Imagenes/Logo_b.png" alt="Logo Hidrosistemas" class="logo-hidrosistemas">
         </div>
         <div class="container header-container">     
             <!-- Menú de escritorio -->
@@ -653,13 +633,6 @@
             </div>
         </section>
         
-
-        
-        <section class="cta-section">
-            <h2>¿Listo para Mejorar las Habilidades de su Equipo?</h2>
-            <p>Contáctenos hoy mismo para diseñar un programa de capacitación a la medida de las necesidades de su organización. Ofrecemos soluciones para grupos pequeños y grandes corporaciones.</p>
-            <a href="https://api.whatsapp.com/send/?phone=527712167150&text&type=phone_number&app_absent=0" target="_blank" class="btn cta-btn">Solicitar Cotización</a>
-        </section>
     </div>
 
     <button class="btn-scroll-top" aria-label="Volver arriba">

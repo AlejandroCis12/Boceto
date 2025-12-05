@@ -12,14 +12,17 @@
   <link rel="stylesheet" href="Mapa.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        .contact-header {
+            margin-top: 15pc;
+        }
         /* Hero Section */
         .contact-content-h{
             margin-bottom: 168px;
         }
 
         .hero {
-            background: linear-gradient(rgba(197, 199, 201, 0.8), rgba(0, 52, 89, 0.9)), url(Imagenes/Sub-paginas/Asesoria/hero-asesoria.jpeg) no-repeat center center/cover;
-            height: 100vh;
+            background: linear-gradient(rgba(197, 199, 201, 0.8), rgba(0, 52, 89, 0.9)), url(Imagenes/asesoria.png) no-repeat center center/cover;
+            height: 432px;
             display: flex;
             align-items: center;
             text-align: center;
@@ -52,13 +55,15 @@
         /* Servicios */
         .servicios {
             padding: 50px 0;
-            background-color: var(--white);
         }
 
         .section-title {
             text-align: center;
             margin-bottom: 60px;
             position: relative;
+        }
+        .section-title h2 {
+            color: var(--green);
         }
 
         .servicios-grid {
@@ -104,7 +109,6 @@
         /* Proceso */
         .proceso {
             padding: 50px 0;
-            background-color: var(--white);
         }
 
         .proceso-steps {
@@ -198,6 +202,9 @@
        }
 
         @media (max-width: 768px) {
+            .contact-container-h{
+                margin-top: -150px;
+            }
             .menu-toggle {
                 display: flex;
             }

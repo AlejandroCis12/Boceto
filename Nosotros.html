@@ -20,41 +20,41 @@
     }
     /* Hero Styles */
     .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                url('Imagenes/asesoria.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    color: white;
-    position: relative;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Imagenes/asesoria.png');
+        background-size: cover;
+        background-position: center;
+        height: 432px;
+        display: flex;
+        align-items: center;
+        color: white;
+        position: relative;
+        margin-top: 50px;
     }
 
     .hero-overlay {
-    width: 100%;
-    padding: 0 20px;
+        width: 100%;
+        padding: 0 20px;
     }
 
     .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
-    color: #ffffff;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+        color: #ffffff;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
     }
 
     .hero-subtitle {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
     }
     /* ################################################################################# */
-    /* Why Choose Us Section */
+    /* Sección de porque elegirnos */
     .why-choose-us {
         padding: 80px 20px;
         max-width: 1500px;
-        margin: 0 auto;
+        margin-top: -50px;
     }
 
     .section-title-why {
@@ -64,19 +64,17 @@
     }
 
     .section-title-why h2 {
-        color: var(--primary);
+        color: var(--green);
         margin-bottom: 1rem;
-        text-align: left;
+        text-align: center;
         font-size: 24px;
-        margin-left: 4vw;
-
    }
 
     .features-container {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 30px;
+        gap: 3rem;
     }
 
     .feature-card {
@@ -93,8 +91,8 @@
     }
 
     .feature-card:hover {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
-    color: white;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+        color: white;
     }
 
     .feature-card:hover h3,.feature-card:hover .feature-icon, .feature-title  {
@@ -117,7 +115,7 @@
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
-        color: #1db954;
+        color: var(--secondary);
     }
     
     .feature-title {
@@ -135,114 +133,120 @@
     /* ################################################################################# */
     /* Values Styles */
     .values-section {
-    background-color: #f9f9f9;
-    margin-left: 5vw;
-    margin-right: 5vw;
-    padding: 2rem 0;
+        margin-left: 5vw;
+        margin-right: 5vw;
+        padding: 2rem 0;
+        margin-top: -70px;
     }
 
     .values-container {
-    margin: 0 auto;
-    padding: 0 0;
+        margin: 0 auto;
+        padding: 0 0;
     }
 
     .values-section h2 {
-    color: var(--primary);
-    margin-bottom: 1rem;
-    text-align: left;
+        color: var(--green);
+        margin-bottom: 1rem;
     }
 
     .values-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
     }
 
     .value-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        transition: transform 0.3s ease;
     }
 
     .value-card:hover {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
-    color: white;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+        color: white;
     }
 
     .value-card:hover h3, .value-card:hover .value-icon, .value-card:hover li::before {
-    color: white;
+        color: white;
     }
 
     .value-icon {
-    font-size: 2.5rem;
-    color: var(--primary);
-    margin-bottom: 1rem;
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 1rem;
     }
 
     .value-card h3 {
-    color: var(--primary);
-    margin-bottom: 1rem;
+        color: var(--primary);
+        margin-bottom: 1rem;
     }
 
     .value-card p {
-    text-align: justify;
+        text-align: justify;
     }
 
     .values-list {
-    list-style: none;
-    padding-left: 0;
-    text-align: left;
+        list-style: none;
+        padding-left: 0;
+        text-align: left;
     }
 
     .values-list li {
-    position: relative;
-    padding-left: 1.5em;
-    margin-bottom: 0.5rem;
+        position: relative;
+        padding-left: 1.5em;
+        margin-bottom: 0.5rem;
     }
 
     .values-list li::before {
-    content: "●";
-    color: var(--primary);
-    font-size: 1rem;
-    position: absolute;
-    left: 0;
-    top: 0;
-    transform: translateY(-1px);
+        content: "●";
+        color: var(--primary);
+        font-size: 1rem;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform: translateY(-1px);
     }
 
     .btn-primary {
-    background-color: rgb(202, 12, 12);
-    color: #fff;
-    border: none;
-    padding: 12px 24px;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-right: 15px;
+        background-color: rgb(202, 12, 12);
+        color: #fff;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-right: 15px;
     }
 
     .btn-secondary {
-    background-color: #fff;
-    color: #007bff;
-    border: 2px solid #007bff;
-    padding: 12px 24px;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
+        background-color: #fff;
+        color: #007bff;
+        border: 2px solid #007bff;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 4px;
+        cursor: pointer;
     }
 
     /* ############################################################################################# */
     /* Seccion de nuestra experiencia */
+    .section-title{
+        color: var(--green);
+    }
+    .container p{
+        color: var(--white)
+    }
+
     .services-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
-        padding: 40px;
-        max-width: 1200px;
+        gap: 3rem 2rem;
+        padding: 16px;
+        max-width: 1300px;
         margin: 0 auto;
         justify-items: center;
     }
@@ -345,46 +349,6 @@
         background: var(--comercial);
     }
 
-    /* ############################################################################################# */
-    /* Seccion de informes */
-    .cta-section {
-        background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
-        color: var(--white);
-        text-align: center;
-        padding: 70px 0;
-        border-radius: 10px;
-        margin: 60px 0;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    }
-
-    .cta-section h2 {
-        color: var(--white);
-        font-size: 2.2rem;
-        margin-bottom: 20px;
-    }
-
-    .cta-section h2:after {
-        background: var(--white);
-    }
-
-    .cta-section p {
-        max-width: 700px;
-        margin: 0 auto 30px;
-        font-size: 1.1rem;
-    }
-
-    .cta-btn {
-        background: var(--white);
-        color: var(--primary);
-        font-weight: 700;
-    }
-
-    .cta-btn:hover {
-        background: var(--accent);
-        color: var(--white);
-        border-color: var(--accent);
-    }
-
     @media (max-width: 970px) {
         .menu-toggle  {
             margin-right: 40%;
@@ -438,11 +402,15 @@
         justify-items: center;
     }
 }
-
-    @media (max-width: 400px) {
+    @media (max-width: 425px) {
+        .hero {
+            width: 103.5%;
+            margin-top: 60px;
+        }
         .infraestrucutura, .viviendas, .edificios, .comercial {
             width: 80%;
         }
+
     }
     </style>
 </head>
@@ -450,8 +418,7 @@
     <!-- Header -->
     <header>
         <div class="logo-container">        
-            <img src="Imagenes/logo-ajustado-2.png" alt="Logo Hidrosistemas" class="logo-hidrosistemas">
-            <img src="Imagenes/triangulo.png" alt="triangulo decorativo" class="triangulo">
+            <img src="Imagenes/Logo_b.png" alt="Logo Hidrosistemas" class="logo-hidrosistemas">
         </div>
         <div class="container header-container">      
             <!-- Menú de escritorio -->
@@ -675,14 +642,6 @@
         </div>
     </div>
 </section>
-        
-        
-    <section class="cta-section">
-        <h2>¿Te interesa trabajar con nosotros?</h2>
-        <p>Comunícate y pide informes, estamos para servirte y brindarte un buen servicio.</p>
-        <a href="#contacto" class="btn cta-btn">Solicitar Cotización</a>
-    </section>
-    </div>
 
     <button class="btn-scroll-top" aria-label="Volver arriba">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
