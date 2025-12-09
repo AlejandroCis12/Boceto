@@ -210,7 +210,7 @@
         
         /* Estilos para el slider */
         .slider-section {
-            padding: 40px 120px;
+            padding: 0vw 3vw;
         }
         
         .content-wrapper {
@@ -300,7 +300,7 @@
         
         /* Ajustes para el texto */
         .text-content h2 {
-            color: #20a4ed;
+            color: var(--green);
             margin-bottom: 20px;
         }
         
@@ -392,12 +392,16 @@
         }
 
         @media (max-width: 784px){
+            .logo img{
+                margin-top: -1vh;
+                height: 37vw;
+            }
             .contact-container-h {
                 margin-top: -120px;
             }
             .catalog-section {
-            margin-top: 300px;
-        }
+                margin-top: 36vh;
+            }
 
         }
         @media (max-width: 576px) {
@@ -427,9 +431,6 @@
 
         
         @media (max-width: 500px) {
-            .slider-section {
-            padding: 3rem 2rem;
-            }
             .text-content {
                 order: 1;
                 padding: 2rem;
