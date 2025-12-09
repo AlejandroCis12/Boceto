@@ -1263,10 +1263,6 @@ footer a {
     width: 250px;
     height: 69px;
   }
-  .triangulo{
-    height: 69px;
-    left: 250px;
-  }
   
   .desktop-nav a {
     padding: 10px 12px;
@@ -1317,7 +1313,9 @@ footer a {
     gap: 15px;
   }
   .contact-container-h{
-    margin-top: -50px;
+    margin-top: -8vh;
+    width: 70vw;
+    margin-left: 9vw;
   }
   .contact-header {
     margin-bottom: -50px;
@@ -1333,11 +1331,7 @@ footer a {
     flex-direction: column;
     padding: 20px;
     margin-top: -100px;
-  }
-  .contact-content-h{
-    height: 230px;
-  }
-  
+  }  
   .supervision-info {
     border-left: none;
     border-top: 1px solid #eee;
@@ -1442,7 +1436,7 @@ footer a {
 
   .logo {
     order: 2;
-    margin-top: -200px;
+    margin-top: -12vh;
     margin-bottom: 200px;
   }
 
@@ -1455,9 +1449,9 @@ footer a {
   }
 
   .logo img {
-    height: 170px;
+    height: 45vw;
     display: flex;
-    margin-top: 109px;
+    margin-top: 4vh;
   }
 
   .read-more{
@@ -1563,14 +1557,11 @@ footer a {
 }
 @media (max-width: 480px) {
   .contact-info {
-    margin-left: 20px;
-    margin-top: -10px;
+    margin-left: -4vw;
+    margin-top: -2vh;
   }
   .logo{
-    margin-top: -285px;
-  }
-  .logo img {
-    margin-top: 170px;
+    margin-top: -14vh;
   }
   .slider-container {
     height: 300px;
@@ -1648,9 +1639,6 @@ footer a {
   }
 }
 @media (max-width: 375px) {
-  .contact-info {
-    margin-left: 55px;
-  }
   .contact-item {
     max-width: 200px;
     padding-right: 9px;

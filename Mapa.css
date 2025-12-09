@@ -192,7 +192,7 @@
 }
 @media (max-width: 375px) {
     .contact-info {
-        margin-left: 15px;
+        margin-left: -7vw;
     }
     .contact-header {
         margin-top: 11pc;
@@ -202,7 +202,7 @@
         padding-right: 9px;
     }
     .logo img {
-        margin-top: 170px;
+        margin-top: -2vh;
     }
   
 }
