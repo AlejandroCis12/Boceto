@@ -724,7 +724,7 @@ header {
   transform: scale(1.05);
 }
 
-.slide-content {
+.slide-content-h {
   position: absolute;
   top: 50%;
   transform: translateY(-60%);
@@ -737,13 +737,59 @@ header {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   transition: var(--transition);
   backdrop-filter: blur(5px);
-  height: 65%;
+  height: 40%;
   text-align: justify;
   align-content: center;
 }
 
+.slide-content {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  width: 45%;
+  max-width: 600px;
+  padding: 20px 40px;
+  background: 
+    /* Color base con transparencia + imagen */
+    linear-gradient(
+      rgba(0, 0, 0, 0.3), /* Negro al 30% - oscurece la imagen */
+      rgba(0, 0, 0, 0.2)
+    ),
+    url('Imagenes/agua.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--text-light);
+  border-radius: 12px;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: var(--transition);
+  backdrop-filter: blur(12px) brightness(1.1);
+  height: 33vh;
+  min-height: 260px;
+  max-height: 70vh;
+  text-align: justify;
+  align-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
 .slide-content.right-align {
   right: 5%;
+}
+.slide-content-h.right-align {
+  right: 5%;
+}
+
+.slide-content-h h1 {
+  color: white;
+  font-size: clamp(2rem, 3.2vw, 3.5rem);
+  margin-bottom: 20px;
+  font-weight: 550;
+  line-height: 0.2;
+  position: relative;
+  padding-bottom: 15px;
 }
 
 .slide-content h1 {
@@ -751,19 +797,16 @@ header {
   font-size: clamp(2rem, 3.2vw, 3.5rem);
   margin-bottom: 20px;
   font-weight: 550;
-  line-height: 1.2;
+  line-height: 0.2;
   position: relative;
   padding-bottom: 15px;
 }
 
-.slide-content h1::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 60px;
-  height: 4px;
-  background: currentColor;
+.slide-content-h p {
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  margin-bottom: 20px;
+  line-height: 1.2;
+  color: white;
 }
 
 .slide-content p {

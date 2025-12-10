@@ -34,7 +34,9 @@
             margin-top: 50px;
             height: 432px;
         }
-        
+        .container-hero{
+            margin-top: -12vh ;
+        }
         .hero h1 {
             font-size: 3.5rem;
             color: white;
@@ -44,8 +46,17 @@
         
         .hero p {
             font-size: 1.25rem;
-            max-width: 700px;
+            max-width: 108vw;
             margin: 0 auto 40px;
+            text-align: justify;
+        }
+        .container-supervision {
+            margin: 2vh 3vh;
+        }
+        .container-supervision h2 {
+            padding-top: 0; /* Elimina el padding superior del h2 en móviles */
+            font-size: 2rem; /* Opcional: reduce el tamaño de fuente para móviles */
+            color: var(--green);
         }
 
                 /* Services Intro */
@@ -55,10 +66,6 @@
             grid-template-columns: 1fr 1fr;
             gap: 50px;
             align-items: center;
-        }
-
-        .intro-content{
-            padding-bottom: 200px;
         }
         
         .intro-content h2 {
@@ -98,8 +105,34 @@
         }
 
         @media(max-width:800px){
+            .contact-container-h{
+                margin-top: -15vh;
+            }
+            .logo {
+                margin-top: -12vh;
+            }
+            .logo img{
+                height: 34vh;
+                margin-top: -8vh;
+            }
             .hero {
-                margin-top: 200px;
+                margin-top: 15vh;
+            }
+            .container-supervision h2{
+                text-align: center;
+
+            }
+            .container-hero{
+                margin-top: -12vh;
+                padding: 2vh;
+            }
+            .hero h1 {
+                font-size: 4.5vh;
+            }
+            .hero p {
+                font-size: 2.6vh;
+                max-width: 80vw;
+                text-align: justify;
             }
             .intro-grid {
                 grid-template-columns: 1fr; /* Cambia a una sola columna */
@@ -110,17 +143,53 @@
                 padding-top: 50px; /* Ajusta el padding superior para móviles */
             }
             
-            .intro-content h2 {
-                padding-top: 0; /* Elimina el padding superior del h2 en móviles */
-                font-size: 2rem; /* Opcional: reduce el tamaño de fuente para móviles */
-            }
-            
             .intro-image {
                 order: 1; /* Opcional: coloca la imagen después del texto */
                 margin-top: 20px; /* Añade espacio entre el texto y la imagen */
                 padding-bottom: 50px; /* Añade padding inferior para móviles */
             }
-
+            @media(max-width:546px){
+                .slogan {
+                    margin-top: 2vh;
+                }
+                .logo {
+                    margin-top: -6vh;
+                }
+                .logo img{
+                    height: 28vh;
+                    margin-top: -16vh;
+                }
+                .container-hero{
+                    margin-top: -20vh;
+                }
+                .hero h1 {
+                    font-size: 4vh;
+                }
+                .hero p{
+                    font-size: 2.4vh;
+                }
+            }
+            @media(max-width: 425px)
+            {
+                .slogan {
+                    margin-top: 11vh;
+                }
+                .logo {
+                    margin-top: -10vh;
+                }
+                .logo img{
+                    height: 22vh;
+                    margin-top: -10vh;
+                }
+            }
+            @media(max-width:320px){
+                .container-hero h2{
+                    font-size: 3.5vh;
+                }
+                .container-hero p{
+                    font-size: 2vh;
+                }
+            }
 
         }
 
@@ -233,10 +302,11 @@
 
    <!-- Services Intro -->
     <section class="services-intro section">
-        <div class="container">
+        <div class="container-supervision">                    
+            <h2>Supervisión Especializada</h2>
             <div class="intro-grid">
                 <div class="intro-content">
-                    <h2>Supervisión Especializada</h2>
+
                     <p>En Hidrosistemas, verificamos y supervisamos el cumplimiento de instalaciones y avance contra proyecto integrando la aplicación de las normas y reglamentos nacionales e internacionales vigentes, tanto para la aprobación de los materiales como para las instalaciones a realizar.</p>
                     <p>Acompañamos a nuestros socios durante la obra para se cumplan los lineamientos y normativas que hagan su proyecto, seguro, funcional y con viabilidad y sustentabilidad para que el usuario final obtenga un valor agregado que solo los profesionales podemos ofrecer.</p>
                 </div>
