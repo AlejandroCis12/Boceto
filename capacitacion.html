@@ -26,12 +26,37 @@
             height: 225px; /* Ajusta el tamaño del logo según sea necesario */
             margin-top: 86px;
         }
+        .hero {
+            background: linear-gradient(rgb(10 6 6 / 38%), #0d141c), url('Imagenes/Capacitacion.png') center/cover no-repeat;
+            color: white;
+            padding: 180px 0 100px;
+            text-align: center;
+            margin-top: 8vh;
+            height: 432px;
+        }
+        .container-hero{
+            margin-top: -12vh ;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 108vw;
+            margin: 0 auto 40px;
+            text-align: justify;
+            padding: 0 20vw;
+        }
         .contact-content-h{
             margin-bottom: 146px;
         }
         .cap-container {
             max-width: 1300px;
-            margin: 0 auto;
+            margin: -9vh auto 0;
             padding: 0 20px;
         }
         .cap-container h2{
@@ -314,6 +339,12 @@
     }
 
         @media (max-width: 768px) {
+            .hero {
+                margin-top: 6vh;
+            }
+            .container-hero{
+                margin-top: -17vh ;
+            }
             .contact-container-h {
                 margin-top: -19vh;
             }
@@ -328,7 +359,11 @@
             }
             
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2rem;
+                margin: 0 1vh;
+            }
+            .hero p {
+                padding: 0 11vw;
             }
             
             h1 {
@@ -452,46 +487,6 @@
 
         </div>
     </header>
-
-
-    <div class="container-encabezado">
-        <!-- Logo de la empresa -->
-        <div class="logo">
-        <img src="Imagenes/2.png" alt="Logo de Hidrosistemas">
-        </div>
-        <div class="slogan">
-            <div class="contact-container-h">
-                <div class="contact-header">
-                    <h1>¡Contáctanos!</h1>
-                </div>
-                <div class="contact-content-h">
-                    <div class="contact-info">
-                        <ul class="contact-list">
-                            <li class="contact-item No-inicio">
-                                <div class="contact-icon-t">
-                                    <i class="fab fa-whatsapp"></i>
-                                </div>
-                                <div class="No-inicio">
-                                    <h3>WhatsApp</h3>
-                                    <p><a href="https://api.whatsapp.com/send/?phone=527712167150&text&type=phone_number&app_absent=0">771 216 7150</a></p>
-                                </div>
-                            </li>
-                            <li class="contact-item Fb-top">
-                                <div class="contact-icon-t">
-                                    <i class="fab fa-facebook"></i>
-                                </div>
-                                <div class="Fb-top">
-                                    <h3>Facebook</h3>
-                                    <p><a href="https://www.facebook.com/HidrosistemasHGO/?fref=ts">Hidrosistemas de Hidalgo, S.A. de C.V.</a></p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-    </div>
     
     <!-- Menú Móvil -->
     <div class="mobile-menu">
@@ -513,7 +508,13 @@
             <li><a href="#contacto" class="mobile-contact"><i class="fas fa-envelope"></i> Contacto</a></li>
         </ul>
     </div>
-
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container-hero">
+            <h1>Supervisión Profesional de Proyectos</h1>
+            <p>Garantizamos el éxito de sus proyectos hidráulicos con nuestra supervisión experta, asegurando calidad, eficiencia y cumplimiento de normativas en cada etapa del proceso.</p>
+        </div>
+    </section>
     <div class="cap-container">
         <section class="main-content">
             <h2>Nuestros Servicios de Capacitación</h2>

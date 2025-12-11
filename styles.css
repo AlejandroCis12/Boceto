@@ -686,7 +686,7 @@ header {
   min-height: 400px;
   max-height: 800px;
   border-radius: 2px;
-  margin-top: 35px;
+  margin-top: 8vh;
 }
 
 .slider {
@@ -1392,18 +1392,27 @@ footer a {
   .slider-container {
     height: 50vh;
     min-height: 350px;
-    margin-top: 0px;
-    margin-bottom: 200px;
+    margin-top: 6vh;
+    margin-bottom: 22vh;
 
   }
-  
-  .slide-content {
-    width: 90%;
+  .slide-content-h {
+    width: 56%;
     padding: 20px;
     right: 5%;
-    left: 5%;
+    left: 40%;
   }
-  
+  .slide-content {
+    width: 50%;
+    padding: 20px;
+    right: 5%;
+    left: 47%;
+    text-align: left;
+  }
+  .slide-button{
+    padding: 9px 15px;
+    font-size: 0.8rem;
+  }
   .container-nosotros {
     padding: 30px 20px;
     top: -190px;
@@ -1582,7 +1591,6 @@ footer a {
   }
   .slider-container {
     height: 300px;
-    margin-top: 200px;
   }
   .slogan{
     padding-top: 100px;
@@ -1595,7 +1603,6 @@ footer a {
   }
   .slider-container {
     height: 300px;
-    margin-top: 200px;
   }  
 }
 @media (max-width: 480px) {
@@ -1608,17 +1615,24 @@ footer a {
   }
   .slider-container {
     height: 300px;
-    margin-top: 130px;
-  }  
+  }
+  .slide-content-h h1 {
+    font-size: 1.5rem;
+  }
   .slide-content h1 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
-  
+  .slide-content-h p {
+    font-size: 0.8rem;
+    margin-bottom: 3px;
+  }
   .slide-content p {
-    font-size: 0.9rem;
-    margin-bottom: 15px;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
   }
-  
+  .slide-button{
+    font-size: 0.6rem;
+  }
   .slider-controls {
     bottom: 15px;
   }

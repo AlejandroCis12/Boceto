@@ -20,6 +20,31 @@
         .slogan {
             margin-top: 60px    ;
         }
+        .hero {
+            background: linear-gradient(rgb(10 6 6 / 38%), #0d141c), url('Imagenes/productos.png') center/cover no-repeat;
+            color: white;
+            padding: 180px 0 100px;
+            text-align: center;
+            margin-top: 5vw;
+            height: 432px;
+        }
+        .container-hero{
+            margin-top: -12vh ;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 108vw;
+            margin: 0 auto 40px;
+            text-align: justify;
+            padding: 0 20vw;
+        }
         /* Product Section */
         .container-encabezado {
             height: 250px;
@@ -112,6 +137,7 @@
             gap: 30px;
             padding: 20px;
             padding-top: 15%;
+            margin-top: -13vw;
         }
         
         .catalog-content h3 {
@@ -392,6 +418,19 @@
         }
 
         @media (max-width: 784px){
+            .container-hero{
+                margin-top: -12vh;
+                padding: 2vh;
+            }
+            .hero h1 {
+                font-size: 4.5vh;
+            }
+            .hero p {
+                font-size: 2.6vh;
+                max-width: 100vw;
+                text-align: justify;
+                padding: 0 10vw;
+            }
             .logo img{
                 margin-top: -1vh;
                 height: 37vw;
@@ -400,11 +439,20 @@
                 margin-top: -120px;
             }
             .catalog-section {
-                margin-top: 36vh;
+                margin-top: -4vh;
             }
 
         }
         @media (max-width: 576px) {
+            .container-hero{
+                margin-top: -18vh;
+            }
+            .hero h1{
+                font-size: 4vh;
+            }
+            .hero p{
+                font-size: 2.1vh;
+            }
             .product-text {
                 justify-content: center;
                 padding: 40px 10px;
@@ -423,9 +471,6 @@
             
             .product-text p {
                 font-size: 1rem;
-            }
-            .catalog-section {
-            margin-top: 250px;
             }
         }        
 
@@ -487,46 +532,7 @@
             </button>
 
         </div>
-    </header>
-
-    <div class="container-encabezado">
-        <!-- Logo de la empresa -->
-        <div class="logo">
-        <img src="Imagenes/2.png" alt="Logo de Hidrosistemas">
-        </div>
-        <div class="slogan">
-            <div class="contact-container-h">
-                <div class="contact-header">
-                    <h1>¡Contáctanos!</h1>
-                </div>
-                <div class="contact-content-h">
-                    <div class="contact-info">
-                        <ul class="contact-list">
-                            <li class="contact-item No-inicio">
-                                <div class="contact-icon-t">
-                                    <i class="fab fa-whatsapp"></i>
-                                </div>
-                                <div class="No-inicio">
-                                    <h3>WhatsApp</h3>
-                                    <p><a href="https://api.whatsapp.com/send/?phone=527712167150&text&type=phone_number&app_absent=0">771 216 7150</a></p>
-                                </div>
-                            </li>
-                            <li class="contact-item Fb-top">
-                                <div class="contact-icon-t">
-                                    <i class="fab fa-facebook"></i>
-                                </div>
-                                <div class="Fb-top">
-                                    <h3>Facebook</h3>
-                                    <p><a href="https://www.facebook.com/HidrosistemasHGO/?fref=ts">Hidrosistemas de Hidalgo, S.A. de C.V.</a></p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
+    </header>   
     <!-- Menú Móvil -->
     <div class="mobile-menu">
         <button class="close-menu" aria-label="Cerrar menú">
@@ -548,6 +554,13 @@
         </ul>
     </div>
 
+    <!-- Hero Section -->
+<section class="hero">
+    <div class="container-hero">
+        <h1>Productos</h1>
+        <p>Garantizamos el éxito de sus proyectos hidráulicos con nuestra supervisión experta, asegurando calidad, eficiencia y cumplimiento de normativas en cada etapa del proceso.</p>
+    </div>
+</section>
 
     <div class="catalog-section">
         <div class="catalog-card">
