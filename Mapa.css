@@ -50,7 +50,7 @@
 }
 
 .info-title {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     color: #333;
     margin-bottom: 20px;
     padding-bottom: 12px;
@@ -73,7 +73,7 @@
 .item-header {
     display: flex;
     align-items: center;
-    margin-bottom: -4px;
+    margin-bottom: 8px;
 }
 
 .item-icon {
@@ -95,7 +95,7 @@
 }
 
 .item-label {
-    font-size: 1.5rem;
+    font-size: 0.95rem;
     color: #333;
     margin: 0;
     font-weight: 600;
@@ -103,7 +103,7 @@
 
 /* Texto del elemento */
 .item-text {
-    font-size: 1rem;
+    font-size: 0.85rem;
     color: #555;
     line-height: 1.4;
     margin-left: 42px; /* Alineado con el texto después del icono */
@@ -188,7 +188,7 @@
     
     .map-frame,
     .info-side {
-        height: 450px; /* Reducir un poco en tablet */
+        height: 400px; /* Reducir un poco en tablet */
     }
 }
 
@@ -203,12 +203,8 @@
     
     .map-frame,
     .info-side {
-        height: 550px;
+        height: 380px;
     }
-
-    .email-block {
-        justify-items: left;
-   }
     
     .info-side {
         padding: 20px;
@@ -225,9 +221,10 @@
 }
 
 @media (max-width: 576px) {
+
     .map-frame,
     .info-side {
-        height: 500px;
+        height: 350px;
     }
     
     .info-title {
@@ -252,8 +249,5 @@
     
     .contact-row .item-text {
         padding-left: 38px;
-    }
-    .email-block {
-        padding-top: 0px;
     }
 }
