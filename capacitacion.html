@@ -50,41 +50,6 @@
             box-shadow: var(--shadow);
         }
 
-        /* Hero section corregida */
-        .hero {
-            background: linear-gradient(rgba(10, 6, 6, 0.38), #0d141c), url('Imagenes/Capacitacion.png') center/cover no-repeat;
-            color: white;
-            padding: 200px 0 100px;
-            text-align: center;
-            margin-top: 72px; /* Altura del header */
-            min-height: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-content {
-            max-width: 1200px;
-            padding: 0 20px;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            color: white;
-            margin-bottom: 25px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-            line-height: 1.2;
-        }
-        
-        .hero p {
-            font-size: 1.25rem;
-            max-width: 800px;
-            margin: 0 auto 40px;
-            text-align: center;
-            line-height: 1.6;
-            opacity: 0.9;
-        }
-
         /* Contenedor principal */
         .cap-container {
             max-width: 1300px;
@@ -96,6 +61,7 @@
             color: var(--green);
             font-size: 2.8rem;
             margin-bottom: 30px;
+            padding-top: 80px;
         }
 
         .cap-container p {
@@ -315,10 +281,6 @@
 
         /* Responsive Design */
         @media (max-width: 1200px) {
-            .hero h1 {
-                font-size: 3rem;
-            }
-            
             .cap-container {
                 padding: 50px 20px;
             }
@@ -334,34 +296,9 @@
                 align-items: center;
                 max-width: 800px;
             }
-            
-            .map-side,
-            .info-side {
-                width: 100%;
-                max-width: 800px;
-            }
-            
-            .map-frame,
-            .info-side {
-                height: 400px;
-            }
         }
 
-        @media (max-width: 992px) {
-            .hero {
-                padding: 150px 0 80px;
-                min-height: 400px;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
-                padding: 0 20px;
-            }
-            
+        @media (max-width: 992px) {  
             .content-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
@@ -377,21 +314,6 @@
         }
 
         @media (max-width: 768px) {
-            .hero {
-                margin-top: 72px;
-                padding: 120px 0 60px;
-                min-height: 350px;
-            }
-            
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-                padding: 0 15px;
-            }
-            
             .cap-container h2 {
                 font-size: 2.2rem;
             }
@@ -433,16 +355,7 @@
             .contact-content {
                 gap: 25px;
             }
-            
-            .map-frame,
-            .info-side {
-                height: 380px;
-            }
-            
-            .info-side {
-                padding: 20px;
-            }
-            
+                  
             .contact-row {
                 flex-direction: column;
                 gap: 15px;
@@ -454,21 +367,6 @@
         }
 
         @media (max-width: 576px) {
-            .hero {
-                padding: 100px 0 50px;
-                min-height: 300px;
-            }
-            
-            .hero h1 {
-                font-size: 1.8rem;
-                margin-bottom: 20px;
-            }
-            
-            .hero p {
-                font-size: 0.95rem;
-                margin-bottom: 30px;
-            }
-            
             .cap-container {
                 padding: 40px 15px;
             }
@@ -522,41 +420,9 @@
             .contact-section .container {
                 padding: 0 15px;
             }
-            
-            .map-frame,
-            .info-side {
-                height: 350px;
-            }
-            
-            .info-title {
-                font-size: 1.3rem;
-                margin-bottom: 15px;
-            }
-            
-            .item-icon {
-                width: 28px;
-                height: 28px;
-                font-size: 0.8rem;
-            }
-            
-            .item-label {
-                font-size: 0.9rem;
-            }
-            
-            .item-text {
-                font-size: 0.8rem;
-                margin-left: 38px;
-            }
-            
-            .contact-row .item-text {
-                padding-left: 38px;
-            }
         }
 
         @media (max-width: 400px) {
-            .hero h1 {
-                font-size: 1.6rem;
-            }
             
             .cap-container h2 {
                 font-size: 1.6rem;
@@ -697,14 +563,6 @@
             <li><a href="#contacto" class="mobile-contact"><i class="fas fa-envelope"></i> Contacto</a></li>
         </ul>
     </div>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="fade-in">Capacitación</h1>
-            <p class="fade-in">Llevamos a cabo proyectos de capacitación, permitiéndoles resolver exitosamente sus requerimientos específicos al proveer capacitación a obreros e instaladores.</p>
-        </div>
-    </section>
 
     <!-- Contenido Principal -->
     <div class="cap-container">
