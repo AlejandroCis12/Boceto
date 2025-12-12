@@ -105,24 +105,7 @@ h1, h2, h3 {
   margin: 0 auto;
 }
 
-.slogan{
-  text-align: left;
 
-}
-
-.slogan h1{
-  color: white;
-}
-
-.slogan h1
-.slogan p {
-  text-align: center;
-  margin-top: 20px;
-  padding-top: 20px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  line-height: 1.3;
-}
 
 .contact-container-h {
   display: flex;
@@ -371,7 +354,7 @@ header {
 
 
 .logo-hidrosistemas{
-  width: 300px; 
+  width: 265px; 
   height: 72px;
   position: absolute;
   object-fit: contain;
@@ -530,7 +513,7 @@ header {
 }
 
 .nav-contact:hover {
-  background-color: #ff0202;
+  background-color: var(--green);
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(255, 107, 0, 0.3);
 }
@@ -1376,11 +1359,6 @@ footer a {
     margin-bottom: -50px;
   }
   
-  .slogan {
-    padding-top: 50px;
-    padding-bottom: -50px;
-    width: 100%;
-  }
   
   .contact-content {
     flex-direction: column;
@@ -1478,10 +1456,6 @@ footer a {
     height: 600px;
     padding: 0px 0 40px;
     gap: 15px;
-  }
-  .slogan {
-    padding-top: 50px;
-    padding-bottom: 20px;
   }
 
 .contact-info {
@@ -1604,10 +1578,6 @@ footer a {
   .slider-container {
     height: 300px;
   }
-  .slogan{
-    padding-top: 100px;
-    padding-bottom: 50px;
-  }
 }
 @media (max-width: 500px) {
   .container-encabezado {
@@ -1653,10 +1623,6 @@ footer a {
     flex-direction: column;
     padding: 20px 0;
   }
-    
-    .slogan {
-      padding-top: 20px;
-    }
     .catalog-section {
       margin-top: 70px;
     }
