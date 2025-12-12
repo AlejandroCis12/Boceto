@@ -64,6 +64,7 @@
         }
         .section-title h2 {
             color: var(--green);
+            text-align: left;
         }
 
         .servicios-grid {
@@ -79,7 +80,7 @@
             box-shadow: var(--shadow);
             transition: var(--transition);
             text-align: center;
-            padding: 10px;
+            padding: 10px 10px 20px 10px;
         }
 
         .servicio-card:hover {
@@ -90,7 +91,10 @@
         .servicio-card:hover h3{
             color: white;
         }
-
+        .servicio-card p{
+            padding: 0 20px;
+            text-align: justify;
+        }
         .servicio-icon {
             font-size: 3.5rem;
             color: var(--primary);
@@ -103,7 +107,7 @@
 
         .servicio-card h3 {
             font-size: 1.5rem;
-            margin-bottom: 20px;
+            margin-bottom: 5px;
         }
 
         /* Proceso */
@@ -121,7 +125,7 @@
 
         .step {
             flex: 1;
-            min-width: 250px;
+            min-width: 150px;
             max-width: 300px;
             text-align: center;
             position: relative;
@@ -154,6 +158,9 @@
             margin-bottom: 15px;
             color: var(--primary);
         }
+        .step p {
+            text-align: justify;
+        }
 
         .step:hover {
             transform: translateY(-10px);
@@ -168,7 +175,7 @@
         .imagenes-final {
             display: flex;
             justify-content: center;
-            gap: 85px; 
+            gap: 25vw; 
             padding: 20px;
             flex-wrap: wrap; 
             max-width: 100%;
@@ -359,28 +366,29 @@
             <div class="proceso-steps">
                 <div class="step">
                     <div class="step-number">1</div>
-                    <h3>Evaluación Inicial</h3>
-                    <p>Análisis detallado de tus necesidades y objetivos para entender el alcance del proyecto.</p>
+                    <h3>Evaluación preliminar</h3>
+                    <p>Análisis de necesidades y objetivos específicos para definir el alcance y parámetros del proyecto.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
                     <h3>Diagnóstico Técnico</h3>
-                    <p>Inspección de sistemas existentes y recopilación de datos para identificar áreas de mejora.</p>
+                    <p>Inspección de sistemas actuales y recopilación de datos para identificar las mejoras específicas.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
                     <h3>Desarrollo de Soluciones</h3>
-                    <p>Elaboración de propuestas técnicas con alternativas optimizadas para tu sistema.</p>
+                    <p>Elaboración de varias de propuestas y alternativas técnicas que garanticen mejoras al proyecto.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">4</div>
-                    <h3>Implementación</h3>
-                    <p>Soporte durante la ejecución del proyecto y asesoramiento continuo durante la instalación.</p>
+                    <h3>Implementación Guiada</h3>
+                    <p>Soporte técnico durante la ejecución del proyecto y asesoramiento durante la instalación.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">5</div>
-                    <h3>Seguimiento</h3>
-                    <p>Monitoreo post-implementación para asegurar el funcionamiento óptimo del sistema.</p>
+                    <h3>Seguimiento Continuo</h3>
+                    <p>Monitoreo continuo que asegura el rendimiento y funcionamiento óptimo del sistema.
+</p>
                 </div>
             </div>
         </div>
@@ -398,14 +406,14 @@
                         <i class="fas fa-tools"></i>
                     </div>
                     <h3>Diseño y Proyectos</h3>
-                    <p>Servicios de diseño especializado y desarrollo de proyectos a medida para aplicaciones industriales, comerciales y residenciales.</p>
+                    <p>Servicios de diseño desarrollo de proyectos a medida para diversar aplicaciones.</p>
                 </div>
                 <div class="servicio-card">
                     <div class="servicio-icon">
                         <i class="fas fa-search"></i>
                     </div>
                     <h3>Diagnóstico y Optimización</h3>
-                    <p>Análisis profesional y mejora de sistemas existentes para maximizar su rendimiento y eficiencia.</p>
+                    <p>Análisis profesional y mejora de sistemas existentes para maximizar su rendimiento.</p>
                 </div>
                 <div class="servicio-card">
                     <div class="servicio-icon">
