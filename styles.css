@@ -8,13 +8,25 @@
   box-sizing: border-box;
 }
 
-/* Si necesitas cargar la fuente Eras Bold ITC */
+/* Cargar la fuente Eras Bold ITC */
 @font-face {
   font-family: 'Eras Bold ITC';
-  src: url('ruta/a/eras-bold-itc.ttf') format('truetype');
-  /* Ajusta la ruta y el formato según tu archivo de fuente */
+  src: url('fonts/eras-itc-bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
+}
+@font-face {
+  font-family: 'D-DINCondensed-Bold';
+  src: url('fonts/D-DINCondensed-Bold.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* h4, h5, h6 {
+  font-family: 'Eras Bold ITC', sans-serif;
+} */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'D-DINCondensed-Bold', sans-serif;
 }
 
 body {

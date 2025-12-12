@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Capacitación</title>
+  <title>Capacitación - Hidrosistemas</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nata+Sans:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -11,314 +11,257 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="Mapa.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <title>Capacitación</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+        /* Reset y estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         html, body {
             max-width: 100%;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
-        .slogan {
-            margin-top: 100px;
+
+        /* Variables CSS */
+        :root {
+            --primary: #011b37;
+            --secondary: #018bd8;
+            --accent: #CB0000;
+            --green: #14bb03fa;
+            --white: #ffffff;
+            --dark: #333333;
+            --light: #f5f9fc;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
         }
-        /* Estilos generales */
-        .logo img {
-            height: 225px; /* Ajusta el tamaño del logo según sea necesario */
-            margin-top: 86px;
+
+        /* Header fijo */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgb(0 43 89);
+            box-shadow: var(--shadow);
         }
+
+        /* Hero section corregida */
         .hero {
-            background: linear-gradient(rgb(10 6 6 / 38%), #0d141c), url('Imagenes/Capacitacion.png') center/cover no-repeat;
+            background: linear-gradient(rgba(10, 6, 6, 0.38), #0d141c), url('Imagenes/Capacitacion.png') center/cover no-repeat;
             color: white;
-            padding: 180px 0 100px;
+            padding: 200px 0 100px;
             text-align: center;
-            margin-top: 8vh;
-            height: 432px;
+            margin-top: 72px; /* Altura del header */
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .container-hero{
-            margin-top: -12vh ;
+
+        .hero-content {
+            max-width: 1200px;
+            padding: 0 20px;
         }
+
         .hero h1 {
             font-size: 3.5rem;
             color: white;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.2;
         }
         
         .hero p {
             font-size: 1.25rem;
-            max-width: 108vw;
+            max-width: 800px;
             margin: 0 auto 40px;
-            text-align: justify;
-            padding: 0 20vw;
-        }
-        .contact-content-h{
-            margin-bottom: 146px;
-        }
-        .cap-container {
-            max-width: 1300px;
-            margin: -9vh auto 0;
-            padding: 0 20px;
-        }
-        .cap-container h2{
-            color: var(--green);
             text-align: center;
-        }
-        .cap-container p{
-            color: black;
-        }
-        
-        section {
-            padding: 60px 0;
-        }
-        
-        h2 {
-            font-size: 1.8rem;
-        }
-        
-        p {
-            margin-bottom: 15px;
-            font-size: 1.05rem;
-        }
-        
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-        .btn {
-            display: inline-block;
-            background: #ff0000;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 2px solid #ff0000;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-        }
-        
-        .btn:hover {
-            background: transparent;
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            line-height: 1.6;
+            opacity: 0.9;
         }
 
-        .btn-fechas {
-            display: flex;
+        /* Contenedor principal */
+        .cap-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        .cap-container h2 {
+            color: var(--green);
+            font-size: 2.8rem;
+            margin-bottom: 30px;
+        }
+
+        .cap-container p {
+            color: var(--white);
+            text-align: justify;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* Grid de contenido */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-            gap: 12px;
-            padding: 16px 32px;
-            background: #075e54;
-            color: white;
-            border: none;
+            margin: 60px 0;
+        }
+
+        .content-img {
             border-radius: 12px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
             overflow: hidden;
-            margin-right: 15px;
-        }
-        .btn-fechas:hover {
-            background: 	#128c7e;
-            transform: translateY(-3px);
-        }
-        
-        .btn-fechas:active {
-            transform: translateY(1px);
-        }
-        
-        .btn-fechas i {
-            font-size: 1.5rem;
+            box-shadow: var(--shadow);
             transition: transform 0.3s ease;
         }
-        
-        .btn-fechas:hover i {
-            transform: scale(1.1);
+
+        .content-img:hover {
+            transform: translateY(-5px);
         }
-        
-        /* Efecto de onda al hacer clic */
-        .btn-fechas::after {
-            content: "";
-            position: absolute;
+
+        .content-img img {
             width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 70%);
-            opacity: 0;
-            transition: all 0.5s ease;
+            height: 400px;
+            object-fit: cover;
+            display: block;
         }
-        
-        .btn-fechas:active::after {
-            opacity: 1;
-            transform: scale(1.5);
+
+        /* Servicios */
+        .services-section {
+            margin: 80px 0;
         }
 
         .container-fechas {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px;
-            border-radius: 8px;
-           }
-           .container-fechas h2 {
-            color: var(--green);
-            margin-left: 450px;
-           }
-        
-        /* Contenido Principal */
-        .main-content {
-            border-radius: 10px;
-            padding: 40px;
-            margin-bottom: 50px;
-            margin-top: 50px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
-        .main-content p {
-            text-align: justify;
-            color: var(--white);
-        }         
-        .content-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 8rem;
+        .btn-fechas {
+            display: inline-flex;
             align-items: center;
-            margin: 40px 0;
+            gap: 12px;
+            padding: 16px 32px;
+            background: #075e54;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
         }
-        
-        .content-img {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+
+        .btn-fechas:hover {
+            background: #128c7e;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
-        
-        .content-img img {
-            display: block;
-            transition: transform 0.5s ease;
-        }
-        
-        .content-img:hover img {
-            transform: scale(1.05);
-        }
-        
-        /* Servicios */
-        .services-section {
-            padding: 60px 0;
-            margin-top: -90px;
-        }
-        
+
+        /* Grid de servicios */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 41px;
-            margin-top: 9px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
         }
-        
+
         .service-card {
             background: white;
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            width: 300px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(
-                0deg, 
-                transparent, 
-                transparent 30%, 
-                var(--primary)
-            );
-            transform: rotate(-45deg);
-            transition: all 0.5s ease;
-            opacity: 0;
-            }
 
         .service-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px var(--primary)
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
 
-        .service-card:hover::before {
-            opacity: 1;
-            transform: rotate(-45deg) translateY(100%);
-        }
-  
         .card-icon {
             background: linear-gradient(162deg, var(--secondary) 0%, #002b59 100%);
             color: white;
-            font-size: 2.5rem;
-            height: 100px;
-            width: 300px;
+            font-size: 2.2rem;
+            height: 80px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
         
         .card-content {
-            padding: 25px;
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
         
         .card-content h3 {
             margin-bottom: 15px;
             color: var(--primary);
+            font-size: 1.7rem;
+            line-height: 1.3;
         }
         
+        .card-content p {
+            flex-grow: 1;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        /* Beneficios */
         .benefits-list {
-            margin-top: -100px;
-        }
-
-
-        
-        .benefits-list h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            color: var(--green)
+            margin: 80px 0;
         }
         
         .benefits-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 44px;
-            padding: 10px 30px;
+            gap: 30px;
+            margin-top: 40px;
         }
         
         .benefit-item {
             background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
             text-align: center;
             transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         
         .benefit-item:hover {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
-            color: white;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            transform: translateY(-5px);
         }
         
-        .benefit-item:hover h3 {
+        .benefit-item:hover h3,
+        .benefit-item:hover p {
             color: white;
         }
         
         .benefit-icon {
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: var(--primary);
             margin-bottom: 20px;
+            transition: color 0.3s ease;
         }
         
         .benefit-item:hover .benefit-icon {
@@ -326,128 +269,375 @@
         }
         
         .benefit-item h3 {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             margin-bottom: 15px;
+            color: var(--primary);
         }
-               
-        /* Responsive */
 
-         @media (max-width: 970px) {
-           .menu-toggle  {
-            margin-right: 40%;
+        .benefit-item p {
+            color: var(--dark);
+            line-height: 1.5;
         }
-    }
 
-        @media (max-width: 768px) {
-            .hero {
-                margin-top: 6vh;
+        /* Botón flotante */
+        .btn-scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--secondary) 0%, #3498db 100%);
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 999;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .btn-scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .btn-scroll-top:hover {
+            transform: translateY(-3px) scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 3rem;
             }
-            .container-hero{
-                margin-top: -17vh ;
-            }
-            .contact-container-h {
-                margin-top: -19vh;
-            }
-            .logo {
-                margin-top: -29vh;
-            }
+            
             .cap-container {
-                margin-top: 6vh;
+                padding: 50px 20px;
             }
-            .content-grid {
-                grid-template-columns: 1fr;
+            
+            .contact-content {
+                max-width: 1000px;
+            }
+        }
+
+        @media (max-width: 1100px) {
+            .contact-content {
+                flex-direction: column;
+                align-items: center;
+                max-width: 800px;
+            }
+            
+            .map-side,
+            .info-side {
+                width: 100%;
+                max-width: 800px;
+            }
+            
+            .map-frame,
+            .info-side {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero {
+                padding: 150px 0 80px;
+                min-height: 400px;
             }
             
             .hero h1 {
-                font-size: 2rem;
-                margin: 0 1vh;
+                font-size: 2.5rem;
             }
+            
             .hero p {
-                padding: 0 11vw;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            section {
-                padding: 40px 0;
-            }
-            
-            .main-content {
-                padding: 25px;
-            }
-        }
-
-        @media (max-width: 670px) {
-            .cap-container {
-                margin-top: 20vh;
-            }
-            .services-grid {
-                grid-template-columns: 1fr;
-                justify-items: center;
-            }
-        }
-
-        @media (max-width: 500px) {
-            .logo {
-                margin-top: -35vh;
-            }
-            .contact-content-h {
-                margin-bottom: 1vh;
-                height: 27vh;
-            }
-            .contact-info {
-                margin-left: -4vw;
-                margin-top: -3vh;
-            }
-            
-            .main-content {
-                margin-top: -100px;
-            }
-            .contact-container-h{
-                margin-top: -150px;
-            }
-            .logo img {
-                margin-top: 29vh;
-                height: 22vh;
-            }
-            .btn-fechas {
-                padding: 8px 16px;
-                font-size: 14px;
-                border-radius: 4px;
-                width: 90%; 
-                max-width: 280px; 
-                margin-left: 30px;
-            }
-        }
-  
-
-/* Ajuste extra para pantallas muy pequeñas */
-        @media (max-width: 360px) {
-            .logo img {
-                height: 160px;
-            }
-            .btn-fechas {
-                font-size: 10px;
-                padding: 7px 14px;
-           }
-            .btn-fechas i {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
+                padding: 0 20px;
             }
             
             .content-grid {
                 grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .content-img img {
+                height: 350px;
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                margin-top: 72px;
+                padding: 120px 0 60px;
+                min-height: 350px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+                padding: 0 15px;
+            }
+            
+            .cap-container h2 {
+                font-size: 2.2rem;
+            }
+            
+            .container-fechas {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .container-fechas h2 {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .btn-fechas {
+                width: 100%;
+                justify-content: center;
             }
             
             .services-grid {
                 grid-template-columns: 1fr;
-                width: 271px;
+                gap: 25px;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .card-content {
+                padding: 25px;
+            }
+            
+            .contact-section {
+                padding: 40px 0;
+            }
+            
+            .contact-content {
+                gap: 25px;
+            }
+            
+            .map-frame,
+            .info-side {
+                height: 380px;
+            }
+            
+            .info-side {
+                padding: 20px;
+            }
+            
+            .contact-row {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .contact-row .info-item {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding: 100px 0 50px;
+                min-height: 300px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+                margin-bottom: 20px;
+            }
+            
+            .hero p {
+                font-size: 0.95rem;
+                margin-bottom: 30px;
+            }
+            
+            .cap-container {
+                padding: 40px 15px;
+            }
+            
+            .cap-container h2 {
+                font-size: 1.8rem;
+                margin-bottom: 25px;
+            }
+            
+            .cap-container p {
+                font-size: 1rem;
+                text-align: left;
+            }
+            
+            .content-grid {
+                margin: 40px 0;
+                gap: 30px;
+            }
+            
+            .content-img img {
+                height: 250px;
             }
             
             .benefits-grid {
                 grid-template-columns: 1fr;
+                gap: 15px;
             }
+            
+            .benefit-item {
+                padding: 30px 20px;
+            }
+            
+            .service-card {
+                margin: 0 auto;
+                max-width: 100%;
+            }
+            
+            .btn-fechas {
+                padding: 14px 24px;
+                font-size: 1rem;
+            }
+            
+            .btn-scroll-top {
+                width: 48px;
+                height: 48px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 1.3rem;
+            }
+            
+            .contact-section .container {
+                padding: 0 15px;
+            }
+            
+            .map-frame,
+            .info-side {
+                height: 350px;
+            }
+            
+            .info-title {
+                font-size: 1.3rem;
+                margin-bottom: 15px;
+            }
+            
+            .item-icon {
+                width: 28px;
+                height: 28px;
+                font-size: 0.8rem;
+            }
+            
+            .item-label {
+                font-size: 0.9rem;
+            }
+            
+            .item-text {
+                font-size: 0.8rem;
+                margin-left: 38px;
+            }
+            
+            .contact-row .item-text {
+                padding-left: 38px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            
+            .cap-container h2 {
+                font-size: 1.6rem;
+            }
+            
+            .services-grid {
+                gap: 20px;
+            }
+            
+            .card-content {
+                padding: 20px;
+            }
+            
+            .card-content h3 {
+                font-size: 1.4rem;
+            }
+            
+            .info-side {
+                padding: 15px;
+            }
+        }
+
+        /* Animaciones */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .service-card,
+        .benefit-item,
+        .content-grid > div {
+            opacity: 0;
+        }
+
+        .service-card.animate,
+        .benefit-item.animate,
+        .content-grid > div.animate {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        /* Mejoras de accesibilidad */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Mejoras de focus para navegación por teclado */
+        a:focus,
+        button:focus {
+            outline: 3px solid var(--secondary);
+            outline-offset: 3px;
+        }
+
+        /* Mejoras de contraste */
+        .contact-text a,
+        .footer-col a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-text a:hover,
+        .footer-col a:hover {
+            color: var(--accent);
         }
   </style>
 </head>
@@ -463,28 +653,27 @@
             <!-- Menú de escritorio -->
             <nav class="desktop-nav">
                 <ul>
-                    <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
-                    <li><a href="productos.html"><i class="fas fa-box"></i> Productos</a></li>
+                    <li><a href="index.html" class="nav-contact" ><i class="fas fa-home "></i> Inicio</a></li>
+                    <li><a href="productos.html" class="nav-contact"><i class="fas fa-box"></i> Productos</a></li>
                     <li class="dropdown">
-                        <a href="#servicios"><i class="fas fa-briefcase"></i> Servicios <i class="fas fa-chevron-down"></i></a>
+                        <a href="#servicios" class="nav-contact"><i class="fas fa-briefcase"></i> Servicios <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="asesoria.html"><i class="fas fa-lightbulb"></i> Asesoría</a></li>
+                            <li><a href="asesoria.html" ><i class="fas fa-lightbulb"></i> Asesoría</a></li>
                             <li><a href="capacitacion.html"><i class="fas fa-graduation-cap"></i> Capacitación</a></li>
                             <li><a href="supervision.html"><i class="fas fa-search"></i> Supervisión</a></li>
                         </ul>
                     </li>
-                    <li><a href="Nosotros.html"><i class="fas fa-users"></i> Nosotros</a></li>
+                    <li><a href="Nosotros.html"  class="nav-contact"><i class="fas fa-users"></i> Nosotros</a></li>
                     <li><a href="#contacto" class="nav-contact"><i class="fas fa-envelope"></i> Contacto</a></li>
                 </ul>
             </nav>
             
             <!-- Botón menú móvil -->
-             <button class="menu-toggle" aria-label="Menú" style="margin-left: auto;">
+             <button class="menu-toggle" aria-label="Abrir menú" style="margin-left: auto;">
                  <span class="bar"></span>
                  <span class="bar"></span>
                  <span class="bar"></span>
             </button>
-
         </div>
     </header>
     
@@ -508,19 +697,22 @@
             <li><a href="#contacto" class="mobile-contact"><i class="fas fa-envelope"></i> Contacto</a></li>
         </ul>
     </div>
+
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container-hero">
-            <h1>Supervisión Profesional de Proyectos</h1>
-            <p>Garantizamos el éxito de sus proyectos hidráulicos con nuestra supervisión experta, asegurando calidad, eficiencia y cumplimiento de normativas en cada etapa del proceso.</p>
+        <div class="hero-content">
+            <h1 class="fade-in">Capacitación</h1>
+            <p class="fade-in">Llevamos a cabo proyectos de capacitación, permitiéndoles resolver exitosamente sus requerimientos específicos al proveer capacitación a obreros e instaladores.</p>
         </div>
     </section>
+
+    <!-- Contenido Principal -->
     <div class="cap-container">
         <section class="main-content">
             <h2>Nuestros Servicios de Capacitación</h2>
             
             <div class="content-grid">
-                <div class="content-text">
+                <div class="content-text animate">
                     <p>En Hidrosistemas, ofrecemos programas de capacitación diseñados para satisfacer las necesidades específicas de profesionales en el sector hidráulico. Nuestros cursos combinan fundamentos teóricos con aplicaciones prácticas para garantizar una formación integral.</p>
                     
                     <p>Contamos con instructores altamente calificados y con amplia experiencia en la industria, lo que permite a los participantes adquirir conocimientos aplicables directamente en su entorno laboral.</p>
@@ -528,8 +720,8 @@
                     <p>Nuestros programas están disponibles tanto en modalidad presencial como en línea, con flexibilidad de horarios para adaptarnos a las necesidades de su organización.</p>
                 </div>
                 
-                <div class="content-img">
-                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Sesión de capacitación">
+                <div class="content-img animate">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Sesión de capacitación" loading="lazy">
                 </div>
             </div>
         </section>
@@ -538,31 +730,31 @@
             <h2>Beneficios de Nuestra Capacitación</h2>
             
             <div class="benefits-grid">
-                <div class="benefit-item">
+                <div class="benefit-item animate">
                     <div class="benefit-icon">
                         <i class="fas fa-chalkboard-teacher"></i>
                     </div>
                     <h3>Instructores Expertos</h3>
-                    <p>Profesionales con más de 15 años de experiencia en el campo</p>
+                    <p>Profesionales con más de 15 años de experiencia.</p>
                 </div>
                 
-                <div class="benefit-item">
+                <div class="benefit-item animate">
                     <div class="benefit-icon">
                         <i class="fas fa-certificate"></i>
                     </div>
                     <h3>Certificación</h3>
-                    <p>Diplomas con validez oficial reconocidos por la industria</p>
+                    <p>Diplomas con validez oficial reconocidos por la industria.</p>
                 </div>
                 
-                <div class="benefit-item">
+                <div class="benefit-item animate">
                     <div class="benefit-icon">
                         <i class="fas fa-hand-holding-usd"></i>
                     </div>
                     <h3>Rentabilidad</h3>
-                    <p>Mejora en la eficiencia operativa que reduce costos</p>
+                    <p>Mejoras en las eficiencias operativas que reduce costos.</p>
                 </div>
                 
-                <div class="benefit-item">
+                <div class="benefit-item animate">
                     <div class="benefit-icon">
                         <i class="fas fa-cogs"></i>
                     </div>
@@ -574,34 +766,34 @@
         
         <section class="services-section">
             <div class="container-fechas">
-            <h2>Cursos Disponibles</h2>
-            <button class="btn-fechas">
-                <i class="fas fa-calendar-alt"></i>
+                <h2>Cursos Disponibles</h2>
+                <button class="btn-fechas" id="btnFechas">
+                    <i class="fas fa-calendar-alt"></i>
                     Ver fechas próximas
                 </button>
             </div>
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card animate">
                     <div class="card-icon">
                         <i class="fas fa-tools"></i>
                     </div>
                     <div class="card-content">
-                        <h3>Mantenimiento de Sistemas Hidroneumáticos</h3>
+                        <h3>Mantenimiento Hidroneumático</h3>
                         <p>Preventivo y correctivo de sistemas hidroneumáticos. Diagnóstico de fallas y protocolos de mantenimiento.</p>
                     </div>
                 </div>
                 
-                <div class="service-card">
+                <div class="service-card animate">
                     <div class="card-icon">
                         <i class="fas fa-pump-soap"></i>
                     </div>
                     <div class="card-content">
                         <h3>Bombas Centrífugas</h3>
-                        <p>Mantenimiento especializado para bombas tipo turbina. Procedimientos de desmontaje, reparación y reinstalación.</p>
+                        <p>Mantenimiento preventivo para bombas. Procedimientos de desmontaje, reparación y reinstalación.</p>
                     </div>
                 </div>
                 
-                <div class="service-card">
+                <div class="service-card animate">
                     <div class="card-icon">
                         <i class="fas fa-wrench"></i>
                     </div>
@@ -611,7 +803,7 @@
                     </div>
                 </div>
                 
-                <div class="service-card">
+                <div class="service-card animate">
                     <div class="card-icon">
                         <i class="fas fa-tint-slash"></i>
                     </div>
@@ -621,7 +813,7 @@
                     </div>
                 </div>
                 
-                <div class="service-card">
+                <div class="service-card animate">
                     <div class="card-icon">
                         <i class="fas fa-drafting-compass"></i>
                     </div>
@@ -631,7 +823,7 @@
                     </div>
                 </div>
                 
-                <div class="service-card">
+                <div class="service-card animate">
                     <div class="card-icon">
                         <i class="fas fa-faucet"></i>
                     </div>
@@ -642,134 +834,106 @@
                 </div>
             </div>
         </section>
-        
     </div>
 
     <button class="btn-scroll-top" aria-label="Volver arriba">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M12 4l-8 8h5v8h6v-8h5z"/>
-        </svg>
+        <i class="fas fa-chevron-up"></i>
     </button>
 
-    <!-- Scripts (si fueran necesarios) -->
-    <script>
-        // Script para animaciones simples
-        document.addEventListener('DOMContentLoaded', function() {
-            // Animación para las tarjetas al aparecer
-            const cards = document.querySelectorAll('.service-card, .benefit-item, .main-content');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                        entry.target.style.transform = 'translateY(0)';
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-            
-            cards.forEach(card => {
-                card.style.opacity = 0;
-                card.style.transform = 'translateY(20px)';
-                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                observer.observe(card);
-            });
-        });
-    </script>
-<!-- Sección: En Dónde Estamos -->
-<section class="contact-section" id="contacto">
-    <div class="container">
-        <div class="contact-container">
+    <!-- Sección: En Dónde Estamos -->
+    <section class="contact-section" id="contacto">
+        <div class="container">
             <div class="contact-content">
-                <div class="map-section">
-                    <div class="map-visual">
+                <!-- Mapa -->
+                <div class="map-side">
+                    <div class="map-frame">
                         <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3748.102762546342!2d-98.72903212661991!3d20.04613797964586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842eeef8364d9bcf%3A0xd7ba69856107117d!2sHidrosistemas!5e0!3m2!1sen!2smx!4v1760387857696!5m2!1sen!2smx" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" 
-                            width="100%" 
-                            height="100%" 
-                            style="border:0" 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3748.102762546342!2d-98.72903212661991!3d20.04613797964586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842eeef8364d9bcf%3A0xd7ba69856107117d!2sHidrosistemas!5e0!3m2!1sen!2smx!4v1760387857696!5m2!1sen!2smx" 
                             allowfullscreen="" 
                             loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Ubicación de Hidrosistemas">
                         </iframe>
                     </div>
                 </div>
-                <div class="contact-info-section">
-                    <h3>Contáctanos</h3>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">
+                
+                <!-- Información de contacto -->
+                <div class="info-side">
+                    <h2 class="info-title">Contáctanos</h2>
+                    
+                    <!-- Dirección -->
+                    <div class="info-item address-block">
+                        <div class="item-header">
+                            <div class="item-icon">
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
-                            <div class="contact-text">
-                                <h4>Dirección</h4>
-                                <p>Circuito Emprendedores No. 19, Parque Industrial Metropolitano, Mineral de la Reforma, Hgo. CP 42186</p>
+                            <h3 class="item-label">Dirección</h3>
+                        </div>
+                        <p class="item-text">Circuito Emprendedores No. 19, Parque Industrial Metropolitano, Mineral de la Reforma, Hgo. CP 42186</p>
+                    </div>
+                    
+                    <!-- Línea divisoria -->
+                    <div class="separator"></div>
+                    
+                    <!-- Teléfonos y WhatsApp en misma línea -->
+                    <div class="contact-row">
+                        <!-- Teléfonos -->
+                        <div class="info-item phone-block">
+                            <div class="item-header">
+                                <div class="item-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <h3 class="item-label">Teléfonos</h3>
+                            </div>
+                            <div class="item-text">
+                                <p><a href="tel:+527717132513">771 713 2513</a></p>
+                                <p><a href="tel:+527717132514">771 713 2514</a></p>
+                                <p><a href="tel:+527717181044">771 718 1044</a></p>
                             </div>
                         </div>
-                            <div class="contact-container">
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
+                        
+                        <!-- WhatsApp -->
+                        <div class="info-item whatsapp-block">
+                            <div class="item-header">
+                                <div class="item-icon whatsapp-icon">
+                                    <i class="fab fa-whatsapp"></i>
                                 </div>
-                                <div class="contact-text">
-                                <h4>Teléfonos</h4>
-                                <p>
-                                    <a href="tel:+527717132513">771 713 2513</a><br>
-                                    <a href="tel:+527717132514">771 713 2514</a><br>
-                                    <a href="tel:+527717181044">771 718 1044</a>
-                                </p>
-                                </div>
+                                <h3 class="item-label">WhatsApp</h3>
                             </div>
-
-                            <div class="contact-item whatsapp-item">
-                                <div class="contact-icon contact-whatsapp-icon">
-                                <i class="fab fa-whatsapp"></i>
-                                </div>
-                                <div class="contact-whatsapp">
-                                <h4>WhatsApp</h4>
-                                <p>
-                                    <a href="https://wa.me/52771712167150" target="_blank">771 712 167 150</a>
-                                </p>
-                                </div>
+                            <div class="item-text">
+                                <p><a href="https://wa.me/52771712167150" target="_blank" rel="noopener noreferrer">771 712 167 150</a></p>
                             </div>
-                            </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
+                        </div>
+                    </div>
+                    
+                    <!-- Email abajo centrado -->
+                    <div class="info-item email-block">
+                        <div class="item-header">
+                            <div class="item-icon">
                                 <i class="fas fa-envelope"></i>
                             </div>
-                            <div class="contact-text">
-                                <h4>Email</h4>
-                                <p><a href="mailto:ventas@hidrosistemas.com.mx">ventas@hidrosistemas.com.mx</a></p>
-                            </div>
+                            <h3 class="item-label">Email</h3>
                         </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Horario</h4>
-                                <p>Lun-Vie: 9:00 AM - 6:00 PM</p>
-                                <p>Sábado: 9:00 AM - 1:00 PM</p>
-                            </div>
+                        <div class="item-text">
+                            <p><a href="mailto:ventas@hidrosistemas.com.mx">ventas@hidrosistemas.com.mx</a></p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Footer -->
-    <footer id="contacto">
+    <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
                     <h4>HIDROSISTEMAS</h4>
                     <p>Tenemos las mejores marcas, con calidad que buscas.</p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/HidrosistemasHGO/?fref=ts" target="_blank"><i class="fab fa-facebook-f icon"></i></a>
-                        <a href="https://api.whatsapp.com/send/?phone=527712167150&text&type=phone_number&app_absent=0" target="_blank"><i class="fab fa-whatsapp icon"></i></a>
-                        <a href="https://www.instagram.com/hidrosistemas_mx?igsh=MXZ6YmsydjgxZmN6NA==" target="_blank"><i class="fab fa-instagram icon"></i></a>
+                        <a href="https://www.facebook.com/HidrosistemasHGO/?fref=ts" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f icon"></i></a>
+                        <a href="https://api.whatsapp.com/send/?phone=527712167150&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp icon"></i></a>
+                        <a href="https://www.instagram.com/hidrosistemas_mx?igsh=MXZ6YmsydjgxZmN6NA==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram icon"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
@@ -791,10 +955,117 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 Hidrosistemas. Todos los derechos reservados.</p>
+                <p>&copy; <span id="añoActual"></span> Hidrosistemas. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
-<script src="app.js"></script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Obtiene el elemento por su ID
+        const añoEl = document.getElementById('añoActual');
+        // Crea un objeto Date y obtiene el año actual
+        const año = new Date().getFullYear();
+        // Inserta el año en el elemento
+        añoEl.textContent = año;
+    });
+        // Scroll animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Botón de fechas
+            const btnFechas = document.getElementById('btnFechas');
+            if (btnFechas) {
+                btnFechas.addEventListener('click', function() {
+                    alert('Próximamente se publicarán las fechas de los cursos. Por favor, contáctenos para más información.');
+                });
+            }
+
+            // Animación al hacer scroll
+            const animateOnScroll = function() {
+                const elements = document.querySelectorAll('.animate');
+                const scrollTop = window.pageYOffset;
+                const windowHeight = window.innerHeight;
+                
+                elements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top + scrollTop;
+                    if (scrollTop + windowHeight > elementTop + 100) {
+                        element.classList.add('animate');
+                    }
+                });
+            };
+
+            // Scroll to top button
+            const scrollTopBtn = document.querySelector('.btn-scroll-top');
+            
+            window.addEventListener('scroll', function() {
+                // Mostrar/ocultar botón de scroll
+                if (window.pageYOffset > 300) {
+                    scrollTopBtn.classList.add('visible');
+                } else {
+                    scrollTopBtn.classList.remove('visible');
+                }
+                
+                // Animaciones
+                animateOnScroll();
+            });
+
+            // Botón de scroll to top
+            scrollTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Inicializar animaciones
+            animateOnScroll();
+            
+            // Smooth scroll para enlaces internos
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Menu toggle para móvil
+            const menuToggle = document.querySelector('.menu-toggle');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const closeMenu = document.querySelector('.close-menu');
+            
+            if (menuToggle && mobileMenu && closeMenu) {
+                menuToggle.addEventListener('click', function() {
+                    mobileMenu.classList.add('active');
+                });
+                
+                closeMenu.addEventListener('click', function() {
+                    mobileMenu.classList.remove('active');
+                });
+                
+                // Cerrar menú al hacer clic en un enlace
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', function() {
+                        mobileMenu.classList.remove('active');
+                    });
+                });
+            }
+        });
+
+        // Optimización de imágenes (lazy loading)
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.loading = 'lazy';
+            });
+        });
+    </script>
 </body>
 </html>
