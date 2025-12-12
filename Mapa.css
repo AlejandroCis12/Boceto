@@ -50,7 +50,7 @@
 }
 
 .info-title {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     color: #333;
     margin-bottom: 20px;
     padding-bottom: 12px;
@@ -73,7 +73,7 @@
 .item-header {
     display: flex;
     align-items: center;
-    margin-bottom: 8px;
+    margin-bottom: -4px;
 }
 
 .item-icon {
@@ -95,7 +95,7 @@
 }
 
 .item-label {
-    font-size: 0.95rem;
+    font-size: 1.5rem;
     color: #333;
     margin: 0;
     font-weight: 600;
@@ -103,7 +103,7 @@
 
 /* Texto del elemento */
 .item-text {
-    font-size: 0.85rem;
+    font-size: 1rem;
     color: #555;
     line-height: 1.4;
     margin-left: 42px; /* Alineado con el texto después del icono */
@@ -188,7 +188,7 @@
     
     .map-frame,
     .info-side {
-        height: 400px; /* Reducir un poco en tablet */
+        height: 450px; /* Reducir un poco en tablet */
     }
 }
 
@@ -203,8 +203,12 @@
     
     .map-frame,
     .info-side {
-        height: 380px;
+        height: 550px;
     }
+
+    .email-block {
+        justify-items: left;
+   }
     
     .info-side {
         padding: 20px;
@@ -221,13 +225,9 @@
 }
 
 @media (max-width: 576px) {
-    .container {
-        padding: 0 15px;
-    }
-    
     .map-frame,
     .info-side {
-        height: 350px;
+        height: 500px;
     }
     
     .info-title {
@@ -252,5 +252,8 @@
     
     .contact-row .item-text {
         padding-left: 38px;
+    }
+    .email-block {
+        padding-top: 0px;
     }
 }
