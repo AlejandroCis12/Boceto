@@ -21,7 +21,7 @@
 }
 
 .map-frame {
-    height: 450px; /* Altura exacta para alinearse */
+    height: 400px; /* Altura exacta para alinearse */
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
@@ -43,7 +43,7 @@
     padding: 25px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
     border: 1px solid #ddd;
-    height: 450px; /* MISMA ALTURA que el mapa */
+    height: 400px; /* MISMA ALTURA que el mapa */
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
@@ -142,6 +142,7 @@
     gap: 20px;
     margin-bottom: 10px;
     flex-shrink: 0;
+    padding-top: 3%;
 }
 
 .contact-row .info-item {
