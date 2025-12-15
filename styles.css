@@ -27,10 +27,13 @@
 } */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'D-DINCondensed-Bold', sans-serif;
+  font-size: 2.8rem;
 }
-
+p {
+  font-size: 1.6rem;
+}
 body {
-  font-family: "Saira Semi Condensed", sans-serif;
+  font-family: "Helvetica", sans-serif;
   line-height: 1.6;
   color: var(--dark);
   background-image: url(Imagenes/fondo.png);
@@ -55,6 +58,7 @@ strong, b {
   --light-gray: #e9ecef;
   --white: #ffffff;
   --green: #14bb03fa;
+  --dark-reen: #0a7a02;
   --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   --transition: all 0.3s ease;
   --border-radius: 8px;
@@ -150,6 +154,9 @@ h1, h2, h3 {
   align-items: center;
   margin-bottom: 20px;
   transition: transform 0.3s ease;
+}
+.item-text p {
+  font-size: .95rem;
 }
 
 .contact-item:hover {
@@ -513,7 +520,7 @@ header {
 }
 
 .nav-contact:hover {
-  background-color: var(--green);
+  background-color: var(--dark-reen);
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(255, 107, 0, 0.3);
 }
@@ -894,11 +901,10 @@ align-items: center;
   position: relative;
   margin: 0 auto;
   padding: 50px;
-  padding-top: 20px;
+  padding-top: 6vh;
 }
 
 .container-nosotros h1 {
-  font-size: 25px;
   color: var(--green);
   position: absolute;
   padding-top: 20px;
@@ -949,7 +955,6 @@ transform: translateY(-2px);
 }
 /* Productos */
 .section-title{
-  font-size: 24px;
   font-weight: bold;
   color: #20a4ed;
   margin-bottom: 20px;
@@ -1065,8 +1070,9 @@ transform: translateY(-2px);
 }
 
 .container-marcas h2 {
-  font-size: 28px;
   color: var(--green);
+  text-align: left;
+  margin-left: 6vw;
 }
 
 .slider-marcas {
@@ -1185,6 +1191,7 @@ footer a {
   margin-bottom: 25px;
   position: relative;
   padding-bottom: 10px;
+  font-size: 2rem;
 }
 
 .footer-col h4::after {
