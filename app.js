@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Obtiene el elemento por su ID
+    const añoEl = document.getElementById('añoActual');
+    // Crea un objeto Date y obtiene el año actual
+    const año = new Date().getFullYear();
+    // Inserta el año en el elemento
+    añoEl.textContent = año;
+});
+document.addEventListener('DOMContentLoaded', function() {
   // Elementos del DOM
   const menuToggle = document.querySelector('.menu-toggle');
   const mobileMenu = document.querySelector('.mobile-menu');
@@ -277,39 +285,55 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //boton para subir
 
-document.addEventListener('DOMContentLoaded', function() {
-    const btnScrollTop = document.querySelector('.btn-scroll-top');
-    const scrollThreshold = 300;
-    
-    // Mostrar/ocultar botón con animación
-    window.addEventListener('scroll', function() {
-        if (window.pageYOffset > scrollThreshold) {
-            btnScrollTop.classList.add('visible');
-        } else {
-            btnScrollTop.classList.remove('visible');
-        }
-    });
-    
-    // Scroll suave al hacer clic
-    btnScrollTop.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-    
-    // Efecto de retroalimentación táctil
-    btnScrollTop.addEventListener('mousedown', function() {
-        this.style.transform = 'translateY(1px) scale(0.98)';
-    });
-    
-    btnScrollTop.addEventListener('mouseup', function() {
-        this.style.transform = 'translateY(-3px) scale(1.05)';
-    });
-    
-    btnScrollTop.addEventListener('mouseleave', function() {
-        this.style.transform = '';
-    });
+        // Scroll animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Botón de fechas
+            const btnFechas = document.getElementById('btnFechas');
+            if (btnFechas) {
+                btnFechas.addEventListener('click', function() {
+                    alert('Próximamente se publicarán las fechas de los cursos. Por favor, contáctenos para más información.');
+                });
+            }
+
+            // Animación al hacer scroll
+            const animateOnScroll = function() {
+                const elements = document.querySelectorAll('.animate');
+                const scrollTop = window.pageYOffset;
+                const windowHeight = window.innerHeight;
+                
+                elements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top + scrollTop;
+                    if (scrollTop + windowHeight > elementTop + 100) {
+                        element.classList.add('animate');
+                    }
+                });
+            };
+
+            // Scroll to top button
+            const scrollTopBtn = document.querySelector('.btn-scroll-top');
+            
+            window.addEventListener('scroll', function() {
+                // Mostrar/ocultar botón de scroll
+                if (window.pageYOffset > 300) {
+                    scrollTopBtn.classList.add('visible');
+                } else {
+                    scrollTopBtn.classList.remove('visible');
+                }
+                
+                // Animaciones
+                animateOnScroll();
+            });
+
+            // Botón de scroll to top
+            scrollTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Inicializar animaciones
+            animateOnScroll();
 });
 
 

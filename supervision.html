@@ -206,17 +206,17 @@
             <!-- Menú de escritorio -->
             <nav class="desktop-nav">
                 <ul>
-                    <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
-                    <li><a href="productos.html"><i class="fas fa-box"></i> Productos</a></li>
+                    <li><a href="index.html"  class="nav-contact"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li><a href="productos.html"  class="nav-contact"><i class="fas fa-box"></i> Productos</a></li>
                     <li class="dropdown">
-                        <a href="#servicios"><i class="fas fa-briefcase"></i> Servicios <i class="fas fa-chevron-down"></i></a>
+                        <a href="#servicios"  class="nav-contact"><i class="fas fa-briefcase"></i> Servicios <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="asesoria.html"><i class="fas fa-lightbulb"></i> Asesoría</a></li>
                             <li><a href="capacitacion.html"><i class="fas fa-graduation-cap"></i> Capacitación</a></li>
                             <li><a href="supervision.html"><i class="fas fa-search"></i> Supervisión</a></li>
                         </ul>
                     </li>
-                    <li><a href="Nosotros.html"><i class="fas fa-users"></i> Nosotros</a></li>
+                    <li><a href="Nosotros.html"  class="nav-contact"><i class="fas fa-users"></i> Nosotros</a></li>
                     <li><a href="#contacto" class="nav-contact"><i class="fas fa-envelope"></i> Contacto</a></li>
                 </ul>
             </nav>
@@ -276,92 +276,90 @@
         </div>
     </section>
 <!-- Sección: En Dónde Estamos -->
-<section class="contact-section" id="contacto">
-    <div class="container">
-        <div class="contact-container">
+    <section class="contact-section" id="contacto">
+        <div class="container">
             <div class="contact-content">
-                <div class="map-section">
-                    <div class="map-visual">
+                <!-- Mapa -->
+                <div class="map-side">
+                    <div class="map-frame">
                         <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3748.102762546342!2d-98.72903212661991!3d20.04613797964586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842eeef8364d9bcf%3A0xd7ba69856107117d!2sHidrosistemas!5e0!3m2!1sen!2smx!4v1760387857696!5m2!1sen!2smx" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" 
-                            width="100%" 
-                            height="100%" 
-                            style="border:0" 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3748.102762546342!2d-98.72903212661991!3d20.04613797964586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842eeef8364d9bcf%3A0xd7ba69856107117d!2sHidrosistemas!5e0!3m2!1sen!2smx!4v1760387857696!5m2!1sen!2smx" 
                             allowfullscreen="" 
                             loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Ubicación de Hidrosistemas">
                         </iframe>
                     </div>
                 </div>
-                <div class="contact-info-section">
-                    <h3>Contáctanos</h3>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">
+                
+                <!-- Información de contacto -->
+                <div class="info-side">
+                    <h2 class="info-title">Contáctanos</h2>
+                    
+                    <!-- Dirección -->
+                    <div class="info-item address-block">
+                        <div class="item-header">
+                            <div class="item-icon">
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
-                            <div class="contact-text">
-                                <h4>Dirección</h4>
-                                <p>Circuito Emprendedores No. 19, Parque Industrial Metropolitano, Mineral de la Reforma, Hgo. CP 42186</p>
+                            <h3 class="item-label">Dirección</h3>
+                        </div>
+                        <p class="item-text">Circuito Emprendedores No. 19, Parque Industrial Metropolitano, Mineral de la Reforma, Hgo. CP 42186</p>
+                    </div>
+                    
+                    <!-- Línea divisoria -->
+                    <div class="separator"></div>
+                    
+                    <!-- Teléfonos y WhatsApp en misma línea -->
+                    <div class="contact-row">
+                        <!-- Teléfonos -->
+                        <div class="info-item phone-block">
+                            <div class="item-header">
+                                <div class="item-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <h3 class="item-label">Teléfonos</h3>
+                            </div>
+                            <div class="item-text">
+                                <p><a href="tel:+527717132513">771 713 2513</a></p>
+                                <p><a href="tel:+527717132514">771 713 2514</a></p>
+                                <p><a href="tel:+527717181044">771 718 1044</a></p>
                             </div>
                         </div>
-                            <div class="contact-container">
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
+                        
+                        <!-- WhatsApp -->
+                        <div class="info-item whatsapp-block">
+                            <div class="item-header">
+                                <div class="item-icon whatsapp-icon">
+                                    <i class="fab fa-whatsapp"></i>
                                 </div>
-                                <div class="contact-text">
-                                <h4>Teléfonos</h4>
-                                <p>
-                                    <a href="tel:+527717132513">771 713 2513</a><br>
-                                    <a href="tel:+527717132514">771 713 2514</a><br>
-                                    <a href="tel:+527717181044">771 718 1044</a>
-                                </p>
-                                </div>
+                                <h3 class="item-label">WhatsApp</h3>
                             </div>
-
-                            <div class="contact-item whatsapp-item">
-                                <div class="contact-icon contact-whatsapp-icon">
-                                <i class="fab fa-whatsapp"></i>
-                                </div>
-                                <div class="contact-whatsapp">
-                                <h4>WhatsApp</h4>
-                                <p>
-                                    <a href="https://wa.me/52771712167150" target="_blank">771 712 167 150</a>
-                                </p>
-                                </div>
+                            <div class="item-text">
+                                <p><a href="https://wa.me/52771712167150" target="_blank" rel="noopener noreferrer">771 712 167 150</a></p>
                             </div>
-                            </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
+                        </div>
+                    </div>
+                    
+                    <!-- Email abajo centrado -->
+                    <div class="info-item email-block">
+                        <div class="item-header">
+                            <div class="item-icon">
                                 <i class="fas fa-envelope"></i>
                             </div>
-                            <div class="contact-text">
-                                <h4>Email</h4>
-                                <p><a href="mailto:ventas@hidrosistemas.com.mx">ventas@hidrosistemas.com.mx</a></p>
-                            </div>
+                            <h3 class="item-label">Email</h3>
                         </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Horario</h4>
-                                <p>Lun-Vie: 9:00 AM - 6:00 PM</p>
-                                <p>Sábado: 9:00 AM - 1:00 PM</p>
-                            </div>
+                        <div class="item-text">
+                            <p><a href="mailto:ventas@hidrosistemas.com.mx">ventas@hidrosistemas.com.mx</a></p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <button class="btn-scroll-top" aria-label="Volver arriba">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M12 4l-8 8h5v8h6v-8h5z"/>
-        </svg>
+        <i class="fas fa-chevron-up"></i>
     </button>
 
 
@@ -398,9 +396,8 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 Hidrosistemas. Todos los derechos reservados.</p>
-            </div>
-        </div>
+                <p>&copy; <span id="añoActual"></span> Hidrosistemas. Todos los derechos reservados.</p>
+            </div>        </div>
     </footer>
     
     <script src="app.js"></script>
