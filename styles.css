@@ -8,7 +8,7 @@
   box-sizing: border-box;
 }
 
-/* Cargar la fuente Eras Bold ITC */
+/* Cargar las fuentes */
 @font-face {
   font-family: 'Eras Bold ITC';
   src: url('fonts/eras-itc-bold.ttf') format('truetype');

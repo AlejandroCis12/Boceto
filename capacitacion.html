@@ -382,7 +382,7 @@
                 font-size: 1.3rem;
             }
             
-            .contact-section .container {
+            .contact-section{
                 padding: 0 15px;
             }
         }
@@ -784,14 +784,6 @@
     </footer>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Obtiene el elemento por su ID
-        const añoEl = document.getElementById('añoActual');
-        // Crea un objeto Date y obtiene el año actual
-        const año = new Date().getFullYear();
-        // Inserta el año en el elemento
-        añoEl.textContent = año;
-    });
         // Scroll animations
         document.addEventListener('DOMContentLoaded', function() {
             // Botón de fechas
@@ -858,28 +850,6 @@
                     }
                 });
             });
-
-            // Menu toggle para móvil
-            const menuToggle = document.querySelector('.menu-toggle');
-            const mobileMenu = document.querySelector('.mobile-menu');
-            const closeMenu = document.querySelector('.close-menu');
-            
-            if (menuToggle && mobileMenu && closeMenu) {
-                menuToggle.addEventListener('click', function() {
-                    mobileMenu.classList.add('active');
-                });
-                
-                closeMenu.addEventListener('click', function() {
-                    mobileMenu.classList.remove('active');
-                });
-                
-                // Cerrar menú al hacer clic en un enlace
-                mobileMenu.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', function() {
-                        mobileMenu.classList.remove('active');
-                    });
-                });
-            }
         });
 
         // Optimización de imágenes (lazy loading)
@@ -890,5 +860,6 @@
             });
         });
     </script>
+    <script src="app.js"></script>
 </body>
 </html>
