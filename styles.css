@@ -27,10 +27,11 @@
 } */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'D-DINCondensed-Bold', sans-serif;
+  letter-spacing: 1px;
   font-size: 2.8rem;
 }
 p {
-  font-size: 1.6rem;
+  font-size: 1.1rem;
 }
 body {
   font-family: "Helvetica", sans-serif;
@@ -366,6 +367,7 @@ header {
   position: absolute;
   object-fit: contain;
   padding: 5px;
+  margin-left: 2vw;
 }
 
 .triangulo{
@@ -924,13 +926,11 @@ align-items: center;
 }
 
 .left p {
-  font-size: 15px;
   margin-bottom: 20px;
   text-align: justify;
 }
 
 .right p {
-  font-size: 15px;
   text-align: justify;
 }
 
@@ -1006,6 +1006,7 @@ transform: translateY(-2px);
 .product-info h3 {
   color: var(--primary);
   margin-bottom: 10px;
+  font-size: 2rem;
 }
 .product-info p {
   color: #555;
@@ -1191,7 +1192,7 @@ footer a {
   margin-bottom: 25px;
   position: relative;
   padding-bottom: 10px;
-  font-size: 2rem;
+  font-size: 1.7rem;
 }
 
 .footer-col h4::after {
