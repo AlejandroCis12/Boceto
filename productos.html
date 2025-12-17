@@ -16,489 +16,653 @@
     <link rel="stylesheet" href="Mapa.css">
     <!-- Font Awesome para íconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        .slogan {
-            margin-top: 60px    ;
-        }
-        .hero {
-            background: linear-gradient(rgb(10 6 6 / 38%), #0d141c), url('Imagenes/productos.png') center/cover no-repeat;
-            color: white;
-            padding: 180px 0 100px;
-            text-align: center;
-            margin-top: 5vw;
-            height: 432px;
-        }
-        .container-hero{
-            margin-top: -12vh ;
-        }
-        .hero h1 {
-            font-size: 3.5rem;
-            color: white;
-            margin-bottom: 20px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        .hero p {
-            font-size: 1.25rem;
-            max-width: 108vw;
-            margin: 0 auto 40px;
-            text-align: justify;
-            padding: 0 16vw;
-        }
-        /* Product Section */
-        .container-encabezado {
-            height: 250px;
-        }
-        .logo img{
-            margin-top: 144px
-        }
+<style>
+    .slogan {
+        margin-top: 60px    ;
+    }
+    .hero {
+        background: linear-gradient(rgb(10 6 6 / 38%), #0d141c), url('Imagenes/productos.png') center/cover no-repeat;
+        color: white;
+        padding: 180px 0 100px;
+        text-align: center;
+        margin-top: 5vw;
+        height: 432px;
+    }
+    .container-hero{
+        margin-top: -12vh ;
+    }
+    .hero h1 {
+        font-size: 3.5rem;
+        color: white;
+        margin-bottom: 20px;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    .hero p {
+        font-size: 1.25rem;
+        max-width: 108vw;
+        margin: 0 auto 40px;
+        text-align: justify;
+        padding: 0 16vw;
+    }
+    /* Product Section */
+    .container-encabezado {
+        height: 250px;
+    }
+    .logo img{
+        margin-top: 144px
+    }
 
-        .contact-content-h{
-            margin-bottom: 100px;
-        }
-        .container-prod {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 20px;
-        }
+    .contact-content-h{
+        margin-bottom: 100px;
+    }
+    .container-prod {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    }
 
-        .product-wrapper {
+    .product-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    }
+
+    .product-image {
+    flex: 1;
+    max-width: 20%;
+    height: auto;
+    border-radius: 8px;
+    }
+
+    .product-text {
+    flex: 1;
+    padding: 0 20px;
+    }
+
+    .product-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: justify;
+    color: #555;
+    }
+    
+    .product-text h1 {
+        color: var(--primary);
+        text-align: left;
+    }
+    
+    /* NUEVO ESTILO PARA LA SECCIÓN DE CATÁLOGO MODIFICADA */
+    .catalog-section-mod {
         display: flex;
-        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 40px;
-        }
-
-        .product-image {
-        flex: 1;
-        max-width: 20%;
-        height: auto;
-        border-radius: 8px;
-        }
-
-        .product-text {
-        flex: 1;
+        margin-top: 2vw;
+        margin-bottom: 2vw;
+        max-width: 1300px;
+        margin-left: auto;
+        margin-right: auto;
         padding: 0 20px;
-        }
-
-        .product-text p {
-        font-size: 1.1rem;
+    }
+    
+    .catalog-card-mod {
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--box-shadow);
+        width: 100%;
+        max-width: 1400px;
+        transition: var(--transition);
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        height: 475px;
+        min-height: 400px;
+    }
+    
+    .catalog-card-mod:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    .catalog-content-mod {
+        flex: 1;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .catalog-content-mod h3 {
+        margin-bottom: 20px;
+        color: var(--green);
+    }
+    
+    .catalog-content-mod p {
+        margin-bottom: 20px;
+        color: white;
         line-height: 1.8;
         text-align: justify;
-        color: #555;
+    }
+    
+    .catalog-image-mod {
+        flex: 1;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f5f5f5;
+    }
+    
+    .catalog-image-mod img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transition: var(--transition);
+    }
+    
+    .catalog-card-mod:hover .catalog-image-mod img {
+        transform: scale(1.05);
+    }
+    
+    .catalog-actions-mod {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        justify-content: center;
+    }
+    
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 25px;
+        border-radius: var(--border-radius);
+        text-decoration: none;
+        font-weight: 600;
+        transition: var(--transition);
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        min-width: 160px;
+    }
+    
+    .btn i {
+        margin-right: 8px;
+    }
+    
+    .btn-download {
+        background: var(--primary);
+        color: white;
+        box-shadow: 0 4px 10px rgba(0, 86, 179, 0.3);
+    }
+    
+    .btn-download:hover {
+        background: #004494;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(0, 86, 179, 0.4);
+    }
+    
+    .btn-view {
+        background: #075e54;
+        color: white;
+        box-shadow: 0 4px 10px rgba(0, 168, 232, 0.3);
+    }
+    .btn-view:hover {
+        background: #1db954;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(0, 168, 232, 0.4);
+    }
+    
+    /* ESTILOS EXISTENTES MANTENIDOS */
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-30px);
         }
-        
-        .product-text h1 {
-            color: var(--primary);
-            text-align: left;
+        to {
+            opacity: 1;
+            transform: translateY(0);
         }
-        
-        .catalog-card {
-            background: white;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--box-shadow);
-            width: 100%;
-            max-width: 1200px;
-            transition: var(--transition);
-            position: relative;
+    }
+    
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
         }
-        
-        .catalog-card:hover {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes float {
+        0% {
+            transform: translateY(0px);
+        }
+        50% {
             transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
-        
-        .catalog-image {
-            height: 200px;
-            overflow: hidden;
+        100% {
+            transform: translateY(0px);
         }
-        
-        .catalog-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-        
-        .catalog-card:hover .catalog-image img {
-            transform: scale(1.05);
-        }
-        
-        .catalog-content {
-            padding: 25px;
-            text-align: center;
-            height: 80%;
-        }
+    }
+    
+    /* Estilos para el slider */
+    .slider-section {
+        padding: 0vw 3vw;
+        margin-bottom: 2vw;
+    }
+    
+    .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        max-width: 1500px;
+        margin: 0 auto;
+    }
 
-        .catalog-section {
-            display: flex;
-            flex-wrap: wrap;
+    .slider-section img {
+        max-width: 100%;
+    }
+
+    .text-content {
+        flex: 1;
+        padding: 20px;
+    }
+    
+    .slider-container {
+        flex: 1;
+        max-width: 600px;
+        height: auto;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        padding: 0;
+    }
+    
+    .slider {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+    
+    .slide {
+        min-width: 100%;
+        position: relative;
+    }
+    
+    .slider-controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 15px;
+        gap: 15px;
+    }
+    
+    .slider-btn {
+        background-color: var(--primary);
+        color: white;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
+    
+    .slider-btn:hover {
+        background-color: var(--accent);
+    }
+    
+    .dots-container {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+    }
+    
+    .dot {
+        cursor: pointer;
+        height: 12px;
+        width: 12px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.3s ease;
+    }
+    
+    .dot.active, .dot:hover {
+        background-color: var(--primary);
+    }
+    
+    /* Ajustes para el texto */
+    .text-content h2 {
+        color: var(--green);
+        margin-bottom: 20px;
+    }
+    
+    .text-content p {
+        margin-bottom: 15px;
+        text-align: justify;
+        justify-items: center;
+        align-items: center;
+        color: white;
+    }
+
+    /* RESPONSIVE DESIGN MEJORADO */
+
+    /* Para tablets medianas (1024px y menos) */
+    @media (max-width: 1024px) {
+        .catalog-card-mod {
+            height: auto;
+            min-height: auto;
+            flex-direction: column;
+        }
+        
+        .catalog-image-mod {
+            order: 2;
+            height: 350px;
+            width: 100%;
+        }
+        
+        .catalog-content-mod {
+            order: 1;
+            padding: 30px;
+        }
+        
+        .catalog-content-mod h3 {
+            text-align: center;
+            font-size: 1.8rem;
+        }
+        
+        .catalog-actions-mod {
             justify-content: center;
-            gap: 30px;
+        }
+    }
+
+    /* Para tablets pequeñas (768px y menos) */
+    @media (max-width: 768px) {
+        .catalog-section-mod {
+            gap: 20px;
+            margin-top: 0;
+            margin-bottom: 0;
             padding: 20px;
-            padding-top: 15%;
-            margin-top: -13vw;
         }
         
-        .catalog-content h3 {
+        .catalog-card-mod {
+            height: auto;
+        }
+        
+        .catalog-image-mod {
+            height: 300px;
+        }
+        
+        .catalog-content-mod {
+            padding: 25px;
+        }
+        
+        .catalog-content-mod h3 {
+            font-size: 1.7rem;
+        }
+    }
+
+    /* Para móviles grandes (600px y menos) */
+    @media (max-width: 600px) {
+        .catalog-section-mod {
+            padding: 15px;
+        }
+        
+        .catalog-image-mod {
+            height: 250px;
+        }
+        
+        .catalog-content-mod {
+            padding: 20px;
+        }
+        
+        .catalog-content-mod h3 {
             font-size: 1.5rem;
+        }
+        
+        .catalog-content-mod p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .catalog-actions-mod {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .catalog-actions-mod .btn {
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 10px;
+        }
+        
+        .catalog-actions-mod .btn:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    /* Para móviles pequeños (480px y menos) */
+    @media (max-width: 480px) {
+        .catalog-section-mod {
+            padding: 10px;
+        }
+        
+        .catalog-image-mod {
+            height: 200px;
+        }
+        
+        .catalog-content-mod {
+            padding: 15px;
+        }
+        
+        .catalog-content-mod h3 {
+            font-size: 1.3rem;
             margin-bottom: 15px;
-            color: var(--primary);
         }
         
-        .catalog-content p {
-            margin-bottom: 20px;
-            color: #666;
-        }
-        
-        .catalog-actions {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
+        .catalog-content-mod p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
         }
         
         .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px 25px;
-            border-radius: var(--border-radius);
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-            min-width: 160px;
+            padding: 10px 15px;
+            font-size: 0.9rem;
+            min-width: 140px;
         }
-        
-        .btn i {
-            margin-right: 8px;
-        }
-        
-        .btn-download {
-            background: var(--primary);
-            color: white;
-            box-shadow: 0 4px 10px rgba(0, 86, 179, 0.3);
-        }
-        
-        .btn-download:hover {
-            background: #004494;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0, 86, 179, 0.4);
-        }
-        
-        .btn-view {
-            background: #075e54;
-            color: white;
-            box-shadow: 0 4px 10px rgba(0, 168, 232, 0.3);
-        }
-        .btn-view:hover {
-            background: #1db954;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0, 168, 232, 0.4);
-        }    
+    }
 
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes float {
-            0% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-            100% {
-                transform: translateY(0px);
-            }
-        }
-        
-        /* Estilos para el slider */
-        .slider-section {
-            padding: 0vw 3vw;
-            margin-bottom: 2vw;
-        }
-        
+    /* TUS ESTILOS RESPONSIVE ORIGINALES (conservados) */
+    @media (min-width: 1200px) {
         .content-wrapper {
-            display: flex;
+            flex-direction: row;
+            gap: 40px;
+            }
+    }
+    
+    @media (max-width: 970px) {
+        .menu-toggle  {
+            margin-right: 15px;
+        }
+    }
+
+    @media (max-width: 992px) {
+        .product-text {
+        justify-content: center;
+        padding: 40px 10px;
+        }
+        h1 {
+            font-size: 2.2rem;
+        }
+        
+        .slogan h1 {
+            font-size: 2.2rem;
+        }
+        
+        .catalog-card {
+            width: calc(50% - 30px);
+        }
+        .product-wrapper {
+        flex-direction: column;
+        }
+
+        .product-image {
+        order: 1; /* Imagen debajo del texto */
+        max-width: 80%;
+        }
+
+        .product-text {
+        order: 0; /* Texto arriba */
+        padding: 0;
+        text-align: center;
+        }
+
+        .product-text p {
+        text-align: left; /* Ajuste para que el texto justificado no se vea mal */
+        }
+        
+        .catalog-actions {
             flex-direction: column;
-            max-width: 1500px;
             margin: 0 auto;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .btn {
+            width: 100%;
+            max-width: 280px;
+        }
+        
+        .contact-container {
+            flex-direction: column;
+        }
+        
+        .map-section {
+            height: 350px;
+        }
+        
+        .catalog-card {
+            width: 100%;
         }
 
-        .slider-section img {
-            max-width: 100%;
+        .container-prod {
+            text-align: left;
+            align-items: center;
+            align-content: center;
+        }
+    }
+
+    @media (max-width: 784px){
+        .container-hero{
+            margin-top: -12vh;
+            padding: 2vh;
+        }
+        .hero h1 {
+            font-size: 4.5vh;
+        }
+        .hero p {
+            font-size: 2.6vh;
+            max-width: 100vw;
+            text-align: justify;
+            padding: 0 10vw;
+        }
+        .logo img{
+            margin-top: -1vh;
+            height: 37vw;
+        }
+        .contact-container-h {
+            margin-top: -120px;
+        }
+        .catalog-section {
+            margin-top: -4vh;
+        }
+        .catalog-section-mod {
+            margin-top: -4vh;
+        }
+        .catalog-content-mod h3 {
+            font-size: 1.7rem;
+        }
+        .catalog-content-mod {
+            padding: 25px;
         }
 
+    }
+    
+    @media (max-width: 576px) {
+        .container-hero{
+            margin-top: -18vh;
+        }
+        .hero h1{
+            font-size: 4vh;
+        }
+        .hero p{
+            font-size: 2.1vh;
+        }
+        .product-text {
+            justify-content: center;
+            padding: 40px 10px;
+        }
+        .slogan h1 {
+            font-size: 1.8rem;
+        }
+        
+        .slogan p {
+            font-size: 1.2rem;
+        }
+        
+        h1 {
+            font-size: 1.8rem;
+        }
+        
+        .product-text p {
+            font-size: 1rem;
+        }
+        .catalog-actions-mod {
+            flex-direction: column;
+        }
+        .catalog-actions-mod .btn {
+            width: 100%;
+        }
+    }        
+
+    
+    @media (max-width: 500px) {
         .text-content {
-            flex: 1;
-            padding: 20px;
+            order: 1;
+            padding: 2rem;
         }
         
         .slider-container {
-            flex: 1;
-            max-width: 600px;
-            height: auto;
-            margin: 0 auto;
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            padding: 0;
+            order: 2;
         }
         
-        .slider {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-        
-        .slide {
-            min-width: 100%;
-            position: relative;
-        }
-        
-        .slider-controls {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 15px;
-            gap: 15px;
-        }
-        
-        .slider-btn {
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
-        }
-        
-        .slider-btn:hover {
-            background-color: var(--accent);
-        }
-        
-        .dots-container {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-        }
-        
-        .dot {
-            cursor: pointer;
-            height: 12px;
-            width: 12px;
-            background-color: #bbb;
-            border-radius: 50%;
-            display: inline-block;
-            transition: background-color 0.3s ease;
-        }
-        
-        .dot.active, .dot:hover {
-            background-color: var(--primary);
-        }
-        
-        /* Ajustes para el texto */
         .text-content h2 {
-            color: var(--green);
-            margin-bottom: 20px;
-        }
-        
-        .text-content p {
-            margin-bottom: 15px;
-            text-align: justify;
-            justify-items: center;
-            align-items: center;
-            color: white;
+            text-align: left;
         }
 
-        /* Responsive Design */
-
-        @media (min-width: 1200px) {
-            .content-wrapper {
-                flex-direction: row;
-                gap: 40px;
-                }
-            }
-        @media (max-width: 970px) {
-            .menu-toggle  {
-                margin-right: 15px;
-            }
+    }
+    
+    @media (max-width: 425px) {
+        .contact-container-h {
+        margin-top: -120px;
         }
-
-        @media (max-width: 992px) {
-            .product-text {
-            justify-content: center;
-            padding: 40px 10px;
-            }
-            h1 {
-                font-size: 2.2rem;
-            }
-            
-            .slogan h1 {
-                font-size: 2.2rem;
-            }
-            
-            .catalog-card {
-                width: calc(50% - 30px);
-            }
-            .product-wrapper {
-            flex-direction: column;
-            }
-
-            .product-image {
-            order: 1; /* Imagen debajo del texto */
-            max-width: 80%;
-            }
-
-            .product-text {
-            order: 0; /* Texto arriba */
-            padding: 0;
-            text-align: center;
-            }
-
-            .product-text p {
-            text-align: left; /* Ajuste para que el texto justificado no se vea mal */
-            }
-            .catalog-actions {
-                flex-direction: column;
-                margin: 0 auto;
-                justify-content: center;
-                align-items: center;
-            }
-            
-            .btn {
-                width: 100%;
-                max-width: 280px;
-            }
-            
-            .contact-container {
-                flex-direction: column;
-            }
-            
-            .map-section {
-                height: 350px;
-            }
-            
-            .catalog-card {
-                width: 100%;
-            }
-
-            .container-prod {
-                text-align: left;
-                align-items: center;
-                align-content: center;
-            }
-        }
-
-        @media (max-width: 784px){
-            .container-hero{
-                margin-top: -12vh;
-                padding: 2vh;
-            }
-            .hero h1 {
-                font-size: 4.5vh;
-            }
-            .hero p {
-                font-size: 2.6vh;
-                max-width: 100vw;
-                text-align: justify;
-                padding: 0 10vw;
-            }
-            .logo img{
-                margin-top: -1vh;
-                height: 37vw;
-            }
-            .contact-container-h {
-                margin-top: -120px;
-            }
-            .catalog-section {
-                margin-top: -4vh;
-            }
-
-        }
-        @media (max-width: 576px) {
-            .container-hero{
-                margin-top: -18vh;
-            }
-            .hero h1{
-                font-size: 4vh;
-            }
-            .hero p{
-                font-size: 2.1vh;
-            }
-            .product-text {
-                justify-content: center;
-                padding: 40px 10px;
-            }
-            .slogan h1 {
-                font-size: 1.8rem;
-            }
-            
-            .slogan p {
-                font-size: 1.2rem;
-            }
-            
-            h1 {
-                font-size: 1.8rem;
-            }
-            
-            .product-text p {
-                font-size: 1rem;
-            }
-        }        
-
-        
-        @media (max-width: 500px) {
-            .text-content {
-                order: 1;
-                padding: 2rem;
-            }
-            
-            .slider-container {
-                order: 2;
-            }
-            
-            .text-content h2 {
-                text-align: left;
-            }
-
-        }
-        @media (max-width: 425px) {
-            .contact-container-h {
-            margin-top: -120px;
-            }
-        }
-        @media (max-width: 375px) {
-        }
-    </style>
+    }
+    
+    @media (max-width: 375px) {
+    }
+</style>
 </head>
 <body>
     <!-- Header -->
@@ -565,15 +729,16 @@
     </div>
 </section>
 
-    <div class="catalog-section">
-        <div class="catalog-card">
-            <div class="catalog-image">
-                <img src="Imagenes/Sub-paginas/Productos/hero-catalogo.png" alt="Catálogo Hidrosistemas">
-            </div>
-            <div class="catalog-content">
+    <!-- NUEVA SECCIÓN DE CATÁLOGO MODIFICADA -->
+    <div class="catalog-section-mod">
+        <div class="catalog-card-mod">
+            <div class="catalog-content-mod">
                 <h3>Catálogo</h3>
-                <p>Nuestro catálogo completo con todos los productos disponibles y sus especificaciones técnicas.</p>
-                <div class="catalog-actions">
+                <p>Si estas interesado en redes de agua potable, alcantarillado sanitario y pluvial, redes eléctricas, urbanización para centros comerciales, estacionamientos, hospitales, áreas industriales, laboratorios, áreas de cultivo e invernaderos y oficinas en general, ponte en contacto con nosotros.</p>
+                
+                <p>Con nosotros encontrarás una gran variedad de tubería, conexiones, equipo y los mejores productos en las mejores marcas para su instalación.</p>
+                
+                <div class="catalog-actions-mod">
                     <a href="Catalogo/CATALOGO_HIDROSISTEMAS_2021.pdf" download="CATALOGO_HIDROSISTEMAS_2023.pdf" class="btn btn-download">
                         <i class="fas fa-download"></i> Descargar PDF
                     </a>
@@ -581,6 +746,9 @@
                         <i class="fas fa-eye"></i> Ver Online
                     </a>
                 </div>
+            </div>
+            <div class="catalog-image-mod">
+                <img src="Imagenes\Sub-paginas\Productos\hero-catalogo_1.png" alt="Catálogo Hidrosistemas" width="912" height="1184">
             </div>
         </div>
     </div>
