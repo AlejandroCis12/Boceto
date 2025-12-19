@@ -360,6 +360,217 @@
     .icon-comercial {
         background: var(--comercial);
     }
+    /* ===== SECCIÓN MAPA INTERACTIVO ===== */
+.interactive-section {
+    padding: 80px 20px;
+    max-width: 1500px;
+    margin: 60px auto;
+    text-align: center;
+}
+
+.interactive-title {
+    color: var(--green);
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.interactive-subtitle {
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+    text-align: left;
+}
+
+/* Contenedor principal de el contenedor de la casa */
+.house-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Imagen de la casa (debes reemplazar la URL) */
+.house-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Puntos interactivos sobre la imagen */
+.interactive-dot {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    background: var(--accent); /* Rojo de tu marca */
+    border-radius: 50%;
+    border: 4px solid white;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(202, 12, 12, 0.4);
+    transition: all 0.3s ease;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.interactive-dot:hover {
+    transform: scale(1.2);
+    background: #ff0202; /* Rojo más brillante al hover */
+    box-shadow: 0 5px 15px rgba(202, 12, 12, 0.6);
+}
+
+.interactive-dot.active {
+    background: var(--primary); /* Azul cuando está activo */
+    transform: scale(1.2);
+    box-shadow: 0 5px 15px rgba(1, 27, 55, 0.6);
+}
+
+/* Etiqueta que aparece al lado del punto */
+.dot-label {
+    position: absolute;
+    background: var(--primary);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 11;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.interactive-dot:hover .dot-label {
+    opacity: 1;
+}
+
+/* Panel de información que aparece al hacer clic */
+.info-panel {
+    background: white;
+    border-radius: 12px;
+    padding: 35px;
+    margin-top: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    border-top: 5px solid var(--accent);
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.info-panel.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.panel-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.panel-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary), var(--dark));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.8rem;
+}
+
+.panel-title {
+    color: var(--primary);
+    font-size: 2.2rem;
+    margin: 0;
+}
+
+.panel-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.panel-text {
+    color: #555;
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+.panel-benefits {
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--green);
+}
+
+.panel-benefits h4 {
+    color: var(--dark);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.panel-benefits ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.panel-benefits li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.panel-benefits li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--green);
+    font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .house-container {
+        padding: 15px;
+    }
+    
+    .interactive-dot {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+    
+    .panel-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .info-panel {
+        padding: 25px;
+    }
+    
+    .panel-title {
+        font-size: 1.8rem;
+    }
+}
+/* ===== FIN SECCIÓN MAPA INTERACTIVO ===== */
     @media (max-width: 970px) {
         .menu-toggle  {
             margin-right: 40%;
@@ -560,7 +771,78 @@
     </div>
   </div> 
 </section>
-
+<!-- Sección: Mapa Interactivo de Sistemas Residenciales -->
+<section class="interactive-section" id="sistemas-casa">
+    <div class="container">
+        <h2 class="interactive-title">Sistemas Hidráulicos por Zona</h2>
+        <p class="interactive-subtitle">Haz clic en cada área de la vivienda para conocer nuestras soluciones especializadas en sistemas hidráulicos y sanitarios.</p>
+        
+        <div class="house-container">
+            <!-- IMAGEN DE LA CASA - ¡DEBES REEMPLAZAR ESTA URL! -->
+            <img src="Imagenes/Sub-paginas/Nosotros/Residencia.png"
+                 alt="Diagrama de sistemas hidráulicos residenciales" 
+                 class="house-image">
+            
+            <!-- Puntos interactivos (debes ajustar las coordenadas left/top según tu imagen) -->
+            <!-- Punto 1: Techo (drenaje pluvial) -->
+            <div class="interactive-dot" style="left: 50%; top: 12%;" data-target="roof">
+                <div class="dot-label" style="top: -40px; left: 50%; transform: translateX(-50%);">Techo</div>
+                1
+            </div>
+            
+            <!-- Punto 2: Baño principal -->
+            <div class="interactive-dot" style="left: 30%; top: 50%;" data-target="bathroom">
+                <div class="dot-label" style="top: -40px; left: 50%; transform: translateX(-50%);">Baño</div>
+                2
+            </div>
+            
+            <!-- Punto 3: Cocina -->
+            <div class="interactive-dot" style="left: 60%; top: 55%;" data-target="kitchen">
+                <div class="dot-label" style="top: -40px; left: 50%; transform: translateX(-50%);">Cocina</div>
+                3
+            </div>
+            
+            <!-- Punto 4: Jardín -->
+            <div class="interactive-dot" style="left: 20%; top: 80%;" data-target="garden">
+                <div class="dot-label" style="top: -40px; left: 50%; transform: translateX(-50%);">Jardín</div>
+                4
+            </div>
+            
+            <!-- Punto 5: Caldera/Calentador -->
+            <div class="interactive-dot" style="left: 75%; top: 70%;" data-target="heating">
+                <div class="dot-label" style="top: -40px; left: 50%; transform: translateX(-50%);">Calefacción</div>
+                5
+            </div>
+        </div>
+        
+        <!-- Panel de información dinámica -->
+        <div class="info-panel active" id="info-panel">
+            <div class="panel-header">
+                <div class="panel-icon">
+                    <i class="fas fa-bath" id="panel-icon"></i>
+                </div>
+                <h3 class="panel-title" id="panel-title">Sistema de Baños y Sanitarios</h3>
+            </div>
+            
+            <div class="panel-content">
+                <div class="panel-text" id="panel-text">
+                    <p>Instalamos sistemas completos de fontanería para baños con tuberías de PVC y CPVC de alta resistencia. Nuestras soluciones garantizan un flujo óptimo de agua y un drenaje eficiente, previniendo fugas y obstrucciones.</p>
+                    <p>Utilizamos conexiones precisas y materiales certificados para asegurar la durabilidad y el correcto funcionamiento de todos los componentes sanitarios.</p>
+                </div>
+                
+                <div class="panel-benefits">
+                    <h4>Ventajas Principales</h4>
+                    <ul id="panel-benefits">
+                        <li>Instalación libre de fugas con garantía</li>
+                        <li>Optimización de presión y flujo de agua</li>
+                        <li>Materiales resistentes a la corrosión</li>
+                        <li>Soluciones para ahorro de agua</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <section class="services-section" id="servicios">
     <div class="container-experience">
         <h2 class="section-title">Nuestra experiencia</h2>
@@ -745,5 +1027,135 @@
             });
         });
     </script>
+    <script>
+// Datos para cada zona de la casa
+const houseSystemsData = {
+    roof: {
+        title: "Drenaje Pluvial en Techos",
+        icon: "fas fa-cloud-rain",
+        text: "Sistemas completos de canaletas y bajantes pluviales para el manejo eficiente del agua de lluvia. Instalamos tuberías de PVC de gran diámetro que previenen inundaciones y protegen la estructura de la vivienda contra filtraciones y humedad.",
+        benefits: [
+            "Canaletas y bajantes de alta capacidad",
+            "Materiales resistentes a la intemperie UV",
+            "Prevención de filtraciones en muros y cimientos",
+            "Diseño personalizado según área del techo"
+        ]
+    },
+    bathroom: {
+        title: "Sistema de Baños y Sanitarios",
+        icon: "fas fa-bath",
+        text: "Instalamos sistemas completos de fontanería para baños con tuberías de PVC y CPVC de alta resistencia. Nuestras soluciones garantizan un flujo óptimo de agua y un drenaje eficiente, previniendo fugas y obstrucciones.",
+        benefits: [
+            "Instalación libre de fugas con garantía",
+            "Optimización de presión y flujo de agua",
+            "Materiales resistentes a la corrosión",
+            "Soluciones para ahorro de agua"
+        ]
+    },
+    kitchen: {
+        title: "Sistema Hidráulico para Cocina",
+        icon: "fas fa-kitchen-set",
+        text: "Soluciones integrales para cocinas y lavanderías, incluyendo instalaciones para lavaplatos, lavadoras y líneas de agua filtrada. Utilizamos tuberías que resisten cambios de temperatura y exposición a grasas y productos de limpieza.",
+        benefits: [
+            "Conexiones duraderas para electrodomésticos",
+            "Tuberías resistentes a grasas y químicos",
+            "Sistemas de filtración de agua potable",
+            "Válvulas de control de fácil acceso"
+        ]
+    },
+    garden: {
+        title: "Riego Automatizado para Jardín",
+        icon: "fas fa-tree",
+        text: "Diseñamos e instalamos sistemas de riego eficiente para jardines residenciales, utilizando tuberías de polietileno y aspersores de bajo consumo. Nuestros sistemas pueden ser automatizados para un riego programado que optimiza el uso del agua.",
+        benefits: [
+            "Riego programado y automatizado",
+            "Tuberías flexibles resistentes a raíces",
+            "Aspersores de bajo consumo de agua",
+            "Diseño según tipo de plantas y terreno"
+        ]
+    },
+    heating: {
+        title: "Agua Caliente y Calefacción",
+        icon: "fas fa-fire",
+        text: "Instalación de sistemas de agua caliente sanitaria y calefacción por tuberías, utilizando materiales como PEX y CPVC que soportan altas temperaturas. Configuraciones seguras para calderas, calentadores y boilers.",
+        benefits: [
+            "Tuberías que soportan altas temperaturas",
+            "Aislamiento térmico para eficiencia energética",
+            "Configuración segura para calderas",
+            "Válvulas de seguridad y regulación"
+        ]
+    }
+};
+
+// Inicializar cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', function() {
+    const dots = document.querySelectorAll('.interactive-dot');
+    const panel = document.getElementById('info-panel');
+    const panelTitle = document.getElementById('panel-title');
+    const panelIcon = document.getElementById('panel-icon');
+    const panelText = document.getElementById('panel-text');
+    const panelBenefits = document.getElementById('panel-benefits');
+    
+    // Función para activar un punto y mostrar su información
+    function activateDot(targetDot) {
+        const targetId = targetDot.getAttribute('data-target');
+        const systemData = houseSystemsData[targetId];
+        
+        if (!systemData) return;
+        
+        // 1. Actualizar el panel de información
+        panelTitle.textContent = systemData.title;
+        panelIcon.className = systemData.icon;
+        
+        // Actualizar texto (manteniendo estructura HTML si la hay)
+        panelText.innerHTML = `<p>${systemData.text}</p>`;
+        
+        // Actualizar lista de beneficios
+        panelBenefits.innerHTML = '';
+        systemData.benefits.forEach(benefit => {
+            const li = document.createElement('li');
+            li.textContent = benefit;
+            panelBenefits.appendChild(li);
+        });
+        
+        // 2. Actualizar estado visual de los puntos
+        dots.forEach(dot => {
+            dot.classList.remove('active');
+        });
+        targetDot.classList.add('active');
+        
+        // 3. Animar el panel (si no está activo)
+        if (!panel.classList.contains('active')) {
+            panel.classList.add('active');
+        }
+    }
+    
+    // Añadir evento de clic a cada punto
+    dots.forEach(dot => {
+        dot.addEventListener('click', function() {
+            activateDot(this);
+        });
+        
+        // Para accesibilidad: también activar con Enter
+        dot.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                activateDot(this);
+            }
+        });
+    });
+    
+    // Activar el primer punto por defecto
+    if (dots.length > 0) {
+        activateDot(dots[0]);
+    }
+    
+    // Hacer los puntos enfocables para navegación con teclado
+    dots.forEach(dot => {
+        dot.setAttribute('tabindex', '0');
+        dot.setAttribute('role', 'button');
+        dot.setAttribute('aria-label', `Sistema ${dot.textContent.trim()}`);
+    });
+});
+</script>
 </body>
 </html>
