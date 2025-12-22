@@ -574,6 +574,7 @@
     color: #555;
     line-height: 1.7;
     font-size: 1.05rem;
+    text-align: justify;
 }
 
 /* BOTÓN DEL CATÁLOGO (ESTILO COMO LA IMAGEN) */
@@ -1207,60 +1208,79 @@
     </script>
     <script>
 // Datos para cada zona de la casa
+// Datos para cada zona de la casa
 const houseSystemsData = {
     roof: {
-        title: "Drenaje Pluvial en Techos",
-        icon: "fas fa-cloud-rain",
-        text: "Sistemas completos de canaletas y bajantes pluviales para el manejo eficiente del agua de lluvia. Instalamos tuberías de PVC de gran diámetro que previenen inundaciones y protegen la estructura de la vivienda contra filtraciones y humedad.",
+        title: "Sistemas de Techos y Tinacos",
+        icon: "fas fa-house",
+        text: "Soluciones integrales para la captación y almacenamiento de agua en techos. Instalamos sistemas de tinacos con capacidades desde 450 hasta 2500 litros. Nuestros sistemas incluyen tuberías de PVC para conducción, filtros de sedimentos y sistemas de purificación para garantizar agua de calidad.",
         benefits: [
-            "Canaletas y bajantes de alta capacidad",
-            "Materiales resistentes a la intemperie UV",
-            "Prevención de filtraciones en muros y cimientos",
-            "Diseño personalizado según área del techo"
+            "Tinacos rotomoldeados de polietileno grado alimenticio",
+            "Sistemas de captación pluvial con filtros",
+            "Tuberías de PVC de gran diámetro para conducción",
+            "Instalación con normas de seguridad y hermeticidad",
+            "Capacidades desde 450L hasta 2500L"
         ]
     },
     bathroom: {
-        title: "Sistema de Baños y Sanitarios",
+        title: "Sistemas de Baños con Línea DWV y CPVC",
         icon: "fas fa-bath",
-        text: "Instalamos sistemas completos de fontanería para baños con tuberías de PVC y CPVC de alta resistencia. Nuestras soluciones garantizan un flujo óptimo de agua y un drenaje eficiente, previniendo fugas y obstrucciones.",
+        text: "Instalaciones completas para baños utilizando tuberías de CPVC para agua caliente y fría, y línea DWV (Drain-Waste-Vent) para sistemas de drenaje y ventilación. Trabajamos con materiales certificados que garantizan durabilidad y funcionamiento óptimo.",
         benefits: [
-            "Instalación libre de fugas con garantía",
-            "Optimización de presión y flujo de agua",
-            "Materiales resistentes a la corrosión",
-            "Soluciones para ahorro de agua"
+            "Tubería CPVC para agua caliente (hasta 90°C)",
+            "Línea DWV para drenaje y ventilación",
+            "Accesorios sanitarios de alta resistencia",
+            "Sistemas libres de fugas y corrosión",
+            "Cumplimiento con normas sanitarias"
         ]
     },
     kitchen: {
-        title: "Sistema Hidráulico para Cocina",
+        title: "Sistemas de Cocina con Tuberías PVC y CPVC",
         icon: "fas fa-kitchen-set",
-        text: "Soluciones integrales para cocinas y lavanderías, incluyendo instalaciones para lavaplatos, lavadoras y líneas de agua filtrada. Utilizamos tuberías que resisten cambios de temperatura y exposición a grasas y productos de limpieza.",
+        text: "Sistemas hidráulicos completos para cocinas utilizando tuberías de PVC para drenaje y CPVC para agua potable. Nuestras instalaciones incluyen sistemas de filtración, conexiones para electrodomésticos y válvulas de control de fácil acceso.",
         benefits: [
-            "Conexiones duraderas para electrodomésticos",
-            "Tuberías resistentes a grasas y químicos",
-            "Sistemas de filtración de agua potable",
-            "Válvulas de control de fácil acceso"
+            "Tubería PVC para drenajes y desagües",
+            "Tubería CPVC para líneas de agua potable",
+            "Resistencia a grasas y productos químicos",
+            "Válvulas de control y purga",
+            "Sistemas de filtración multietapas"
         ]
     },
     garden: {
-        title: "Riego Automatizado para Jardín",
+        title: "Sistemas de Riego con Tubería de Polietileno",
         icon: "fas fa-tree",
-        text: "Diseñamos e instalamos sistemas de riego eficiente para jardines residenciales, utilizando tuberías de polietileno y aspersores de bajo consumo. Nuestros sistemas pueden ser automatizados para un riego programado que optimiza el uso del agua.",
+        text: "Diseño e instalación de sistemas de riego automatizado utilizando tubería de polietileno de alta densidad para jardines residenciales y comerciales. Incluimos aspersores, difusores y programadores inteligentes para un riego eficiente.",
         benefits: [
-            "Riego programado y automatizado",
-            "Tuberías flexibles resistentes a raíces",
-            "Aspersores de bajo consumo de agua",
-            "Diseño según tipo de plantas y terreno"
+            "Tubería de polietileno de alta densidad",
+            "Aspersores y difusores de bajo consumo",
+            "Programadores automáticos y sensores de humedad",
+            "Resistente a raíces y cambios climáticos",
+            "Diseño personalizado según tipo de vegetación"
         ]
     },
     heating: {
-        title: "Agua Caliente y Calefacción",
+        title: "Sistemas de Agua Caliente con CPVC y PEX",
         icon: "fas fa-fire",
-        text: "Instalación de sistemas de agua caliente sanitaria y calefacción por tuberías, utilizando materiales como PEX y CPVC que soportan altas temperaturas. Configuraciones seguras para calderas, calentadores y boilers.",
+        text: "Instalación de sistemas de agua caliente sanitaria y calefacción utilizando tuberías de CPVC y PEX que soportan altas temperaturas y presión. Configuramos sistemas seguros para calderas, calentadores y boilers con aislamiento térmico.",
         benefits: [
-            "Tuberías que soportan altas temperaturas",
+            "Tubería CPVC para agua caliente (hasta 90°C)",
+            "Tubería PEX para sistemas de calefacción",
             "Aislamiento térmico para eficiencia energética",
-            "Configuración segura para calderas",
-            "Válvulas de seguridad y regulación"
+            "Válvulas de seguridad y termostatos",
+            "Conexiones libres de fugas con garantía"
+        ]
+    },
+    // AGREGAR ESTE NUEVO SISTEMA PARA MATERIALES GENERALES
+    materials: {
+        title: "Materiales Especializados: PVC, CPVC y Línea DWV",
+        icon: "fas fa-cogs",
+        text: "Suministramos tuberías y accesorios especializados para todos tus proyectos hidráulicos. Contamos con línea completa de PVC para drenaje, CPVC para agua caliente y fría, y línea DWV para sistemas sanitarios. Todos nuestros materiales cumplen con normas de calidad y están certificados.",
+        benefits: [
+            "PVC para drenaje sanitario y pluvial",
+            "CPVC para agua potable caliente y fría",
+            "Línea DWV completa (drenaje, desagüe, ventilación)",
+            "Tubería de polietileno para riego",
+            "Accesorios, válvulas y conexiones especializadas"
         ]
     }
 };
