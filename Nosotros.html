@@ -452,92 +452,212 @@
     opacity: 1;
 }
 
-/* Panel de información que aparece al hacer clic */
-.info-panel {
-    background: white;
-    border-radius: 12px;
-    padding: 35px;
-    margin-top: 30px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    text-align: left;
-    border-top: 5px solid var(--accent);
-    min-height: 280px;
-    display: flex;
-    flex-direction: column;
+/* ===== MODAL/POPUP ===== */
+.system-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: none;
     justify-content: center;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.5s ease;
+    align-items: center;
+    padding: 20px;
 }
 
-.info-panel.active {
-    opacity: 1;
-    transform: translateY(0);
+.system-modal.active {
+    display: flex;
 }
 
-.panel-header {
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(3px);
+}
+
+.modal-content {
+    position: relative;
+    background: white;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    animation: modalSlideIn 0.3s ease-out;
+    z-index: 1001;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #ff4444;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    justify-content: center;
+    z-index: 1002;
+    transition: background 0.3s ease;
+}
+
+.modal-close:hover {
+    background: #ff0000;
+}
+
+.modal-header {
+    padding: 30px 30px 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
     gap: 15px;
 }
 
-.panel-icon {
-    width: 60px;
-    height: 60px;
+.modal-icon {
+    width: 70px;
+    height: 70px;
     background: linear-gradient(135deg, var(--primary), var(--dark));
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 1.8rem;
+    font-size: 2rem;
+    flex-shrink: 0;
 }
 
-.panel-title {
+.modal-title {
     color: var(--primary);
-    font-size: 2.2rem;
+    font-size: 2rem;
     margin: 0;
+    flex: 1;
 }
 
-.panel-content {
+.modal-body {
+    padding: 30px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
-    align-items: start;
 }
 
-.panel-text {
+.modal-text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+}
+
+.modal-text {
     color: #555;
     line-height: 1.7;
     font-size: 1.05rem;
 }
 
-.panel-benefits {
+/* BOTÓN DEL CATÁLOGO (ESTILO COMO LA IMAGEN) */
+.catalog-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 280px; 
+    height: 120px;
+    background: linear-gradient(135deg, #1a2b3c 0%, #2c3e50 100%);
+    border: 3px solid #ca0c0c;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    padding: 15px 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    margin: 15px auto;
+}
+
+.catalog-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #ca0c0c 0%, #ff0202 100%);
+    border-color: #fff;
+}
+
+.catalog-btn:active {
+    transform: translateY(0);
+}
+
+.catalog-title {
+    font-size: 1.2rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.catalog-subtitle {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ca0c0c;
+    margin-bottom: 8px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.catalog-description {
+    font-size: 0.7rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #e0e0e0;
+    max-width: 90%;
+}
+
+.modal-benefits {
     background: #f8fafc;
     padding: 20px;
     border-radius: 8px;
     border-left: 4px solid var(--green);
 }
 
-.panel-benefits h4 {
+.modal-benefits h4 {
     color: var(--dark);
     margin-bottom: 15px;
     font-size: 1.3rem;
 }
 
-.panel-benefits ul {
+.modal-benefits ul {
     list-style: none;
     padding-left: 0;
 }
 
-.panel-benefits li {
+.modal-benefits li {
     margin-bottom: 10px;
     padding-left: 25px;
     position: relative;
 }
 
-.panel-benefits li:before {
+.modal-benefits li:before {
     content: "✓";
     position: absolute;
     left: 0;
@@ -557,17 +677,50 @@
         font-size: 14px;
     }
     
-    .panel-content {
+    .modal-body {
         grid-template-columns: 1fr;
         gap: 20px;
     }
     
-    .info-panel {
-        padding: 25px;
+    .modal-content {
+        padding: 15px;
     }
     
-    .panel-title {
+    .modal-title {
         font-size: 1.8rem;
+    }
+    
+    .modal-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .modal-title {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+    
+    .modal-content {
+        width: 95%;
+    }
+    
+    .catalog-btn {
+        width: 220px;
+        height: 110px;
+        margin: 10px auto;
+    }
+    
+    .catalog-title {
+        font-size: 1.1rem;
+    }
+    
+    .catalog-subtitle {
+        font-size: 1.6rem;
+    }
+    
+    .catalog-description {
+        font-size: 0.65rem;
     }
 }
 /* ===== FIN SECCIÓN MAPA INTERACTIVO ===== */
@@ -629,7 +782,19 @@
         .infraestrucutura, .viviendas, .edificios, .comercial {
             width: 80%;
         }
-
+        .catalog-btn {
+            width: 200px;
+            height: 100px;
+        }
+        .catalog-title {
+            font-size: 1rem;
+        }
+        .catalog-subtitle {
+            font-size: 1.4rem;
+        }
+        .catalog-description {
+            font-size: 0.6rem;
+        }
     }
     </style>
 </head>
@@ -778,12 +943,12 @@
         <p class="interactive-subtitle">Haz clic en cada área de la vivienda para conocer nuestras soluciones especializadas en sistemas hidráulicos y sanitarios.</p>
         
         <div class="house-container">
-            <!-- IMAGEN DE LA CASA - ¡DEBES REEMPLAZAR ESTA URL! -->
+            <!-- IMAGEN DE LA CASA -->
             <img src="Imagenes/Sub-paginas/Nosotros/Residencia.png"
                  alt="Diagrama de sistemas hidráulicos residenciales" 
                  class="house-image">
             
-            <!-- Puntos interactivos (debes ajustar las coordenadas left/top según tu imagen) -->
+            <!-- Puntos interactivos -->
             <!-- Punto 1: Techo (drenaje pluvial) -->
             <div class="interactive-dot" style="left: 50%; top: 12%;" data-target="roof">
                 <div class="dot-label" style="top: -40px; left: 50%; transform: translateX(-50%);">Techo</div>
@@ -814,35 +979,48 @@
                 5
             </div>
         </div>
+    </div>
+</section>
+
+<!-- Modal/popup para la información -->
+<div class="system-modal" id="system-modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+        <button class="modal-close" aria-label="Cerrar modal">
+            <i class="fas fa-times"></i>
+        </button>
         
-        <!-- Panel de información dinámica -->
-        <div class="info-panel active" id="info-panel">
-            <div class="panel-header">
-                <div class="panel-icon">
-                    <i class="fas fa-bath" id="panel-icon"></i>
+        <div class="modal-header">
+            <div class="modal-icon">
+                <i class="fas fa-bath" id="modal-icon"></i>
+            </div>
+            <h3 class="modal-title" id="modal-title">Sistema de Baños y Sanitarios</h3>
+        </div>
+        
+        <div class="modal-body">
+            <!-- Contenedor para texto y botón del catálogo -->
+            <div class="modal-text-container">
+                <div class="modal-text" id="modal-text">
+                    <!-- El texto se insertará aquí -->
                 </div>
-                <h3 class="panel-title" id="panel-title">Sistema de Baños y Sanitarios</h3>
+                <!-- Botón del catálogo (reemplaza a la imagen) -->
+                <button class="catalog-btn" id="catalog-btn">
+                    <span class="catalog-title">HIDROSISTEMAS</span>
+                    <span class="catalog-subtitle">CATÁLOGO</span>
+                    <span class="catalog-description">VENTA DE TUBERIA Y VALVULAS PARA AGUA, DRENAJE Y RIEGO</span>
+                </button>
             </div>
             
-            <div class="panel-content">
-                <div class="panel-text" id="panel-text">
-                    <p>Instalamos sistemas completos de fontanería para baños con tuberías de PVC y CPVC de alta resistencia. Nuestras soluciones garantizan un flujo óptimo de agua y un drenaje eficiente, previniendo fugas y obstrucciones.</p>
-                    <p>Utilizamos conexiones precisas y materiales certificados para asegurar la durabilidad y el correcto funcionamiento de todos los componentes sanitarios.</p>
-                </div>
-                
-                <div class="panel-benefits">
-                    <h4>Ventajas Principales</h4>
-                    <ul id="panel-benefits">
-                        <li>Instalación libre de fugas con garantía</li>
-                        <li>Optimización de presión y flujo de agua</li>
-                        <li>Materiales resistentes a la corrosión</li>
-                        <li>Soluciones para ahorro de agua</li>
-                    </ul>
-                </div>
+            <div class="modal-benefits">
+                <h4>Ventajas Principales</h4>
+                <ul id="modal-benefits">
+                    <!-- Los beneficios se insertarán aquí -->
+                </ul>
             </div>
         </div>
     </div>
-</section>
+</div>
+
 <section class="services-section" id="servicios">
     <div class="container-experience">
         <h2 class="section-title">Nuestra experiencia</h2>
@@ -950,15 +1128,15 @@
                             <div class="item-text">
                                 <p><a href="https://wa.me/52771712167150" target="_blank" rel="noopener noreferrer">771 712 167 150</a></p>
                             </div>
-                                                    <div class="item-header">
-                            <div class="item-icon">
-                                <i class="fas fa-envelope"></i>
+                            <div class="item-header">
+                                <div class="item-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <h3 class="item-label">Email</h3>
                             </div>
-                            <h3 class="item-label">Email</h3>
-                        </div>
-                        <div class="item-text">
-                            <p><a href="mailto:ventas@hidrosistemas.com.mx">ventas@hidrosistemas.com.mx</a></p>
-                        </div>
+                            <div class="item-text">
+                                <p><a href="mailto:ventas@hidrosistemas.com.mx">ventas@hidrosistemas.com.mx</a></p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1090,11 +1268,43 @@ const houseSystemsData = {
 // Inicializar cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', function() {
     const dots = document.querySelectorAll('.interactive-dot');
-    const panel = document.getElementById('info-panel');
-    const panelTitle = document.getElementById('panel-title');
-    const panelIcon = document.getElementById('panel-icon');
-    const panelText = document.getElementById('panel-text');
-    const panelBenefits = document.getElementById('panel-benefits');
+    const modal = document.getElementById('system-modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalIcon = document.getElementById('modal-icon');
+    const modalText = document.getElementById('modal-text');
+    const modalBenefits = document.getElementById('modal-benefits');
+    const catalogBtn = document.getElementById('catalog-btn');
+    const closeBtn = document.querySelector('.modal-close');
+    
+    // Función para abrir el modal con la información
+    function openModal(systemData) {
+        if (!systemData) return;
+        
+        // Actualizar contenido del modal
+        modalTitle.textContent = systemData.title;
+        modalIcon.className = systemData.icon;
+        
+        // Actualizar texto
+        modalText.innerHTML = `<p>${systemData.text}</p>`;
+        
+        // Actualizar lista de beneficios
+        modalBenefits.innerHTML = '';
+        systemData.benefits.forEach(benefit => {
+            const li = document.createElement('li');
+            li.textContent = benefit;
+            modalBenefits.appendChild(li);
+        });
+        
+        // Mostrar el modal
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevenir scroll del fondo
+    }
+    
+    // Función para cerrar el modal
+    function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto'; // Restaurar scroll
+    }
     
     // Función para activar un punto y mostrar su información
     function activateDot(targetDot) {
@@ -1103,31 +1313,14 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (!systemData) return;
         
-        // 1. Actualizar el panel de información
-        panelTitle.textContent = systemData.title;
-        panelIcon.className = systemData.icon;
-        
-        // Actualizar texto (manteniendo estructura HTML si la hay)
-        panelText.innerHTML = `<p>${systemData.text}</p>`;
-        
-        // Actualizar lista de beneficios
-        panelBenefits.innerHTML = '';
-        systemData.benefits.forEach(benefit => {
-            const li = document.createElement('li');
-            li.textContent = benefit;
-            panelBenefits.appendChild(li);
-        });
-        
-        // 2. Actualizar estado visual de los puntos
+        // Actualizar estado visual de los puntos
         dots.forEach(dot => {
             dot.classList.remove('active');
         });
         targetDot.classList.add('active');
         
-        // 3. Animar el panel (si no está activo)
-        if (!panel.classList.contains('active')) {
-            panel.classList.add('active');
-        }
+        // Abrir modal con la información
+        openModal(systemData);
     }
     
     // Añadir evento de clic a cada punto
@@ -1144,10 +1337,30 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Activar el primer punto por defecto
-    if (dots.length > 0) {
-        activateDot(dots[0]);
-    }
+    // Cerrar modal con el botón de cerrar
+    closeBtn.addEventListener('click', closeModal);
+    
+    // Cerrar modal haciendo clic fuera del contenido
+    modal.addEventListener('click', function(e) {
+        if (e.target.classList.contains('modal-overlay')) {
+            closeModal();
+        }
+    });
+    
+    // Cerrar modal con la tecla Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+    
+    // Evento para el botón del catálogo (puedes agregar aquí la funcionalidad que necesites)
+    catalogBtn.addEventListener('click', function() {
+        // Por ejemplo, redirigir a la página de productos o abrir un PDF
+        window.open('Catalogo/Catalogo-2026.html', '_blank');
+        // O también puedes cerrar el modal automáticamente:
+        // closeModal();
+    });
     
     // Hacer los puntos enfocables para navegación con teclado
     dots.forEach(dot => {
