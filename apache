@@ -1,0 +1,26 @@
+# BLOQUEO DE SEGURIDAD EXTREMO
+Options -Indexes
+
+# Proteger archivos sensibles
+<FilesMatch "\.(js|css|html|php|txt)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Permitir solo archivos necesarios
+<FilesMatch "^(index|asesoria|capacitacion|nosotros|productos|supervision)\.html$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>
+
+# Bloquear hotlinking de imágenes
+RewriteEngine On
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?hidrosistemas.com.mx [NC]
+RewriteRule \.(jpg|jpeg|png|gif|webp)$ - [NC,F,L]
+
+# Prevenir ataques
+ServerSignature Off
+Header set X-Content-Type-Options "nosniff"
+Header set X-Frame-Options "DENY"
+Header set X-XSS-Protection "1; mode=block"
